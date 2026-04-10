@@ -5,8 +5,6 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>CULTURE HEAD — We Basically Collect Stories</title>
 <style>
-  @import url('https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300;400;500;700&display=swap');
-
   :root {
     --black: #0a0a0a;
     --white: #f5f5f0;
@@ -16,784 +14,208 @@
     --gray-light: #888;
     --font: 'Helvetica Neue', Helvetica, Arial, sans-serif;
   }
-
   * { margin: 0; padding: 0; box-sizing: border-box; }
-
   html { scroll-behavior: smooth; }
+  body { background: var(--black); color: var(--white); font-family: var(--font); font-size: 16px; line-height: 1.6; }
+  @media (hover: hover) { body { cursor: none; } }
+  @media (hover: none) { .cursor, .cursor-ring { display: none !important; } }
 
-  body {
-    background: var(--black);
-    color: var(--white);
-    font-family: var(--font);
-    font-size: 16px;
-    line-height: 1.6;
-    cursor: none;
-  }
+  .cursor { width: 10px; height: 10px; background: var(--neon); border-radius: 50%; position: fixed; pointer-events: none; z-index: 9999; transform: translate(-50%,-50%); transition: transform 0.15s; }
+  .cursor-ring { width: 36px; height: 36px; border: 1px solid rgba(212,255,0,0.4); border-radius: 50%; position: fixed; pointer-events: none; z-index: 9998; transform: translate(-50%,-50%); transition: width 0.2s, height 0.2s; }
 
-  /* Custom cursor */
-  .cursor {
-    width: 10px; height: 10px;
-    background: var(--neon);
-    border-radius: 50%;
-    position: fixed;
-    pointer-events: none;
-    z-index: 9999;
-    transition: transform 0.15s ease;
-    transform: translate(-50%, -50%);
-  }
-  .cursor-ring {
-    width: 36px; height: 36px;
-    border: 1px solid rgba(212,255,0,0.4);
-    border-radius: 50%;
-    position: fixed;
-    pointer-events: none;
-    z-index: 9998;
-    transition: transform 0.08s ease, width 0.2s, height 0.2s;
-    transform: translate(-50%, -50%);
-  }
+  /* NAV */
+  nav { position: fixed; top: 0; left: 0; right: 0; z-index: 100; display: flex; align-items: center; justify-content: space-between; padding: 20px 48px; }
+  nav::before { content: ''; position: absolute; inset: 0; background: linear-gradient(to bottom, rgba(10,10,10,0.97), transparent); pointer-events: none; }
+  .nav-logo { position: relative; z-index: 1; text-decoration: none; cursor: pointer; line-height: 0; }
+  .nav-logo img { height: 250px; width: auto; display: block; }
+  .nav-links { display: flex; gap: 36px; list-style: none; position: relative; z-index: 1; }
+  .nav-links a { font-size: 11px; letter-spacing: 0.15em; text-transform: uppercase; color: var(--gray-light); text-decoration: none; transition: color 0.2s; cursor: pointer; }
+  .nav-links a:hover, .nav-links a.active { color: var(--neon); }
+  .nav-hamburger { display: none; flex-direction: column; gap: 5px; background: none; border: none; cursor: pointer; position: relative; z-index: 1; padding: 4px; }
+  .nav-hamburger span { display: block; width: 24px; height: 1px; background: var(--white); }
+  .mobile-menu { display: none; position: fixed; inset: 0; background: var(--black); z-index: 99; flex-direction: column; align-items: center; justify-content: center; gap: 40px; }
+  .mobile-menu.open { display: flex; }
+  .mobile-menu a { font-size: 36px; font-weight: 700; text-transform: uppercase; letter-spacing: -0.01em; color: var(--white); text-decoration: none; }
+  .mobile-menu a:hover { color: var(--neon); }
+  .mobile-close { position: absolute; top: 24px; right: 24px; background: none; border: none; color: var(--white); font-size: 28px; cursor: pointer; }
 
-  /* Navigation */
-  nav {
-    position: fixed;
-    top: 0; left: 0; right: 0;
-    z-index: 100;
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-    padding: 24px 48px;
-    mix-blend-mode: normal;
-  }
-  nav::before {
-    content: '';
-    position: absolute;
-    inset: 0;
-    background: linear-gradient(to bottom, rgba(10,10,10,0.95), transparent);
-    pointer-events: none;
-  }
-  .nav-logo {
-    font-size: 13px;
-    font-weight: 700;
-    letter-spacing: 0.2em;
-    text-transform: uppercase;
-    color: var(--white);
-    text-decoration: none;
-    position: relative;
-    z-index: 1;
-  }
-  .nav-links {
-    display: flex;
-    gap: 40px;
-    list-style: none;
-    position: relative;
-    z-index: 1;
-  }
-  .nav-links a {
-    font-size: 12px;
-    letter-spacing: 0.15em;
-    text-transform: uppercase;
-    color: var(--gray-light);
-    text-decoration: none;
-    transition: color 0.2s;
-  }
-  .nav-links a:hover { color: var(--neon); }
-
-  /* Pages */
-  .page { display: none; min-height: 100vh; }
+  /* PAGES */
+  .page { display: none; min-height: 100svh; }
   .page.active { display: block; }
 
-  /* ===================== LANDING PAGE ===================== */
-  #page-home {
-    position: relative;
-    overflow: hidden;
-  }
-
-  .hero {
-    height: 100vh;
-    display: flex;
-    flex-direction: column;
-    justify-content: flex-end;
-    padding: 0 48px 80px;
-    position: relative;
-  }
-
-  .hero-bg {
-    position: absolute;
-    inset: 0;
-    background: var(--black);
-  }
-
-  .hero-grid {
-    position: absolute;
-    inset: 0;
-    background-image:
-      linear-gradient(rgba(212,255,0,0.03) 1px, transparent 1px),
-      linear-gradient(90deg, rgba(212,255,0,0.03) 1px, transparent 1px);
-    background-size: 80px 80px;
-  }
-
-  .hero-ticker {
-    position: absolute;
-    top: 50%;
-    left: 0;
-    transform: translateY(-50%);
-    width: 100%;
-    overflow: hidden;
-    pointer-events: none;
-  }
-  .hero-ticker-inner {
-    display: flex;
-    white-space: nowrap;
-    animation: ticker 20s linear infinite;
-  }
-  .hero-ticker span {
-    font-size: clamp(80px, 12vw, 160px);
-    font-weight: 700;
-    letter-spacing: -0.02em;
-    color: transparent;
-    -webkit-text-stroke: 1px rgba(255,255,255,0.06);
-    padding-right: 80px;
-    text-transform: uppercase;
-  }
-  @keyframes ticker {
-    0% { transform: translateX(0); }
-    100% { transform: translateX(-50%); }
-  }
-
-  .hero-tag {
-    font-size: 11px;
-    letter-spacing: 0.25em;
-    text-transform: uppercase;
-    color: var(--neon);
-    margin-bottom: 24px;
-    position: relative;
-    z-index: 1;
-  }
-  .hero-tag::before {
-    content: '';
-    display: inline-block;
-    width: 24px;
-    height: 1px;
-    background: var(--neon);
-    vertical-align: middle;
-    margin-right: 12px;
-  }
-
-  .hero-title {
-    font-size: clamp(48px, 8vw, 120px);
-    font-weight: 700;
-    line-height: 0.9;
-    letter-spacing: -0.03em;
-    text-transform: uppercase;
-    position: relative;
-    z-index: 1;
-    max-width: 900px;
-  }
-
+  /* HOME */
+  .hero { height: 100svh; display: flex; flex-direction: column; justify-content: flex-end; padding: 0 48px 72px; position: relative; overflow: hidden; }
+  .hero-grid { position: absolute; inset: 0; background-image: linear-gradient(rgba(212,255,0,0.025) 1px, transparent 1px), linear-gradient(90deg, rgba(212,255,0,0.025) 1px, transparent 1px); background-size: 80px 80px; pointer-events: none; }
+  .hero-ticker { position: absolute; top: 50%; left: 0; transform: translateY(-50%); width: 100%; overflow: hidden; pointer-events: none; }
+  .hero-ticker-inner { display: flex; white-space: nowrap; animation: ticker 22s linear infinite; }
+  .hero-ticker span { font-size: clamp(72px,11vw,150px); font-weight: 700; letter-spacing: -0.02em; color: transparent; -webkit-text-stroke: 1px rgba(255,255,255,0.05); padding-right: 80px; text-transform: uppercase; }
+  @keyframes ticker { 0%{transform:translateX(0)} 100%{transform:translateX(-50%)} }
+  .hero-tag { font-size: 11px; letter-spacing: 0.25em; text-transform: uppercase; color: var(--neon); margin-bottom: 20px; position: relative; z-index: 1; animation: fadeUp 0.8s ease both; }
+  .hero-tag::before { content: ''; display: inline-block; width: 20px; height: 1px; background: var(--neon); vertical-align: middle; margin-right: 10px; }
+  .hero-title { font-size: clamp(44px,7.5vw,112px); font-weight: 700; line-height: 0.92; letter-spacing: -0.03em; text-transform: uppercase; position: relative; z-index: 1; max-width: 860px; animation: fadeUp 0.8s 0.15s ease both; }
   .hero-title .accent { color: var(--neon); }
+  .hero-bottom { display: flex; align-items: flex-end; justify-content: space-between; margin-top: 40px; position: relative; z-index: 1; animation: fadeUp 0.8s 0.3s ease both; }
+  .hero-sub { font-size: 14px; color: var(--gray-light); max-width: 320px; line-height: 1.7; }
 
-  .hero-bottom {
-    display: flex;
-    align-items: flex-end;
-    justify-content: space-between;
-    margin-top: 48px;
-    position: relative;
-    z-index: 1;
-  }
+  .btn-outline { display: inline-flex; align-items: center; gap: 10px; font-size: 11px; letter-spacing: 0.15em; text-transform: uppercase; color: var(--white); background: none; border: 1px solid rgba(255,255,255,0.2); padding: 15px 28px; cursor: pointer; transition: all 0.3s; font-family: var(--font); white-space: nowrap; }
+  .btn-outline:hover { background: var(--neon); color: var(--black); border-color: var(--neon); }
+  .btn-outline .arrow { transition: transform 0.3s; }
+  .btn-outline:hover .arrow { transform: translateX(5px); }
+  .btn-neon-text { display: inline-flex; align-items: center; gap: 10px; font-size: 11px; letter-spacing: 0.15em; text-transform: uppercase; color: var(--neon); background: none; border: none; border-bottom: 1px solid rgba(212,255,0,0.3); padding-bottom: 6px; cursor: pointer; font-family: var(--font); transition: gap 0.3s; }
+  .btn-neon-text:hover { gap: 18px; }
 
-  .hero-sub {
-    font-size: 15px;
-    color: var(--gray-light);
-    max-width: 360px;
-    line-height: 1.7;
-  }
+  .marquee-strip { border-top: 1px solid rgba(255,255,255,0.07); border-bottom: 1px solid rgba(255,255,255,0.07); padding: 16px 0; overflow: hidden; background: var(--gray); }
+  .marquee-inner { display: flex; white-space: nowrap; animation: marquee 20s linear infinite; }
+  .marquee-inner span { font-size: 11px; letter-spacing: 0.2em; text-transform: uppercase; color: var(--gray-light); padding: 0 40px; }
+  .marquee-inner .dot { color: var(--neon); padding: 0; }
+  @keyframes marquee { 0%{transform:translateX(0)} 100%{transform:translateX(-50%)} }
 
-  .hero-cta {
-    display: flex;
-    align-items: center;
-    gap: 12px;
-    font-size: 12px;
-    letter-spacing: 0.15em;
-    text-transform: uppercase;
-    color: var(--white);
-    background: none;
-    border: 1px solid rgba(255,255,255,0.2);
-    padding: 16px 32px;
-    cursor: none;
-    transition: all 0.3s;
-    font-family: var(--font);
-  }
-  .hero-cta:hover {
-    background: var(--neon);
-    color: var(--black);
-    border-color: var(--neon);
-  }
-  .hero-cta .arrow { transition: transform 0.3s; }
-  .hero-cta:hover .arrow { transform: translateX(6px); }
+  .section { padding: 100px 48px; }
+  .section-label { font-size: 11px; letter-spacing: 0.25em; text-transform: uppercase; color: var(--neon); margin-bottom: 40px; }
 
-  /* Marquee section */
-  .marquee-section {
-    border-top: 1px solid rgba(255,255,255,0.08);
-    border-bottom: 1px solid rgba(255,255,255,0.08);
-    padding: 20px 0;
-    overflow: hidden;
-    background: var(--gray);
-  }
-  .marquee-inner {
-    display: flex;
-    white-space: nowrap;
-    animation: marquee 18s linear infinite;
-  }
-  .marquee-inner span {
-    font-size: 12px;
-    letter-spacing: 0.2em;
-    text-transform: uppercase;
-    color: var(--gray-light);
-    padding: 0 48px;
-  }
-  .marquee-inner .dot {
-    color: var(--neon);
-    padding: 0;
-  }
-  @keyframes marquee {
-    0% { transform: translateX(0); }
-    100% { transform: translateX(-50%); }
-  }
+  .featured-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 2px; background: var(--gray-mid); }
+  .featured-video-wrap { background: var(--gray); overflow: hidden; position: relative; min-height: 520px; }
+  .featured-video-wrap iframe { width: 100%; height: 100%; border: none; display: block; position: absolute; inset: 0; }
+  .featured-info { background: var(--gray); padding: 56px 44px; display: flex; flex-direction: column; justify-content: space-between; }
+  .featured-ep { font-size: 11px; letter-spacing: 0.2em; color: var(--gray-light); }
+  .featured-name { font-size: clamp(28px,3.5vw,56px); font-weight: 700; line-height: 0.95; letter-spacing: -0.02em; text-transform: uppercase; margin: 20px 0 6px; }
+  .featured-role { font-size: 11px; letter-spacing: 0.15em; text-transform: uppercase; color: var(--neon); margin-bottom: 24px; }
+  .featured-quote { font-size: 15px; font-style: italic; color: rgba(245,245,240,0.7); border-left: 2px solid var(--neon); padding-left: 16px; margin-bottom: 20px; line-height: 1.65; }
+  .featured-desc { font-size: 14px; color: var(--gray-light); line-height: 1.8; margin-bottom: 32px; }
+  .featured-actions { display: flex; gap: 16px; flex-wrap: wrap; align-items: center; }
 
-  /* Featured interview */
-  .section {
-    padding: 120px 48px;
-  }
+  .about-teaser { border-top: 1px solid rgba(255,255,255,0.07); padding: 100px 48px; display: grid; grid-template-columns: 200px 1fr; gap: 80px; align-items: start; }
+  .about-teaser-label { font-size: 11px; letter-spacing: 0.25em; text-transform: uppercase; color: var(--neon); padding-top: 6px; }
+  .about-teaser-text { font-size: clamp(20px,2.2vw,32px); line-height: 1.45; font-weight: 300; letter-spacing: -0.01em; }
+  .about-teaser-text strong { font-weight: 700; color: var(--neon); }
 
-  .section-label {
-    font-size: 11px;
-    letter-spacing: 0.25em;
-    text-transform: uppercase;
-    color: var(--neon);
-    margin-bottom: 48px;
-  }
-
-  .featured-interview {
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-    gap: 2px;
-    background: var(--gray-mid);
-  }
-
-  .featured-video {
-    aspect-ratio: 9/12;
-    background: var(--gray);
-    overflow: hidden;
-    position: relative;
-  }
-  .featured-video iframe {
-    width: 100%; height: 100%;
-    border: none;
-  }
-  .featured-video-placeholder {
-    width: 100%; height: 100%;
-    background: var(--gray);
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    color: var(--gray-light);
-    font-size: 13px;
-    letter-spacing: 0.1em;
-  }
-
-  .featured-info {
-    padding: 64px 48px;
-    display: flex;
-    flex-direction: column;
-    justify-content: space-between;
-    background: var(--gray);
-  }
-
-  .featured-number {
-    font-size: 11px;
-    letter-spacing: 0.2em;
-    color: var(--gray-light);
-  }
-
-  .featured-name {
-    font-size: clamp(32px, 4vw, 64px);
-    font-weight: 700;
-    line-height: 0.95;
-    letter-spacing: -0.02em;
-    text-transform: uppercase;
-    margin: 32px 0;
-  }
-
-  .featured-desc {
-    font-size: 14px;
-    color: var(--gray-light);
-    line-height: 1.8;
-    margin-bottom: 48px;
-  }
-
-  .featured-link {
-    display: inline-flex;
-    align-items: center;
-    gap: 12px;
-    font-size: 12px;
-    letter-spacing: 0.15em;
-    text-transform: uppercase;
-    color: var(--neon);
-    text-decoration: none;
-    border-bottom: 1px solid rgba(212,255,0,0.3);
-    padding-bottom: 8px;
-    cursor: none;
-    background: none;
-    border-left: none;
-    border-right: none;
-    border-top: none;
-    font-family: var(--font);
-    transition: gap 0.3s;
-  }
-  .featured-link:hover { gap: 20px; }
-
-  /* About teaser */
-  .about-teaser {
-    border-top: 1px solid rgba(255,255,255,0.08);
-    padding: 120px 48px;
-    display: grid;
-    grid-template-columns: 1fr 2fr;
-    gap: 80px;
-    align-items: start;
-  }
-
-  .about-label {
-    font-size: 11px;
-    letter-spacing: 0.25em;
-    text-transform: uppercase;
-    color: var(--neon);
-    padding-top: 8px;
-  }
-
-  .about-text {
-    font-size: clamp(22px, 2.5vw, 36px);
-    line-height: 1.4;
-    font-weight: 300;
-    letter-spacing: -0.01em;
-  }
-
-  .about-text strong {
-    font-weight: 700;
-    color: var(--neon);
-  }
-
-  /* Stats row */
-  .stats-row {
-    display: grid;
-    grid-template-columns: repeat(3, 1fr);
-    border-top: 1px solid rgba(255,255,255,0.08);
-  }
-
-  .stat-item {
-    padding: 64px 48px;
-    border-right: 1px solid rgba(255,255,255,0.08);
-  }
+  .stats-row { display: grid; grid-template-columns: repeat(3,1fr); border-top: 1px solid rgba(255,255,255,0.07); }
+  .stat-item { padding: 56px 48px; border-right: 1px solid rgba(255,255,255,0.07); }
   .stat-item:last-child { border-right: none; }
+  .stat-number { font-size: clamp(44px,5vw,72px); font-weight: 700; letter-spacing: -0.03em; color: var(--neon); line-height: 1; }
+  .stat-label { font-size: 11px; letter-spacing: 0.15em; text-transform: uppercase; color: var(--gray-light); margin-top: 10px; }
 
-  .stat-number {
-    font-size: clamp(48px, 5vw, 80px);
-    font-weight: 700;
-    letter-spacing: -0.03em;
-    color: var(--neon);
-    line-height: 1;
-  }
-
-  .stat-label {
-    font-size: 12px;
-    letter-spacing: 0.15em;
-    text-transform: uppercase;
-    color: var(--gray-light);
-    margin-top: 12px;
-  }
-
-  /* ===================== INTERVIEWS PAGE ===================== */
-  #page-interviews { display: none; }
-  #page-interviews.active { display: block; }
-
-  .interviews-header {
-    padding: 160px 48px 80px;
-    border-bottom: 1px solid rgba(255,255,255,0.08);
-  }
-
-  .interviews-title {
-    font-size: clamp(48px, 8vw, 120px);
-    font-weight: 700;
-    letter-spacing: -0.03em;
-    text-transform: uppercase;
-    line-height: 0.9;
-  }
-
-  .interviews-title .outline {
-    color: transparent;
-    -webkit-text-stroke: 1px var(--white);
-  }
-
-  .interviews-grid {
-    padding: 80px 48px;
-    display: grid;
-    grid-template-columns: repeat(2, 1fr);
-    gap: 2px;
-    background: var(--gray-mid);
-  }
-
-  .interview-card {
-    background: var(--black);
-    position: relative;
-    overflow: hidden;
-    cursor: none;
-  }
-
-  .interview-card-inner {
-    padding: 0;
-  }
-
-  .interview-video {
-    aspect-ratio: 16/9;
-    background: var(--gray);
-    overflow: hidden;
-    position: relative;
-  }
-  .interview-video iframe {
-    width: 100%; height: 100%;
-    border: none;
-    display: block;
-  }
-
-  .interview-overlay {
-    position: absolute;
-    bottom: 0; left: 0; right: 0;
-    padding: 24px;
-    background: linear-gradient(transparent, rgba(0,0,0,0.8));
-    opacity: 0;
-    transition: opacity 0.3s;
-  }
-  .interview-card:hover .interview-overlay { opacity: 1; }
-
-  .interview-meta {
-    padding: 24px;
-    border-top: 1px solid rgba(255,255,255,0.06);
-  }
-
-  .interview-ep {
-    font-size: 10px;
-    letter-spacing: 0.25em;
-    text-transform: uppercase;
-    color: var(--neon);
-    margin-bottom: 8px;
-  }
-
-  .interview-name {
-    font-size: 20px;
-    font-weight: 700;
-    letter-spacing: -0.01em;
-    text-transform: uppercase;
-    margin-bottom: 8px;
-  }
-
-  .interview-desc {
-    font-size: 13px;
-    color: var(--gray-light);
-    line-height: 1.6;
-  }
-
-  /* ===================== OVER CH PAGE ===================== */
-  #page-about { display: none; }
-  #page-about.active { display: block; }
-
-  .about-hero {
-    min-height: 100vh;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    padding: 160px 48px 120px;
-    position: relative;
-    overflow: hidden;
-  }
-
-  .about-hero-bg {
-    position: absolute;
-    inset: 0;
-    background: radial-gradient(ellipse at 70% 50%, rgba(212,255,0,0.04) 0%, transparent 60%);
-  }
-
-  .about-big-text {
-    font-size: clamp(40px, 6vw, 96px);
-    font-weight: 700;
-    line-height: 1.05;
-    letter-spacing: -0.02em;
-    text-transform: uppercase;
-    max-width: 900px;
-    position: relative;
-    z-index: 1;
-  }
-
-  .about-big-text em {
-    font-style: normal;
-    color: var(--neon);
-  }
-
-  .about-body {
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-    gap: 2px;
-    background: var(--gray-mid);
-    margin-top: 2px;
-  }
-
-  .about-block {
-    background: var(--black);
-    padding: 80px 48px;
-  }
-
-  .about-block-label {
-    font-size: 11px;
-    letter-spacing: 0.25em;
-    text-transform: uppercase;
-    color: var(--neon);
-    margin-bottom: 32px;
-  }
-
-  .about-block-text {
-    font-size: 16px;
-    line-height: 1.9;
-    color: rgba(245,245,240,0.8);
-  }
-
-  .about-values {
-    padding: 120px 48px;
-    border-top: 1px solid rgba(255,255,255,0.08);
-  }
-
-  .values-grid {
-    display: grid;
-    grid-template-columns: repeat(3, 1fr);
-    gap: 2px;
-    background: var(--gray-mid);
-    margin-top: 64px;
-  }
-
-  .value-item {
-    background: var(--black);
-    padding: 48px;
-  }
-
-  .value-number {
-    font-size: 11px;
-    letter-spacing: 0.2em;
-    color: var(--gray-light);
-    margin-bottom: 24px;
-  }
-
-  .value-title {
-    font-size: 24px;
-    font-weight: 700;
-    text-transform: uppercase;
-    letter-spacing: -0.01em;
-    margin-bottom: 16px;
-  }
-
-  .value-text {
-    font-size: 14px;
-    color: var(--gray-light);
-    line-height: 1.8;
-  }
-
-  /* ===================== CONTACT PAGE ===================== */
-  #page-contact { display: none; }
-  #page-contact.active { display: block; }
-
-  .contact-wrap {
-    min-height: 100vh;
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-  }
-
-  .contact-left {
-    padding: 160px 48px 80px;
-    border-right: 1px solid rgba(255,255,255,0.08);
-    display: flex;
-    flex-direction: column;
-    justify-content: space-between;
-  }
-
-  .contact-title {
-    font-size: clamp(40px, 6vw, 80px);
-    font-weight: 700;
-    text-transform: uppercase;
-    letter-spacing: -0.02em;
-    line-height: 0.95;
-  }
-
-  .contact-title .neon { color: var(--neon); }
-
-  .contact-info {
-    margin-top: auto;
-    padding-top: 80px;
-  }
-
-  .contact-info-item {
-    padding: 32px 0;
-    border-top: 1px solid rgba(255,255,255,0.08);
-  }
-
-  .contact-info-label {
-    font-size: 11px;
-    letter-spacing: 0.2em;
-    text-transform: uppercase;
-    color: var(--neon);
-    margin-bottom: 8px;
-  }
-
-  .contact-info-value {
-    font-size: 16px;
-    color: var(--white);
-  }
-
-  .contact-right {
-    padding: 160px 48px 80px;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-  }
-
-  .form-group {
-    margin-bottom: 32px;
-  }
-
-  .form-label {
-    font-size: 11px;
-    letter-spacing: 0.2em;
-    text-transform: uppercase;
-    color: var(--gray-light);
-    display: block;
-    margin-bottom: 12px;
-  }
-
-  .form-input, .form-textarea {
-    width: 100%;
-    background: transparent;
-    border: none;
-    border-bottom: 1px solid rgba(255,255,255,0.15);
-    padding: 12px 0;
-    color: var(--white);
-    font-size: 16px;
-    font-family: var(--font);
-    outline: none;
-    transition: border-color 0.3s;
-    cursor: none;
-  }
-
-  .form-input:focus, .form-textarea:focus {
-    border-color: var(--neon);
-  }
-
-  .form-input::placeholder, .form-textarea::placeholder {
-    color: rgba(255,255,255,0.2);
-  }
-
-  .form-textarea {
-    resize: none;
-    height: 120px;
-  }
-
-  .form-submit {
-    display: flex;
-    align-items: center;
-    gap: 16px;
-    background: var(--neon);
-    color: var(--black);
-    border: none;
-    padding: 20px 48px;
-    font-size: 12px;
-    letter-spacing: 0.2em;
-    text-transform: uppercase;
-    font-family: var(--font);
-    font-weight: 700;
-    cursor: none;
-    margin-top: 16px;
-    transition: all 0.3s;
-    width: 100%;
-    justify-content: center;
-  }
-  .form-submit:hover {
-    background: var(--white);
-  }
-
-  /* Footer */
-  footer {
-    padding: 64px 48px;
-    border-top: 1px solid rgba(255,255,255,0.08);
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-  }
-
-  .footer-logo {
-    font-size: 13px;
-    font-weight: 700;
-    letter-spacing: 0.2em;
-    text-transform: uppercase;
-  }
-
-  .footer-tagline {
-    font-size: 12px;
-    color: var(--gray-light);
-    letter-spacing: 0.05em;
-  }
-
-  .footer-ig {
-    font-size: 12px;
-    letter-spacing: 0.15em;
-    text-transform: uppercase;
-    color: var(--neon);
-    text-decoration: none;
-    cursor: none;
-    transition: opacity 0.2s;
-  }
+  footer { padding: 56px 48px; border-top: 1px solid rgba(255,255,255,0.07); display: flex; align-items: center; justify-content: space-between; flex-wrap: wrap; gap: 20px; }
+  footer img { height: 26px; width: auto; }
+  .footer-tagline { font-size: 12px; color: var(--gray-light); }
+  .footer-ig { font-size: 11px; letter-spacing: 0.15em; text-transform: uppercase; color: var(--neon); text-decoration: none; transition: opacity 0.2s; }
   .footer-ig:hover { opacity: 0.7; }
 
-  /* Animations */
-  @keyframes fadeUp {
-    from { opacity: 0; transform: translateY(40px); }
-    to { opacity: 1; transform: translateY(0); }
-  }
+  /* INTERVIEWS */
+  .page-header { padding: 140px 48px 72px; border-bottom: 1px solid rgba(255,255,255,0.07); }
+  .page-title { font-size: clamp(44px,8vw,112px); font-weight: 700; letter-spacing: -0.03em; text-transform: uppercase; line-height: 0.9; }
+  .page-title .outline { color: transparent; -webkit-text-stroke: 1px var(--white); }
+  .interviews-grid { padding: 64px 48px; display: grid; grid-template-columns: repeat(2,1fr); gap: 2px; background: var(--gray-mid); }
+  .interview-card { background: var(--black); }
+  .interview-video-wrap { position: relative; overflow: hidden; background: var(--gray); }
+  .interview-video-wrap iframe { width: 100%; aspect-ratio: 9/16; border: none; display: block; }
+  .interview-meta { padding: 24px; border-top: 1px solid rgba(255,255,255,0.06); }
+  .interview-ep { font-size: 10px; letter-spacing: 0.25em; text-transform: uppercase; color: var(--neon); margin-bottom: 6px; }
+  .interview-name { font-size: 18px; font-weight: 700; letter-spacing: -0.01em; text-transform: uppercase; margin-bottom: 4px; }
+  .interview-role-tag { font-size: 11px; letter-spacing: 0.1em; text-transform: uppercase; color: var(--neon); margin-bottom: 10px; }
+  .interview-desc { font-size: 13px; color: var(--gray-light); line-height: 1.65; margin-bottom: 16px; }
 
-  .fade-up {
-    animation: fadeUp 0.8s ease forwards;
-  }
+  /* OVER CH */
+  .about-hero { min-height: 100svh; display: flex; flex-direction: column; justify-content: center; padding: 140px 48px 100px; position: relative; overflow: hidden; }
+  .about-hero::before { content: ''; position: absolute; inset: 0; background: radial-gradient(ellipse at 65% 50%, rgba(212,255,0,0.04) 0%, transparent 55%); pointer-events: none; }
+  .about-big { font-size: clamp(36px,5.5vw,88px); font-weight: 700; line-height: 1.05; letter-spacing: -0.02em; text-transform: uppercase; max-width: 860px; position: relative; z-index: 1; }
+  .about-big em { font-style: normal; color: var(--neon); }
+  .about-body { display: grid; grid-template-columns: 1fr 1fr; gap: 2px; background: var(--gray-mid); }
+  .about-block { background: var(--black); padding: 72px 48px; }
+  .about-block-label { font-size: 11px; letter-spacing: 0.25em; text-transform: uppercase; color: var(--neon); margin-bottom: 28px; }
+  .about-block-text { font-size: 16px; line-height: 1.95; color: rgba(245,245,240,0.8); }
+  .about-block-text p { margin-bottom: 20px; }
+  .about-block-text p:last-child { margin-bottom: 0; }
+  .about-extra { padding: 100px 48px; border-top: 1px solid rgba(255,255,255,0.07); display: grid; grid-template-columns: 200px 1fr; gap: 80px; align-items: start; }
+  .about-extra-label { font-size: 11px; letter-spacing: 0.25em; text-transform: uppercase; color: var(--neon); padding-top: 6px; }
+  .about-extra-text { font-size: clamp(18px,1.8vw,26px); line-height: 1.55; font-weight: 300; color: rgba(245,245,240,0.85); }
 
-  .fade-up-delay {
-    animation: fadeUp 0.8s 0.2s ease forwards;
-    opacity: 0;
-  }
+  /* ARTIKEL */
+  .article-header { padding: 140px 48px 72px; border-bottom: 1px solid rgba(255,255,255,0.07); }
+  .article-ep-tag { font-size: 11px; letter-spacing: 0.25em; text-transform: uppercase; color: var(--neon); margin-bottom: 20px; }
+  .article-title { font-size: clamp(44px,8vw,108px); font-weight: 700; letter-spacing: -0.03em; text-transform: uppercase; line-height: 0.9; margin-bottom: 24px; }
+  .article-role { font-size: 12px; letter-spacing: 0.12em; text-transform: uppercase; color: var(--gray-light); }
+  .article-split { display: grid; grid-template-columns: 1fr 1fr; gap: 2px; background: var(--gray-mid); }
+  .article-video-side { background: var(--black); overflow: hidden; min-height: 500px; position: relative; }
+  .article-video-side iframe { width: 100%; height: 100%; border: none; display: block; position: absolute; inset: 0; }
+  .article-quote-side { background: var(--black); padding: 64px 48px; display: flex; align-items: center; }
+  .article-pullquote { font-size: clamp(18px,2.2vw,30px); font-weight: 300; line-height: 1.5; letter-spacing: -0.01em; color: var(--white); border-left: 2px solid var(--neon); padding-left: 28px; }
+  .article-body-wrap { max-width: 680px; margin: 0 auto; padding: 88px 48px; }
+  .article-body-wrap p { font-size: 17px; line-height: 1.95; color: rgba(245,245,240,0.85); margin-bottom: 26px; }
+  .article-body-wrap h3 { font-size: 20px; font-weight: 700; text-transform: uppercase; letter-spacing: -0.01em; margin: 52px 0 18px; color: var(--white); }
+  .article-body-wrap blockquote { border-left: 2px solid var(--neon); padding: 20px 28px; margin: 40px 0; font-size: 18px; font-weight: 300; line-height: 1.65; color: var(--white); font-style: italic; }
+  .article-body-wrap strong { color: var(--white); font-weight: 700; }
+  .article-body-wrap em { color: var(--neon); font-style: normal; }
+  .article-nav { padding: 72px 48px; border-top: 1px solid rgba(255,255,255,0.07); display: flex; align-items: center; justify-content: space-between; flex-wrap: wrap; gap: 16px; }
 
-  .fade-up-delay-2 {
-    animation: fadeUp 0.8s 0.4s ease forwards;
-    opacity: 0;
-  }
+  /* CONTACT */
+  .contact-wrap { display: grid; grid-template-columns: 1fr 1fr; min-height: 100svh; }
+  .contact-left { padding: 140px 48px 72px; border-right: 1px solid rgba(255,255,255,0.07); display: flex; flex-direction: column; }
+  .contact-title { font-size: clamp(36px,5vw,72px); font-weight: 700; text-transform: uppercase; letter-spacing: -0.02em; line-height: 0.95; }
+  .contact-title .neon { color: var(--neon); }
+  .contact-info { margin-top: auto; padding-top: 64px; }
+  .contact-item { padding: 28px 0; border-top: 1px solid rgba(255,255,255,0.07); }
+  .contact-item-label { font-size: 10px; letter-spacing: 0.2em; text-transform: uppercase; color: var(--neon); margin-bottom: 6px; }
+  .contact-item-value { font-size: 15px; color: var(--white); }
+  .contact-item-value a { color: var(--white); text-decoration: none; transition: color 0.2s; }
+  .contact-item-value a:hover { color: var(--neon); }
+  .contact-right { padding: 140px 48px 72px; display: flex; flex-direction: column; justify-content: center; }
+  .form-group { margin-bottom: 28px; }
+  .form-label { display: block; font-size: 10px; letter-spacing: 0.2em; text-transform: uppercase; color: var(--gray-light); margin-bottom: 10px; }
+  .form-input, .form-textarea { width: 100%; background: transparent; border: none; border-bottom: 1px solid rgba(255,255,255,0.12); padding: 10px 0; color: var(--white); font-size: 15px; font-family: var(--font); outline: none; transition: border-color 0.3s; }
+  .form-input:focus, .form-textarea:focus { border-color: var(--neon); }
+  .form-input::placeholder, .form-textarea::placeholder { color: rgba(255,255,255,0.18); }
+  .form-textarea { resize: none; height: 100px; }
+  .btn-submit { width: 100%; margin-top: 8px; background: var(--neon); color: var(--black); border: none; padding: 18px 40px; font-size: 11px; letter-spacing: 0.2em; text-transform: uppercase; font-family: var(--font); font-weight: 700; cursor: pointer; transition: background 0.3s; }
+  .btn-submit:hover { background: var(--white); }
 
-  /* Responsive */
-  @media (max-width: 768px) {
-    nav { padding: 20px 24px; }
-    .hero, .section { padding-left: 24px; padding-right: 24px; }
-    .hero-bottom { flex-direction: column; align-items: flex-start; gap: 32px; }
-    .featured-interview { grid-template-columns: 1fr; }
-    .about-teaser { grid-template-columns: 1fr; gap: 32px; }
-    .stats-row { grid-template-columns: 1fr; }
-    .stat-item { border-right: none; border-bottom: 1px solid rgba(255,255,255,0.08); }
-    .interviews-grid { grid-template-columns: 1fr; padding: 24px; }
+  @keyframes fadeUp { from{opacity:0;transform:translateY(32px)} to{opacity:1;transform:translateY(0)} }
+
+  /* RESPONSIVE */
+  @media (max-width: 900px) {
+    nav { padding: 18px 24px; }
+    .nav-links { display: none; }
+    .nav-hamburger { display: flex; }
+
+    .hero { padding: 0 24px 56px; }
+    .hero-bottom { flex-direction: column; align-items: flex-start; gap: 24px; }
+    .hero-sub { max-width: 100%; }
+
+    .section { padding: 64px 24px; }
+    .featured-grid { grid-template-columns: 1fr; }
+    .featured-video-wrap { min-height: 360px; }
+    .featured-info { padding: 36px 24px; }
+
+    .about-teaser { padding: 64px 24px; grid-template-columns: 1fr; gap: 20px; }
+    .stats-row { grid-template-columns: 1fr 1fr; }
+    .stat-item { padding: 36px 24px; }
+    .stat-item:nth-child(2) { border-right: none; }
+    .stat-item:nth-child(3) { border-right: none; border-top: 1px solid rgba(255,255,255,0.07); grid-column: span 2; }
+    footer { padding: 36px 24px; justify-content: center; text-align: center; flex-direction: column; gap: 12px; }
+
+    .page-header { padding: 110px 24px 56px; }
+    .interviews-grid { grid-template-columns: 1fr; padding: 20px 24px; }
+
+    .about-hero { padding: 120px 24px 80px; }
     .about-body { grid-template-columns: 1fr; }
-    .values-grid { grid-template-columns: 1fr; }
+    .about-block { padding: 48px 24px; }
+    .about-extra { padding: 64px 24px; grid-template-columns: 1fr; gap: 20px; }
+
+    .article-header { padding: 110px 24px 56px; }
+    .article-split { grid-template-columns: 1fr; }
+    .article-video-side { min-height: 320px; }
+    .article-quote-side { padding: 36px 24px; }
+    .article-body-wrap { padding: 56px 24px; }
+    .article-nav { padding: 48px 24px; flex-direction: column; align-items: flex-start; }
+
     .contact-wrap { grid-template-columns: 1fr; }
-    .contact-left { padding: 120px 24px 48px; }
-    .contact-right { padding: 48px 24px 80px; }
-    .interviews-header, .about-hero { padding-left: 24px; padding-right: 24px; }
-    .about-values, .about-block { padding: 48px 24px; }
-    footer { flex-direction: column; gap: 16px; text-align: center; padding: 48px 24px; }
+    .contact-left { padding: 110px 24px 48px; border-right: none; border-bottom: 1px solid rgba(255,255,255,0.07); }
+    .contact-right { padding: 48px 24px 72px; }
+  }
+  @media (max-width: 480px) {
+    .stats-row { grid-template-columns: 1fr; }
+    .stat-item:nth-child(2), .stat-item:nth-child(3) { border-right: none; grid-column: auto; }
+    .stat-item { border-bottom: 1px solid rgba(255,255,255,0.07); border-top: none !important; }
   }
 </style>
 </head>
@@ -803,38 +225,46 @@
 <div class="cursor-ring" id="cursorRing"></div>
 
 <nav>
-  <a href="#" class="nav-logo" onclick="showPage('home')">
-    <img src="culture_head_logo.png" alt="Culture Head" style="height:250px;width:auto;display:block;filter:invert(0);">
+  <a class="nav-logo" onclick="showPage('home')">
+    <img src="culture_head_logo.png" alt="Culture Head">
   </a>
   <ul class="nav-links">
-    <li><a href="#" onclick="showPage('home')">Home</a></li>
-    <li><a href="#" onclick="showPage('interviews')">Interviews</a></li>
-    <li><a href="#" onclick="showPage('about')">Over CH</a></li>
-    <li><a href="#" onclick="showPage('contact')">Contact</a></li>
+    <li><a onclick="showPage('home')" id="nav-home" class="active">Home</a></li>
+    <li><a onclick="showPage('interviews')" id="nav-interviews">Interviews</a></li>
+    <li><a onclick="showPage('about')" id="nav-about">Over CH</a></li>
+    <li><a onclick="showPage('contact')" id="nav-contact">Contact</a></li>
   </ul>
+  <button class="nav-hamburger" onclick="toggleMenu()" aria-label="Menu">
+    <span></span><span></span><span></span>
+  </button>
 </nav>
 
-<!-- ===== HOME PAGE ===== -->
+<div class="mobile-menu" id="mobileMenu">
+  <button class="mobile-close" onclick="toggleMenu()">✕</button>
+  <a onclick="showPage('home');toggleMenu()">Home</a>
+  <a onclick="showPage('interviews');toggleMenu()">Interviews</a>
+  <a onclick="showPage('about');toggleMenu()">Over CH</a>
+  <a onclick="showPage('contact');toggleMenu()">Contact</a>
+</div>
+
+<!-- ===== HOME ===== -->
 <div id="page-home" class="page active">
   <section class="hero">
-    <div class="hero-bg"></div>
     <div class="hero-grid"></div>
     <div class="hero-ticker">
       <div class="hero-ticker-inner">
         <span>Culture Head</span><span>Culture Head</span><span>Culture Head</span><span>Culture Head</span><span>Culture Head</span><span>Culture Head</span>
       </div>
     </div>
-    <div class="hero-tag fade-up">Artiesten · Ondernemers · Creatives</div>
-    <h1 class="hero-title fade-up-delay">We Basically<br><span class="accent">Collect</span><br>Stories.</h1>
-    <div class="hero-bottom fade-up-delay-2">
+    <div class="hero-tag">Artiesten · Ondernemers · Creatives</div>
+    <h1 class="hero-title">We Basically<br><span class="accent">Collect</span><br>Stories.</h1>
+    <div class="hero-bottom">
       <p class="hero-sub">Een community waar artiesten, ondernemers en creatives samenkomen voor unieke verhalen.</p>
-      <button class="hero-cta" onclick="showPage('interviews')">
-        Bekijk Interviews <span class="arrow">→</span>
-      </button>
+      <button class="btn-outline" onclick="showPage('interviews')">Bekijk Interviews <span class="arrow">→</span></button>
     </div>
   </section>
 
-  <div class="marquee-section">
+  <div class="marquee-strip">
     <div class="marquee-inner">
       <span>Artiesten</span><span class="dot">✦</span><span>Ondernemers</span><span class="dot">✦</span><span>Creatives</span><span class="dot">✦</span><span>Muzikanten</span><span class="dot">✦</span><span>Designers</span><span class="dot">✦</span><span>Producers</span><span class="dot">✦</span><span>Fotografen</span><span class="dot">✦</span><span>Regisseurs</span><span class="dot">✦</span>
       <span>Artiesten</span><span class="dot">✦</span><span>Ondernemers</span><span class="dot">✦</span><span>Creatives</span><span class="dot">✦</span><span>Muzikanten</span><span class="dot">✦</span><span>Designers</span><span class="dot">✦</span><span>Producers</span><span class="dot">✦</span><span>Fotografen</span><span class="dot">✦</span><span>Regisseurs</span><span class="dot">✦</span>
@@ -842,409 +272,274 @@
   </div>
 
   <section class="section">
-    <p class="section-label">Laatste Interview</p>
-    <div class="featured-interview">
-      <div class="featured-video">
-        <iframe
-          src="https://www.instagram.com/p/reel/embed"
-          allowfullscreen>
-        </iframe>
-        <div class="featured-video-placeholder" style="position:absolute;inset:0;">
-          <div style="text-align:center;">
-            <div style="font-size:32px;margin-bottom:12px;color:rgba(212,255,0,0.4);">▶</div>
-            <div>Video laden via Instagram</div>
-          </div>
-        </div>
+    <p class="section-label">The Stories — Vol. 001</p>
+    <div class="featured-grid">
+      <div class="featured-video-wrap">
+        <iframe src="https://www.instagram.com/p/DHa58Hrs6Cn/embed/" allowfullscreen loading="lazy"></iframe>
       </div>
       <div class="featured-info">
-        <div class="featured-number">Vol. 001</div>
         <div>
-          <h2 class="featured-name">Latest<br>Story</h2>
-          <p class="featured-desc">Elke week duiken we diep in het verhaal achter de artiest, de grind achter de droom. Ongefilter, ongeredigeerd — pure cultuur.</p>
-          <button class="featured-link" onclick="showPage('interviews')">
-            Alle Interviews <span>→</span>
-          </button>
+          <p class="featured-ep">Vol. 001</p>
+          <h2 class="featured-name">Celeste<br>Mercedes</h2>
+          <p class="featured-role">Violiste & Music Director</p>
+          <p class="featured-quote">"Je moet drive hebben, het echt willen en bijna zo obsessed zijn dat het weird wordt."</p>
+          <p class="featured-desc">Hoe een violiste haar plek veroverde naast haar childhood hero The Game — en wat jij daarvan kan leren over obsessie, connecties en jezelf op de juiste plekken zetten.</p>
         </div>
-        <div style="font-size:11px;letter-spacing:0.15em;text-transform:uppercase;color:var(--gray-light);">@cltrhead op Instagram</div>
+        <div class="featured-actions">
+          <button class="btn-neon-text" onclick="showArticle('celeste')">Lees het artikel <span>→</span></button>
+          <button class="btn-outline" onclick="showPage('interviews')" style="font-size:10px;padding:12px 20px;">Alle interviews <span class="arrow">→</span></button>
+        </div>
       </div>
     </div>
   </section>
 
   <div class="about-teaser">
-    <p class="about-label">Over Culture Head</p>
-    <p class="about-text">
-      Elk mens heeft een verhaal. Wij halen het naar buiten. Culture Head is een platform voor <strong>artiesten, ondernemers en creatives</strong> — de mensen die bouwen terwijl de wereld nog slaapt.
-    </p>
+    <p class="about-teaser-label">Over Culture Head</p>
+    <p class="about-teaser-text">Elk mens heeft een verhaal. Wij halen het naar buiten. Culture Head is een platform voor <strong>artiesten, ondernemers en creatives</strong> — de mensen die bouwen terwijl de wereld nog slaapt.</p>
   </div>
 
   <div class="stats-row">
-    <div class="stat-item">
-      <div class="stat-number">25+</div>
-      <div class="stat-label">Episodes</div>
-    </div>
-    <div class="stat-item">
-      <div class="stat-number">100%</div>
-      <div class="stat-label">Authentiek</div>
-    </div>
-    <div class="stat-item">
-      <div class="stat-number">1</div>
-      <div class="stat-label">Community</div>
-    </div>
+    <div class="stat-item"><div class="stat-number">25+</div><div class="stat-label">Episodes</div></div>
+    <div class="stat-item"><div class="stat-number">132</div><div class="stat-label">Volgers & groeiende</div></div>
+    <div class="stat-item"><div class="stat-number">NL</div><div class="stat-label">Made in Nederland</div></div>
   </div>
 
   <footer>
-    <img src="culture_head_logo.png" alt="Culture Head" style="height:250px;width:auto;">
-    <div class="footer-tagline">We basically collect stories 🎙️</div>
+    <img src="culture_head_logo.png" alt="Culture Head">
+    <span class="footer-tagline">We basically collect stories 🎙️</span>
     <a href="https://instagram.com/cltrhead" target="_blank" class="footer-ig">@cltrhead</a>
   </footer>
 </div>
 
-<!-- ===== INTERVIEWS PAGE ===== -->
+<!-- ===== INTERVIEWS ===== -->
 <div id="page-interviews" class="page">
-  <div class="interviews-header">
-    <h1 class="interviews-title">
-      The<br><span class="outline">Stories</span>
-    </h1>
+  <div class="page-header">
+    <h1 class="page-title">The<br><span class="outline">Stories</span></h1>
   </div>
-
-  <div class="interviews-grid" id="interviews-grid">
-  </div>
-
+  <div class="interviews-grid" id="interviews-grid"></div>
   <footer>
-    <img src="culture_head_logo.png" alt="Culture Head" style="height:250px;width:auto;">
-    <div class="footer-tagline">We basically collect stories 🎙️</div>
+    <img src="culture_head_logo.png" alt="Culture Head">
+    <span class="footer-tagline">We basically collect stories 🎙️</span>
     <a href="https://instagram.com/cltrhead" target="_blank" class="footer-ig">@cltrhead</a>
   </footer>
 </div>
 
-<!-- ===== OVER CH PAGE ===== -->
+<!-- ===== OVER CH ===== -->
 <div id="page-about" class="page">
   <section class="about-hero">
-    <div class="about-hero-bg"></div>
-    <h1 class="about-big-text">
-      Dat ene verhaal<br>over vallen en<br><em>opstaan</em>
-    </h1>
+    <h1 class="about-big">Elk verhaal<br>verdient het om<br><em>gehoord</em> te worden.</h1>
   </section>
-
   <div class="about-body">
     <div class="about-block">
-      <p class="about-block-label"></p>
-      <p class="about-block-text">
-        Culture Head legt vast wat in beweging is.
-
-Van ideeën die vorm krijgen.
-Van mensen die bouwen aan iets dat er nog niet is.
-
-We spreken met makers, denkers en doeners
-die hun eigen richting bepalen.
-
-Niet om het eindpunt te vieren,
-maar om het proces vast te leggen.
-
-Eerlijk, scherp en zonder ruis.
-        <br><br>
-      </p>
+      <p class="about-block-label">Wat is Culture Head</p>
+      <div class="about-block-text">
+        <p>Culture Head legt vast wat in beweging is. Van ideeën die vorm krijgen. Van mensen die bouwen aan iets dat er nog niet is.</p>
+        <p>We spreken met makers, denkers en doeners die hun eigen richting bepalen. Niet om het eindpunt te vieren, maar om het proces vast te leggen.</p>
+        <p>Eerlijk, scherp en zonder ruis.</p>
+      </div>
     </div>
     <div class="about-block">
-      <p class="about-block-text">
-      </p>
-    </div>
-  </div>
-
-  <div class="about-values">
-    <p class="section-label">De Waarden</p>
-    <div class="values-grid">
-      <div class="value-item">
-        <div class="value-number">01</div>
-        <h3 class="value-title">Authenticiteit</h3>
-        <p class="value-text">Geen scripts. Geen PR-praat. Alleen echte gesprekken met echte mensen die iets te zeggen hebben.</p>
-      </div>
-      <div class="value-item">
-        <div class="value-number">02</div>
-        <h3 class="value-title">Community</h3>
-        <p class="value-text">Wij bouwen geen platform, wij bouwen een gemeenschap. Elke gast is onderdeel van iets groters.</p>
-      </div>
-      <div class="value-item">
-        <div class="value-number">03</div>
-        <h3 class="value-title">Cultuur</h3>
-        <p class="value-text">Cultuur wordt gemaakt door mensen. Wij archiveren het — zodat het nooit verloren gaat.</p>
+      <p class="about-block-label">Voor wie</p>
+      <div class="about-block-text">
+        <p>Voor de artiest die elke nacht bezig is. De ondernemer die zijn eigen weg baant. De creative die de wereld anders ziet.</p>
+        <p>Als jij iemand bent die bouwt — dan is dit voor jou gemaakt. Niet als inspiratieporn. Maar als bewijs dat het kan. Dat anderen het ook deden, op hun eigen manier, zonder shortcuts.</p>
+        <p>Culture Head is geen platform. Het is een archief van de cultuur.</p>
       </div>
     </div>
   </div>
-
   <footer>
-    <img src="culture_head_logo.png" alt="Culture Head" style="height:250px;width:auto;">
-    <div class="footer-tagline">We basically collect stories 🎙️</div>
+    <img src="culture_head_logo.png" alt="Culture Head">
+    <span class="footer-tagline">We basically collect stories 🎙️</span>
     <a href="https://instagram.com/cltrhead" target="_blank" class="footer-ig">@cltrhead</a>
   </footer>
 </div>
 
-<!-- ===== ARTICLE PAGE ===== -->
+<!-- ===== ARTIKEL ===== -->
 <div id="page-article" class="page">
   <div id="article-content"></div>
 </div>
 
-<!-- ===== CONTACT PAGE ===== -->
+<!-- ===== CONTACT ===== -->
 <div id="page-contact" class="page">
   <div class="contact-wrap">
     <div class="contact-left">
-      <h1 class="contact-title">
-        Laten We<br><span class="neon">Praten.</span>
-      </h1>
+      <h1 class="contact-title">Laten We<br><span class="neon">Praten.</span></h1>
       <div class="contact-info">
-        <div class="contact-info-item">
-          <p class="contact-info-label">Instagram</p>
-          <p class="contact-info-value">@cltrhead</p>
+        <div class="contact-item">
+          <p class="contact-item-label">Instagram</p>
+          <p class="contact-item-value"><a href="https://instagram.com/cltrhead" target="_blank">@cltrhead</a></p>
         </div>
-        <div class="contact-info-item">
-          <p class="contact-info-label">Voor gasten</p>
-          <p class="contact-info-value">Wil jij jouw verhaal vertellen?</p>
-        </div>
-        <div class="contact-info-item">
-          <p class="contact-info-label">Samenwerkingen</p>
-          <p class="contact-info-value">Merken & partners welkom</p>
+        <div class="contact-item">
+          <p class="contact-item-label">TikTok</p>
+          <p class="contact-item-value"><a href="https://www.tiktok.com/@cltrhead1" target="_blank">@cltrhead1</a></p>
         </div>
       </div>
     </div>
     <div class="contact-right">
-      <div class="form-group">
-        <label class="form-label">Naam</label>
-        <input type="text" class="form-input" placeholder="Jouw naam">
-      </div>
-      <div class="form-group">
-        <label class="form-label">Email</label>
-        <input type="email" class="form-input" placeholder="jouw@email.com">
-      </div>
-      <div class="form-group">
-        <label class="form-label">Onderwerp</label>
-        <input type="text" class="form-input" placeholder="Interview / Samenwerking / Anders">
-      </div>
-      <div class="form-group">
-        <label class="form-label">Bericht</label>
-        <textarea class="form-textarea" placeholder="Vertel ons jouw verhaal..."></textarea>
-      </div>
-      <button class="form-submit">
-        Verstuur Bericht →
-      </button>
+      <div class="form-group"><label class="form-label">Naam</label><input type="text" class="form-input" placeholder="Jouw naam"></div>
+      <div class="form-group"><label class="form-label">Email</label><input type="email" class="form-input" placeholder="jouw@email.com"></div>
+      <div class="form-group"><label class="form-label">Onderwerp</label><input type="text" class="form-input" placeholder="Interview / Samenwerking / Anders"></div>
+      <div class="form-group"><label class="form-label">Bericht</label><textarea class="form-textarea" placeholder="Vertel ons jouw verhaal..."></textarea></div>
+      <button class="btn-submit">Verstuur Bericht →</button>
     </div>
   </div>
 </div>
 
 <script>
-  // Custom cursor
-  const cursor = document.getElementById('cursor');
-  const ring = document.getElementById('cursorRing');
-  let mx = 0, my = 0, rx = 0, ry = 0;
-
-  document.addEventListener('mousemove', e => {
-    mx = e.clientX; my = e.clientY;
-    cursor.style.left = mx + 'px';
-    cursor.style.top = my + 'px';
+  // Cursor
+  const cursor=document.getElementById('cursor'), ring=document.getElementById('cursorRing');
+  let mx=0,my=0,rx=0,ry=0;
+  document.addEventListener('mousemove',e=>{mx=e.clientX;my=e.clientY;cursor.style.left=mx+'px';cursor.style.top=my+'px';});
+  (function a(){rx+=(mx-rx)*.12;ry+=(my-ry)*.12;ring.style.left=rx+'px';ring.style.top=ry+'px';requestAnimationFrame(a);})();
+  document.addEventListener('mouseover',e=>{
+    if(e.target.closest('a,button,[onclick]')){cursor.style.transform='translate(-50%,-50%) scale(2)';ring.style.width='56px';ring.style.height='56px';}
+    else{cursor.style.transform='translate(-50%,-50%) scale(1)';ring.style.width='36px';ring.style.height='36px';}
   });
 
-  function animRing() {
-    rx += (mx - rx) * 0.12;
-    ry += (my - ry) * 0.12;
-    ring.style.left = rx + 'px';
-    ring.style.top = ry + 'px';
-    requestAnimationFrame(animRing);
-  }
-  animRing();
+  function toggleMenu(){ document.getElementById('mobileMenu').classList.toggle('open'); }
 
-  document.querySelectorAll('a, button, .interview-card').forEach(el => {
-    el.addEventListener('mouseenter', () => {
-      cursor.style.transform = 'translate(-50%,-50%) scale(2)';
-      ring.style.width = '60px';
-      ring.style.height = '60px';
-    });
-    el.addEventListener('mouseleave', () => {
-      cursor.style.transform = 'translate(-50%,-50%) scale(1)';
-      ring.style.width = '36px';
-      ring.style.height = '36px';
-    });
-  });
-
-  // Page navigation
-  function showPage(name) {
-    document.querySelectorAll('.page').forEach(p => p.classList.remove('active'));
-    const target = document.getElementById('page-' + name);
-    if (target) {
-      target.classList.add('active');
-      window.scrollTo(0, 0);
-    }
-    if (name === 'interviews') buildInterviews();
+  function showPage(name){
+    document.querySelectorAll('.page').forEach(p=>p.classList.remove('active'));
+    const el=document.getElementById('page-'+name);
+    if(el){el.classList.add('active');window.scrollTo(0,0);}
+    document.querySelectorAll('.nav-links a').forEach(a=>a.classList.remove('active'));
+    const nav=document.getElementById('nav-'+name);
+    if(nav) nav.classList.add('active');
+    if(name==='interviews') buildInterviews();
   }
 
+  // ──────────────────────────────────────────────────────────
+  // INTERVIEWS — voeg nieuwe interviews toe hier
+  // Kopieer het template-blok en vul in
+  // ──────────────────────────────────────────────────────────
   const interviews = [
     {
       ep: 'Vol. 001',
       name: 'Celeste Mercedes',
       role: 'Violiste & Music Director',
-      desc: 'Hoe een violiste haar plek veroverde naast haar childhood hero The Game — en wat jij daarvan kan leren.',
+      desc: 'Hoe een violiste haar plek veroverde naast haar childhood hero The Game — en wat jij kan leren over obsessie en connecties.',
       shortcode: 'DHa58Hrs6Cn',
       hasArticle: true,
       articleId: 'celeste'
     },
-    {
-      ep: 'Vol. 002',
-      name: 'Gast Naam',
-      role: 'Artiest / Ondernemer',
-      desc: 'Korte beschrijving van dit gesprek en wat de gast doet.',
-      shortcode: 'JOUW_INSTAGRAM_CODE_2',
-      hasArticle: false
-    },
-    {
-      ep: 'Vol. 003',
-      name: 'Gast Naam',
-      role: 'Artiest / Ondernemer',
-      desc: 'Korte beschrijving van dit gesprek en wat de gast doet.',
-      shortcode: 'JOUW_INSTAGRAM_CODE_3',
-      hasArticle: false
-    },
-    {
-      ep: 'Vol. 004',
-      name: 'Gast Naam',
-      role: 'Artiest / Ondernemer',
-      desc: 'Korte beschrijving van dit gesprek en wat de gast doet.',
-      shortcode: 'JOUW_INSTAGRAM_CODE_4',
-      hasArticle: false
-    },
+    // TEMPLATE — kopieer en plak dit voor elk nieuw interview:
+    // {
+    //   ep: 'Vol. 002',
+    //   name: 'Naam Gast',
+    //   role: 'Rol van de gast',
+    //   desc: 'Korte beschrijving van het gesprek, 1-2 zinnen.',
+    //   shortcode: 'CODE_NA_INSTAGRAM_COM_P',
+    //   hasArticle: false,
+    //   articleId: ''
+    // },
   ];
 
+  // ──────────────────────────────────────────────────────────
+  // ARTIKELEN — voeg nieuwe artikelen toe hier
+  // Kopieer het template-blok en vul in
+  // ──────────────────────────────────────────────────────────
   const articles = {
     celeste: {
       ep: 'Vol. 001',
       name: 'Celeste Mercedes',
       role: 'Violiste & Music Director',
-      quote: 'Je moet drive hebben, het echt willen en bijna zo obsessed zijn dat het weird wordt. Want dat is hoe je op de plekken komt waar anderen niet komen.',
       shortcode: 'DHa58Hrs6Cn',
+      image: '', // Vul hier de bestandsnaam in, bijv: 'celeste.jpg'
+      quote: 'Je moet drive hebben, het echt willen en bijna zo obsessed zijn dat het weird wordt. Want dat is hoe je op de plekken komt waar anderen niet komen.',
       body: `
         <p>Het is een doordeweekse avond als we binnenlopen bij Tivoli Vredenburg. The Game staat op het podium. De zaal trilt. En ergens in dat gewoel staat Celeste Mercedes — niet als toeschouwer, maar als iemand die straks <em>naast</em> hem staat.</p>
-
         <p>We kwamen haar per toeval tegen. Gewoon op een avond waarop alles klopte. En toen we hoorden wie ze was en wat ze had gedaan, wisten we: dit verhaal moet verteld worden.</p>
-
         <h3>Viool in de hiphopwereld</h3>
-
         <p>Celeste is violiste en music director. Twee werelden die op papier weinig met elkaar te maken hebben — klassiek en hiphop — maar in haar handen wordt het één ding. Ze werkte al samen met grote namen in de muziek, maar die avond bij The Game was anders.</p>
-
         <p>Want The Game is niet zomaar een artiest voor haar. Hij is haar childhood hero. De muziek waarmee ze opgroeide. En hem dan op het podium begeleiden, als violiste, als music director? Dat is geen toeval. Dat is werk.</p>
-
         <h3>Hoe kom je op die plekken?</h3>
-
         <p>Dat vroegen wij haar ook. Recht voor z'n raap. Hoe krijg je dit voor elkaar?</p>
-
         <p>Haar antwoord was simpel — maar niet makkelijk:</p>
-
         <blockquote>"Je moet drive hebben, het echt willen en bijna zo obsessed zijn dat het weird wordt. Want dat is hoe je op de plekken komt waar anderen niet komen."</blockquote>
-
         <p>Ze legt uit dat het niet gaat om geluk. Het gaat om connecties — maar dan op de juiste manier. Niet netwerken alsof je iets wil hebben. Verbinden omdat je echt iets te bieden hebt. Praten met de juiste energie, op het juiste moment, met de juiste mensen.</p>
-
         <p>De link met The Game? Die kwam via de mensen om haar heen. Via vertrouwen dat ze had opgebouwd. Via jaren waarin ze consistent was, ook als niemand keek.</p>
-
         <h3>Wat jij hieruit kan meenemen</h3>
-
-        <p>Celeste geeft in het gesprek een paar dingen mee die iedereen die serieus bezig is in de muziek — of welke creative industrie dan ook — moet horen:</p>
-
         <p><strong>Obsessie is geen zwakte.</strong> De mensen die het ver schoppen zijn niet gewoon hard werkend. Ze zijn bijna ongezond gefocust. Ze denken er 's nachts aan. Ze lossen problemen op die anderen nog niet eens zien.</p>
-
-        <p><strong>Connecten is een vak.</strong> Niet elke keer je hand ophouden. Eerst geven. Aanwezig zijn. Waarde toevoegen. Dan open staan deuren die voor anderen dicht blijven.</p>
-
-        <p><strong>Wees op de plekken.</strong> Celeste was die avond in Tivoli niet per ongeluk. Ze was daar omdat ze zichzelf in de juiste omgeving plaatste. Jij kunt ook kiezen waar je jouw tijd stopt.</p>
-
+        <p><strong>Connecten is een vak.</strong> Niet elke keer je hand ophouden. Eerst geven. Aanwezig zijn. Waarde toevoegen. Dan openen deuren die voor anderen dicht blijven.</p>
+        <p><strong>Wees op de plekken.</strong> Celeste was die avond in Tivoli niet per ongeluk. Ze was daar omdat ze zichzelf in de juiste omgeving plaatste. Jij kunt ook kiezen waar je jouw tijd in stopt.</p>
         <h3>De les</h3>
-
         <p>Celeste Mercedes is het bewijs dat originele combinaties werken. Viool en hiphop. Klassiek en straat. Discipline en vrijheid. Ze past niet in één box — en dat is precies haar kracht.</p>
-
         <p>Als je wil weten hoe je van passie je werk maakt, hoe je de goede mensen vindt en hoe je consistent blijft als het moeilijk is — kijk dan het gesprek. Ze zegt het allemaal zelf, beter dan wij het kunnen naschrijven.</p>
       `
-    }
+    },
+    // TEMPLATE — kopieer en plak dit voor elk nieuw artikel:
+    // nieuwenaam: {
+    //   ep: 'Vol. 002',
+    //   name: 'Naam Gast',
+    //   role: 'Rol / Titel',
+    //   shortcode: 'CODE_NA_INSTAGRAM_COM_P',
+    //   image: 'bestandsnaam.jpg', // of '' als je geen foto hebt
+    //   quote: 'De sterkste quote uit het interview.',
+    //   body: `
+    //     <p>Intro alinea...</p>
+    //     <h3>Sectie titel</h3>
+    //     <p>Tekst...</p>
+    //     <blockquote>"Quote..."</blockquote>
+    //     <p>Meer tekst...</p>
+    //   `
+    // },
   };
 
-  function buildInterviews() {
-    const grid = document.getElementById('interviews-grid');
-    if (grid.innerHTML !== '') return;
-    grid.innerHTML = interviews.map(iv => `
+  function buildInterviews(){
+    const grid=document.getElementById('interviews-grid');
+    if(grid.dataset.built) return;
+    grid.dataset.built='1';
+    grid.innerHTML=interviews.map(iv=>`
       <div class="interview-card">
-        <div class="interview-card-inner">
-          <div class="interview-video">
-            <iframe
-              src="https://www.instagram.com/p/${iv.shortcode}/embed/"
-              allowfullscreen
-              loading="lazy"
-              style="width:100%;height:100%;border:none;">
-            </iframe>
-          </div>
-          <div class="interview-meta">
-            <p class="interview-ep">${iv.ep}</p>
-            <h3 class="interview-name">${iv.name}</h3>
-            <p class="interview-role" style="font-size:12px;letter-spacing:0.1em;text-transform:uppercase;color:var(--neon);margin-bottom:8px;">${iv.role}</p>
-            <p class="interview-desc">${iv.desc}</p>
-            ${iv.hasArticle ? `<button onclick="showArticle('${iv.articleId}')" style="margin-top:20px;background:none;border:none;border-bottom:1px solid rgba(212,255,0,0.3);padding-bottom:8px;font-size:12px;letter-spacing:0.15em;text-transform:uppercase;color:var(--neon);font-family:var(--font);cursor:none;transition:letter-spacing 0.3s;" onmouseenter="this.style.letterSpacing='0.25em'" onmouseleave="this.style.letterSpacing='0.15em'">Lees het artikel →</button>` : ''}
-          </div>
+        <div class="interview-video-wrap">
+          <iframe src="https://www.instagram.com/p/${iv.shortcode}/embed/" allowfullscreen loading="lazy"></iframe>
         </div>
-      </div>
-    `).join('');
+        <div class="interview-meta">
+          <p class="interview-ep">${iv.ep}</p>
+          <h3 class="interview-name">${iv.name}</h3>
+          <p class="interview-role-tag">${iv.role}</p>
+          <p class="interview-desc">${iv.desc}</p>
+          ${iv.hasArticle?`<button class="btn-neon-text" onclick="showArticle('${iv.articleId}')">Lees het artikel <span>→</span></button>`:''}
+        </div>
+      </div>`).join('');
   }
 
-  function showArticle(id) {
-    const a = articles[id];
-    if (!a) return;
-    document.getElementById('article-content').innerHTML = `
-      <article style="max-width:100%;">
-        <div style="padding:140px 48px 80px;border-bottom:1px solid rgba(255,255,255,0.08);">
-          <p style="font-size:11px;letter-spacing:0.25em;text-transform:uppercase;color:var(--neon);margin-bottom:24px;">${a.ep} — Interview</p>
-          <h1 style="font-size:clamp(48px,8vw,110px);font-weight:700;letter-spacing:-0.03em;text-transform:uppercase;line-height:0.9;margin-bottom:32px;">${a.name}</h1>
-          <p style="font-size:14px;letter-spacing:0.1em;text-transform:uppercase;color:var(--gray-light);">${a.role}</p>
+  function showArticle(id){
+    const a=articles[id];
+    if(!a) return;
+    const imageBlock = a.image ? `
+      <div style="width:100%;max-width:680px;margin:0 auto;padding:0 48px;">
+        <img src="${a.image}" alt="${a.name}" style="width:100%;display:block;aspect-ratio:3/2;object-fit:cover;">
+      </div>` : '';
+    document.getElementById('article-content').innerHTML=`
+      <div class="article-header">
+        <p class="article-ep-tag">${a.ep} — Interview</p>
+        <h1 class="article-title">${a.name}</h1>
+        <p class="article-role">${a.role}</p>
+      </div>
+      <div class="article-split">
+        <div class="article-video-side">
+          <iframe src="https://www.instagram.com/p/${a.shortcode}/embed/" allowfullscreen loading="lazy"></iframe>
         </div>
-
-        <div style="display:grid;grid-template-columns:1fr 1fr;gap:2px;background:var(--gray-mid);">
-          <div style="background:var(--black);aspect-ratio:9/16;overflow:hidden;">
-            <iframe src="https://www.instagram.com/p/${a.shortcode}/embed/" allowfullscreen style="width:100%;height:100%;border:none;display:block;"></iframe>
-          </div>
-          <div style="background:var(--black);padding:64px 48px;display:flex;align-items:center;">
-            <blockquote style="font-size:clamp(20px,2.5vw,32px);font-weight:300;line-height:1.5;letter-spacing:-0.01em;color:var(--white);border-left:2px solid var(--neon);padding-left:32px;margin:0;">"${a.quote}"</blockquote>
-          </div>
+        <div class="article-quote-side">
+          <p class="article-pullquote">"${a.quote}"</p>
         </div>
-
-        <div style="max-width:720px;margin:0 auto;padding:100px 48px;" class="article-body">
-          ${a.body}
-        </div>
-
-        <div style="padding:80px 48px;border-top:1px solid rgba(255,255,255,0.08);display:flex;align-items:center;justify-content:space-between;">
-          <button onclick="showPage('interviews')" style="background:none;border:1px solid rgba(255,255,255,0.2);color:var(--white);padding:16px 32px;font-size:12px;letter-spacing:0.15em;text-transform:uppercase;font-family:var(--font);cursor:none;transition:all 0.3s;" onmouseenter="this.style.borderColor='var(--neon)';this.style.color='var(--neon)'" onmouseleave="this.style.borderColor='rgba(255,255,255,0.2)';this.style.color='var(--white)'">← Alle Interviews</button>
-          <a href="https://instagram.com/cltrhead" target="_blank" style="font-size:12px;letter-spacing:0.15em;text-transform:uppercase;color:var(--neon);text-decoration:none;">Volg @cltrhead →</a>
-        </div>
-
-        <footer style="padding:64px 48px;border-top:1px solid rgba(255,255,255,0.08);display:flex;align-items:center;justify-content:space-between;">
-          <img src="culture_head_logo.png" alt="Culture Head" style="height:250px;width:auto;">
-          <div style="font-size:12px;color:var(--gray-light);letter-spacing:0.05em;">We basically collect stories 🎙️</div>
-          <a href="https://instagram.com/cltrhead" target="_blank" style="font-size:12px;letter-spacing:0.15em;text-transform:uppercase;color:var(--neon);text-decoration:none;cursor:none;">@cltrhead</a>
-        </footer>
-      </article>
-    `;
+      </div>
+      ${imageBlock}
+      <div class="article-body-wrap">${a.body}</div>
+      <div class="article-nav">
+        <button class="btn-outline" onclick="showPage('interviews')">← Alle Interviews</button>
+        <a href="https://instagram.com/cltrhead" target="_blank" class="footer-ig">Volg @cltrhead →</a>
+      </div>
+      <footer>
+        <img src="culture_head_logo.png" alt="Culture Head">
+        <span class="footer-tagline">We basically collect stories 🎙️</span>
+        <a href="https://instagram.com/cltrhead" target="_blank" class="footer-ig">@cltrhead</a>
+      </footer>`;
     showPage('article');
   }
 
-  // Article body styles injected once
-  const articleStyle = document.createElement('style');
-  articleStyle.textContent = `
-    .article-body p { font-size:17px;line-height:1.95;color:rgba(245,245,240,0.85);margin-bottom:28px; }
-    .article-body h3 { font-size:22px;font-weight:700;text-transform:uppercase;letter-spacing:-0.01em;margin:56px 0 20px;color:var(--white); }
-    .article-body blockquote { border-left:2px solid var(--neon);padding:24px 32px;margin:48px 0;font-size:20px;font-weight:300;line-height:1.6;color:var(--white);font-style:italic; }
-    .article-body strong { color:var(--white);font-weight:700; }
-    .article-body em { color:var(--neon);font-style:normal; }
-    @media(max-width:768px){
-      .article-body { padding:60px 24px !important; }
-      #article-content > article > div:first-child { padding:120px 24px 60px !important; }
-      #article-content > article > div:nth-child(2) { grid-template-columns:1fr !important; }
-      #article-content > article > div:nth-last-child(2),
-      #article-content > article > div:nth-last-child(3) { padding:48px 24px !important; flex-direction:column !important; gap:24px !important; }
-    }
-  `;
-  document.head.appendChild(articleStyle);
-
-  // Prevent right-click for aesthetic
-  document.addEventListener('contextmenu', e => e.preventDefault());
+  document.addEventListener('contextmenu',e=>e.preventDefault());
 </script>
 </body>
 </html>
