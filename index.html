@@ -73,44 +73,65 @@
   .section { padding: 80px 48px; }
   .section-label { font-size: 11px; letter-spacing: 0.25em; text-transform: uppercase; color: var(--neon); margin-bottom: 24px; }
 
-  /* FEATURED — 9:16 video links, info rechts zelfde hoogte */
+  /* FEATURED — bite-size reel grid like Instagram */
   .featured-grid {
     display: grid;
-    grid-template-columns: 1fr 1fr;
+    grid-template-columns: repeat(3, 1fr);
     gap: 2px;
     background: var(--gray-mid);
-    align-items: stretch;
   }
-  /* Video kant: exacte 9:16 container, geen witte randen */
-  .featured-video-wrap {
+
+  /* Reel kaartje */
+  .reel-card {
     background: var(--black);
-    overflow: hidden;
-    position: relative;
-    aspect-ratio: 9 / 16;
-  }
-  .featured-video-wrap iframe {
-    position: absolute;
-    top: -60px; /* trim Instagram top bar */
-    left: 0;
-    width: 100%;
-    height: calc(100% + 120px); /* compensate trim boven + onder */
-    border: none;
-    display: block;
-  }
-  /* Info kant: zelfde hoogte als video door stretch, scrolt mee */
-  .featured-info {
-    background: var(--gray);
-    padding: 40px 36px;
     display: flex;
     flex-direction: column;
-    justify-content: space-between;
+    cursor: pointer;
+    position: relative;
   }
-  .featured-ep { font-size: 11px; letter-spacing: 0.2em; color: var(--gray-light); }
-  .featured-name { font-size: clamp(24px,3vw,48px); font-weight: 700; line-height: 0.95; letter-spacing: -0.02em; text-transform: uppercase; margin: 16px 0 6px; }
-  .featured-role { font-size: 11px; letter-spacing: 0.15em; text-transform: uppercase; color: var(--neon); margin-bottom: 20px; }
-  .featured-quote { font-size: 14px; font-style: italic; color: rgba(245,245,240,0.7); border-left: 2px solid var(--neon); padding-left: 14px; margin-bottom: 16px; line-height: 1.65; }
-  .featured-desc { font-size: 13px; color: var(--gray-light); line-height: 1.8; margin-bottom: 28px; }
-  .featured-actions { display: flex; gap: 16px; flex-wrap: wrap; align-items: center; }
+  .reel-card.featured-card { grid-column: span 1; }
+
+  /* Thumbnail: 9:16 via aspect-ratio, iframe geclipped zodat alleen beeld zichtbaar is */
+  .reel-thumb {
+    position: relative;
+    overflow: hidden;
+    background: var(--gray);
+    aspect-ratio: 9 / 16;
+  }
+  .reel-thumb iframe {
+    position: absolute;
+    /* Clip Instagram UI: header ~60px, footer/likes ~70px, schaal omhoog */
+    top: -56px;
+    left: -2px;
+    width: calc(100% + 4px);
+    height: calc(100% + 130px);
+    border: none;
+    pointer-events: none; /* thumbnail, niet interactief */
+  }
+  /* Hover overlay */
+  .reel-thumb::after {
+    content: '';
+    position: absolute;
+    inset: 0;
+    background: rgba(0,0,0,0);
+    transition: background 0.25s;
+  }
+  .reel-card:hover .reel-thumb::after { background: rgba(212,255,0,0.08); }
+
+  /* Meta onder de thumb */
+  .reel-meta {
+    padding: 12px 14px 16px;
+    border-top: 1px solid rgba(255,255,255,0.06);
+  }
+  .reel-ep { font-size: 9px; letter-spacing: 0.2em; text-transform: uppercase; color: var(--neon); margin-bottom: 3px; }
+  .reel-name { font-size: 13px; font-weight: 700; text-transform: uppercase; letter-spacing: -0.01em; margin-bottom: 2px; line-height: 1.1; }
+  .reel-role { font-size: 10px; letter-spacing: 0.08em; text-transform: uppercase; color: var(--gray-light); margin-bottom: 10px; }
+  .reel-btn { font-size: 10px; letter-spacing: 0.12em; text-transform: uppercase; color: var(--neon); background: none; border: none; border-bottom: 1px solid rgba(212,255,0,0.3); padding-bottom: 3px; cursor: pointer; font-family: var(--font); }
+
+  /* Eerste kaart (featured) iets groter in het grid — neemt 2 rijen */
+  .reel-card.is-featured {
+    grid-row: span 1;
+  }
 
   .about-teaser { border-top: 1px solid rgba(255,255,255,0.07); padding: 100px 48px; display: grid; grid-template-columns: 200px 1fr; gap: 80px; align-items: start; }
   .about-teaser-label { font-size: 11px; letter-spacing: 0.25em; text-transform: uppercase; color: var(--neon); padding-top: 6px; }
@@ -129,7 +150,7 @@
   .footer-ig { font-size: 11px; letter-spacing: 0.15em; text-transform: uppercase; color: var(--neon); text-decoration: none; transition: opacity 0.2s; }
   .footer-ig:hover { opacity: 0.7; }
 
-  /* INTERVIEWS — 9:16 + meta zelfde breedte eronder */
+  /* INTERVIEWS PAGE — zelfde reel grid */
   .page-header { padding: 140px 48px 72px; border-bottom: 1px solid rgba(255,255,255,0.07); }
   .page-title { font-size: clamp(44px,8vw,112px); font-weight: 700; letter-spacing: -0.03em; text-transform: uppercase; line-height: 0.9; }
   .page-title .outline { color: transparent; -webkit-text-stroke: 1px var(--white); }
@@ -137,7 +158,7 @@
   .interviews-grid {
     padding: 48px;
     display: grid;
-    grid-template-columns: repeat(2, 1fr);
+    grid-template-columns: repeat(3, 1fr);
     gap: 2px;
     background: var(--gray-mid);
   }
@@ -145,34 +166,41 @@
     background: var(--black);
     display: flex;
     flex-direction: column;
+    cursor: pointer;
   }
-  /* 9:16 video, no white bars */
   .interview-video-wrap {
     position: relative;
     overflow: hidden;
-    background: var(--black);
+    background: var(--gray);
     aspect-ratio: 9 / 16;
     flex-shrink: 0;
   }
   .interview-video-wrap iframe {
     position: absolute;
-    top: -60px;
-    left: 0;
-    width: 100%;
-    height: calc(100% + 120px);
+    top: -56px;
+    left: -2px;
+    width: calc(100% + 4px);
+    height: calc(100% + 130px);
     border: none;
-    display: block;
+    pointer-events: none;
   }
-  /* Meta zelfde breedte als video */
   .interview-meta {
-    padding: 20px 24px;
+    padding: 12px 14px 16px;
     border-top: 1px solid rgba(255,255,255,0.06);
     background: var(--black);
   }
-  .interview-ep { font-size: 10px; letter-spacing: 0.25em; text-transform: uppercase; color: var(--neon); margin-bottom: 4px; }
-  .interview-name { font-size: 17px; font-weight: 700; letter-spacing: -0.01em; text-transform: uppercase; margin-bottom: 3px; }
-  .interview-role-tag { font-size: 10px; letter-spacing: 0.1em; text-transform: uppercase; color: var(--neon); margin-bottom: 8px; }
-  .interview-desc { font-size: 12px; color: var(--gray-light); line-height: 1.6; margin-bottom: 14px; }
+  .interview-ep { font-size: 9px; letter-spacing: 0.2em; text-transform: uppercase; color: var(--neon); margin-bottom: 3px; }
+  .interview-name { font-size: 13px; font-weight: 700; letter-spacing: -0.01em; text-transform: uppercase; margin-bottom: 2px; line-height: 1.1; }
+  .interview-role-tag { font-size: 10px; letter-spacing: 0.08em; text-transform: uppercase; color: var(--gray-light); margin-bottom: 8px; }
+  .interview-desc { font-size: 11px; color: var(--gray-light); line-height: 1.55; margin-bottom: 10px; }
+  /* klik op kaart opent artikel — pointer op iframe weg via overlay */
+  .interview-video-wrap::after {
+    content: '';
+    position: absolute;
+    inset: 0;
+    background: transparent;
+    cursor: pointer;
+  }
 
   /* OVER CH */
   .about-hero { min-height: 100svh; display: flex; flex-direction: column; justify-content: center; padding: 140px 48px 100px; position: relative; overflow: hidden; }
@@ -235,9 +263,8 @@
     .hero { padding: 0 24px 56px; }
     .hero-bottom { flex-direction: column; align-items: flex-start; gap: 24px; }
     .hero-sub { max-width: 100%; }
-    .section { padding: 48px 24px; }
-    .featured-grid { grid-template-columns: 1fr; }
-    .featured-info { padding: 32px 24px; }
+    .section { padding: 40px 16px; }
+    .featured-grid { grid-template-columns: repeat(2, 1fr); }
     .about-teaser { padding: 64px 24px; grid-template-columns: 1fr; gap: 20px; }
     .stats-row { grid-template-columns: 1fr 1fr; }
     .stat-item { padding: 36px 24px; }
@@ -245,7 +272,7 @@
     .stat-item:nth-child(3) { border-right: none; border-top: 1px solid rgba(255,255,255,0.07); grid-column: span 2; }
     footer { padding: 36px 24px; justify-content: center; text-align: center; flex-direction: column; gap: 12px; }
     .page-header { padding: 110px 24px 56px; }
-    .interviews-grid { grid-template-columns: 1fr; padding: 20px 24px; }
+    .interviews-grid { grid-template-columns: repeat(2, 1fr); padding: 16px; }
     .about-hero { padding: 120px 24px 80px; }
     .about-body { grid-template-columns: 1fr; }
     .about-block { padding: 48px 24px; }
@@ -261,6 +288,8 @@
     .contact-title { margin-top: 0; }
   }
   @media (max-width: 480px) {
+    .featured-grid { grid-template-columns: repeat(2, 1fr); }
+    .interviews-grid { grid-template-columns: repeat(2, 1fr); }
     .stats-row { grid-template-columns: 1fr; }
     .stat-item:nth-child(2), .stat-item:nth-child(3) { border-right: none; grid-column: auto; }
     .stat-item { border-bottom: 1px solid rgba(255,255,255,0.07); border-top: none !important; }
@@ -320,24 +349,10 @@
   </div>
 
   <section class="section">
-    <p class="section-label">The Stories — Vol. 001</p>
-    <div class="featured-grid">
-      <div class="featured-video-wrap">
-        <iframe src="https://www.instagram.com/p/DHa58Hrs6Cn/embed/" allowfullscreen loading="lazy"></iframe>
-      </div>
-      <div class="featured-info">
-        <div>
-          <p class="featured-ep">Vol. 001</p>
-          <h2 class="featured-name">Celeste<br>Mercedes</h2>
-          <p class="featured-role">Violiste & Music Director</p>
-          <p class="featured-quote">"Je moet drive hebben, het echt willen en bijna zo obsessed zijn dat het weird wordt."</p>
-          <p class="featured-desc">Hoe een violiste haar plek veroverde naast haar childhood hero The Game — en wat jij daarvan kan leren over obsessie, connecties en jezelf op de juiste plekken zetten.</p>
-        </div>
-        <div class="featured-actions">
-          <button class="btn-neon-text" onclick="showArticle('celeste')">Lees het artikel <span>→</span></button>
-          <button class="btn-outline" onclick="showPage('interviews')" style="font-size:10px;padding:12px 20px;">Alle interviews <span class="arrow">→</span></button>
-        </div>
-      </div>
+    <p class="section-label">The Stories</p>
+    <div class="featured-grid" id="home-reels"></div>
+    <div style="margin-top:16px;display:flex;justify-content:flex-end;">
+      <button class="btn-outline" onclick="showPage('interviews')" style="font-size:10px;padding:12px 20px;">Alle interviews <span class="arrow">→</span></button>
     </div>
   </section>
 
@@ -530,12 +545,9 @@
     // },
   };
 
-  function buildInterviews(){
-    const grid=document.getElementById('interviews-grid');
-    if(grid.dataset.built) return;
-    grid.dataset.built='1';
-    grid.innerHTML=interviews.map(iv=>`
-      <div class="interview-card">
+  function buildReelCard(iv) {
+    return `
+      <div class="interview-card" onclick="${iv.hasArticle ? `showArticle('${iv.articleId}')` : ''}">
         <div class="interview-video-wrap">
           <iframe src="https://www.instagram.com/p/${iv.shortcode}/embed/" allowfullscreen loading="lazy"></iframe>
         </div>
@@ -544,10 +556,27 @@
           <h3 class="interview-name">${iv.name}</h3>
           <p class="interview-role-tag">${iv.role}</p>
           <p class="interview-desc">${iv.desc}</p>
-          ${iv.hasArticle?`<button class="btn-neon-text" onclick="showArticle('${iv.articleId}')">Lees het artikel <span>→</span></button>`:''}
+          ${iv.hasArticle ? `<button class="btn-neon-text" onclick="event.stopPropagation();showArticle('${iv.articleId}')">Lees het artikel <span>→</span></button>` : ''}
         </div>
-      </div>`).join('');
+      </div>`;
   }
+
+  function buildHomeReels() {
+    const grid = document.getElementById('home-reels');
+    if (!grid || grid.dataset.built) return;
+    grid.dataset.built = '1';
+    grid.innerHTML = interviews.map(buildReelCard).join('');
+  }
+
+  function buildInterviews() {
+    const grid = document.getElementById('interviews-grid');
+    if (!grid || grid.dataset.built) return;
+    grid.dataset.built = '1';
+    grid.innerHTML = interviews.map(buildReelCard).join('');
+  }
+
+  // Build home reels on load
+  buildHomeReels();
 
   function showArticle(id){
     const a=articles[id];
