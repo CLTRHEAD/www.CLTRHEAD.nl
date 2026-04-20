@@ -39,7 +39,6 @@
   .mobile-menu a:hover { color: var(--neon); }
   .mobile-close { position: absolute; top: 24px; right: 24px; background: none; border: none; color: var(--white); font-size: 28px; cursor: pointer; }
 
-  /* PAGES */
   .page { display: none; min-height: 100svh; }
   .page.active { display: block; }
 
@@ -57,7 +56,6 @@
   .hero-bottom { display: flex; align-items: flex-end; justify-content: space-between; margin-top: 40px; position: relative; z-index: 1; animation: fadeUp 0.8s 0.3s ease both; }
   .hero-sub { font-size: 14px; color: var(--gray-light); max-width: 320px; line-height: 1.7; }
 
-  /* BUTTONS */
   .btn-outline { display: inline-flex; align-items: center; gap: 10px; font-size: 11px; letter-spacing: 0.15em; text-transform: uppercase; color: var(--white); background: none; border: 1px solid rgba(255,255,255,0.2); padding: 15px 28px; cursor: pointer; transition: all 0.3s; font-family: var(--font); white-space: nowrap; }
   .btn-outline:hover { background: var(--neon); color: var(--black); border-color: var(--neon); }
   .btn-outline .arrow { transition: transform 0.3s; }
@@ -65,91 +63,29 @@
   .btn-neon-text { display: inline-flex; align-items: center; gap: 10px; font-size: 11px; letter-spacing: 0.15em; text-transform: uppercase; color: var(--neon); background: none; border: none; border-bottom: 1px solid rgba(212,255,0,0.3); padding-bottom: 6px; cursor: pointer; font-family: var(--font); transition: gap 0.3s; }
   .btn-neon-text:hover { gap: 18px; }
 
-  /* MARQUEE */
   .marquee-strip { border-top: 1px solid rgba(255,255,255,0.07); border-bottom: 1px solid rgba(255,255,255,0.07); padding: 16px 0; overflow: hidden; background: var(--gray); }
   .marquee-inner { display: flex; white-space: nowrap; animation: marquee 20s linear infinite; }
   .marquee-inner span { font-size: 11px; letter-spacing: 0.2em; text-transform: uppercase; color: var(--gray-light); padding: 0 40px; }
   .marquee-inner .dot { color: var(--neon); padding: 0; }
   @keyframes marquee { 0%{transform:translateX(0)} 100%{transform:translateX(-50%)} }
 
-  /* SECTION */
   .section { padding: 80px 48px; }
   .section-label { font-size: 11px; letter-spacing: 0.25em; text-transform: uppercase; color: var(--neon); margin-bottom: 24px; }
 
-  /* ── REEL GRID ─────────────────────────────────────────── */
-  .reel-grid {
-    display: grid;
-    grid-template-columns: repeat(4, 1fr);
-    gap: 2px;
-    background: var(--gray-mid);
-  }
-
-  .reel-card {
-    background: var(--black);
-    display: flex;
-    flex-direction: column;
-    cursor: pointer;
-  }
-
-  /* 9:16 container — alleen eigen media, geen iframe */
-  .reel-media {
-    position: relative;
-    overflow: hidden;
-    background: var(--gray);
-    aspect-ratio: 9 / 16;
-    flex-shrink: 0;
-  }
-
-  /* Thumbnail (img) en video vullen container volledig */
-  .reel-media img,
-  .reel-media video {
-    position: absolute;
-    inset: 0;
-    width: 100%;
-    height: 100%;
-    object-fit: cover;
-    display: block;
-  }
-
-  /* Play-icoon overlay op thumbnail */
-  .reel-media .play-icon {
-    position: absolute;
-    inset: 0;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    pointer-events: none;
-    transition: opacity 0.2s;
-  }
-  .reel-media .play-icon svg {
-    width: 40px;
-    height: 40px;
-    fill: none;
-    stroke: rgba(255,255,255,0.7);
-    stroke-width: 1.5;
-  }
+  /* REEL GRID */
+  .reel-grid { display: grid; grid-template-columns: repeat(4, 1fr); gap: 2px; background: var(--gray-mid); }
+  .reel-card { background: var(--black); display: flex; flex-direction: column; cursor: pointer; }
+  .reel-media { position: relative; overflow: hidden; background: var(--gray); aspect-ratio: 9 / 16; flex-shrink: 0; }
+  .reel-media img, .reel-media video { position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover; display: block; }
+  .reel-media .play-icon { position: absolute; inset: 0; display: flex; align-items: center; justify-content: center; pointer-events: none; transition: opacity 0.2s; }
+  .reel-media .play-icon svg { width: 40px; height: 40px; fill: none; stroke: rgba(255,255,255,0.7); stroke-width: 1.5; }
   .reel-card:hover .play-icon { opacity: 0; }
-
-  /* Neon hover tint */
-  .reel-media::after {
-    content: '';
-    position: absolute;
-    inset: 0;
-    background: rgba(212,255,0,0);
-    transition: background 0.25s;
-    pointer-events: none;
-  }
+  .reel-media::after { content: ''; position: absolute; inset: 0; background: rgba(212,255,0,0); transition: background 0.25s; pointer-events: none; }
   .reel-card:hover .reel-media::after { background: rgba(212,255,0,0.06); }
-
-  /* Meta onder video */
-  .reel-meta {
-    padding: 12px 14px 16px;
-    border-top: 1px solid rgba(255,255,255,0.06);
-    background: var(--black);
-  }
-  .reel-ep   { font-size: 9px;  letter-spacing: 0.2em;  text-transform: uppercase; color: var(--neon);       margin-bottom: 3px; }
-  .reel-name { font-size: 13px; font-weight: 700;        text-transform: uppercase; letter-spacing: -0.01em; margin-bottom: 2px; line-height: 1.1; }
-  .reel-role { font-size: 10px; letter-spacing: 0.08em;  text-transform: uppercase; color: var(--gray-light); margin-bottom: 8px; }
+  .reel-meta { padding: 12px 14px 16px; border-top: 1px solid rgba(255,255,255,0.06); background: var(--black); }
+  .reel-ep   { font-size: 9px;  letter-spacing: 0.2em;  text-transform: uppercase; color: var(--neon);        margin-bottom: 3px; }
+  .reel-name { font-size: 13px; font-weight: 700;        text-transform: uppercase; letter-spacing: -0.01em;  margin-bottom: 2px; line-height: 1.1; }
+  .reel-role { font-size: 10px; letter-spacing: 0.08em;  text-transform: uppercase; color: var(--gray-light);  margin-bottom: 8px; }
   .reel-desc { font-size: 11px; color: var(--gray-light); line-height: 1.55; margin-bottom: 10px; }
 
   /* ABOUT TEASER */
@@ -158,14 +94,12 @@
   .about-teaser-text { font-size: clamp(20px,2.2vw,32px); line-height: 1.45; font-weight: 300; letter-spacing: -0.01em; }
   .about-teaser-text strong { font-weight: 700; color: var(--neon); }
 
-  /* STATS */
   .stats-row { display: grid; grid-template-columns: repeat(3,1fr); border-top: 1px solid rgba(255,255,255,0.07); }
   .stat-item { padding: 56px 48px; border-right: 1px solid rgba(255,255,255,0.07); }
   .stat-item:last-child { border-right: none; }
   .stat-number { font-size: clamp(44px,5vw,72px); font-weight: 700; letter-spacing: -0.03em; color: var(--neon); line-height: 1; }
   .stat-label  { font-size: 11px; letter-spacing: 0.15em; text-transform: uppercase; color: var(--gray-light); margin-top: 10px; }
 
-  /* FOOTER */
   footer { padding: 56px 48px; border-top: 1px solid rgba(255,255,255,0.07); display: flex; align-items: center; justify-content: space-between; flex-wrap: wrap; gap: 20px; }
   footer img { height: 26px; width: auto; }
   .footer-tagline { font-size: 12px; color: var(--gray-light); }
@@ -194,18 +128,52 @@
   .article-ep-tag { font-size: 11px; letter-spacing: 0.25em; text-transform: uppercase; color: var(--neon); margin-bottom: 20px; }
   .article-title { font-size: clamp(44px,8vw,108px); font-weight: 700; letter-spacing: -0.03em; text-transform: uppercase; line-height: 0.9; margin-bottom: 24px; }
   .article-role-tag { font-size: 12px; letter-spacing: 0.12em; text-transform: uppercase; color: var(--gray-light); }
-  .article-split { display: grid; grid-template-columns: 1fr 1fr; gap: 2px; background: var(--gray-mid); }
-  .article-video-side { background: var(--black); overflow: hidden; aspect-ratio: 9/16; position: relative; }
+
+  /* Video sectie in artikel — kleiner: max 360px breed, gecentreerd naast quote */
+  .article-top {
+    display: grid;
+    grid-template-columns: 360px 1fr;
+    gap: 2px;
+    background: var(--gray-mid);
+  }
+  .article-video-side {
+    background: var(--black);
+    overflow: hidden;
+    aspect-ratio: 9 / 16;
+    position: relative;
+    width: 100%;
+  }
   .article-video-side video,
-  .article-video-side img { position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover; display: block; }
+  .article-video-side img {
+    position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover; display: block;
+  }
   .article-quote-side { background: var(--black); padding: 64px 48px; display: flex; align-items: center; }
   .article-pullquote { font-size: clamp(18px,2.2vw,30px); font-weight: 300; line-height: 1.5; letter-spacing: -0.01em; color: var(--white); border-left: 2px solid var(--neon); padding-left: 28px; }
+
+  /* Artikel body */
   .article-body-wrap { max-width: 680px; margin: 0 auto; padding: 88px 48px; }
   .article-body-wrap p { font-size: 17px; line-height: 1.95; color: rgba(245,245,240,0.85); margin-bottom: 26px; }
   .article-body-wrap h3 { font-size: 20px; font-weight: 700; text-transform: uppercase; letter-spacing: -0.01em; margin: 52px 0 18px; color: var(--white); }
   .article-body-wrap blockquote { border-left: 2px solid var(--neon); padding: 20px 28px; margin: 40px 0; font-size: 18px; font-weight: 300; line-height: 1.65; color: var(--white); font-style: italic; }
   .article-body-wrap strong { color: var(--white); font-weight: 700; }
   .article-body-wrap em { color: var(--neon); font-style: normal; }
+
+  /* Foto's in artikel — 2 naast elkaar */
+  .article-photos {
+    max-width: 680px;
+    margin: 0 auto;
+    padding: 0 48px 56px;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 4px;
+  }
+  .article-photos img {
+    width: 100%;
+    aspect-ratio: 3 / 4;
+    object-fit: cover;
+    display: block;
+  }
+
   .article-nav { padding: 72px 48px; border-top: 1px solid rgba(255,255,255,0.07); display: flex; align-items: center; justify-content: space-between; flex-wrap: wrap; gap: 16px; }
 
   /* CONTACT */
@@ -252,9 +220,11 @@
     .about-body { grid-template-columns: 1fr; }
     .about-block { padding: 48px 24px; }
     .article-header { padding: 110px 24px 56px; }
-    .article-split { grid-template-columns: 1fr; }
+    .article-top { grid-template-columns: 1fr; }
+    .article-video-side { max-width: 280px; }
     .article-quote-side { padding: 36px 24px; }
     .article-body-wrap { padding: 56px 24px; }
+    .article-photos { padding: 0 24px 40px; }
     .article-nav { padding: 48px 24px; flex-direction: column; align-items: flex-start; }
     .contact-wrap { grid-template-columns: 1fr; }
     .contact-left { padding: 110px 24px 48px; border-right: none; border-bottom: 1px solid rgba(255,255,255,0.07); }
@@ -266,6 +236,7 @@
     .stats-row { grid-template-columns: 1fr; }
     .stat-item { border-right: none; border-bottom: 1px solid rgba(255,255,255,0.07); border-top: none !important; }
     .stat-item:nth-child(3) { grid-column: auto; }
+    .article-photos { grid-template-columns: 1fr; }
   }
 </style>
 </head>
@@ -424,7 +395,6 @@
 </div>
 
 <script>
-  // ── Cursor ────────────────────────────────────────────────
   const cursor=document.getElementById('cursor'), ring=document.getElementById('cursorRing');
   let mx=0,my=0,rx=0,ry=0;
   document.addEventListener('mousemove',e=>{mx=e.clientX;my=e.clientY;cursor.style.left=mx+'px';cursor.style.top=my+'px';});
@@ -447,16 +417,10 @@
   }
 
   // ──────────────────────────────────────────────────────────
-  // INTERVIEWS — voeg nieuwe interviews toe hier
-  //
-  // thumb: bestandsnaam van je thumbnail afbeelding
-  //        zet het bestand in dezelfde map als index.html
-  //        bijv: 'celeste-thumb.jpg'
-  //
-  // video: bestandsnaam van je video (mp4 aanbevolen)
-  //        zet het bestand in dezelfde map als index.html
-  //        bijv: 'celeste.mp4'
-  //        laat '' als je alleen een thumbnail wil
+  // INTERVIEWS
+  // thumb: bestandsnaam thumbnail  →  zet in zelfde map als index.html
+  // video: bestandsnaam mp4 video  →  zet in zelfde map als index.html
+  //        gebruik '' als je alleen een foto wil
   // ──────────────────────────────────────────────────────────
   const interviews = [
     {
@@ -464,8 +428,8 @@
       name:       'Celeste Mercedes',
       role:       'Violiste & Music Director',
       desc:       'Hoe een violiste haar plek veroverde naast haar childhood hero The Game — en wat jij kan leren over obsessie en connecties.',
-      thumb:      'celeste-thumb.jpg',   // ← verander naar jouw bestandsnaam
-      video:      'celeste.mp4',         // ← verander naar jouw bestandsnaam, of '' voor alleen foto
+      thumb:      'celeste-thumb.jpg',   // ← jouw thumbnail bestand
+      video:      'celeste.mp4',         // ← jouw video bestand, of '' voor alleen foto
       hasArticle: true,
       articleId:  'celeste'
     },
@@ -483,20 +447,21 @@
   ];
 
   // ──────────────────────────────────────────────────────────
-  // ARTIKELEN — voeg nieuwe artikelen toe hier
-  //
-  // video / thumb: zelfde bestandsnamen als in interviews
-  // image: optionele extra foto in het artikel zelf
+  // ARTIKELEN
+  // photo1 / photo2: 2 extra foto's in het artikel
+  //   → zet bestanden in dezelfde map als index.html
+  //   → gebruik '' als je een foto niet wil tonen
   // ──────────────────────────────────────────────────────────
   const articles = {
     celeste: {
-      ep:        'Vol. 001',
-      name:      'Celeste Mercedes',
-      role:      'Violiste & Music Director',
-      thumb:     'celeste-thumb.jpg',    // ← zelfde als in interviews
-      video:     'celeste.mp4',          // ← zelfde als in interviews, of ''
-      image:     '',                     // ← extra foto in artikel, bijv: 'celeste-foto.jpg'
-      quote:     'Je moet drive hebben, het echt willen en bijna zo obsessed zijn dat het weird wordt. Want dat is hoe je op de plekken komt waar anderen niet komen.',
+      ep:     'Vol. 001',
+      name:   'Celeste Mercedes',
+      role:   'Violiste & Music Director',
+      thumb:  'celeste-thumb.jpg',   // ← zelfde als in interviews
+      video:  'celeste.mp4',         // ← zelfde als in interviews, of ''
+      photo1: 'celeste-foto1.jpg',   // ← eerste extra foto in artikel
+      photo2: 'celeste-foto2.jpg',   // ← tweede extra foto in artikel
+      quote:  'Je moet drive hebben, het echt willen en bijna zo obsessed zijn dat het weird wordt. Want dat is hoe je op de plekken komt waar anderen niet komen.',
       body: `
         <p>Het is een doordeweekse avond als we binnenlopen bij Tivoli Vredenburg. The Game staat op het podium. De zaal trilt. En ergens in dat gewoel staat Celeste Mercedes — niet als toeschouwer, maar als iemand die straks <em>naast</em> hem staat.</p>
         <p>We kwamen haar per toeval tegen. Gewoon op een avond waarop alles klopte. En toen we hoorden wie ze was en wat ze had gedaan, wisten we: dit verhaal moet verteld worden.</p>
@@ -520,13 +485,14 @@
     },
     // ── TEMPLATE — kopieer dit blok voor elk nieuw artikel ──
     // nieuwenaam: {
-    //   ep:    'Vol. 002',
-    //   name:  'Naam Gast',
-    //   role:  'Rol / Titel',
-    //   thumb: 'gast-thumb.jpg',
-    //   video: 'gast.mp4',        // of ''
-    //   image: '',                // extra foto in artikel, of ''
-    //   quote: 'Sterkste quote.',
+    //   ep:     'Vol. 002',
+    //   name:   'Naam Gast',
+    //   role:   'Rol / Titel',
+    //   thumb:  'gast-thumb.jpg',
+    //   video:  'gast.mp4',          // of ''
+    //   photo1: 'gast-foto1.jpg',    // of ''
+    //   photo2: 'gast-foto2.jpg',    // of ''
+    //   quote:  'Sterkste quote.',
     //   body: `
     //     <p>Intro...</p>
     //     <h3>Titel</h3>
@@ -536,7 +502,6 @@
     // },
   };
 
-  // ── Bouw een reel-kaartje ─────────────────────────────────
   function buildCard(iv) {
     const media = iv.video
       ? `<video src="${iv.video}" poster="${iv.thumb}" muted playsinline loop preload="none"
@@ -544,7 +509,6 @@
            onmouseenter="this.play()" onmouseleave="this.pause();this.currentTime=0"></video>`
       : `<img src="${iv.thumb}" alt="${iv.name}"
            style="position:absolute;inset:0;width:100%;height:100%;object-fit:cover;display:block;" loading="lazy">`;
-
     return `
       <div class="reel-card" onclick="${iv.hasArticle ? `showArticle('${iv.articleId}')` : ''}">
         <div class="reel-media">
@@ -563,7 +527,6 @@
       </div>`;
   }
 
-  // ── Vul een grid ──────────────────────────────────────────
   function buildGrid(id) {
     const grid = document.getElementById(id);
     if (!grid || grid.dataset.built) return;
@@ -571,24 +534,25 @@
     grid.innerHTML = interviews.map(buildCard).join('');
   }
 
-  // Home reels direct laden
   buildGrid('home-reels');
 
-  // ── Artikel pagina ────────────────────────────────────────
   function showArticle(id) {
     const a = articles[id];
     if (!a) return;
 
+    // Video/foto links naast quote — kleiner door artikel-top klasse (max 360px)
     const mediaSide = a.video
       ? `<video src="${a.video}" poster="${a.thumb}" controls playsinline
            style="position:absolute;inset:0;width:100%;height:100%;object-fit:cover;display:block;"></video>`
       : `<img src="${a.thumb}" alt="${a.name}"
            style="position:absolute;inset:0;width:100%;height:100%;object-fit:cover;display:block;">`;
 
-    const imageBlock = a.image
-      ? `<div style="max-width:680px;margin:0 auto;padding:0 48px;">
-           <img src="${a.image}" alt="${a.name}" style="width:100%;display:block;aspect-ratio:3/2;object-fit:cover;margin-top:56px;">
-         </div>` : '';
+    // 2 foto's naast elkaar in het artikel, na de tekst
+    const photoBlock = (a.photo1 || a.photo2) ? `
+      <div class="article-photos">
+        ${a.photo1 ? `<img src="${a.photo1}" alt="${a.name} foto 1" loading="lazy">` : '<div style="background:var(--gray);aspect-ratio:3/4;"></div>'}
+        ${a.photo2 ? `<img src="${a.photo2}" alt="${a.name} foto 2" loading="lazy">` : '<div style="background:var(--gray);aspect-ratio:3/4;"></div>'}
+      </div>` : '';
 
     document.getElementById('article-content').innerHTML = `
       <div class="article-header">
@@ -596,14 +560,14 @@
         <h1 class="article-title">${a.name}</h1>
         <p class="article-role-tag">${a.role}</p>
       </div>
-      <div class="article-split">
+      <div class="article-top">
         <div class="article-video-side">${mediaSide}</div>
         <div class="article-quote-side">
           <p class="article-pullquote">"${a.quote}"</p>
         </div>
       </div>
-      ${imageBlock}
       <div class="article-body-wrap">${a.body}</div>
+      ${photoBlock}
       <div class="article-nav">
         <button class="btn-outline" onclick="showPage('interviews')">← Alle Interviews</button>
         <a href="https://instagram.com/cltrhead" target="_blank" class="footer-ig">Volg @cltrhead →</a>
@@ -621,4 +585,3 @@
 </script>
 </body>
 </html>
-  
