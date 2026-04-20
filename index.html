@@ -43,7 +43,7 @@
   .page { display: none; min-height: 100svh; }
   .page.active { display: block; }
 
-  /* HOME */
+  /* HERO */
   .hero { height: 100svh; display: flex; flex-direction: column; justify-content: flex-end; padding: 0 48px 72px; position: relative; overflow: hidden; }
   .hero-grid { position: absolute; inset: 0; background-image: linear-gradient(rgba(212,255,0,0.025) 1px, transparent 1px), linear-gradient(90deg, rgba(212,255,0,0.025) 1px, transparent 1px); background-size: 80px 80px; pointer-events: none; }
   .hero-ticker { position: absolute; top: 50%; left: 0; transform: translateY(-50%); width: 100%; overflow: hidden; pointer-events: none; }
@@ -57,6 +57,7 @@
   .hero-bottom { display: flex; align-items: flex-end; justify-content: space-between; margin-top: 40px; position: relative; z-index: 1; animation: fadeUp 0.8s 0.3s ease both; }
   .hero-sub { font-size: 14px; color: var(--gray-light); max-width: 320px; line-height: 1.7; }
 
+  /* BUTTONS */
   .btn-outline { display: inline-flex; align-items: center; gap: 10px; font-size: 11px; letter-spacing: 0.15em; text-transform: uppercase; color: var(--white); background: none; border: 1px solid rgba(255,255,255,0.2); padding: 15px 28px; cursor: pointer; transition: all 0.3s; font-family: var(--font); white-space: nowrap; }
   .btn-outline:hover { background: var(--neon); color: var(--black); border-color: var(--neon); }
   .btn-outline .arrow { transition: transform 0.3s; }
@@ -64,144 +65,117 @@
   .btn-neon-text { display: inline-flex; align-items: center; gap: 10px; font-size: 11px; letter-spacing: 0.15em; text-transform: uppercase; color: var(--neon); background: none; border: none; border-bottom: 1px solid rgba(212,255,0,0.3); padding-bottom: 6px; cursor: pointer; font-family: var(--font); transition: gap 0.3s; }
   .btn-neon-text:hover { gap: 18px; }
 
+  /* MARQUEE */
   .marquee-strip { border-top: 1px solid rgba(255,255,255,0.07); border-bottom: 1px solid rgba(255,255,255,0.07); padding: 16px 0; overflow: hidden; background: var(--gray); }
   .marquee-inner { display: flex; white-space: nowrap; animation: marquee 20s linear infinite; }
   .marquee-inner span { font-size: 11px; letter-spacing: 0.2em; text-transform: uppercase; color: var(--gray-light); padding: 0 40px; }
   .marquee-inner .dot { color: var(--neon); padding: 0; }
   @keyframes marquee { 0%{transform:translateX(0)} 100%{transform:translateX(-50%)} }
 
+  /* SECTION */
   .section { padding: 80px 48px; }
   .section-label { font-size: 11px; letter-spacing: 0.25em; text-transform: uppercase; color: var(--neon); margin-bottom: 24px; }
 
-  /* FEATURED — bite-size reel grid like Instagram */
-  .featured-grid {
+  /* ── REEL GRID ─────────────────────────────────────────── */
+  .reel-grid {
     display: grid;
     grid-template-columns: repeat(4, 1fr);
     gap: 2px;
     background: var(--gray-mid);
   }
 
-  /* Reel kaartje */
   .reel-card {
     background: var(--black);
     display: flex;
     flex-direction: column;
     cursor: pointer;
-    position: relative;
   }
-  .reel-card.featured-card { grid-column: span 1; }
 
-  /* Thumbnail: 9:16 via aspect-ratio, iframe geclipped zodat alleen beeld zichtbaar is */
-  .reel-thumb {
+  /* 9:16 container — alleen eigen media, geen iframe */
+  .reel-media {
     position: relative;
     overflow: hidden;
-    background: var(--black);
+    background: var(--gray);
     aspect-ratio: 9 / 16;
+    flex-shrink: 0;
   }
-  .reel-thumb iframe {
+
+  /* Thumbnail (img) en video vullen container volledig */
+  .reel-media img,
+  .reel-media video {
     position: absolute;
-    top: -100px;
-    left: -2px;
-    width: calc(100% + 4px);
-    height: calc(100% + 200px);
-    border: none;
-    pointer-events: none;
+    inset: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
     display: block;
   }
-  /* Hover overlay */
-  .reel-thumb::after {
+
+  /* Play-icoon overlay op thumbnail */
+  .reel-media .play-icon {
+    position: absolute;
+    inset: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    pointer-events: none;
+    transition: opacity 0.2s;
+  }
+  .reel-media .play-icon svg {
+    width: 40px;
+    height: 40px;
+    fill: none;
+    stroke: rgba(255,255,255,0.7);
+    stroke-width: 1.5;
+  }
+  .reel-card:hover .play-icon { opacity: 0; }
+
+  /* Neon hover tint */
+  .reel-media::after {
     content: '';
     position: absolute;
     inset: 0;
-    background: rgba(0,0,0,0);
+    background: rgba(212,255,0,0);
     transition: background 0.25s;
+    pointer-events: none;
   }
-  .reel-card:hover .reel-thumb::after { background: rgba(212,255,0,0.08); }
+  .reel-card:hover .reel-media::after { background: rgba(212,255,0,0.06); }
 
-  /* Meta onder de thumb */
+  /* Meta onder video */
   .reel-meta {
     padding: 12px 14px 16px;
     border-top: 1px solid rgba(255,255,255,0.06);
+    background: var(--black);
   }
-  .reel-ep { font-size: 9px; letter-spacing: 0.2em; text-transform: uppercase; color: var(--neon); margin-bottom: 3px; }
-  .reel-name { font-size: 13px; font-weight: 700; text-transform: uppercase; letter-spacing: -0.01em; margin-bottom: 2px; line-height: 1.1; }
-  .reel-role { font-size: 10px; letter-spacing: 0.08em; text-transform: uppercase; color: var(--gray-light); margin-bottom: 10px; }
-  .reel-btn { font-size: 10px; letter-spacing: 0.12em; text-transform: uppercase; color: var(--neon); background: none; border: none; border-bottom: 1px solid rgba(212,255,0,0.3); padding-bottom: 3px; cursor: pointer; font-family: var(--font); }
+  .reel-ep   { font-size: 9px;  letter-spacing: 0.2em;  text-transform: uppercase; color: var(--neon);       margin-bottom: 3px; }
+  .reel-name { font-size: 13px; font-weight: 700;        text-transform: uppercase; letter-spacing: -0.01em; margin-bottom: 2px; line-height: 1.1; }
+  .reel-role { font-size: 10px; letter-spacing: 0.08em;  text-transform: uppercase; color: var(--gray-light); margin-bottom: 8px; }
+  .reel-desc { font-size: 11px; color: var(--gray-light); line-height: 1.55; margin-bottom: 10px; }
 
-  /* Eerste kaart (featured) iets groter in het grid — neemt 2 rijen */
-  .reel-card.is-featured {
-    grid-row: span 1;
-  }
-
+  /* ABOUT TEASER */
   .about-teaser { border-top: 1px solid rgba(255,255,255,0.07); padding: 100px 48px; display: grid; grid-template-columns: 200px 1fr; gap: 80px; align-items: start; }
   .about-teaser-label { font-size: 11px; letter-spacing: 0.25em; text-transform: uppercase; color: var(--neon); padding-top: 6px; }
   .about-teaser-text { font-size: clamp(20px,2.2vw,32px); line-height: 1.45; font-weight: 300; letter-spacing: -0.01em; }
   .about-teaser-text strong { font-weight: 700; color: var(--neon); }
 
+  /* STATS */
   .stats-row { display: grid; grid-template-columns: repeat(3,1fr); border-top: 1px solid rgba(255,255,255,0.07); }
   .stat-item { padding: 56px 48px; border-right: 1px solid rgba(255,255,255,0.07); }
   .stat-item:last-child { border-right: none; }
   .stat-number { font-size: clamp(44px,5vw,72px); font-weight: 700; letter-spacing: -0.03em; color: var(--neon); line-height: 1; }
-  .stat-label { font-size: 11px; letter-spacing: 0.15em; text-transform: uppercase; color: var(--gray-light); margin-top: 10px; }
+  .stat-label  { font-size: 11px; letter-spacing: 0.15em; text-transform: uppercase; color: var(--gray-light); margin-top: 10px; }
 
+  /* FOOTER */
   footer { padding: 56px 48px; border-top: 1px solid rgba(255,255,255,0.07); display: flex; align-items: center; justify-content: space-between; flex-wrap: wrap; gap: 20px; }
   footer img { height: 26px; width: auto; }
   .footer-tagline { font-size: 12px; color: var(--gray-light); }
   .footer-ig { font-size: 11px; letter-spacing: 0.15em; text-transform: uppercase; color: var(--neon); text-decoration: none; transition: opacity 0.2s; }
   .footer-ig:hover { opacity: 0.7; }
 
-  /* INTERVIEWS PAGE — zelfde reel grid */
+  /* INTERVIEWS PAGE */
   .page-header { padding: 140px 48px 72px; border-bottom: 1px solid rgba(255,255,255,0.07); }
   .page-title { font-size: clamp(44px,8vw,112px); font-weight: 700; letter-spacing: -0.03em; text-transform: uppercase; line-height: 0.9; }
   .page-title .outline { color: transparent; -webkit-text-stroke: 1px var(--white); }
-
-  .interviews-grid {
-    padding: 48px;
-    display: grid;
-    grid-template-columns: repeat(4, 1fr);
-    gap: 2px;
-    background: var(--gray-mid);
-  }
-  .interview-card {
-    background: var(--black);
-    display: flex;
-    flex-direction: column;
-    cursor: pointer;
-  }
-  .interview-video-wrap {
-    position: relative;
-    overflow: hidden;
-    background: var(--black);
-    aspect-ratio: 9 / 16;
-    flex-shrink: 0;
-  }
-  .interview-video-wrap iframe {
-    position: absolute;
-    top: -100px;
-    left: -2px;
-    width: calc(100% + 4px);
-    height: calc(100% + 200px);
-    border: none;
-    pointer-events: none;
-    display: block;
-  }
-  .interview-meta {
-    padding: 12px 14px 16px;
-    border-top: 1px solid rgba(255,255,255,0.06);
-    background: var(--black);
-  }
-  .interview-ep { font-size: 9px; letter-spacing: 0.2em; text-transform: uppercase; color: var(--neon); margin-bottom: 3px; }
-  .interview-name { font-size: 13px; font-weight: 700; letter-spacing: -0.01em; text-transform: uppercase; margin-bottom: 2px; line-height: 1.1; }
-  .interview-role-tag { font-size: 10px; letter-spacing: 0.08em; text-transform: uppercase; color: var(--gray-light); margin-bottom: 8px; }
-  .interview-desc { font-size: 11px; color: var(--gray-light); line-height: 1.55; margin-bottom: 10px; }
-  /* klik op kaart opent artikel — pointer op iframe weg via overlay */
-  .interview-video-wrap::after {
-    content: '';
-    position: absolute;
-    inset: 0;
-    background: transparent;
-    cursor: pointer;
-  }
 
   /* OVER CH */
   .about-hero { min-height: 100svh; display: flex; flex-direction: column; justify-content: center; padding: 140px 48px 100px; position: relative; overflow: hidden; }
@@ -219,10 +193,11 @@
   .article-header { padding: 140px 48px 72px; border-bottom: 1px solid rgba(255,255,255,0.07); }
   .article-ep-tag { font-size: 11px; letter-spacing: 0.25em; text-transform: uppercase; color: var(--neon); margin-bottom: 20px; }
   .article-title { font-size: clamp(44px,8vw,108px); font-weight: 700; letter-spacing: -0.03em; text-transform: uppercase; line-height: 0.9; margin-bottom: 24px; }
-  .article-role { font-size: 12px; letter-spacing: 0.12em; text-transform: uppercase; color: var(--gray-light); }
+  .article-role-tag { font-size: 12px; letter-spacing: 0.12em; text-transform: uppercase; color: var(--gray-light); }
   .article-split { display: grid; grid-template-columns: 1fr 1fr; gap: 2px; background: var(--gray-mid); }
-  .article-video-side { background: var(--black); overflow: hidden; min-height: 500px; position: relative; }
-  .article-video-side iframe { width: 100%; height: 100%; border: none; display: block; position: absolute; inset: 0; }
+  .article-video-side { background: var(--black); overflow: hidden; aspect-ratio: 9/16; position: relative; }
+  .article-video-side video,
+  .article-video-side img { position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover; display: block; }
   .article-quote-side { background: var(--black); padding: 64px 48px; display: flex; align-items: center; }
   .article-pullquote { font-size: clamp(18px,2.2vw,30px); font-weight: 300; line-height: 1.5; letter-spacing: -0.01em; color: var(--white); border-left: 2px solid var(--neon); padding-left: 28px; }
   .article-body-wrap { max-width: 680px; margin: 0 auto; padding: 88px 48px; }
@@ -265,7 +240,7 @@
     .hero-bottom { flex-direction: column; align-items: flex-start; gap: 24px; }
     .hero-sub { max-width: 100%; }
     .section { padding: 40px 16px; }
-    .featured-grid { grid-template-columns: repeat(3, 1fr); }
+    .reel-grid { grid-template-columns: repeat(3, 1fr); }
     .about-teaser { padding: 64px 24px; grid-template-columns: 1fr; gap: 20px; }
     .stats-row { grid-template-columns: 1fr 1fr; }
     .stat-item { padding: 36px 24px; }
@@ -273,13 +248,11 @@
     .stat-item:nth-child(3) { border-right: none; border-top: 1px solid rgba(255,255,255,0.07); grid-column: span 2; }
     footer { padding: 36px 24px; justify-content: center; text-align: center; flex-direction: column; gap: 12px; }
     .page-header { padding: 110px 24px 56px; }
-    .interviews-grid { grid-template-columns: repeat(3, 1fr); padding: 16px; }
     .about-hero { padding: 120px 24px 80px; }
     .about-body { grid-template-columns: 1fr; }
     .about-block { padding: 48px 24px; }
     .article-header { padding: 110px 24px 56px; }
     .article-split { grid-template-columns: 1fr; }
-    .article-video-side { min-height: 320px; }
     .article-quote-side { padding: 36px 24px; }
     .article-body-wrap { padding: 56px 24px; }
     .article-nav { padding: 48px 24px; flex-direction: column; align-items: flex-start; }
@@ -289,11 +262,10 @@
     .contact-title { margin-top: 0; }
   }
   @media (max-width: 480px) {
-    .featured-grid { grid-template-columns: repeat(2, 1fr); }
-    .interviews-grid { grid-template-columns: repeat(2, 1fr); }
+    .reel-grid { grid-template-columns: repeat(2, 1fr); }
     .stats-row { grid-template-columns: 1fr; }
-    .stat-item:nth-child(2), .stat-item:nth-child(3) { border-right: none; grid-column: auto; }
-    .stat-item { border-bottom: 1px solid rgba(255,255,255,0.07); border-top: none !important; }
+    .stat-item { border-right: none; border-bottom: 1px solid rgba(255,255,255,0.07); border-top: none !important; }
+    .stat-item:nth-child(3) { grid-column: auto; }
   }
 </style>
 </head>
@@ -351,7 +323,7 @@
 
   <section class="section">
     <p class="section-label">The Stories</p>
-    <div class="featured-grid" id="home-reels"></div>
+    <div class="reel-grid" id="home-reels"></div>
     <div style="margin-top:16px;display:flex;justify-content:flex-end;">
       <button class="btn-outline" onclick="showPage('interviews')" style="font-size:10px;padding:12px 20px;">Alle interviews <span class="arrow">→</span></button>
     </div>
@@ -380,7 +352,9 @@
   <div class="page-header">
     <h1 class="page-title">The<br><span class="outline">Stories</span></h1>
   </div>
-  <div class="interviews-grid" id="interviews-grid"></div>
+  <div style="padding:48px;background:var(--gray-mid);">
+    <div class="reel-grid" id="interviews-grid" style="background:none;gap:2px;"></div>
+  </div>
   <footer>
     <img src="culture_head_logo.png" alt="Culture Head">
     <span class="footer-tagline">We basically collect stories 🎙️</span>
@@ -450,6 +424,7 @@
 </div>
 
 <script>
+  // ── Cursor ────────────────────────────────────────────────
   const cursor=document.getElementById('cursor'), ring=document.getElementById('cursorRing');
   let mx=0,my=0,rx=0,ry=0;
   document.addEventListener('mousemove',e=>{mx=e.clientX;my=e.clientY;cursor.style.left=mx+'px';cursor.style.top=my+'px';});
@@ -468,45 +443,60 @@
     document.querySelectorAll('.nav-links a').forEach(a=>a.classList.remove('active'));
     const nav=document.getElementById('nav-'+name);
     if(nav) nav.classList.add('active');
-    if(name==='interviews') buildInterviews();
+    if(name==='interviews') buildGrid('interviews-grid');
   }
 
   // ──────────────────────────────────────────────────────────
   // INTERVIEWS — voeg nieuwe interviews toe hier
+  //
+  // thumb: bestandsnaam van je thumbnail afbeelding
+  //        zet het bestand in dezelfde map als index.html
+  //        bijv: 'celeste-thumb.jpg'
+  //
+  // video: bestandsnaam van je video (mp4 aanbevolen)
+  //        zet het bestand in dezelfde map als index.html
+  //        bijv: 'celeste.mp4'
+  //        laat '' als je alleen een thumbnail wil
   // ──────────────────────────────────────────────────────────
   const interviews = [
     {
-      ep: 'Vol. 001',
-      name: 'Celeste Mercedes',
-      role: 'Violiste & Music Director',
-      desc: 'Hoe een violiste haar plek veroverde naast haar childhood hero The Game — en wat jij kan leren over obsessie en connecties.',
-      shortcode: 'DHa58Hrs6Cn',
+      ep:         'Vol. 001',
+      name:       'Celeste Mercedes',
+      role:       'Violiste & Music Director',
+      desc:       'Hoe een violiste haar plek veroverde naast haar childhood hero The Game — en wat jij kan leren over obsessie en connecties.',
+      thumb:      'celeste-thumb.jpg',   // ← verander naar jouw bestandsnaam
+      video:      'celeste.mp4',         // ← verander naar jouw bestandsnaam, of '' voor alleen foto
       hasArticle: true,
-      articleId: 'celeste'
+      articleId:  'celeste'
     },
-    // TEMPLATE — kopieer en plak dit voor elk nieuw interview:
+    // ── TEMPLATE — kopieer dit blok voor elk nieuw interview ──
     // {
-    //   ep: 'Vol. 002',
-    //   name: 'Naam Gast',
-    //   role: 'Rol van de gast',
-    //   desc: 'Korte beschrijving van het gesprek, 1-2 zinnen.',
-    //   shortcode: 'CODE_NA_INSTAGRAM_COM_P',
+    //   ep:         'Vol. 002',
+    //   name:       'Naam Gast',
+    //   role:       'Rol van de gast',
+    //   desc:       'Korte beschrijving, 1-2 zinnen.',
+    //   thumb:      'gast-thumb.jpg',
+    //   video:      'gast.mp4',          // of '' voor alleen foto
     //   hasArticle: false,
-    //   articleId: ''
+    //   articleId:  ''
     // },
   ];
 
   // ──────────────────────────────────────────────────────────
   // ARTIKELEN — voeg nieuwe artikelen toe hier
+  //
+  // video / thumb: zelfde bestandsnamen als in interviews
+  // image: optionele extra foto in het artikel zelf
   // ──────────────────────────────────────────────────────────
   const articles = {
     celeste: {
-      ep: 'Vol. 001',
-      name: 'Celeste Mercedes',
-      role: 'Violiste & Music Director',
-      shortcode: 'DHa58Hrs6Cn',
-      image: '', // Vul hier de bestandsnaam in bijv: 'celeste.jpg' — zet foto in dezelfde map
-      quote: 'Je moet drive hebben, het echt willen en bijna zo obsessed zijn dat het weird wordt. Want dat is hoe je op de plekken komt waar anderen niet komen.',
+      ep:        'Vol. 001',
+      name:      'Celeste Mercedes',
+      role:      'Violiste & Music Director',
+      thumb:     'celeste-thumb.jpg',    // ← zelfde als in interviews
+      video:     'celeste.mp4',          // ← zelfde als in interviews, of ''
+      image:     '',                     // ← extra foto in artikel, bijv: 'celeste-foto.jpg'
+      quote:     'Je moet drive hebben, het echt willen en bijna zo obsessed zijn dat het weird wordt. Want dat is hoe je op de plekken komt waar anderen niet komen.',
       body: `
         <p>Het is een doordeweekse avond als we binnenlopen bij Tivoli Vredenburg. The Game staat op het podium. De zaal trilt. En ergens in dat gewoel staat Celeste Mercedes — niet als toeschouwer, maar als iemand die straks <em>naast</em> hem staat.</p>
         <p>We kwamen haar per toeval tegen. Gewoon op een avond waarop alles klopte. En toen we hoorden wie ze was en wat ze had gedaan, wisten we: dit verhaal moet verteld worden.</p>
@@ -528,74 +518,86 @@
         <p>Als je wil weten hoe je van passie je werk maakt, hoe je de goede mensen vindt en hoe je consistent blijft als het moeilijk is — kijk dan het gesprek. Ze zegt het allemaal zelf, beter dan wij het kunnen naschrijven.</p>
       `
     },
-    // TEMPLATE — kopieer en plak dit voor elk nieuw artikel:
+    // ── TEMPLATE — kopieer dit blok voor elk nieuw artikel ──
     // nieuwenaam: {
-    //   ep: 'Vol. 002',
-    //   name: 'Naam Gast',
-    //   role: 'Rol / Titel',
-    //   shortcode: 'CODE_NA_INSTAGRAM_COM_P',
-    //   image: 'foto.jpg', // of '' als je geen foto hebt
-    //   quote: 'De sterkste quote uit het interview.',
+    //   ep:    'Vol. 002',
+    //   name:  'Naam Gast',
+    //   role:  'Rol / Titel',
+    //   thumb: 'gast-thumb.jpg',
+    //   video: 'gast.mp4',        // of ''
+    //   image: '',                // extra foto in artikel, of ''
+    //   quote: 'Sterkste quote.',
     //   body: `
-    //     <p>Intro alinea...</p>
-    //     <h3>Sectie titel</h3>
+    //     <p>Intro...</p>
+    //     <h3>Titel</h3>
     //     <p>Tekst...</p>
     //     <blockquote>"Quote..."</blockquote>
-    //     <p>Meer tekst...</p>
     //   `
     // },
   };
 
-  function buildReelCard(iv) {
+  // ── Bouw een reel-kaartje ─────────────────────────────────
+  function buildCard(iv) {
+    const media = iv.video
+      ? `<video src="${iv.video}" poster="${iv.thumb}" muted playsinline loop preload="none"
+           style="position:absolute;inset:0;width:100%;height:100%;object-fit:cover;display:block;"
+           onmouseenter="this.play()" onmouseleave="this.pause();this.currentTime=0"></video>`
+      : `<img src="${iv.thumb}" alt="${iv.name}"
+           style="position:absolute;inset:0;width:100%;height:100%;object-fit:cover;display:block;" loading="lazy">`;
+
     return `
-      <div class="interview-card" onclick="${iv.hasArticle ? `showArticle('${iv.articleId}')` : ''}">
-        <div class="interview-video-wrap">
-          <iframe src="https://www.instagram.com/p/${iv.shortcode}/embed/" allowfullscreen loading="lazy"></iframe>
+      <div class="reel-card" onclick="${iv.hasArticle ? `showArticle('${iv.articleId}')` : ''}">
+        <div class="reel-media">
+          ${media}
+          <div class="play-icon">
+            <svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="10"/><polygon points="10,8 16,12 10,16" fill="rgba(255,255,255,0.9)" stroke="none"/></svg>
+          </div>
         </div>
-        <div class="interview-meta">
-          <p class="interview-ep">${iv.ep}</p>
-          <h3 class="interview-name">${iv.name}</h3>
-          <p class="interview-role-tag">${iv.role}</p>
-          <p class="interview-desc">${iv.desc}</p>
+        <div class="reel-meta">
+          <p class="reel-ep">${iv.ep}</p>
+          <h3 class="reel-name">${iv.name}</h3>
+          <p class="reel-role">${iv.role}</p>
+          <p class="reel-desc">${iv.desc}</p>
           ${iv.hasArticle ? `<button class="btn-neon-text" onclick="event.stopPropagation();showArticle('${iv.articleId}')">Lees het artikel <span>→</span></button>` : ''}
         </div>
       </div>`;
   }
 
-  function buildHomeReels() {
-    const grid = document.getElementById('home-reels');
+  // ── Vul een grid ──────────────────────────────────────────
+  function buildGrid(id) {
+    const grid = document.getElementById(id);
     if (!grid || grid.dataset.built) return;
     grid.dataset.built = '1';
-    grid.innerHTML = interviews.map(buildReelCard).join('');
+    grid.innerHTML = interviews.map(buildCard).join('');
   }
 
-  function buildInterviews() {
-    const grid = document.getElementById('interviews-grid');
-    if (!grid || grid.dataset.built) return;
-    grid.dataset.built = '1';
-    grid.innerHTML = interviews.map(buildReelCard).join('');
-  }
+  // Home reels direct laden
+  buildGrid('home-reels');
 
-  // Build home reels on load
-  buildHomeReels();
+  // ── Artikel pagina ────────────────────────────────────────
+  function showArticle(id) {
+    const a = articles[id];
+    if (!a) return;
 
-  function showArticle(id){
-    const a=articles[id];
-    if(!a) return;
-    const imageBlock = a.image ? `
-      <div style="width:100%;max-width:680px;margin:0 auto;padding:0 48px 0;">
-        <img src="${a.image}" alt="${a.name}" style="width:100%;display:block;aspect-ratio:3/2;object-fit:cover;margin-top:56px;">
-      </div>` : '';
-    document.getElementById('article-content').innerHTML=`
+    const mediaSide = a.video
+      ? `<video src="${a.video}" poster="${a.thumb}" controls playsinline
+           style="position:absolute;inset:0;width:100%;height:100%;object-fit:cover;display:block;"></video>`
+      : `<img src="${a.thumb}" alt="${a.name}"
+           style="position:absolute;inset:0;width:100%;height:100%;object-fit:cover;display:block;">`;
+
+    const imageBlock = a.image
+      ? `<div style="max-width:680px;margin:0 auto;padding:0 48px;">
+           <img src="${a.image}" alt="${a.name}" style="width:100%;display:block;aspect-ratio:3/2;object-fit:cover;margin-top:56px;">
+         </div>` : '';
+
+    document.getElementById('article-content').innerHTML = `
       <div class="article-header">
         <p class="article-ep-tag">${a.ep} — Interview</p>
         <h1 class="article-title">${a.name}</h1>
-        <p class="article-role">${a.role}</p>
+        <p class="article-role-tag">${a.role}</p>
       </div>
       <div class="article-split">
-        <div class="article-video-side">
-          <iframe src="https://www.instagram.com/p/${a.shortcode}/embed/" allowfullscreen loading="lazy"></iframe>
-        </div>
+        <div class="article-video-side">${mediaSide}</div>
         <div class="article-quote-side">
           <p class="article-pullquote">"${a.quote}"</p>
         </div>
@@ -611,10 +613,12 @@
         <span class="footer-tagline">We basically collect stories 🎙️</span>
         <a href="https://instagram.com/cltrhead" target="_blank" class="footer-ig">@cltrhead</a>
       </footer>`;
+
     showPage('article');
   }
 
-  document.addEventListener('contextmenu',e=>e.preventDefault());
+  document.addEventListener('contextmenu', e => e.preventDefault());
 </script>
 </body>
 </html>
+  
