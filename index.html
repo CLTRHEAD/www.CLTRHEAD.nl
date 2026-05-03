@@ -251,7 +251,7 @@
   </a>
   <ul class="nav-links">
     <li><a onclick="showPage('home')" id="nav-home" class="active">Home</a></li>
-    <li><a onclick="showPage('interviews')" id="nav-interviews">Interviews</a></li>
+    <li><a onclick="showPage('interviews')" id="nav-interviews">The Stories</a></li>
     <li><a onclick="showPage('about')" id="nav-about">Over CH</a></li>
     <li><a onclick="showPage('contact')" id="nav-contact">Contact</a></li>
   </ul>
@@ -263,7 +263,7 @@
 <div class="mobile-menu" id="mobileMenu">
   <button class="mobile-close" onclick="toggleMenu()">✕</button>
   <a onclick="showPage('home');toggleMenu()">Home</a>
-  <a onclick="showPage('interviews');toggleMenu()">Interviews</a>
+  <a onclick="showPage('interviews');toggleMenu()">The Stories</a>
   <a onclick="showPage('about');toggleMenu()">Over CH</a>
   <a onclick="showPage('contact');toggleMenu()">Contact</a>
 </div>
@@ -302,7 +302,7 @@
 
   <div class="about-teaser">
     <p class="about-teaser-label">Over Culture Head</p>
-    <p class="about-teaser-text">Voor een generatie creatives die bouwen voordat het klopt. <strong>Culture Head vertelt hun verhalen.</strong></p>
+    <p class="about-teaser-text">Elk mens heeft een verhaal. Wij halen het naar buiten. Culture Head is een platform voor <strong>artiesten, ondernemers en creatives</strong> — de mensen die bouwen terwijl de wereld nog slaapt.</p>
   </div>
 
   <div class="stats-row">
@@ -337,9 +337,12 @@
 <div id="page-about" class="page">
   <div style="min-height:100svh;display:flex;align-items:center;justify-content:center;padding:120px 48px;">
     <div style="max-width:560px;text-align:center;">
+      <p style="font-size:11px;letter-spacing:0.25em;text-transform:uppercase;color:var(--neon);margin-bottom:48px;">Culture Head</p>
       <p style="font-size:clamp(15px,1.6vw,20px);line-height:2.1;color:rgba(245,245,240,0.75);font-weight:300;letter-spacing:0.02em;">
-        Geen succes zonder struggle.<br>
-        Dit is meer dan een platform.<br>
+        Geen succes zonder struggle.<br><br>
+        We praten met mensen die bouwen.<br>
+        Niet met mensen die praten.<br><br>
+        Dit is geen platform.<br>
         Dit is documentatie van de grind.
       </p>
     </div>
@@ -500,6 +503,56 @@
       video:      'supadupagoods.mp4',
       hasArticle: true,
       articleId:  'supadupa'
+    },
+    {
+      ep:         'Vol. 010',
+      name:       'Amiera Amore',
+      role:       'Artiest',
+      desc:       'Het verhaal van Amiera Amore — tekst volgt binnenkort.',
+      thumb:      'Amiera Amore-thumb.jpg',
+      video:      'Amiera Amore.mp4',
+      hasArticle: true,
+      articleId:  'amiera'
+    },
+    {
+      ep:         'Vol. 011',
+      name:       'Annicee',
+      role:       'Artiest',
+      desc:       'Het verhaal van Annicee — tekst volgt binnenkort.',
+      thumb:      'Annicee-thumb.jpg',
+      video:      'Annicee.mp4',
+      hasArticle: true,
+      articleId:  'annicee'
+    },
+    {
+      ep:         'Vol. 012',
+      name:       'Kaytranada',
+      role:       'Producer & DJ',
+      desc:       'Het verhaal van Kaytranada — tekst volgt binnenkort.',
+      thumb:      'kaytranada-thumb.jpg',
+      video:      'kaytranada.mp4',
+      hasArticle: true,
+      articleId:  'kaytranada'
+    },
+    {
+      ep:         'Vol. 013',
+      name:       'Steven Aswin',
+      role:       'Artiest',
+      desc:       'Het verhaal van Steven Aswin — tekst volgt binnenkort.',
+      thumb:      'Steven Aswin-thumb.jpg',
+      video:      'Steven Aswin.mp4',
+      hasArticle: true,
+      articleId:  'stevenaswin'
+    },
+    {
+      ep:         'Vol. 014',
+      name:       'Twenty20',
+      role:       'Artiest',
+      desc:       'Het verhaal van Twenty20 — tekst volgt binnenkort.',
+      thumb:      'Twenty20-thumb.jpg',
+      video:      'Twenty20.mp4',
+      hasArticle: true,
+      articleId:  'twenty20'
     },
     // ── TEMPLATE — kopieer dit blok voor elk nieuw interview ──
     // {
@@ -781,6 +834,61 @@
         <p>De druk van buitenaf was er. Mensen die vroegen wat ze aan het doen was, waarom ze niet reageerde. Ze leerde accepteren waar ze zat in het proces. Tot haar gevoel zei: nu. "Dit jaar moet het zijn." En nu staat ze hier, op haar releaseparty, met een single die van haar is.</p>
         <p>Dat is de les van Chanou: je kunt niet forceren wat er nog niet is. Maar als je de tijd neemt om het goed te doen, is het moment dat je er wél staat onbetaalbaar.</p>
       `
+    },
+    amiera: {
+      ep:     'Vol. 010',
+      name:   'Amiera Amore',
+      role:   'Artiest',
+      thumb:  'Amiera Amore-thumb.jpg',
+      video:  'Amiera Amore.mp4',
+      photo1: '',
+      photo2: '',
+      quote:  'Quote volgt binnenkort.',
+      body:   `<p><em>Dit artikel wordt binnenkort toegevoegd.</em></p>`
+    },
+    annicee: {
+      ep:     'Vol. 011',
+      name:   'Annicee',
+      role:   'Artiest',
+      thumb:  'Annicee-thumb.jpg',
+      video:  'Annicee.mp4',
+      photo1: '',
+      photo2: '',
+      quote:  'Quote volgt binnenkort.',
+      body:   `<p><em>Dit artikel wordt binnenkort toegevoegd.</em></p>`
+    },
+    kaytranada: {
+      ep:     'Vol. 012',
+      name:   'Kaytranada',
+      role:   'Producer & DJ',
+      thumb:  'kaytranada-thumb.jpg',
+      video:  'kaytranada.mp4',
+      photo1: '',
+      photo2: '',
+      quote:  'Quote volgt binnenkort.',
+      body:   `<p><em>Dit artikel wordt binnenkort toegevoegd.</em></p>`
+    },
+    stevenaswin: {
+      ep:     'Vol. 013',
+      name:   'Steven Aswin',
+      role:   'Artiest',
+      thumb:  'Steven Aswin-thumb.jpg',
+      video:  'Steven Aswin.mp4',
+      photo1: '',
+      photo2: '',
+      quote:  'Quote volgt binnenkort.',
+      body:   `<p><em>Dit artikel wordt binnenkort toegevoegd.</em></p>`
+    },
+    twenty20: {
+      ep:     'Vol. 014',
+      name:   'Twenty20',
+      role:   'Artiest',
+      thumb:  'Twenty20-thumb.jpg',
+      video:  'Twenty20.mp4',
+      photo1: '',
+      photo2: '',
+      quote:  'Quote volgt binnenkort.',
+      body:   `<p><em>Dit artikel wordt binnenkort toegevoegd.</em></p>`
     },
     // ── TEMPLATE — kopieer dit blok voor elk nieuw artikel ──
     // nieuwenaam: {
