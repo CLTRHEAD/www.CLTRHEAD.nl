@@ -335,25 +335,16 @@
 
 <!-- ===== OVER CH ===== -->
 <div id="page-about" class="page">
-  <section class="about-hero">
-    <h1 class="about-big">Elk verhaal<br>verdient het om<br><em>gehoord</em> te worden.</h1>
-  </section>
-  <div class="about-body">
-    <div class="about-block">
-      <p class="about-block-label">Wat is Culture Head</p>
-      <div class="about-block-text">
-        <p>Culture Head legt vast wat in beweging is. Van ideeën die vorm krijgen. Van mensen die bouwen aan iets dat er nog niet is.</p>
-        <p>We spreken met makers, denkers en doeners die hun eigen richting bepalen. Niet om het eindpunt te vieren, maar om het proces vast te leggen.</p>
-        <p>Eerlijk, scherp en zonder ruis.</p>
-      </div>
-    </div>
-    <div class="about-block">
-      <p class="about-block-label">Voor wie</p>
-      <div class="about-block-text">
-        <p>Voor de artiest die elke nacht bezig is. De ondernemer die zijn eigen weg baant. De creative die de wereld anders ziet.</p>
-        <p>Als jij iemand bent die bouwt — dan is dit voor jou gemaakt. Niet als inspiratieporn. Maar als bewijs dat het kan. Dat anderen het ook deden, op hun eigen manier, zonder shortcuts.</p>
-        <p>Culture Head is geen platform. Het is een archief van de cultuur.</p>
-      </div>
+  <div style="min-height:100svh;display:flex;align-items:center;justify-content:center;padding:120px 48px;">
+    <div style="max-width:560px;text-align:center;">
+      <p style="font-size:11px;letter-spacing:0.25em;text-transform:uppercase;color:var(--neon);margin-bottom:48px;">Culture Head</p>
+      <p style="font-size:clamp(15px,1.6vw,20px);line-height:2.1;color:rgba(245,245,240,0.75);font-weight:300;letter-spacing:0.02em;">
+        Geen succes zonder struggle.<br><br>
+        We praten met mensen die bouwen.<br>
+        Niet met mensen die praten.<br><br>
+        Dit is geen platform.<br>
+        Dit is documentatie van de grind.
+      </p>
     </div>
   </div>
   <footer>
@@ -445,21 +436,21 @@
     },
     {
       ep:         'Vol. 003',
-      name:       ' Daila',
+      name:       'Yael Daila',
       role:       'Artiest & Performer',
       desc:       'Backstage in Paradiso, daags voor haar allereerste headline show — Yael Daila over haar voorbereiding, haar visie en op een vriendelijke manier toch je zin doordrijven.',
-      thumb:      'Yael-thumb.jpg',    // ← jouw thumbnail bestand
-      video:      'Yael.mp4',          // ← jouw video bestand, of '' voor alleen foto
+      thumb:      'Yael-thumb.jpg',
+      video:      'Yael.mp4',
       hasArticle: true,
       articleId:  'yael'
     },
     {
       ep:         'Vol. 004',
       name:       'Jessy Richmond',
-      role:       'Producent & Filmmaker',
+      role:       'Producent & Eigenaresse Richmond Media Group',
       desc:       'Van Japan naar LA naar het Carré — hoe Jessy Richmond een internationaal productiehuis bouwde op vertrouwen, netwerk en slow and steady.',
-      thumb:      'jessy-thumb.jpg',   // ← jouw thumbnail bestand
-      video:      'Jessy.mp4',         // ← jouw video bestand, of '' voor alleen foto
+      thumb:      'jessy-thumb.jpg',
+      video:      'Jessy.mp4',
       hasArticle: true,
       articleId:  'jessy'
     },
@@ -467,9 +458,9 @@
       ep:         'Vol. 005',
       name:       'Jaz Karis',
       role:       'Artiest',
-      desc:       'Interview door N\'kia Landburg — het verhaal van Jaz Karis over muziek, identiteit en de weg naar eigen werk.',
-      thumb:      'jaz-thumb.jpg',
-      video:      'jaz.mp4',
+      desc:       'Culture Head was uitgenodigd voor haar show in de Melkweg — Jaz Karis over haar creatief proces, muziek en hoe het internet haar ontdekte.',
+      thumb:      'jazkaris-thumb.jpg',
+      video:      'jazkaris.mp4',
       hasArticle: true,
       articleId:  'jaz'
     },
@@ -482,6 +473,36 @@
       video:      'chanou.mp4',
       hasArticle: true,
       articleId:  'chanou'
+    },
+    {
+      ep:         'Vol. 007',
+      name:       'Joeboy',
+      role:       'Artiest',
+      desc:       'Parkeer — video en thumb worden toegevoegd, artikel volgt.',
+      thumb:      'joeboy-thumb.jpg',
+      video:      'joeboy.mp4',
+      hasArticle: true,
+      articleId:  'joeboy'
+    },
+    {
+      ep:         'Vol. 008',
+      name:       'Sneakerness — Matthijs van Meulen',
+      role:       'CEO Sneakerness',
+      desc:       'Hoe Matthijs van Meulen CEO werd van het grootste sneaker- en lifestyle event van Europa — door gewoon de telefoon op te pakken.',
+      thumb:      'sneakerness-thumb.jpg',
+      video:      'sneakerness.mp4',
+      hasArticle: true,
+      articleId:  'sneakerness'
+    },
+    {
+      ep:         'Vol. 009',
+      name:       'Supa Dupa Goods',
+      role:       'Nick Spapens & Samay June — Oprichters',
+      desc:       'Van crappy shirts als hobbyproject naar een eigen merk — Supa Dupa Goods over naïef beginnen, investeren en de valkuil van perfectie.',
+      thumb:      'supadupagoods-thumb.jpg',
+      video:      'supadupagoods.mp4',
+      hasArticle: true,
+      articleId:  'supadupa'
     },
     // ── TEMPLATE — kopieer dit blok voor elk nieuw interview ──
     // {
@@ -537,8 +558,8 @@
       ep:     'Vol. 003',
       name:   'Yael Daila',
       role:   'Artiest & Performer',
-      thumb:  'Yael-thumb.jpg',    // ← jouw thumbnail bestand
-      video:  'Yael.mp4',          // ← jouw video bestand, of ''
+      thumb:  'Yael-thumb.jpg',
+      video:  'Yael.mp4',
       photo1: '',                  // ← geen foto's, later toe te voegen
       photo2: '',
       quote:  'Het is belangrijk om op een heel vriendelijke manier toch je zin door te drijven. At the end of the day weet mijn team: dit is jouw show.',
@@ -572,8 +593,8 @@
       ep:     'Vol. 004',
       name:   'Jessy Richmond',
       role:   'Producent & Eigenaresse Richmond Media Group',
-      thumb:  'jessy-thumb.jpg',     // ← jouw thumbnail bestand
-      video:  'Jessy.mp4',           // ← jouw video bestand, of ''
+      thumb:  'jessy-thumb.jpg',
+      video:  'Jessy.mp4',
       photo1: 'jessy-foto1.jpg',     // ← eerste extra foto in artikel, of ''
       photo2: 'jessy-foto2.jpg',     // ← tweede extra foto in artikel, of ''
       quote:  'Slow and steady wins the race. Als je weet waar je naartoe wil, hou dat vooruitzicht — maar wil niet te snel gaan.',
@@ -642,13 +663,98 @@
       ep:     'Vol. 005',
       name:   'Jaz Karis',
       role:   'Artiest',
-      thumb:  'jaz-thumb.jpg',
-      video:  'jaz.mp4',
+      thumb:  'jazkaris-thumb.jpg',
+      video:  'jazkaris.mp4',
+      photo1: 'jaz1.jpg',
+      photo2: 'jaz2.jpg',
+      photo3: 'jaz3.jpg',
+      photo4: 'jaz4.jpg',
+      quote:  'I have one rule — I never buy WiFi on the plane. That\'s my creative space. No one can reach me.',
+      body: `
+        <p>Culture Head werd uitgenodigd voor de show van Jaz Karis in de Melkweg. Niet om te recenseren. Gewoon om te kijken, te luisteren en te begrijpen wie ze is. En wie ze is, dat werd duidelijk voordat ze ook maar één noot had gezongen.</p>
+        <p>Jaz Karis is een van die artiesten die het internet vond voordat de industrie doorhad dat ze er was. Een stem, een gevoel, een sound die niet om aandacht vroeg — maar die je gewoon niet kon negeren.</p>
+
+        <h3>Gevonden door het internet</h3>
+        <p>Haar verhaal begint niet op een podium. Het begint online. Een clip hier, een opname daar — en dan ineens een golf van mensen die haar muziek deelden alsof ze iets hadden ontdekt dat van hen was. Zo werkt het tegenwoordig. Je hoeft niet op iemand te wachten die je "ontdekt". Het internet doet het voor ze.</p>
+        <p>Maar dat betekent ook dat je klaar moet zijn als het moment komt. En Jaz was klaar. De muziek klopte. De visuals klopten. Het gevoel klopte. Wat ze maakt, maakt ze op haar eigen voorwaarden.</p>
+
+        <h3>Het creatief proces</h3>
+        <p>Ze heeft één regel die alles zegt over hoe ze werkt. Geen WiFi in het vliegtuig. Nooit. Dat is haar tijd. Geen mails, geen socials, geen mensen die iets van haar willen. Alleen zij en haar gedachten.</p>
+        <blockquote>"I have one rule — I never buy WiFi on the plane. That's my creative space. No one can reach me."</blockquote>
+        <p>In een wereld waar iedereen altijd bereikbaar is en constant reageert op wat er buiten hen gebeurt, is dat een statement. Creativiteit heeft ruimte nodig. Stilte. Tijd zonder input. Jaz beschermt dat actief.</p>
+
+        <h3>De Melkweg</h3>
+        <p>De show in de Melkweg was het bewijs van alles wat ze online had opgebouwd. De zaal zat vol met mensen die elk woord meezingen. Niet omdat een label hen had verteld dat ze dit moesten kennen. Maar omdat ze het zelf hadden gevonden — en voor zichzelf hadden gehouden totdat anderen het ook ontdekten.</p>
+        <p>Dat is de kracht van Jaz Karis. Ze maakt muziek die van jou aanvoelt. En op het podium in de Melkweg stond ze — precies goed, precies op haar plek.</p>
+
+        <h3>Voor up-and-coming artiesten</h3>
+        <p>Haar boodschap voor artiesten die net beginnen is simpel maar zwaar: bescherm je proces. Weet wanneer je de wereld buiten moet sluiten. Maak wat je moet maken, niet wat je denkt dat anderen willen horen.</p>
+        <p>Het internet heeft haar gevonden. Maar het internet vond haar pas omdat ze echt was. Dat is de volgorde. Niet andersom.</p>
+      `
+    },
+    joeboy: {
+      ep:     'Vol. 007',
+      name:   'Joeboy',
+      role:   'Artiest',
+      thumb:  'joeboy-thumb.jpg',
+      video:  'joeboy.mp4',
       photo1: '',
       photo2: '',
-      quote:  'Voeg hier de sterkste quote van Jaz toe zodra je het transcript hebt.',
+      quote:  'Artikel volgt.',
+      body: `<p><em>Dit artikel wordt binnenkort toegevoegd.</em></p>`
+    },
+    sneakerness: {
+      ep:     'Vol. 008',
+      name:   'Sneakerness — Matthijs van Meulen',
+      role:   'CEO Sneakerness',
+      thumb:  'sneakerness-thumb.jpg',
+      video:  'sneakerness.mp4',
+      photo1: '',
+      photo2: '',
+      quote:  'Trek gewoon de stoute schoenen aan. Ga je ergens mee bemoeien. Kijk waar je mensen kunt helpen — zo vind je je rol.',
       body: `
-        <p><em>Dit artikel volgt zodra het transcript van het Jaz Karis interview beschikbaar is. Interview afgenomen door N'kia Landburg.</em></p>
+        <p>Matthijs van Meulen liep dertien jaar geleden voor het eerst Sneakerness binnen. Niet als CEO, niet als marketingdirecteur. Gewoon als iemand die het tof vond. En die één vraag niet kon loslaten: waarom was er al zo lang geen sneakerevent meer in Amsterdam geweest?</p>
+        <p>Hij ging rond vragen. En toen hij hoorde dat een oud-collega de productie zou gaan doen, pakte hij de telefoon.</p>
+
+        <h3>Bijdehand bellen</h3>
+        <p>"Ik belde hem gewoon op en zei: goeie productie, dat kan jij, dat weet ik. Maar wat weet jij in godsnaam van de sneaker community?" Zijn collega moest hard lachen. En gaf meteen toe: niks. Ze hadden nog zes weken. Of Matthijs wilde helpen.</p>
+        <p>Dat is hoe het begon. Niet met een sollicitatie. Niet met een vijfjarenplan. Met een telefoontje en de bereidheid om je ergens mee te bemoeien.</p>
+        <blockquote>"Trek gewoon de stoute schoenen aan. Ga je ergens mee bemoeien. Kijk waar je mensen kunt helpen — zo vind je je rol."</blockquote>
+
+        <h3>Van community naar CEO</h3>
+        <p>In het eerste jaar vroeg Sneakerness International hem al om de marketing te doen. Hij kende de community van binnenuit. Hij wist wat mensen voelden bij sneakers — niet alleen wat ze kochten, maar waarom het hen wat deed.</p>
+        <p>Twee jaar geleden werd hij CEO. Het grootste sneaker- en lifestyle event van Europa. En het begon met één telefoontje, dertien jaar geleden, vanuit oprechte nieuwsgierigheid.</p>
+
+        <h3>De les</h3>
+        <p>Matthijs is geen klassiek ondernemerverhaal. Hij heeft geen merk gebouwd vanuit niks of een app gelanceerd. Hij heeft iets gevonden wat hij écht cool vond — en is gaan kijken waar hij kon toevoegen. Stap voor stap werd zijn rol groter.</p>
+        <p>De sneaker community herken je direct als je er deel van bent. En juist dat — die authentieke connectie met een wereld — is wat hem onderscheidt van iemand die er alleen business in ziet.</p>
+      `
+    },
+    supadupa: {
+      ep:     'Vol. 009',
+      name:   'Supa Dupa Goods',
+      role:   'Nick Spapens & Samay June — Oprichters',
+      thumb:  'supadupagoods-thumb.jpg',
+      video:  'supadupagoods.mp4',
+      photo1: '',
+      photo2: '',
+      quote:  'We zijn heel naïef begonnen. Maar die laatste verbeteringen waren waarschijnlijk verbeteringen die alleen wij zagen. We hadden zo veel harder kunnen gaan.',
+      body: `
+        <p>Supa Dupa Goods is geen merk dat is gebouwd op een businessplan. Het begon als een hobbyproject. Twee fans — Nick Spapens en Samay June — die hun liefde voor een bepaalde subcultuur wilden uiten op een subtiele manier. En die misten hoe dat kon.</p>
+        <p>Dus maakten ze het zelf.</p>
+
+        <h3>Crappy shirts en alles opnieuw investeren</h3>
+        <p>Ze begonnen met shirts. De meest crappy kwaliteit shirts ever, zoals ze het zelf omschrijven. Beiden hadden een fulltime baan. Avonden, weekenden, dan één dag in de week, dan twee. En alles wat ze verdienden, ging er meteen weer in.</p>
+        <p>"Je weet absoluut niet waar je moet beginnen." Maar ze begonnen toch. En dat is het enige wat telt.</p>
+
+        <h3>De valkuil van perfectie</h3>
+        <p>Kijkend terug is er één ding dat ze anders hadden willen doen. Niet het product zelf — maar de tijd die ze verloren aan het proberen te perfectioneren ervan.</p>
+        <blockquote>"Die laatste verbeteringen waren waarschijnlijk verbeteringen die alleen wij zagen. We hadden zo veel harder kunnen gaan als we gewoon hadden gezegd: fuck it, dit is het."</blockquote>
+        <p>Imperfect lanceren is een les die de meeste ondernemers te laat leren. Supa Dupa Goods leerde het ook pas na een tijdje — maar ze erkenden het. En dat is de eerste stap.</p>
+
+        <h3>Fan first</h3>
+        <p>Wat Supa Dupa Goods onderscheidt van andere merken is precies wat het begin zo lastig maakte: ze zijn fans. Ze maken voor zichzelf, voor mensen die hetzelfde voelen. Niet voor de markt. Niet voor het algoritme.</p>
+        <p>Dat is ook waarom het werkt. Mensen voelen het als iets echt is. En Supa Dupa Goods is echt — van de eerste crappy shirt tot wat het nu is.</p>
       `
     },
     chanou: {
@@ -743,12 +849,23 @@
       : `<img src="${a.thumb}" alt="${a.name}"
            style="position:absolute;inset:0;width:100%;height:100%;object-fit:cover;display:block;">`;
 
-    // 2 foto's naast elkaar in het artikel, na de tekst
-    const photoBlock = (a.photo1 || a.photo2) ? `
-      <div class="article-photos">
+    // 2 of 4 foto's naast elkaar in het artikel, na de tekst
+    const hasPhotos = a.photo1 || a.photo2 || a.photo3 || a.photo4;
+    const photoBlock = hasPhotos ? (() => {
+      if (a.photo3 || a.photo4) {
+        // 4-foto grid: 2x2
+        return `<div class="article-photos" style="grid-template-columns:1fr 1fr;">
+          ${a.photo1 ? `<img src="${a.photo1}" alt="${a.name} 1" loading="lazy">` : '<div style="background:var(--gray);aspect-ratio:3/4;"></div>'}
+          ${a.photo2 ? `<img src="${a.photo2}" alt="${a.name} 2" loading="lazy">` : '<div style="background:var(--gray);aspect-ratio:3/4;"></div>'}
+          ${a.photo3 ? `<img src="${a.photo3}" alt="${a.name} 3" loading="lazy">` : '<div style="background:var(--gray);aspect-ratio:3/4;"></div>'}
+          ${a.photo4 ? `<img src="${a.photo4}" alt="${a.name} 4" loading="lazy">` : '<div style="background:var(--gray);aspect-ratio:3/4;"></div>'}
+        </div>`;
+      }
+      return `<div class="article-photos">
         ${a.photo1 ? `<img src="${a.photo1}" alt="${a.name} foto 1" loading="lazy">` : '<div style="background:var(--gray);aspect-ratio:3/4;"></div>'}
         ${a.photo2 ? `<img src="${a.photo2}" alt="${a.name} foto 2" loading="lazy">` : '<div style="background:var(--gray);aspect-ratio:3/4;"></div>'}
-      </div>` : '';
+      </div>`;
+    })() : '';
 
     document.getElementById('article-content').innerHTML = `
       <div class="article-header">
