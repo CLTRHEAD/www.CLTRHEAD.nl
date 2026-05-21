@@ -37,7 +37,6 @@
   .mobile-close { position: absolute; top: 24px; right: 24px; background: none; border: none; color: var(--white); font-size: 28px; cursor: pointer; }
   .page { display: none; min-height: 100svh; }
   .page.active { display: block; }
-  /* HERO */
   .hero { height: 100svh; display: flex; flex-direction: column; justify-content: flex-end; padding: 0 48px 72px; position: relative; overflow: hidden; }
   .hero-grid { position: absolute; inset: 0; background-image: linear-gradient(rgba(0,163,255,0.025) 1px, transparent 1px), linear-gradient(90deg, rgba(0,163,255,0.025) 1px, transparent 1px); background-size: 80px 80px; pointer-events: none; }
   .hero-ticker { position: absolute; top: 50%; left: 0; transform: translateY(-50%); width: 100%; overflow: hidden; pointer-events: none; }
@@ -70,7 +69,6 @@
   .cta-headline .neon { color: var(--neon); }
   .cta-sub { font-size: 16px; color: var(--gray-light); max-width: 560px; margin: 0 auto 44px; line-height: 1.7; position: relative; z-index: 1; }
   .cta-section .btn-outline { position: relative; z-index: 1; }
-  /* REEL GRID */
   .reel-grid { display: grid; grid-template-columns: repeat(4, 1fr); gap: 2px; background: var(--gray-mid); }
   .reel-card { background: var(--black); display: flex; flex-direction: column; cursor: pointer; }
   .reel-media { position: relative; overflow: hidden; background: var(--gray); aspect-ratio: 9 / 16; flex-shrink: 0; }
@@ -85,7 +83,6 @@
   .reel-name { font-size: 13px; font-weight: 700; text-transform: uppercase; letter-spacing: -0.01em; margin-bottom: 2px; line-height: 1.1; }
   .reel-role { font-size: 10px; letter-spacing: 0.08em; text-transform: uppercase; color: var(--gray-light); margin-bottom: 8px; }
   .reel-desc { font-size: 11px; color: var(--gray-light); line-height: 1.55; margin-bottom: 10px; }
-  /* ABOUT TEASER */
   .about-teaser { border-top: 1px solid rgba(255,255,255,0.07); padding: 100px 48px; display: grid; grid-template-columns: 200px 1fr; gap: 80px; align-items: start; }
   .about-teaser-label { font-size: 11px; letter-spacing: 0.25em; text-transform: uppercase; color: var(--neon); padding-top: 6px; }
   .about-teaser-text { font-size: clamp(20px,2.2vw,32px); line-height: 1.45; font-weight: 300; letter-spacing: -0.01em; }
@@ -95,17 +92,13 @@
   .footer-tagline { font-size: 12px; color: var(--gray-light); }
   .footer-ig { font-size: 11px; letter-spacing: 0.15em; text-transform: uppercase; color: var(--neon); text-decoration: none; transition: opacity 0.2s; }
   .footer-ig:hover { opacity: 0.7; }
-  /* PAGE HEADER */
   .page-header { padding: 140px 48px 72px; border-bottom: 1px solid rgba(255,255,255,0.07); }
   .page-title { font-size: clamp(44px,8vw,112px); font-weight: 700; letter-spacing: -0.03em; text-transform: uppercase; line-height: 0.9; }
   .page-title .outline { color: transparent; -webkit-text-stroke: 1px var(--white); }
-  /* ABOUT PAGE */
-  /* CREDO */
   .about-credo { padding: 120px 48px 100px; position: relative; border-bottom: 1px solid rgba(255,255,255,0.07); }
   .about-credo::before { content: ''; position: absolute; inset: 0; background: radial-gradient(ellipse at 60% 50%, rgba(0,163,255,0.04) 0%, transparent 65%); pointer-events: none; }
-  .about-credo-text { font-size: clamp(36px,5.5vw,88px); font-weight: 700; letter-spacing: -0.02em; line-height: 1.05; text-transform: uppercase; position: relative; z-index: 1; max-width: 860px; }
+  .about-credo-text { font-size: clamp(44px,6.5vw,100px); font-weight: 700; letter-spacing: -0.03em; line-height: 0.95; text-transform: uppercase; position: relative; z-index: 1; max-width: 860px; }
   .about-credo-text em { color: var(--neon); font-style: normal; }
-  /* CHAPTER SLIDER */
   .chapter-slider { position: relative; overflow: hidden; border-bottom: 1px solid rgba(255,255,255,0.07); }
   .chapter-track { display: flex; transition: transform 0.5s cubic-bezier(0.4,0,0.2,1); }
   .chapter-slide { min-width: 100%; padding: 80px 48px; display: grid; grid-template-columns: 160px 1fr; gap: 80px; align-items: start; box-sizing: border-box; }
@@ -116,7 +109,6 @@
   .chapter-body p { font-size: 17px; line-height: 1.9; color: rgba(245,245,240,0.82); margin-bottom: 22px; font-weight: 300; }
   .chapter-body p:last-child { margin-bottom: 0; }
   .chapter-body em { color: var(--neon); font-style: normal; font-weight: 700; }
-  /* SLIDER CONTROLS */
   .chapter-controls { display: flex; align-items: center; justify-content: space-between; padding: 28px 48px; border-bottom: 1px solid rgba(255,255,255,0.07); }
   .chapter-progress { display: flex; gap: 8px; align-items: center; }
   .chapter-dot { width: 6px; height: 6px; border-radius: 50%; background: rgba(255,255,255,0.15); transition: background 0.3s, width 0.3s; cursor: pointer; }
@@ -126,7 +118,6 @@
   .chapter-arrow:hover { background: var(--neon); color: var(--black); border-color: var(--neon); }
   .chapter-arrow:disabled { opacity: 0.2; cursor: not-allowed; }
   .chapter-arrow:disabled:hover { background: none; color: var(--white); border-color: rgba(255,255,255,0.15); }
-  /* MAGAZINE */
   .mag-cover-wrap { padding: 100px 48px; background: var(--black); text-align: center; border-top: 1px solid rgba(255,255,255,0.07); border-bottom: 1px solid rgba(255,255,255,0.07); }
   .mag-cover { max-width: 420px; margin: 32px auto 0; aspect-ratio: 3 / 4; background: var(--gray); display: flex; flex-direction: column; align-items: center; justify-content: center; border: 1px solid rgba(0,163,255,0.15); position: relative; overflow: hidden; }
   .mag-cover::before { content: ''; position: absolute; inset: 0; background: linear-gradient(135deg, rgba(0,163,255,0.05) 0%, transparent 50%); pointer-events: none; }
@@ -138,7 +129,6 @@
   .mag-form input:focus { border-color: var(--neon); }
   .mag-form input::placeholder { color: rgba(255,255,255,0.25); }
   #mag-msg { margin-top: 24px; font-size: 11px; min-height: 18px; letter-spacing: 0.15em; text-transform: uppercase; font-weight: 700; position: relative; z-index: 1; }
-  /* ARTIKEL */
   .article-header { padding: 140px 48px 72px; border-bottom: 1px solid rgba(255,255,255,0.07); }
   .article-ep-tag { font-size: 11px; letter-spacing: 0.25em; text-transform: uppercase; color: var(--neon); margin-bottom: 20px; }
   .article-title { font-size: clamp(44px,8vw,108px); font-weight: 700; letter-spacing: -0.03em; text-transform: uppercase; line-height: 0.9; margin-bottom: 24px; }
@@ -157,7 +147,6 @@
   .article-photos { max-width: 680px; margin: 0 auto; padding: 0 48px 56px; display: grid; grid-template-columns: 1fr 1fr; gap: 4px; }
   .article-photos img { width: 100%; aspect-ratio: 3 / 4; object-fit: cover; display: block; }
   .article-nav { padding: 72px 48px; border-top: 1px solid rgba(255,255,255,0.07); display: flex; align-items: center; justify-content: space-between; flex-wrap: wrap; gap: 16px; }
-  /* CONTACT */
   .contact-wrap { display: grid; grid-template-columns: 1fr 1fr; min-height: 100svh; }
   .contact-left { padding: 140px 48px 72px; border-right: 1px solid rgba(255,255,255,0.07); display: flex; flex-direction: column; }
   .contact-title { font-size: clamp(36px,5vw,72px); font-weight: 700; text-transform: uppercase; letter-spacing: -0.02em; line-height: 0.95; margin-top: auto; }
@@ -180,15 +169,10 @@
   @keyframes fadeUp { from{opacity:0;transform:translateY(32px)} to{opacity:1;transform:translateY(0)} }
   @media (max-width: 1100px) { .nav-links { gap: 22px; } .nav-links a { font-size: 10px; } }
   @media (max-width: 900px) {
-    nav { padding: 18px 24px; }
-    .nav-links { display: none; }
-    .nav-hamburger { display: flex; }
-    .nav-logo img { height: 110px; }
-    .hero { padding: 0 24px 56px; }
-    .hero-bottom { flex-direction: column; align-items: flex-start; gap: 24px; }
-    .hero-sub { max-width: 100%; }
-    .section { padding: 40px 16px; }
-    .cta-section { padding: 72px 24px; }
+    nav { padding: 18px 24px; } .nav-links { display: none; } .nav-hamburger { display: flex; }
+    .nav-logo img { height: 110px; } .hero { padding: 0 24px 56px; }
+    .hero-bottom { flex-direction: column; align-items: flex-start; gap: 24px; } .hero-sub { max-width: 100%; }
+    .section { padding: 40px 16px; } .cta-section { padding: 72px 24px; }
     .reel-grid { grid-template-columns: repeat(3, 1fr); }
     .about-teaser { padding: 64px 24px; grid-template-columns: 1fr; gap: 20px; }
     footer { padding: 36px 24px; justify-content: center; text-align: center; flex-direction: column; gap: 12px; }
@@ -197,21 +181,16 @@
     .chapter-slide { padding: 56px 24px; grid-template-columns: 1fr; gap: 16px; }
     .chapter-controls { padding: 20px 24px; }
     .mag-cover-wrap { padding: 64px 24px; }
-    .article-header { padding: 110px 24px 56px; }
-    .article-top { grid-template-columns: 1fr; }
-    .article-video-side { max-width: 280px; }
-    .article-quote-side { padding: 36px 24px; }
-    .article-body-wrap { padding: 56px 24px; }
-    .article-photos { padding: 0 24px 40px; }
+    .article-header { padding: 110px 24px 56px; } .article-top { grid-template-columns: 1fr; }
+    .article-video-side { max-width: 280px; } .article-quote-side { padding: 36px 24px; }
+    .article-body-wrap { padding: 56px 24px; } .article-photos { padding: 0 24px 40px; }
     .article-nav { padding: 48px 24px; flex-direction: column; align-items: flex-start; }
     .contact-wrap { grid-template-columns: 1fr; }
     .contact-left { padding: 110px 24px 48px; border-right: none; border-bottom: 1px solid rgba(255,255,255,0.07); }
-    .contact-right { padding: 48px 24px 72px; }
-    .contact-title { margin-top: 0; }
+    .contact-right { padding: 48px 24px 72px; } .contact-title { margin-top: 0; }
   }
   @media (max-width: 480px) {
-    .reel-grid { grid-template-columns: repeat(2, 1fr); }
-    .nav-logo img { height: 80px; }
+    .reel-grid { grid-template-columns: repeat(2, 1fr); } .nav-logo img { height: 80px; }
     .article-photos { grid-template-columns: 1fr; }
   }
 </style>
@@ -220,9 +199,7 @@
 <div class="cursor" id="cursor"></div>
 <div class="cursor-ring" id="cursorRing"></div>
 <nav>
-  <a class="nav-logo" onclick="showPage('home')">
-    <img src="culture_head_logo.png" alt="Culture Head">
-  </a>
+  <a class="nav-logo" onclick="showPage('home')"><img src="culture_head_logo.png" alt="Culture Head"></a>
   <ul class="nav-links">
     <li><a onclick="showPage('home')" id="nav-home" class="active">Home</a></li>
     <li><a onclick="showPage('interviews')" id="nav-interviews">The Stories</a></li>
@@ -230,9 +207,7 @@
     <li><a onclick="showPage('about')" id="nav-about">Over CLTRHEAD</a></li>
     <li><a onclick="showPage('contact')" id="nav-contact">Contact</a></li>
   </ul>
-  <button class="nav-hamburger" onclick="toggleMenu()" aria-label="Menu">
-    <span></span><span></span><span></span>
-  </button>
+  <button class="nav-hamburger" onclick="toggleMenu()" aria-label="Menu"><span></span><span></span><span></span></button>
 </nav>
 <div class="mobile-menu" id="mobileMenu">
   <button class="mobile-close" onclick="toggleMenu()">✕</button>
@@ -247,11 +222,7 @@
 <div id="page-home" class="page active">
   <section class="hero">
     <div class="hero-grid"></div>
-    <div class="hero-ticker">
-      <div class="hero-ticker-inner">
-        <span>Culture Head</span><span>Culture Head</span><span>Culture Head</span><span>Culture Head</span><span>Culture Head</span><span>Culture Head</span>
-      </div>
-    </div>
+    <div class="hero-ticker"><div class="hero-ticker-inner"><span>Culture Head</span><span>Culture Head</span><span>Culture Head</span><span>Culture Head</span><span>Culture Head</span><span>Culture Head</span></div></div>
     <div class="hero-tag">Artiesten · Ondernemers · Creatives</div>
     <h1 class="hero-title">We Basically<br><span class="accent">Collect</span><br>Stories.</h1>
     <div class="hero-bottom">
@@ -259,12 +230,7 @@
       <button class="btn-outline" onclick="showPage('interviews')">Check The Stories <span class="arrow">→</span></button>
     </div>
   </section>
-  <div class="marquee-strip">
-    <div class="marquee-inner">
-      <span>Artiesten</span><span class="dot">✦</span><span>Ondernemers</span><span class="dot">✦</span><span>Creatives</span><span class="dot">✦</span><span>Muzikanten</span><span class="dot">✦</span><span>Designers</span><span class="dot">✦</span><span>Producers</span><span class="dot">✦</span><span>Fotografen</span><span class="dot">✦</span><span>Regisseurs</span><span class="dot">✦</span>
-      <span>Artiesten</span><span class="dot">✦</span><span>Ondernemers</span><span class="dot">✦</span><span>Creatives</span><span class="dot">✦</span><span>Muzikanten</span><span class="dot">✦</span><span>Designers</span><span class="dot">✦</span><span>Producers</span><span class="dot">✦</span><span>Fotografen</span><span class="dot">✦</span><span>Regisseurs</span><span class="dot">✦</span>
-    </div>
-  </div>
+  <div class="marquee-strip"><div class="marquee-inner"><span>Artiesten</span><span class="dot">✦</span><span>Ondernemers</span><span class="dot">✦</span><span>Creatives</span><span class="dot">✦</span><span>Muzikanten</span><span class="dot">✦</span><span>Designers</span><span class="dot">✦</span><span>Producers</span><span class="dot">✦</span><span>Fotografen</span><span class="dot">✦</span><span>Regisseurs</span><span class="dot">✦</span><span>Artiesten</span><span class="dot">✦</span><span>Ondernemers</span><span class="dot">✦</span><span>Creatives</span><span class="dot">✦</span><span>Muzikanten</span><span class="dot">✦</span><span>Designers</span><span class="dot">✦</span><span>Producers</span><span class="dot">✦</span><span>Fotografen</span><span class="dot">✦</span><span>Regisseurs</span><span class="dot">✦</span></div></div>
   <section class="section">
     <p class="section-label">The Stories</p>
     <div class="reel-grid" id="home-reels"></div>
@@ -291,48 +257,30 @@
 
 <!-- INTERVIEWS -->
 <div id="page-interviews" class="page">
-  <div class="page-header">
-    <h1 class="page-title">The<br><span class="outline">Stories</span></h1>
-  </div>
+  <div class="page-header"><h1 class="page-title">The<br><span class="outline">Stories</span></h1></div>
   <div style="padding:48px;background:var(--black);">
     <div class="reel-grid" id="interviews-grid" style="background:var(--black);gap:2px;"></div>
   </div>
-  <footer>
-    <img src="culture_head_logo.png" alt="Culture Head">
-    <span class="footer-tagline">We basically collect stories 🎙️</span>
-    <a href="https://instagram.com/cltrhead" target="_blank" class="footer-ig">@cltrhead</a>
-  </footer>
+  <footer><img src="culture_head_logo.png" alt="Culture Head"><span class="footer-tagline">We basically collect stories 🎙️</span><a href="https://instagram.com/cltrhead" target="_blank" class="footer-ig">@cltrhead</a></footer>
 </div>
 
 <!-- OVER CULTURE HEAD -->
 <div id="page-about" class="page">
-
-  <!-- CREDO -->
   <div class="about-credo">
-    <p class="about-credo-text">Real stories <em>move</em><br>people forward.</p>
+    <p class="about-credo-text">Real stories<br><em>move</em> people.</p>
   </div>
-
-  <!-- CHAPTER SLIDER -->
   <div class="chapter-slider">
     <div class="chapter-track" id="chapterTrack">
-
       <div class="chapter-slide">
-        <div class="chapter-num">
-          Chapter 01
-          <span>Hoe het begon</span>
-        </div>
+        <div class="chapter-num">Chapter 01<span>Hoe het begon</span></div>
         <div class="chapter-body">
           <h2>Uit Amsterdam. Uit liefde.</h2>
           <p>Culture Head begon met een simpele observatie. Overal waren verhalen over wat mensen hadden bereikt. Maar niemand liet zien hoe het er echt aan toe ging. De twijfel voor een show. De keuze om te stoppen met je baan. De eerste collectie die niemand kocht. Het jaar dat niks werkte en je toch doorging.</p>
           <p>Die verhalen bestonden niet. Dus besloten we ze zelf te gaan vertellen.</p>
         </div>
       </div>
-
       <div class="chapter-slide">
-        <div class="chapter-num">
-          Chapter 02
-          <span>Wat we doen</span>
-        </div>
+        <div class="chapter-num">Chapter 02<span>Wat we doen</span></div>
         <div class="chapter-body">
           <h2>We documenteren de grind.</h2>
           <p>Culture Head gaat op pad. Backstage in Paradiso. Achter de naaimachine in een atelier. In de coulissen van het Carré. Op de releaseparty van een artiest die twee jaar heeft gewacht op dit moment.</p>
@@ -340,23 +288,16 @@
           <p>Elke story is een les voor iedereen die ook iets aan het bouwen is.</p>
         </div>
       </div>
-
       <div class="chapter-slide">
-        <div class="chapter-num">
-          Chapter 03
-          <span>Voor wie</span>
-        </div>
+        <div class="chapter-num">Chapter 03<span>Voor wie</span></div>
         <div class="chapter-body">
           <h2>Voor de makers.</h2>
           <p>Voor wie liever een eerlijk gesprek hoort dan een gepolijste pitch leest. Voor wie de struggle herkent en weet dat het bij het pad hoort. Voor wie leert van mensen die het gewoon doen.</p>
           <p>Culture Head is er voor de makers. De bouwers. De mensen die bezig zijn met iets wat ze nog niet kunnen uitleggen maar toch elke dag aan werken.</p>
         </div>
       </div>
-
     </div>
   </div>
-
-  <!-- SLIDER CONTROLS -->
   <div class="chapter-controls">
     <div class="chapter-progress" id="chapterDots"></div>
     <div class="chapter-arrows">
@@ -364,19 +305,12 @@
       <button class="chapter-arrow" id="chapterNext" onclick="moveChapter(1)">→</button>
     </div>
   </div>
-
-  <footer>
-    <img src="culture_head_logo.png" alt="Culture Head">
-    <span class="footer-tagline">We basically collect stories 🎙️</span>
-    <a href="https://instagram.com/cltrhead" target="_blank" class="footer-ig">@cltrhead</a>
-  </footer>
+  <footer><img src="culture_head_logo.png" alt="Culture Head"><span class="footer-tagline">We basically collect stories 🎙️</span><a href="https://instagram.com/cltrhead" target="_blank" class="footer-ig">@cltrhead</a></footer>
 </div>
 
 <!-- MAGAZINE -->
 <div id="page-magazine" class="page">
-  <div class="page-header">
-    <h1 class="page-title">The<br><span class="outline">Magazine</span></h1>
-  </div>
+  <div class="page-header"><h1 class="page-title">The<br><span class="outline">Magazine</span></h1></div>
   <div class="mag-cover-wrap">
     <p class="section-label">Vol. 01 — Preview</p>
     <div class="mag-cover">
@@ -390,23 +324,14 @@
     <p class="section-label">Be the first to know</p>
     <h2 class="cta-headline">Drop <span class="neon">incoming.</span></h2>
     <p class="cta-sub">Laat je email achter. Je hoort het als Vol. 01 ready is en je krijgt eerst de kans om hem te scoren.</p>
-    <form class="mag-form" onsubmit="event.preventDefault();notifyMagazine();">
-      <input type="email" id="mag-email" placeholder="jouw@email.com" required>
-      <button type="submit" class="btn-outline">Notify Me <span class="arrow">→</span></button>
-    </form>
+    <form class="mag-form" onsubmit="event.preventDefault();notifyMagazine();"><input type="email" id="mag-email" placeholder="jouw@email.com" required><button type="submit" class="btn-outline">Notify Me <span class="arrow">→</span></button></form>
     <p id="mag-msg"></p>
   </section>
-  <footer>
-    <img src="culture_head_logo.png" alt="Culture Head">
-    <span class="footer-tagline">We basically collect stories 🎙️</span>
-    <a href="https://instagram.com/cltrhead" target="_blank" class="footer-ig">@cltrhead</a>
-  </footer>
+  <footer><img src="culture_head_logo.png" alt="Culture Head"><span class="footer-tagline">We basically collect stories 🎙️</span><a href="https://instagram.com/cltrhead" target="_blank" class="footer-ig">@cltrhead</a></footer>
 </div>
 
 <!-- ARTIKEL -->
-<div id="page-article" class="page">
-  <div id="article-content"></div>
-</div>
+<div id="page-article" class="page"><div id="article-content"></div></div>
 
 <!-- CONTACT -->
 <div id="page-contact" class="page">
@@ -414,14 +339,8 @@
     <div class="contact-left">
       <h1 class="contact-title">Laten We<br><span class="neon">Praten.</span></h1>
       <div class="contact-info">
-        <div class="contact-item">
-          <p class="contact-item-label">Instagram</p>
-          <p class="contact-item-value"><a href="https://instagram.com/cltrhead" target="_blank">@cltrhead</a></p>
-        </div>
-        <div class="contact-item">
-          <p class="contact-item-label">TikTok</p>
-          <p class="contact-item-value"><a href="https://www.tiktok.com/@cltrhead1" target="_blank">@cltrhead1</a></p>
-        </div>
+        <div class="contact-item"><p class="contact-item-label">Instagram</p><p class="contact-item-value"><a href="https://instagram.com/cltrhead" target="_blank">@cltrhead</a></p></div>
+        <div class="contact-item"><p class="contact-item-label">TikTok</p><p class="contact-item-value"><a href="https://www.tiktok.com/@cltrhead1" target="_blank">@cltrhead1</a></p></div>
       </div>
     </div>
     <div class="contact-right">
@@ -435,7 +354,7 @@
 </div>
 
 <script>
-  const cursor=document.getElementById('cursor'), ring=document.getElementById('cursorRing');
+  const cursor=document.getElementById('cursor'),ring=document.getElementById('cursorRing');
   let mx=0,my=0,rx=0,ry=0;
   document.addEventListener('mousemove',e=>{mx=e.clientX;my=e.clientY;cursor.style.left=mx+'px';cursor.style.top=my+'px';});
   (function a(){rx+=(mx-rx)*.12;ry+=(my-ry)*.12;ring.style.left=rx+'px';ring.style.top=ry+'px';requestAnimationFrame(a);})();
@@ -445,164 +364,232 @@
   });
 
   // CHAPTER SLIDER
-  let currentChapter = 0;
-  const totalChapters = 3;
-  const track = document.getElementById('chapterTrack');
-  const dotsContainer = document.getElementById('chapterDots');
-  const prevBtn = document.getElementById('chapterPrev');
-  const nextBtn = document.getElementById('chapterNext');
-
-  // Build dots
-  for (let i = 0; i < totalChapters; i++) {
-    const dot = document.createElement('div');
-    dot.className = 'chapter-dot' + (i === 0 ? ' active' : '');
-    dot.onclick = () => goToChapter(i);
+  let currentChapter=0;
+  const totalChapters=3;
+  const track=document.getElementById('chapterTrack');
+  const dotsContainer=document.getElementById('chapterDots');
+  const prevBtn=document.getElementById('chapterPrev');
+  const nextBtn=document.getElementById('chapterNext');
+  for(let i=0;i<totalChapters;i++){
+    const dot=document.createElement('div');
+    dot.className='chapter-dot'+(i===0?' active':'');
+    dot.onclick=()=>goToChapter(i);
     dotsContainer.appendChild(dot);
   }
-
-  function goToChapter(n) {
-    currentChapter = n;
-    track.style.transform = `translateX(-${n * 100}%)`;
-    document.querySelectorAll('.chapter-dot').forEach((d,i) => d.classList.toggle('active', i === n));
-    prevBtn.disabled = n === 0;
-    nextBtn.disabled = n === totalChapters - 1;
+  function goToChapter(n){
+    currentChapter=n;
+    track.style.transform=`translateX(-${n*100}%)`;
+    document.querySelectorAll('.chapter-dot').forEach((d,i)=>d.classList.toggle('active',i===n));
+    prevBtn.disabled=n===0;
+    nextBtn.disabled=n===totalChapters-1;
   }
+  function moveChapter(dir){goToChapter(Math.max(0,Math.min(totalChapters-1,currentChapter+dir)));}
+  let touchStartX=0;
+  document.querySelector('.chapter-slider').addEventListener('touchstart',e=>{touchStartX=e.touches[0].clientX;},{passive:true});
+  document.querySelector('.chapter-slider').addEventListener('touchend',e=>{const diff=touchStartX-e.changedTouches[0].clientX;if(Math.abs(diff)>50)moveChapter(diff>0?1:-1);},{passive:true});
 
-  function moveChapter(dir) {
-    goToChapter(Math.max(0, Math.min(totalChapters - 1, currentChapter + dir)));
-  }
-
-  // Touch swipe support
-  let touchStartX = 0;
-  const slider = document.querySelector('.chapter-slider');
-  slider.addEventListener('touchstart', e => { touchStartX = e.touches[0].clientX; }, {passive:true});
-  slider.addEventListener('touchend', e => {
-    const diff = touchStartX - e.changedTouches[0].clientX;
-    if (Math.abs(diff) > 50) moveChapter(diff > 0 ? 1 : -1);
-  }, {passive:true});
-
-  function toggleMenu(){ document.getElementById('mobileMenu').classList.toggle('open'); }
+  function toggleMenu(){document.getElementById('mobileMenu').classList.toggle('open');}
   function showPage(name){
     document.querySelectorAll('.page').forEach(p=>p.classList.remove('active'));
     const el=document.getElementById('page-'+name);
     if(el){el.classList.add('active');window.scrollTo(0,0);}
     document.querySelectorAll('.nav-links a').forEach(a=>a.classList.remove('active'));
     const nav=document.getElementById('nav-'+name);
-    if(nav) nav.classList.add('active');
-    if(name==='interviews') buildGrid('interviews-grid');
+    if(nav)nav.classList.add('active');
+    if(name==='interviews')buildGrid('interviews-grid');
   }
   function notifyMagazine(){
-    const inp=document.getElementById('mag-email');
-    const msg=document.getElementById('mag-msg');
-    if(!inp||!msg) return;
+    const inp=document.getElementById('mag-email'),msg=document.getElementById('mag-msg');
+    if(!inp||!msg)return;
     const v=(inp.value||'').trim();
-    if(!v||!v.includes('@')){ msg.textContent='Voer een geldig emailadres in.'; msg.style.color='var(--white)'; return; }
-    msg.textContent="You're on the list. We'll holler.";
-    msg.style.color='var(--neon)';
-    inp.value='';
+    if(!v||!v.includes('@')){msg.textContent='Voer een geldig emailadres in.';msg.style.color='var(--white)';return;}
+    msg.textContent="You're on the list. We'll holler.";msg.style.color='var(--neon)';inp.value='';
   }
 
-  const interviews = [
-    { ep:'Vol. 001', name:'Celeste Mercedes', role:'Violiste & Music Director', desc:'Hoe een violiste haar plek veroverde naast haar childhood hero The Game en wat jij kan leren over obsessie en connecties.', thumb:'celeste-thumb.jpg', video:'celeste.mp4', hasArticle:true, articleId:'celeste' },
-    { ep:'Vol. 002', name:'Rawen Mustafa', role:'Designer & Oprichter ETB', desc:'Hoe Rawen Mustafa vanuit zijn vaders leeratelier een eigen jeansmerk bouwde op vakmanschap en de filosofie dat slow de enige echte weg is.', thumb:'rawen-thumb.jpg', video:'rawen.mp4', hasArticle:true, articleId:'rawen' },
-    { ep:'Vol. 003', name:'Yael Daila', role:'Artiest & Performer', desc:'Backstage in Paradiso daags voor haar allereerste headline show. Yael Daila over haar voorbereiding en op een vriendelijke manier toch je zin doordrijven.', thumb:'Yael-thumb.jpg', video:'Yael.mp4', hasArticle:true, articleId:'yael' },
-    { ep:'Vol. 004', name:'Jessy Richmond', role:'Producent & Eigenaresse Richmond Media Group', desc:'Van Japan naar LA naar het Carré. Hoe Jessy Richmond een internationaal productiehuis bouwde op vertrouwen, netwerk en slow and steady.', thumb:'jessy-thumb.jpg', video:'Jessy.mp4', hasArticle:true, articleId:'jessy' },
-    { ep:'Vol. 005', name:'Jaz Karis', role:'Artiest', desc:'Culture Head was uitgenodigd voor haar show in de Melkweg. Jaz Karis over haar creatief proces en hoe het internet haar ontdekte.', thumb:'jazkaris-thumb.jpg', video:'jazkaris.mp4', hasArticle:true, articleId:'jaz' },
-    { ep:'Vol. 006', name:'Chanou', role:'Zangeres', desc:'Op de releaseparty van haar eerste single na twee jaar. Chanou over geduld, visuals en terug bij jezelf komen.', thumb:'chanou-thumb.jpg', video:'chanou.mp4', hasArticle:true, articleId:'chanou' },
-    { ep:'Vol. 007', name:'Joeboy', role:'Artiest', desc:'Artikel volgt binnenkort.', thumb:'joeboy-thumb.jpg', video:'joeboy.mp4', hasArticle:true, articleId:'joeboy' },
-    { ep:'Vol. 008', name:'Sneakerness — Matthijs van Meulen', role:'CEO Sneakerness', desc:'Hoe Matthijs van Meulen CEO werd van het grootste sneaker en lifestyle event van Europa door gewoon de telefoon op te pakken.', thumb:'sneakerness-thumb.jpg', video:'sneakerness.mp4', hasArticle:true, articleId:'sneakerness' },
-    { ep:'Vol. 009', name:'Supa Dupa Goods', role:'Nick Spapens & Samay June — Oprichters', desc:'Van crappy shirts als hobbyproject naar een eigen merk. Supa Dupa Goods over naïef beginnen en de valkuil van perfectie.', thumb:'supadupagoods-thumb.jpg', video:'supadupagoods.mp4', hasArticle:true, articleId:'supadupa' },
-    { ep:'Vol. 010', name:'Amiera Amore', role:'Artiest', desc:'Het verhaal van Amiera Amore. Tekst volgt binnenkort.', thumb:'Amiera Amore-thumb.jpg', video:'Amiera Amore.mp4', hasArticle:true, articleId:'amiera' },
-    { ep:'Vol. 011', name:'Annicee', role:'Artiest', desc:'Het verhaal van Annicee. Tekst volgt binnenkort.', thumb:'Annicee-thumb.jpg', video:'Annicee.mp4', hasArticle:true, articleId:'annicee' },
-    { ep:'Vol. 012', name:'Kaytranada', role:'Producer & DJ', desc:'Het verhaal van Kaytranada. Tekst volgt binnenkort.', thumb:'kaytranada-thumb.jpg', video:'kaytranada.mp4', hasArticle:true, articleId:'kaytranada' },
-    { ep:'Vol. 013', name:'Steven Aswin', role:'Artiest', desc:'Het verhaal van Steven Aswin. Tekst volgt binnenkort.', thumb:'Steven Aswin-thumb.jpg', video:'Steven Aswin.mp4', hasArticle:true, articleId:'stevenaswin' },
-    { ep:'Vol. 014', name:'Twenty20', role:'Artiest', desc:'Het verhaal van Twenty20. Tekst volgt binnenkort.', thumb:'Twenty20-thumb.jpg', video:'Twenty20.mp4', hasArticle:true, articleId:'twenty20' },
+  const interviews=[
+    {ep:'Vol. 001',name:'Celeste Mercedes',role:'Violiste & Music Director',desc:'Hoe een violiste haar plek veroverde naast haar childhood hero The Game en wat jij kan leren over obsessie en connecties.',thumb:'celeste-thumb.jpg',video:'celeste.mp4',hasArticle:true,articleId:'celeste'},
+    {ep:'Vol. 002',name:'Rawen Mustafa',role:'Designer & Oprichter ETB',desc:'Hoe Rawen Mustafa vanuit zijn vaders leeratelier een eigen jeansmerk bouwde op vakmanschap en de filosofie dat slow de enige echte weg is.',thumb:'rawen-thumb.jpg',video:'rawen.mp4',hasArticle:true,articleId:'rawen'},
+    {ep:'Vol. 003',name:'Yael Daila',role:'Artiest & Performer',desc:'Backstage in Paradiso daags voor haar allereerste headline show. Yael Daila over haar voorbereiding en op een vriendelijke manier toch je zin doordrijven.',thumb:'Yael-thumb.jpg',video:'Yael.mp4',hasArticle:true,articleId:'yael'},
+    {ep:'Vol. 004',name:'Jessy Richmond',role:'Producent & Eigenaresse Richmond Media Group',desc:'Van Japan naar LA naar het Carré. Hoe Jessy Richmond een internationaal productiehuis bouwde op vertrouwen, netwerk en slow and steady.',thumb:'jessy-thumb.jpg',video:'Jessy.mp4',hasArticle:true,articleId:'jessy'},
+    {ep:'Vol. 005',name:'Jaz Karis',role:'Artiest',desc:'Culture Head was uitgenodigd voor haar show in de Melkweg. Jaz Karis over haar creatief proces en hoe het internet haar ontdekte.',thumb:'jazkaris-thumb.jpg',video:'jazkaris.mp4',hasArticle:true,articleId:'jaz'},
+    {ep:'Vol. 006',name:'Chanou',role:'Zangeres',desc:'Op de releaseparty van haar eerste single na twee jaar. Chanou over geduld, visuals en terug bij jezelf komen.',thumb:'chanou-thumb.jpg',video:'chanou.mp4',hasArticle:true,articleId:'chanou'},
+    {ep:'Vol. 007',name:'Joeboy',role:'Artiest',desc:'Artikel volgt binnenkort.',thumb:'joeboy-thumb.jpg',video:'joeboy.mp4',hasArticle:true,articleId:'joeboy'},
+    {ep:'Vol. 008',name:'Sneakerness — Matthijs van Meulen',role:'CEO Sneakerness',desc:'Hoe Matthijs van Meulen CEO werd van het grootste sneaker en lifestyle event van Europa door gewoon de telefoon op te pakken.',thumb:'sneakerness-thumb.jpg',video:'sneakerness.mp4',hasArticle:true,articleId:'sneakerness'},
+    {ep:'Vol. 009',name:'Supa Dupa Goods',role:'Nick Spapens & Samay June — Oprichters',desc:'Van crappy shirts als hobbyproject naar een eigen merk. Supa Dupa Goods over naïef beginnen en de valkuil van perfectie.',thumb:'supadupagoods-thumb.jpg',video:'supadupagoods.mp4',hasArticle:true,articleId:'supadupa'},
+    {ep:'Vol. 010',name:'Amiera Amore',role:'Artiest',desc:'Het verhaal van Amiera Amore. Tekst volgt binnenkort.',thumb:'Amiera Amore-thumb.jpg',video:'Amiera Amore.mp4',hasArticle:true,articleId:'amiera'},
+    {ep:'Vol. 011',name:'Annicee',role:'Artiest',desc:'Het verhaal van Annicee. Tekst volgt binnenkort.',thumb:'Annicee-thumb.jpg',video:'Annicee.mp4',hasArticle:true,articleId:'annicee'},
+    {ep:'Vol. 012',name:'Kaytranada',role:'Producer & DJ',desc:'Het verhaal van Kaytranada. Tekst volgt binnenkort.',thumb:'kaytranada-thumb.jpg',video:'kaytranada.mp4',hasArticle:true,articleId:'kaytranada'},
+    {ep:'Vol. 013',name:'Steven Aswin',role:'Artiest',desc:'Het verhaal van Steven Aswin. Tekst volgt binnenkort.',thumb:'Steven Aswin-thumb.jpg',video:'Steven Aswin.mp4',hasArticle:true,articleId:'stevenaswin'},
+    {ep:'Vol. 014',name:'Twenty20',role:'Artiest',desc:'Het verhaal van Twenty20. Tekst volgt binnenkort.',thumb:'Twenty20-thumb.jpg',video:'Twenty20.mp4',hasArticle:true,articleId:'twenty20'},
   ];
 
-  const articles = {
-    celeste: { ep:'Vol. 001', name:'Celeste Mercedes', role:'Violiste & Music Director', thumb:'celeste-thumb.jpg', video:'celeste.mp4', photo1:'celeste-foto1.jpg', photo2:'celeste-foto2.jpg', quote:'Je moet drive hebben, het echt willen en bijna zo obsessed zijn dat het weird wordt. Want dat is hoe je op de plekken komt waar anderen niet komen.', body:`<p>Het is een doordeweekse avond als we binnenlopen bij Tivoli Vredenburg. The Game staat op het podium. De zaal trilt. En ergens in dat gewoel staat Celeste Mercedes — niet als toeschouwer, maar als iemand die straks <em>naast</em> hem staat.</p><p>We kwamen haar per toeval tegen. Gewoon op een avond waarop alles klopte. En toen we hoorden wie ze was en wat ze had gedaan, wisten we: dit verhaal moet verteld worden.</p><h3>Viool in de hiphopwereld</h3><p>Celeste is violiste en music director. Twee werelden die op papier weinig met elkaar te maken hebben — klassiek en hiphop — maar in haar handen wordt het één ding.</p><blockquote>"Je moet drive hebben, het echt willen en bijna zo obsessed zijn dat het weird wordt. Want dat is hoe je op de plekken komt waar anderen niet komen."</blockquote><p>Ze legt uit dat het niet gaat om geluk. Het gaat om connecties op de juiste manier. Niet netwerken alsof je iets wil hebben. Verbinden omdat je echt iets te bieden hebt.</p>` },
-    yael: { ep:'Vol. 003', name:'Yael Daila', role:'Artiest & Performer', thumb:'Yael-thumb.jpg', video:'Yael.mp4', photo1:'', photo2:'', quote:'Het is belangrijk om op een heel vriendelijke manier toch je zin door te drijven. At the end of the day weet mijn team: dit is jouw show.', body:`<p>Paradiso. Daags voor haar allereerste headline show. Yael Daila staat in de repetitieruimte, in-ears in haar oren, band om haar heen, setlist in haar hoofd.</p><blockquote>"Het is belangrijk om op een heel vriendelijke manier toch je zin door te drijven. At the end of the day weet mijn team: dit is jouw show. Als ik zeg nee, dan gaat het gewoon niet gebeuren."</blockquote>` },
-    jessy: { ep:'Vol. 004', name:'Jessy Richmond', role:'Producent & Eigenaresse Richmond Media Group', thumb:'jessy-thumb.jpg', video:'Jessy.mp4', photo1:'jessy-foto1.jpg', photo2:'jessy-foto2.jpg', quote:'Slow and steady wins the race. Als je weet waar je naartoe wil, hou dat vooruitzicht maar wil niet te snel gaan.', body:`<p>We staan midden in het Carré. Backstage. En dan is daar Jessy Richmond — rustig, gefocust, precies weten wat ze doet.</p><blockquote>"Slow and steady wins the race. Als je weet waar je naartoe wil, hou dat vooruitzicht maar wil niet te snel gaan. Kijk niet naar andere mensen. Geloof in jezelf. En je gaat er komen."</blockquote>` },
-    rawen: { ep:'Vol. 002', name:'Rawen Mustafa', role:'Designer & Oprichter ETB', thumb:'rawen-thumb.jpg', video:'rawen.mp4', photo1:'rawen-foto1.jpg', photo2:'rawen-foto2.jpg', quote:'Als het product klopt, dan komt pas het vervolg. Vakmanschap is een verlengstuk van het product.', body:`<p>Rawen Mustafa zit achter een naaimachine als we binnenkomen. Niet voor de camera — gewoon omdat hij aan het werk is.</p><blockquote>"Als het product klopt, dan komt pas het vervolg. Vakmanschap is een verlengstuk van het product."</blockquote>` },
-    jaz: { ep:'Vol. 005', name:'Jaz Karis', role:'Artiest', thumb:'jazkaris-thumb.jpg', video:'jazkaris.mp4', photo1:'jaz1.jpg', photo2:'jaz2.jpg', photo3:'jaz3.jpg', photo4:'jaz4.jpg', quote:"I have one rule — I never buy WiFi on the plane. That's my creative space. No one can reach me.", body:`<p>Culture Head werd uitgenodigd voor de show van Jaz Karis in de Melkweg. Niet om te recenseren. Gewoon om te kijken, te luisteren en te begrijpen wie ze is.</p><blockquote>"I have one rule — I never buy WiFi on the plane. That's my creative space. No one can reach me."</blockquote>` },
-    joeboy: { ep:'Vol. 007', name:'Joeboy', role:'Artiest', thumb:'joeboy-thumb.jpg', video:'joeboy.mp4', photo1:'', photo2:'', quote:'Artikel volgt.', body:`<p><em>Dit artikel wordt binnenkort toegevoegd.</em></p>` },
-    sneakerness: { ep:'Vol. 008', name:'Sneakerness — Matthijs van Meulen', role:'CEO Sneakerness', thumb:'sneakerness-thumb.jpg', video:'sneakerness.mp4', photo1:'', photo2:'', quote:'Trek gewoon de stoute schoenen aan. Ga je ergens mee bemoeien. Kijk waar je mensen kunt helpen — zo vind je je rol.', body:`<p>Matthijs van Meulen liep dertien jaar geleden voor het eerst Sneakerness binnen. Niet als CEO. Gewoon als iemand die het tof vond.</p><blockquote>"Trek gewoon de stoute schoenen aan. Ga je ergens mee bemoeien. Kijk waar je mensen kunt helpen — zo vind je je rol."</blockquote>` },
-    supadupa: { ep:'Vol. 009', name:'Supa Dupa Goods', role:'Nick Spapens & Samay June — Oprichters', thumb:'supadupagoods-thumb.jpg', video:'supadupagoods.mp4', photo1:'', photo2:'', quote:'We zijn heel naïef begonnen. Maar die laatste verbeteringen waren waarschijnlijk verbeteringen die alleen wij zagen. We hadden zo veel harder kunnen gaan.', body:`<p>Supa Dupa Goods is geen merk dat is gebouwd op een businessplan. Het begon als een hobbyproject. Twee fans die misten wat ze zochten. Dus maakten ze het zelf.</p><blockquote>"Die laatste verbeteringen waren waarschijnlijk verbeteringen die alleen wij zagen. We hadden zo veel harder kunnen gaan als we gewoon hadden gezegd: fuck it, dit is het."</blockquote>` },
-    chanou: { ep:'Vol. 006', name:'Chanou', role:'Zangeres', thumb:'chanou-thumb.jpg', video:'chanou.mp4', photo1:'chanou-foto1.jpg', photo2:'chanou-foto2.jpg', quote:'Heb geduld met jezelf. Bouw een visie voor wat voor jou in de toekomst wel gaat werken en neem daar alle tijd voor die je daarvoor nodig hebt.', body:`<p>De releaseparty van haar eerste single na twee jaar. Chanou staat midden in de ruimte, lacht, praat met iedereen — maar achter die lichte energie zit een heel bewust proces.</p><blockquote>"Heb geduld met jezelf. Bouw een visie voor wat voor jou in de toekomst wel gaat werken en neem daar alle tijd voor die je daarvoor nodig hebt. Want als dit voor jou is, dan rent het niet weg."</blockquote>` },
-    amiera: { ep:'Vol. 010', name:'Amiera Amore', role:'Artiest', thumb:'Amiera Amore-thumb.jpg', video:'Amiera Amore.mp4', photo1:'', photo2:'', quote:'Quote volgt binnenkort.', body:`<p><em>Dit artikel wordt binnenkort toegevoegd.</em></p>` },
-    annicee: { ep:'Vol. 011', name:'Annicee', role:'Artiest', thumb:'Annicee-thumb.jpg', video:'Annicee.mp4', photo1:'', photo2:'', quote:'Quote volgt binnenkort.', body:`<p><em>Dit artikel wordt binnenkort toegevoegd.</em></p>` },
-    kaytranada: { ep:'Vol. 012', name:'Kaytranada', role:'Producer & DJ', thumb:'kaytranada-thumb.jpg', video:'kaytranada.mp4', photo1:'', photo2:'', quote:'Quote volgt binnenkort.', body:`<p><em>Dit artikel wordt binnenkort toegevoegd.</em></p>` },
-    stevenaswin: { ep:'Vol. 013', name:'Steven Aswin', role:'Artiest', thumb:'Steven Aswin-thumb.jpg', video:'Steven Aswin.mp4', photo1:'', photo2:'', quote:'Quote volgt binnenkort.', body:`<p><em>Dit artikel wordt binnenkort toegevoegd.</em></p>` },
-    twenty20: { ep:'Vol. 014', name:'Twenty20', role:'Artiest', thumb:'Twenty20-thumb.jpg', video:'Twenty20.mp4', photo1:'', photo2:'', quote:'Quote volgt binnenkort.', body:`<p><em>Dit artikel wordt binnenkort toegevoegd.</em></p>` },
+  const articles={
+    celeste:{ep:'Vol. 001',name:'Celeste Mercedes',role:'Violiste & Music Director',thumb:'celeste-thumb.jpg',video:'celeste.mp4',photo1:'celeste-foto1.jpg',photo2:'celeste-foto2.jpg',
+      quote:'Je moet drive hebben, het echt willen en bijna zo obsessed zijn dat het weird wordt. Want dat is hoe je op de plekken komt waar anderen niet komen.',
+      body:`<p>Het is een doordeweekse avond als we binnenlopen bij Tivoli Vredenburg. The Game staat op het podium. De zaal trilt. En ergens in dat gewoel staat Celeste Mercedes — niet als toeschouwer, maar als iemand die straks <em>naast</em> hem staat.</p>
+        <p>We kwamen haar per toeval tegen. Gewoon op een avond waarop alles klopte. En toen we hoorden wie ze was en wat ze had gedaan, wisten we: dit verhaal moet verteld worden.</p>
+        <h3>Viool in de hiphopwereld</h3>
+        <p>Celeste is violiste en music director. Twee werelden die op papier weinig met elkaar te maken hebben — klassiek en hiphop — maar in haar handen wordt het één ding. Ze werkte al samen met grote namen in de muziek, maar die avond bij The Game was anders.</p>
+        <p>Want The Game is niet zomaar een artiest voor haar. Hij is haar childhood hero. De muziek waarmee ze opgroeide. En hem dan op het podium begeleiden, als violiste, als music director? Dat is geen toeval. Dat is werk.</p>
+        <h3>Hoe kom je op die plekken?</h3>
+        <p>Dat vroegen wij haar ook. Recht voor z'n raap. Hoe krijg je dit voor elkaar?</p>
+        <blockquote>"Je moet drive hebben, het echt willen en bijna zo obsessed zijn dat het weird wordt. Want dat is hoe je op de plekken komt waar anderen niet komen."</blockquote>
+        <p>Ze legt uit dat het niet gaat om geluk. Het gaat om connecties op de juiste manier. Niet netwerken alsof je iets wil hebben. Verbinden omdat je echt iets te bieden hebt. Praten met de juiste energie, op het juiste moment, met de juiste mensen.</p>
+        <h3>Wat jij hieruit kan meenemen</h3>
+        <p><strong>Obsessie is geen zwakte.</strong> De mensen die het ver schoppen zijn niet gewoon hard werkend. Ze zijn bijna ongezond gefocust. Ze denken er 's nachts aan. Ze lossen problemen op die anderen nog niet eens zien.</p>
+        <p><strong>Connecten is een vak.</strong> Niet elke keer je hand ophouden. Eerst geven. Aanwezig zijn. Waarde toevoegen. Dan openen deuren die voor anderen dicht blijven.</p>
+        <p><strong>Wees op de plekken.</strong> Celeste was die avond in Tivoli niet per ongeluk. Ze was daar omdat ze zichzelf in de juiste omgeving plaatste.</p>
+        <h3>De les</h3>
+        <p>Celeste Mercedes is het bewijs dat originele combinaties werken. Viool en hiphop. Klassiek en straat. Discipline en vrijheid. Ze past niet in één box en dat is precies haar kracht.</p>`},
+
+    rawen:{ep:'Vol. 002',name:'Rawen Mustafa',role:'Designer & Oprichter ETB',thumb:'rawen-thumb.jpg',video:'rawen.mp4',photo1:'rawen-foto1.jpg',photo2:'rawen-foto2.jpg',
+      quote:'Als het product klopt, dan komt pas het vervolg. Vakmanschap is een verlengstuk van het product.',
+      body:`<p>Rawen Mustafa zit achter een naaimachine als we binnenkomen. Niet voor de camera — gewoon omdat hij aan het werk is. Dat is meteen alles wat je moet weten over ETB, zijn jeansmerk. Het begint bij het maken zelf.</p>
+        <p>"Ik kom uit een textielfamilie. Mijn vader is leder expert, auto bekleden — zo is het een beetje gaan rollen." Niet via een opleiding, niet via een businessplan. Via de handen van zijn vader, en de nieuwsgierigheid van een jongen die wil begrijpen hoe dingen gemaakt worden.</p>
+        <h3>Waarom denim</h3>
+        <p>De keuze voor denim is geen toeval. Het is een filosofie. Rawen houdt van materialen die leven naarmate je ze draagt.</p>
+        <p>"Als jij een jeans draagt voor anderhalf jaar, elke dag, dan leeft die op de manier hoe jij je stappen zet, hoe hij beweegt, waar jij je telefoon hebt zitten." Denim als spiegel van de drager. Dat trekt hem aan.</p>
+        <h3>Het product eerst</h3>
+        <blockquote>"Als het product klopt, dan komt pas het vervolg. Vakmanschap is een verlengstuk van het product."</blockquote>
+        <p>Die houding maakt ETB langzaam en dat is precies de bedoeling. Stapsgewijs, elk jaar iets verder.</p>
+        <h3>Ondernemen is problemen oplossen</h3>
+        <p>Wat ondernemen voor hem betekent? Constant obstakels tegenkomen en die proberen op te lossen. Creativiteit en zakelijk denken lopen voor hem altijd door elkaar.</p>
+        <p>"Als je daar niet tegen kan, dan zou ik absoluut geen ondernemer worden." Ondernemen is niet voor iedereen. Je moet de persoon er voor zijn.</p>
+        <h3>ETB als leerschool</h3>
+        <p>"Ik kan lekker alles droppen, lekker op mijn bek gaan. ETB is voor mij echt een plek om mezelf te perfectioneren." Die eerlijkheid over waar hij staat maakt zijn verhaal geloofwaardig. Hij weet wat hij nog niet weet. En hij is aan het bouwen.</p>`},
+
+    yael:{ep:'Vol. 003',name:'Yael Daila',role:'Artiest & Performer',thumb:'Yael-thumb.jpg',video:'Yael.mp4',photo1:'',photo2:'',
+      quote:'Het is belangrijk om op een heel vriendelijke manier toch je zin door te drijven. At the end of the day weet mijn team: dit is jouw show.',
+      body:`<p>Paradiso. Daags voor haar allereerste headline show. Yael Daila staat in de repetitieruimte, in-ears in haar oren, band om haar heen, setlist in haar hoofd. Ze is er klaar voor — maar ze is ook eerlijk over wat er allemaal bij komt kijken.</p>
+        <p>"Dit is de laatste repetitie voordat we de show hebben. Alle tracks moeten geoefend worden, alle backing tracks moeten gemaakt worden. En ik heb voor het eerst in-ears." Ze lacht. "In die oortjes hoor je een klik — tik tik tik — de BPM. Dat had ik nog nooit eerder gedaan."</p>
+        <h3>Het hele plaatje</h3>
+        <p>Yael doet het niet half. Stage design, movement coaching, choreografie, vocal workouts — ze rennen op een hardloopband terwijl ze zingt. Alles is voorbereid, alles is doordacht.</p>
+        <h3>Jouw show, hun input</h3>
+        <blockquote>"Het is belangrijk om op een heel vriendelijke manier toch je zin door te drijven. At the end of the day weet mijn team: dit is jouw show. Als ik zeg nee, dan gaat het gewoon niet gebeuren."</blockquote>
+        <p>Het gaat om haar brand. Ze wordt erop aangekeken. Dus ze moet er volledig achter staan.</p>
+        <h3>Rising artiest, rising sound</h3>
+        <p>Yael is ook midden in een rebranding. Van Amapiano richting pop, R&B en afropop. Nieuwe sounds, nieuw profiel, dezelfde stem — maar dan meer van zichzelf.</p>
+        <p>Haar eerste headline show in Paradiso. Niet toevallig. Niet vanzelf. Gewoon: heel goed voorbereid.</p>`},
+
+    jessy:{ep:'Vol. 004',name:'Jessy Richmond',role:'Producent & Eigenaresse Richmond Media Group',thumb:'jessy-thumb.jpg',video:'Jessy.mp4',photo1:'jessy-foto1.jpg',photo2:'jessy-foto2.jpg',
+      quote:'Slow and steady wins the race. Als je weet waar je naartoe wil, hou dat vooruitzicht maar wil niet te snel gaan.',
+      body:`<p>We staan midden in het Carré. Backstage. Technici rennen voorbij, lichten worden ingesteld, artiesten warmen op. En dan is daar Jessy Richmond — rustig, gefocust, precies weten wat ze doet.</p>
+        <p>We kennen haar naam al voordat we haar spreken. Richmond Media Group. Internationaal. Los Angeles. Grammy-artiesten. Maar hoe bouw je zoiets op? Dat vroegen we haar gewoon.</p>
+        <h3>Vanaf haar zesde in de muziekwereld</h3>
+        <p>Jessy zit al in de muziekwereld sinds ze een jaar of zes, zeven was. Ze noemt zichzelf geen videograaf. Ze is een <em>productiehuis</em>.</p>
+        <p>"Als je een productie neer wilt zetten — als artiest, als ondernemer, maakt niet uit wat je doet — dan heb je ook meerdere mensen nodig."</p>
+        <h3>Van Japan naar LA in drie maanden</h3>
+        <p>Twee jaar geleden fotografeerde ze Ozone en zijn team. Het balletje begon te rollen. Drie maanden later zat ze in Los Angeles om een video te maken voor Venti.</p>
+        <p>"Hoe ik dat vertrouwen heb kunnen bouwen is het werk zelf en het netwerk. Mensen weten wat ze kunnen verwachten. Als ik zeg: we doen dit met het team — weten ze dat de kwaliteit naar voren komt."</p>
+        <h3>Slow and steady</h3>
+        <blockquote>"Slow and steady wins the race. Als je weet waar je naartoe wil, hou dat vooruitzicht maar wil niet te snel gaan. Kijk niet naar andere mensen. Geloof in jezelf. En je gaat er komen."</blockquote>
+        <p>Ze zegt het met de rust van iemand die het zelf heeft gedaan. Stap voor stap. Land voor land. Van Amsterdam naar Japan naar Los Angeles, terug naar het Carré.</p>`},
+
+    jaz:{ep:'Vol. 005',name:'Jaz Karis',role:'Artiest',thumb:'jazkaris-thumb.jpg',video:'jazkaris.mp4',photo1:'jaz1.jpg',photo2:'jaz2.jpg',photo3:'jaz3.jpg',photo4:'jaz4.jpg',
+      quote:"I have one rule — I never buy WiFi on the plane. That's my creative space. No one can reach me.",
+      body:`<p>Culture Head werd uitgenodigd voor de show van Jaz Karis in de Melkweg. Niet om te recenseren. Gewoon om te kijken, te luisteren en te begrijpen wie ze is.</p>
+        <p>Jaz Karis is een van die artiesten die het internet vond voordat de industrie doorhad dat ze er was. Een stem, een gevoel, een sound die niet om aandacht vroeg maar die je gewoon niet kon negeren.</p>
+        <h3>Gevonden door het internet</h3>
+        <p>Haar verhaal begint niet op een podium. Een clip hier, een opname daar — en dan ineens een golf van mensen die haar muziek deelden alsof ze iets hadden ontdekt dat van hen was.</p>
+        <h3>Het creatief proces</h3>
+        <blockquote>"I have one rule — I never buy WiFi on the plane. That's my creative space. No one can reach me."</blockquote>
+        <p>In een wereld waar iedereen altijd bereikbaar is, is dat een statement. Creativiteit heeft ruimte nodig. Stilte. Tijd zonder input. Jaz beschermt dat actief.</p>
+        <h3>De Melkweg</h3>
+        <p>De show in de Melkweg was het bewijs van alles wat ze online had opgebouwd. De zaal zat vol met mensen die elk woord meezingen. Niet omdat een label hen had verteld dat ze dit moesten kennen. Maar omdat ze het zelf hadden gevonden.</p>`},
+
+    chanou:{ep:'Vol. 006',name:'Chanou',role:'Zangeres',thumb:'chanou-thumb.jpg',video:'chanou.mp4',photo1:'chanou-foto1.jpg',photo2:'chanou-foto2.jpg',
+      quote:'Heb geduld met jezelf. Bouw een visie voor wat voor jou in de toekomst wel gaat werken en neem daar alle tijd voor die je daarvoor nodig hebt.',
+      body:`<p>De releaseparty van haar eerste single na twee jaar. Chanou staat midden in de ruimte, lacht, praat met iedereen — maar in het gesprek wordt duidelijk dat achter die lichte energie een heel bewust proces schuilgaat.</p>
+        <p>Twee jaar stond ze niet in de spotlights. Niet omdat het niet wilde, maar omdat ze het zo koos.</p>
+        <h3>Terug bij jezelf</h3>
+        <p>Voor haar comeback single twijfelde ze tot het laatste moment. Twee tracks. Eén commercieel aantrekkelijk. Eén die ze voelde. Ze koos het gevoel.</p>
+        <h3>Visuals als tweede taal</h3>
+        <p>Chanou ontdekte tijdens de voorbereiding dat ze niet alleen een zangeres is. Ze is ook een visueel denker. Concepten bedenken, uitvoeren, een hele beleving bouwen rondom een nummer.</p>
+        <blockquote>"Heb geduld met jezelf. Bouw een visie voor wat voor jou in de toekomst wel gaat werken en neem daar alle tijd voor die je daarvoor nodig hebt. Want als dit voor jou is, dan rent het niet weg."</blockquote>
+        <h3>De pauze</h3>
+        <p>Die twee jaar waren niet de bedoeling. Het begon als een korte pas op de plaats. Maar een plan maken bleek meer tijd te kosten. Steeds langer, steeds langer. Tot haar gevoel zei: nu.</p>`},
+
+    joeboy:{ep:'Vol. 007',name:'Joeboy',role:'Artiest',thumb:'joeboy-thumb.jpg',video:'joeboy.mp4',photo1:'',photo2:'',
+      quote:'Artikel volgt.',body:`<p><em>Dit artikel wordt binnenkort toegevoegd.</em></p>`},
+
+    sneakerness:{ep:'Vol. 008',name:'Sneakerness — Matthijs van Meulen',role:'CEO Sneakerness',thumb:'sneakerness-thumb.jpg',video:'sneakerness.mp4',photo1:'',photo2:'',
+      quote:'Trek gewoon de stoute schoenen aan. Ga je ergens mee bemoeien. Kijk waar je mensen kunt helpen — zo vind je je rol.',
+      body:`<p>Matthijs van Meulen liep dertien jaar geleden voor het eerst Sneakerness binnen. Niet als CEO, niet als marketingdirecteur. Gewoon als iemand die het tof vond. En die één vraag niet kon loslaten: waarom was er al zo lang geen sneakerevent meer in Amsterdam geweest?</p>
+        <h3>Bijdehand bellen</h3>
+        <p>"Ik belde hem gewoon op en zei: goeie productie, dat kan jij, dat weet ik. Maar wat weet jij in godsnaam van de sneaker community?" Zijn collega moest hard lachen. Ze hadden nog zes weken. Of Matthijs wilde helpen.</p>
+        <blockquote>"Trek gewoon de stoute schoenen aan. Ga je ergens mee bemoeien. Kijk waar je mensen kunt helpen — zo vind je je rol."</blockquote>
+        <h3>Van community naar CEO</h3>
+        <p>In het eerste jaar vroeg Sneakerness International hem al om de marketing te doen. Hij kende de community van binnenuit. Hij wist wat mensen voelden bij sneakers, niet alleen wat ze kochten maar waarom het hen wat deed.</p>
+        <p>Twee jaar geleden werd hij CEO. Het grootste sneaker en lifestyle event van Europa. En het begon met één telefoontje, dertien jaar geleden, vanuit oprechte nieuwsgierigheid.</p>`},
+
+    supadupa:{ep:'Vol. 009',name:'Supa Dupa Goods',role:'Nick Spapens & Samay June — Oprichters',thumb:'supadupagoods-thumb.jpg',video:'supadupagoods.mp4',photo1:'',photo2:'',
+      quote:'We zijn heel naïef begonnen. Maar die laatste verbeteringen waren waarschijnlijk verbeteringen die alleen wij zagen. We hadden zo veel harder kunnen gaan.',
+      body:`<p>Supa Dupa Goods is geen merk dat is gebouwd op een businessplan. Het begon als een hobbyproject. Twee fans die hun liefde voor een subcultuur wilden uiten op een subtiele manier. En die misten hoe dat kon. Dus maakten ze het zelf.</p>
+        <h3>Crappy shirts en alles opnieuw investeren</h3>
+        <p>Ze begonnen met shirts. De meest crappy kwaliteit shirts ever, zoals ze het zelf omschrijven. Beiden hadden een fulltime baan. Avonden, weekenden, dan één dag in de week, dan twee. En alles wat ze verdienden, ging er meteen weer in.</p>
+        <h3>De valkuil van perfectie</h3>
+        <blockquote>"Die laatste verbeteringen waren waarschijnlijk verbeteringen die alleen wij zagen. We hadden zo veel harder kunnen gaan als we gewoon hadden gezegd: fuck it, dit is het."</blockquote>
+        <p>Imperfect lanceren is een les die de meeste ondernemers te laat leren. Supa Dupa Goods leerde het ook pas na een tijdje — maar ze erkenden het.</p>
+        <h3>Fan first</h3>
+        <p>Wat Supa Dupa Goods onderscheidt van andere merken is precies wat het begin zo lastig maakte: ze zijn fans. Ze maken voor zichzelf, voor mensen die hetzelfde voelen. Niet voor de markt. Niet voor het algoritme.</p>`},
+
+    amiera:{ep:'Vol. 010',name:'Amiera Amore',role:'Artiest',thumb:'Amiera Amore-thumb.jpg',video:'Amiera Amore.mp4',photo1:'',photo2:'',
+      quote:'Quote volgt binnenkort.',body:`<p><em>Dit artikel wordt binnenkort toegevoegd.</em></p>`},
+    annicee:{ep:'Vol. 011',name:'Annicee',role:'Artiest',thumb:'Annicee-thumb.jpg',video:'Annicee.mp4',photo1:'',photo2:'',
+      quote:'Quote volgt binnenkort.',body:`<p><em>Dit artikel wordt binnenkort toegevoegd.</em></p>`},
+    kaytranada:{ep:'Vol. 012',name:'Kaytranada',role:'Producer & DJ',thumb:'kaytranada-thumb.jpg',video:'kaytranada.mp4',photo1:'',photo2:'',
+      quote:'Quote volgt binnenkort.',body:`<p><em>Dit artikel wordt binnenkort toegevoegd.</em></p>`},
+    stevenaswin:{ep:'Vol. 013',name:'Steven Aswin',role:'Artiest',thumb:'Steven Aswin-thumb.jpg',video:'Steven Aswin.mp4',photo1:'',photo2:'',
+      quote:'Quote volgt binnenkort.',body:`<p><em>Dit artikel wordt binnenkort toegevoegd.</em></p>`},
+    twenty20:{ep:'Vol. 014',name:'Twenty20',role:'Artiest',thumb:'Twenty20-thumb.jpg',video:'Twenty20.mp4',photo1:'',photo2:'',
+      quote:'Quote volgt binnenkort.',body:`<p><em>Dit artikel wordt binnenkort toegevoegd.</em></p>`},
   };
 
-  function buildCard(iv) {
-    const media = iv.video
-      ? `<video src="${iv.video}" poster="${iv.thumb}" muted playsinline loop preload="none" style="position:absolute;inset:0;width:100%;height:100%;object-fit:cover;display:block;" onmouseenter="this.play()" onmouseleave="this.pause();this.currentTime=0"></video>`
-      : `<img src="${iv.thumb}" alt="${iv.name}" style="position:absolute;inset:0;width:100%;height:100%;object-fit:cover;display:block;" loading="lazy">`;
-    return `<div class="reel-card" onclick="${iv.hasArticle ? `showArticle('${iv.articleId}')` : ''}">
-      <div class="reel-media">${media}<div class="play-icon"><svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="10"/><polygon points="10,8 16,12 10,16" fill="rgba(255,255,255,0.9)" stroke="none"/></svg></div></div>
-      <div class="reel-meta">
-        <p class="reel-ep">${iv.ep}</p>
-        <h3 class="reel-name">${iv.name}</h3>
-        <p class="reel-role">${iv.role}</p>
-        <p class="reel-desc">${iv.desc}</p>
-        ${iv.hasArticle ? `<button class="btn-neon-text" onclick="event.stopPropagation();showArticle('${iv.articleId}')">Lees het artikel <span>→</span></button>` : ''}
-      </div></div>`;
+  function buildCard(iv){
+    const media=iv.video
+      ?`<video src="${iv.video}" poster="${iv.thumb}" muted playsinline loop preload="none" style="position:absolute;inset:0;width:100%;height:100%;object-fit:cover;display:block;" onmouseenter="this.play()" onmouseleave="this.pause();this.currentTime=0"></video>`
+      :`<img src="${iv.thumb}" alt="${iv.name}" style="position:absolute;inset:0;width:100%;height:100%;object-fit:cover;display:block;" loading="lazy">`;
+    return `<div class="reel-card" onclick="${iv.hasArticle?`showArticle('${iv.articleId}')`:''}">`+
+      `<div class="reel-media">${media}<div class="play-icon"><svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="10"/><polygon points="10,8 16,12 10,16" fill="rgba(255,255,255,0.9)" stroke="none"/></svg></div></div>`+
+      `<div class="reel-meta"><p class="reel-ep">${iv.ep}</p><h3 class="reel-name">${iv.name}</h3><p class="reel-role">${iv.role}</p><p class="reel-desc">${iv.desc}</p>`+
+      `${iv.hasArticle?`<button class="btn-neon-text" onclick="event.stopPropagation();showArticle('${iv.articleId}')">Lees het artikel <span>→</span></button>`:''}</div></div>`;
   }
-  function buildGrid(id) {
-    const grid = document.getElementById(id);
-    if (!grid || grid.dataset.built) return;
-    grid.dataset.built = '1';
-    grid.innerHTML = interviews.map(buildCard).join('');
+  function buildGrid(id){
+    const grid=document.getElementById(id);
+    if(!grid||grid.dataset.built)return;
+    grid.dataset.built='1';
+    grid.innerHTML=interviews.map(buildCard).join('');
   }
   buildGrid('home-reels');
 
-  function showArticle(id) {
-    const a = articles[id];
-    if (!a) return;
-    const mediaSide = a.video
-      ? `<video src="${a.video}" poster="${a.thumb}" controls playsinline style="position:absolute;inset:0;width:100%;height:100%;object-fit:cover;display:block;"></video>`
-      : `<img src="${a.thumb}" alt="${a.name}" style="position:absolute;inset:0;width:100%;height:100%;object-fit:cover;display:block;">`;
-    const hasPhotos = a.photo1 || a.photo2 || a.photo3 || a.photo4;
-    const photoBlock = hasPhotos ? (() => {
-      if (a.photo3 || a.photo4) {
-        return `<div class="article-photos" style="grid-template-columns:1fr 1fr;">
-          ${a.photo1 ? `<img src="${a.photo1}" alt="${a.name} 1" loading="lazy">` : '<div style="background:var(--gray);aspect-ratio:3/4;"></div>'}
-          ${a.photo2 ? `<img src="${a.photo2}" alt="${a.name} 2" loading="lazy">` : '<div style="background:var(--gray);aspect-ratio:3/4;"></div>'}
-          ${a.photo3 ? `<img src="${a.photo3}" alt="${a.name} 3" loading="lazy">` : '<div style="background:var(--gray);aspect-ratio:3/4;"></div>'}
-          ${a.photo4 ? `<img src="${a.photo4}" alt="${a.name} 4" loading="lazy">` : '<div style="background:var(--gray);aspect-ratio:3/4;"></div>'}
-        </div>`;
+  function showArticle(id){
+    const a=articles[id];
+    if(!a)return;
+    const mediaSide=a.video
+      ?`<video src="${a.video}" poster="${a.thumb}" controls playsinline style="position:absolute;inset:0;width:100%;height:100%;object-fit:cover;display:block;"></video>`
+      :`<img src="${a.thumb}" alt="${a.name}" style="position:absolute;inset:0;width:100%;height:100%;object-fit:cover;display:block;">`;
+    const hasPhotos=a.photo1||a.photo2||a.photo3||a.photo4;
+    const photoBlock=hasPhotos?(()=>{
+      if(a.photo3||a.photo4){
+        return`<div class="article-photos" style="grid-template-columns:1fr 1fr;">`+
+          `${a.photo1?`<img src="${a.photo1}" alt="${a.name} 1" loading="lazy">`:'<div style="background:var(--gray);aspect-ratio:3/4;"></div>'}`+
+          `${a.photo2?`<img src="${a.photo2}" alt="${a.name} 2" loading="lazy">`:'<div style="background:var(--gray);aspect-ratio:3/4;"></div>'}`+
+          `${a.photo3?`<img src="${a.photo3}" alt="${a.name} 3" loading="lazy">`:'<div style="background:var(--gray);aspect-ratio:3/4;"></div>'}`+
+          `${a.photo4?`<img src="${a.photo4}" alt="${a.name} 4" loading="lazy">`:'<div style="background:var(--gray);aspect-ratio:3/4;"></div>'}</div>`;
       }
-      return `<div class="article-photos">
-        ${a.photo1 ? `<img src="${a.photo1}" alt="${a.name} foto 1" loading="lazy">` : '<div style="background:var(--gray);aspect-ratio:3/4;"></div>'}
-        ${a.photo2 ? `<img src="${a.photo2}" alt="${a.name} foto 2" loading="lazy">` : '<div style="background:var(--gray);aspect-ratio:3/4;"></div>'}
-      </div>`;
-    })() : '';
-    document.getElementById('article-content').innerHTML = `
-      <div class="article-header">
-        <p class="article-ep-tag">${a.ep} — Interview</p>
-        <h1 class="article-title">${a.name}</h1>
-        <p class="article-role-tag">${a.role}</p>
-      </div>
-      <div class="article-top">
-        <div class="article-video-side">${mediaSide}</div>
-        <div class="article-quote-side"><p class="article-pullquote">"${a.quote}"</p></div>
-      </div>
-      <div class="article-body-wrap">${a.body}</div>
-      ${photoBlock}
-      <div class="article-nav">
-        <button class="btn-outline" onclick="showPage('interviews')">← Alle Stories</button>
-        <a href="https://instagram.com/cltrhead" target="_blank" class="footer-ig">Volg @cltrhead →</a>
-      </div>
-      <footer>
-        <img src="culture_head_logo.png" alt="Culture Head">
-        <span class="footer-tagline">We basically collect stories 🎙️</span>
-        <a href="https://instagram.com/cltrhead" target="_blank" class="footer-ig">@cltrhead</a>
-      </footer>`;
+      return`<div class="article-photos">`+
+        `${a.photo1?`<img src="${a.photo1}" alt="${a.name} foto 1" loading="lazy">`:'<div style="background:var(--gray);aspect-ratio:3/4;"></div>'}`+
+        `${a.photo2?`<img src="${a.photo2}" alt="${a.name} foto 2" loading="lazy">`:'<div style="background:var(--gray);aspect-ratio:3/4;"></div>'}</div>`;
+    })():'';
+    document.getElementById('article-content').innerHTML=
+      `<div class="article-header"><p class="article-ep-tag">${a.ep} — Interview</p><h1 class="article-title">${a.name}</h1><p class="article-role-tag">${a.role}</p></div>`+
+      `<div class="article-top"><div class="article-video-side">${mediaSide}</div><div class="article-quote-side"><p class="article-pullquote">"${a.quote}"</p></div></div>`+
+      `<div class="article-body-wrap">${a.body}</div>${photoBlock}`+
+      `<div class="article-nav"><button class="btn-outline" onclick="showPage('interviews')">← Alle Stories</button><a href="https://instagram.com/cltrhead" target="_blank" class="footer-ig">Volg @cltrhead →</a></div>`+
+      `<footer><img src="culture_head_logo.png" alt="Culture Head"><span class="footer-tagline">We basically collect stories 🎙️</span><a href="https://instagram.com/cltrhead" target="_blank" class="footer-ig">@cltrhead</a></footer>`;
     showPage('article');
   }
-  document.addEventListener('contextmenu', e => e.preventDefault());
+  document.addEventListener('contextmenu',e=>e.preventDefault());
 </script>
 </body>
 </html>
