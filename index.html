@@ -69,6 +69,28 @@
   .cta-headline .neon { color: var(--neon); }
   .cta-sub { font-size: 16px; color: var(--gray-light); max-width: 560px; margin: 0 auto 44px; line-height: 1.7; position: relative; z-index: 1; }
   .cta-section .btn-outline { position: relative; z-index: 1; }
+  /* FEATURED BLOK */
+  .featured-block { display: grid; grid-template-columns: 340px 1fr; border-top: 1px solid rgba(255,255,255,0.07); border-bottom: 1px solid rgba(255,255,255,0.07); cursor: pointer; }
+  .featured-video { position: relative; overflow: hidden; background: var(--gray); aspect-ratio: 9/16; }
+  .featured-video video, .featured-video img { position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover; display: block; }
+  .featured-video .play-icon { position: absolute; inset: 0; display: flex; align-items: center; justify-content: center; pointer-events: none; }
+  .featured-video .play-icon svg { width: 48px; height: 48px; fill: none; stroke: rgba(255,255,255,0.6); stroke-width: 1.5; }
+  .featured-video-logo { position: absolute; top: 20px; left: 20px; z-index: 2; }
+  .featured-video-logo img { height: 48px; width: auto; }
+  .featured-video-tag { position: absolute; bottom: 80px; left: 20px; z-index: 2; border: 1.5px solid white; border-radius: 20px; padding: 4px 12px; display: inline-block; }
+  .featured-video-tag span { font-size: 10px; font-weight: 700; color: white; letter-spacing: 0.08em; text-transform: uppercase; }
+  .featured-video-title { position: absolute; bottom: 20px; left: 20px; right: 20px; z-index: 2; font-size: 16px; font-weight: 900; color: white; line-height: 1.2; text-transform: uppercase; }
+  .featured-right { background: var(--black); display: flex; flex-direction: column; border-left: 1px solid rgba(255,255,255,0.07); }
+  .featured-photo { flex: 1; position: relative; overflow: hidden; background: var(--gray); min-height: 280px; }
+  .featured-photo img { position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover; display: block; transition: transform 0.4s ease; }
+  .featured-text { padding: 32px 40px; border-top: 1px solid rgba(255,255,255,0.07); }
+  .featured-ep { font-size: 10px; letter-spacing: 0.25em; text-transform: uppercase; color: var(--neon); margin-bottom: 10px; }
+  .featured-name { font-size: clamp(28px,3vw,44px); font-weight: 700; color: var(--white); letter-spacing: -0.02em; text-transform: uppercase; line-height: 1; margin-bottom: 6px; }
+  .featured-role { font-size: 11px; letter-spacing: 0.1em; text-transform: uppercase; color: var(--gray-light); margin-bottom: 20px; }
+  .featured-quote { border-left: 2px solid var(--neon); padding: 14px 20px; margin-bottom: 24px; border-radius: 0; }
+  .featured-quote p { font-size: 15px; font-weight: 300; line-height: 1.65; color: var(--white); font-style: italic; margin: 0; }
+  .featured-block:hover .featured-photo img { transform: scale(1.03); }
+  .featured-section { padding: 48px 48px 20px; }
   .reel-grid { display: grid; grid-template-columns: repeat(4, 1fr); gap: 2px; background: var(--gray-mid); }
   .reel-card { background: var(--black); display: flex; flex-direction: column; cursor: pointer; }
   .reel-media { position: relative; overflow: hidden; background: var(--gray); aspect-ratio: 9 / 16; flex-shrink: 0; }
@@ -194,6 +216,10 @@
     .hero-bottom { flex-direction: column; align-items: flex-start; gap: 24px; } .hero-sub { max-width: 100%; }
     .section { padding: 40px 16px; } .cta-section { padding: 72px 24px; }
     .reel-grid { grid-template-columns: repeat(3, 1fr); }
+    .featured-block { grid-template-columns: 1fr; }
+    .featured-video { aspect-ratio: 9/16; max-height: 60vw; }
+    .featured-text { padding: 24px; }
+    .featured-section { padding: 32px 24px 16px; }
     .about-teaser { padding: 64px 24px; grid-template-columns: 1fr; gap: 20px; }
     footer { padding: 36px 24px; justify-content: center; text-align: center; flex-direction: column; gap: 12px; }
     .page-header { padding: 110px 24px 56px; }
@@ -256,6 +282,15 @@
     </div>
   </section>
   <div class="marquee-strip"><div class="marquee-inner"><span>Artiesten</span><span class="dot">✦</span><span>Ondernemers</span><span class="dot">✦</span><span>Creatives</span><span class="dot">✦</span><span>Muzikanten</span><span class="dot">✦</span><span>Designers</span><span class="dot">✦</span><span>Producers</span><span class="dot">✦</span><span>Fotografen</span><span class="dot">✦</span><span>Regisseurs</span><span class="dot">✦</span><span>Artiesten</span><span class="dot">✦</span><span>Ondernemers</span><span class="dot">✦</span><span>Creatives</span><span class="dot">✦</span><span>Muzikanten</span><span class="dot">✦</span><span>Designers</span><span class="dot">✦</span><span>Producers</span><span class="dot">✦</span><span>Fotografen</span><span class="dot">✦</span><span>Regisseurs</span><span class="dot">✦</span></div></div>
+
+  <!-- FEATURED -->
+  <div class="featured-section">
+    <p class="section-label">Featured</p>
+    <p class="featured-section-sub" style="font-size:11px;color:var(--gray-light);margin-top:4px;">Het nieuwste verhaal</p>
+  </div>
+  <div class="featured-block" id="home-featured" onclick=""></div>
+
+  <!-- STORIES -->
   <section class="section">
     <p class="section-label">The Stories</p>
     <div class="reel-grid" id="home-reels"></div>
@@ -590,6 +625,39 @@
     grid.dataset.built='1';
     grid.innerHTML=interviews.map(buildCard).join('');
   }
+  function buildFeatured() {
+    const iv = interviews[0];
+    if (!iv) return;
+    const el = document.getElementById('home-featured');
+    if (!el) return;
+    el.onclick = () => iv.hasArticle ? showArticle(iv.articleId) : null;
+    const a = iv.hasArticle && articles[iv.articleId] ? articles[iv.articleId] : null;
+    const featuredPhoto = (a && a.photo1) ? a.photo1 : iv.thumb;
+    const mediaEl = iv.video
+      ? `<video src="${iv.video}" poster="${iv.thumb}" muted playsinline loop preload="none" style="position:absolute;inset:0;width:100%;height:100%;object-fit:cover;display:block;" onmouseenter="this.play()" onmouseleave="this.pause();this.currentTime=0"></video>`
+      : `<img src="${iv.thumb}" alt="${iv.name}" style="position:absolute;inset:0;width:100%;height:100%;object-fit:cover;display:block;">`;
+    el.innerHTML = `
+      <div class="featured-video">
+        ${mediaEl}
+        <div class="play-icon"><svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="10"/><polygon points="10,8 16,12 10,16" fill="rgba(255,255,255,0.85)" stroke="none"/></svg></div>
+        <div class="featured-video-logo"><img src="culture_head_logo.png" alt="CH"></div>
+        <div class="featured-video-tag"><span>${iv.name}</span></div>
+        <div class="featured-video-title">${iv.desc}</div>
+      </div>
+      <div class="featured-right">
+        <div class="featured-photo">
+          <img src="${featuredPhoto}" alt="${iv.name}">
+        </div>
+        <div class="featured-text">
+          <p class="featured-ep">${iv.ep} — Interview</p>
+          <h2 class="featured-name">${iv.name}</h2>
+          <p class="featured-role">${iv.role}</p>
+          <div class="featured-quote"><p>${iv.desc}</p></div>
+          ${iv.hasArticle ? `<button class="btn-neon-text" onclick="event.stopPropagation();showArticle('${iv.articleId}')">Lees het artikel <span>→</span></button>` : ''}
+        </div>
+      </div>`;
+  }
+  buildFeatured();
   buildGrid('home-reels');
 
   function renderBodyBlock(block){
