@@ -80,10 +80,12 @@
   .featured-video-tag { position: absolute; bottom: 80px; left: 20px; z-index: 2; border: 1.5px solid white; border-radius: 20px; padding: 4px 12px; display: inline-block; }
   .featured-video-tag span { font-size: 10px; font-weight: 700; color: white; letter-spacing: 0.08em; text-transform: uppercase; }
   .featured-video-title { position: absolute; bottom: 20px; left: 20px; right: 20px; z-index: 2; font-size: 16px; font-weight: 900; color: white; line-height: 1.2; text-transform: uppercase; }
-  .featured-right { background: var(--black); display: flex; flex-direction: column; border-left: 1px solid rgba(255,255,255,0.07); }
+  .featured-right { background: var(--black); display: contents; }
+  .featured-photo-middle { position: relative; overflow: hidden; background: var(--gray); border-left: 1px solid rgba(255,255,255,0.07); }
+  .featured-photo-middle img { position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover; display: block; transition: transform 0.4s ease; }
   .featured-photo { flex: 1; position: relative; overflow: hidden; background: var(--gray); min-height: 280px; }
   .featured-photo img { position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover; display: block; transition: transform 0.4s ease; }
-  .featured-text { padding: 32px 40px; border-top: 1px solid rgba(255,255,255,0.07); }
+  .featured-text { padding: 32px 40px; border-left: 1px solid rgba(255,255,255,0.07); display: flex; flex-direction: column; justify-content: center; }
   .featured-ep { font-size: 10px; letter-spacing: 0.25em; text-transform: uppercase; color: var(--neon); margin-bottom: 10px; }
   .featured-name { font-size: clamp(28px,3vw,44px); font-weight: 700; color: var(--white); letter-spacing: -0.02em; text-transform: uppercase; line-height: 1; margin-bottom: 6px; }
   .featured-role { font-size: 11px; letter-spacing: 0.1em; text-transform: uppercase; color: var(--gray-light); margin-bottom: 20px; }
@@ -217,7 +219,7 @@
     .section { padding: 40px 16px; } .cta-section { padding: 72px 24px; }
     .reel-grid { grid-template-columns: repeat(3, 1fr); }
     .featured-block { grid-template-columns: 1fr; }
-    .featured-video { aspect-ratio: 9/16; max-height: 60vw; }
+    .featured-photo-middle { aspect-ratio: 9/16; }
     .featured-text { padding: 24px; }
     .featured-section { padding: 32px 24px 16px; }
     .about-teaser { padding: 64px 24px; grid-template-columns: 1fr; gap: 20px; }
@@ -286,7 +288,6 @@
   <!-- FEATURED -->
   <div class="featured-section">
     <p class="section-label">Featured</p>
-    <p class="featured-section-sub" style="font-size:11px;color:var(--gray-light);margin-top:4px;">Het nieuwste verhaal</p>
   </div>
   <div class="featured-block" id="home-featured" onclick=""></div>
 
@@ -644,17 +645,12 @@
         <div class="featured-video-tag"><span>${iv.name}</span></div>
         <div class="featured-video-title">${iv.desc}</div>
       </div>
-      <div class="featured-right">
-        <div class="featured-photo">
-          <img src="${featuredPhoto}" alt="${iv.name}">
-        </div>
-        <div class="featured-text">
-          <p class="featured-ep">${iv.ep} — Interview</p>
-          <h2 class="featured-name">${iv.name}</h2>
-          <p class="featured-role">${iv.role}</p>
-          <div class="featured-quote"><p>${iv.desc}</p></div>
-          ${iv.hasArticle ? `<button class="btn-neon-text" onclick="event.stopPropagation();showArticle('${iv.articleId}')">Lees het artikel <span>→</span></button>` : ''}
-        </div>
+      <div class="featured-text">
+        <p class="featured-ep">${iv.ep} — Interview</p>
+        <h2 class="featured-name">${iv.name}</h2>
+        <p class="featured-role">${iv.role}</p>
+        <p style="font-size:13px;color:rgba(245,245,240,0.7);line-height:1.7;margin-bottom:20px;">${iv.desc}</p>
+        ${iv.hasArticle ? `<button class="btn-neon-text" onclick="event.stopPropagation();showArticle('${iv.articleId}')">Lees het artikel <span>→</span></button>` : ''}
       </div>`;
   }
   buildFeatured();
