@@ -53,7 +53,7 @@
   .btn-outline:hover { background: var(--neon); color: var(--black); border-color: var(--neon); }
   .btn-outline .arrow { transition: transform 0.3s; }
   .btn-outline:hover .arrow { transform: translateX(5px); }
-  .btn-neon-text { display: inline-flex; align-items: center; gap: 10px; font-size: 11px; letter-spacing: 0.15em; text-transform: uppercase; color: var(--neon); background: none; border: none; border-bottom: 1px solid rgba(0,163,255,0.3); padding-bottom: 6px; cursor: pointer; font-family: var(--font); transition: gap 0.3s; }
+  .btn-neon-text { display: inline-flex; align-items: center; gap: 10px; font-size: 11px; letter-spacing: 0.15em; text-transform: uppercase; color: var(--neon); background: none; border: none; border-bottom: 1px solid rgba(0,163,255,0.3); padding-bottom: 6px; cursor: pointer; font-family: var(--font); transition: gap 0.3s; width: auto; align-self: flex-start; }
   .btn-neon-text:hover { gap: 18px; }
   .marquee-strip { border-top: 1px solid rgba(255,255,255,0.07); border-bottom: 1px solid rgba(255,255,255,0.07); padding: 16px 0; overflow: hidden; background: var(--gray); }
   .marquee-inner { display: flex; white-space: nowrap; animation: marquee 20s linear infinite; }
@@ -87,10 +87,10 @@
   .featured-photo img { position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover; display: block; transition: transform 0.4s ease; }
   .featured-text { padding: 32px 40px; border-left: 1px solid rgba(255,255,255,0.07); display: flex; flex-direction: column; justify-content: center; }
   .featured-block { display: grid; grid-template-columns: 340px 1fr auto; border-top: 1px solid rgba(255,255,255,0.07); border-bottom: 1px solid rgba(255,255,255,0.07); cursor: pointer; }
-  .featured-cards { display: flex; align-items: center; justify-content: center; padding: 32px 40px; border-left: 1px solid rgba(255,255,255,0.07); background: var(--black); position: relative; min-width: 220px; }
-  .featured-cards-inner { position: relative; width: 120px; height: 160px; }
-  .featured-card-1 { position: absolute; width: 100px; height: 140px; border-radius: 12px; overflow: hidden; transform: rotate(-8deg) translate(-20px, 6px); z-index: 1; box-shadow: 0 4px 20px rgba(0,0,0,0.6); }
-  .featured-card-2 { position: absolute; width: 100px; height: 140px; border-radius: 12px; overflow: hidden; transform: rotate(5deg) translate(20px, -6px); z-index: 2; box-shadow: 0 4px 20px rgba(0,0,0,0.6); }
+  .featured-cards { display: flex; align-items: center; justify-content: flex-start; padding: 40px 48px 40px 24px; background: var(--black); position: relative; min-width: 260px; }
+  .featured-cards-inner { position: relative; width: 180px; height: 240px; }
+  .featured-card-1 { position: absolute; width: 150px; height: 205px; border-radius: 12px; overflow: hidden; transform: rotate(-7deg) translate(-18px, 10px); z-index: 2; box-shadow: 0 6px 24px rgba(0,0,0,0.7); }
+  .featured-card-2 { position: absolute; width: 150px; height: 205px; border-radius: 12px; overflow: hidden; transform: rotate(5deg) translate(20px, -10px); z-index: 1; box-shadow: 0 6px 24px rgba(0,0,0,0.7); }
   .featured-card-1 img, .featured-card-2 img { width: 100%; height: 100%; object-fit: cover; display: block; }
   .featured-ep { font-size: 10px; letter-spacing: 0.25em; text-transform: uppercase; color: var(--neon); margin-bottom: 10px; }
   .featured-name { font-size: clamp(28px,3vw,44px); font-weight: 700; color: var(--white); letter-spacing: -0.02em; text-transform: uppercase; line-height: 1; margin-bottom: 6px; }
@@ -658,10 +658,10 @@
         ${iv.hasArticle ? `<button class="btn-neon-text" onclick="event.stopPropagation();showArticle('${iv.articleId}')">Lees het artikel <span>→</span></button>` : ''}
       </div>
       ${(a && a.photos && a.photos[0] && a.photos[1]) ? `
-      <div class="featured-cards">
+      <div class="featured-cards" style="border-left:none;">
         <div class="featured-cards-inner">
-          <div class="featured-card-1"><img src="${a.photos[0]}" alt="${iv.name}"></div>
           <div class="featured-card-2"><img src="${a.photos[1]}" alt="${iv.name}"></div>
+          <div class="featured-card-1"><img src="${a.photos[0]}" alt="${iv.name}"></div>
         </div>
       </div>` : ''}`;
   }
