@@ -69,6 +69,19 @@
   .cta-headline .neon { color: var(--neon); }
   .cta-sub { font-size: 16px; color: rgba(245,245,240,0.75); max-width: 560px; margin: 0 auto 44px; line-height: 1.7; position: relative; z-index: 1; }
   .cta-section .btn-outline { position: relative; z-index: 1; }
+  /* COVER HERO */
+  .cover-hero { position: relative; width: 100%; height: 70vh; overflow: hidden; cursor: pointer; }
+  .cover-hero img { position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover; object-position: center top; display: block; }
+  .cover-hero-overlay { position: absolute; inset: 0; background: linear-gradient(to bottom, rgba(10,10,10,0.1) 0%, rgba(10,10,10,0.15) 50%, rgba(10,10,10,0.85) 100%); }
+  .cover-hero-content { position: absolute; bottom: 0; left: 0; right: 0; padding: 48px; }
+  .cover-hero-meta { display: flex; align-items: flex-end; justify-content: space-between; }
+  .cover-hero-left {}
+  .cover-hero-ep { font-size: 10px; letter-spacing: 0.25em; text-transform: uppercase; color: var(--neon); margin-bottom: 12px; }
+  .cover-hero-name { font-size: clamp(44px,7vw,96px); font-weight: 700; letter-spacing: -0.03em; text-transform: uppercase; line-height: 0.9; color: var(--white); margin-bottom: 8px; }
+  .cover-hero-role { font-size: 12px; letter-spacing: 0.12em; text-transform: uppercase; color: rgba(245,245,240,0.7); }
+  .cover-hero-right { text-align: right; padding-bottom: 8px; }
+  .cover-hero-quote { font-size: 14px; font-weight: 300; line-height: 1.6; color: rgba(245,245,240,0.85); font-style: italic; max-width: 320px; border-right: 2px solid var(--neon); padding-right: 20px; }
+  .cover-hero-btn { margin-top: 16px; }
   /* FEATURED BLOK */
 
   .featured-video { position: relative; overflow: hidden; background: var(--gray); aspect-ratio: 9/16; }
@@ -99,6 +112,21 @@
   .featured-quote p { font-size: 15px; font-weight: 300; line-height: 1.65; color: var(--white); font-style: italic; margin: 0; }
   .featured-block:hover .featured-photo img { transform: scale(1.03); }
   .featured-section { padding: 48px 48px 20px; }
+  /* COVER HOMEPAGE */
+  .cover-img-wrap { width: 100%; aspect-ratio: 16/9; overflow: hidden; cursor: pointer; position: relative; background: var(--gray); }
+  .cover-img-wrap img { width: 100%; height: 100%; object-fit: cover; display: block; transition: transform 0.4s ease; }
+  .cover-img-wrap:hover img { transform: scale(1.02); }
+  .cover-info { padding: 20px 48px 24px; border-bottom: 1px solid rgba(255,255,255,0.07); display: flex; align-items: flex-start; justify-content: space-between; gap: 32px; cursor: pointer; }
+  .cover-info-left {}
+  .cover-info-ep { font-size: 10px; letter-spacing: 0.25em; text-transform: uppercase; color: var(--neon); margin-bottom: 10px; }
+  .cover-info-name { font-size: clamp(28px,4vw,52px); font-weight: 700; letter-spacing: -0.02em; text-transform: uppercase; line-height: 1; color: var(--white); margin-bottom: 6px; }
+  .cover-info-role { font-size: 11px; letter-spacing: 0.1em; text-transform: uppercase; color: var(--gray-light); }
+  .cover-info-right { display: flex; flex-direction: column; align-items: flex-end; justify-content: center; gap: 14px; padding-top: 4px; }
+  .cover-info-desc { font-size: 13px; color: rgba(245,245,240,0.8); max-width: 320px; line-height: 1.65; text-align: right; }
+  /* SMALL ABOUT BAR */
+  .about-bar { padding: 18px 48px; border-top: 1px solid rgba(255,255,255,0.07); display: flex; align-items: center; justify-content: space-between; gap: 24px; }
+  .about-bar-text { font-size: 12px; color: var(--gray-light); line-height: 1.6; }
+  .about-bar-text strong { color: var(--white); }
   .reel-grid { display: grid; grid-template-columns: repeat(4, 1fr); gap: 2px; background: var(--gray-mid); }
   .reel-card { background: var(--black); display: flex; flex-direction: column; cursor: pointer; }
   .reel-media { position: relative; overflow: hidden; background: var(--gray); aspect-ratio: 9 / 16; flex-shrink: 0; }
@@ -227,7 +255,10 @@
     .featured-block { grid-template-columns: 1fr !important; }
     .featured-cards { display: none; }
     .featured-text { padding: 24px; }
-    .featured-section { padding: 32px 24px 16px; }
+    .cover-info { padding: 16px 24px; flex-direction: column; gap: 12px; }
+    .cover-info-right { align-items: flex-start; }
+    .cover-info-desc { text-align: left; max-width: 100%; }
+    .about-bar { padding: 16px 24px; flex-direction: column; align-items: flex-start; gap: 10px; }
     .about-teaser { padding: 64px 24px; grid-template-columns: 1fr; gap: 20px; }
     footer { padding: 36px 24px; justify-content: center; text-align: center; flex-direction: column; gap: 12px; }
     .page-header { padding: 110px 24px 56px; }
@@ -279,23 +310,12 @@
 
 <!-- HOME -->
 <div id="page-home" class="page active">
-  <section class="hero">
-    <div class="hero-grid"></div>
-    <div class="hero-ticker"><div class="hero-ticker-inner"><span>Culture Head</span><span>Culture Head</span><span>Culture Head</span><span>Culture Head</span><span>Culture Head</span><span>Culture Head</span></div></div>
-    <div class="hero-tag">Artiesten · Ondernemers · Creatives</div>
-    <h1 class="hero-title">We Basically<br><span class="accent">Collect</span><br>Stories.</h1>
-    <div class="hero-bottom">
-      <p class="hero-sub">We document the grind, the struggles & everything that comes with it.<br><span style="color:var(--white);">Verhalen van artiesten, ondernemers en creatives die de scene bouwen.</span></p>
-      <button class="btn-outline" onclick="showPage('interviews')">Check The Stories <span class="arrow">→</span></button>
-    </div>
-  </section>
-  <div class="marquee-strip"><div class="marquee-inner"><span>Artiesten</span><span class="dot">✦</span><span>Ondernemers</span><span class="dot">✦</span><span>Creatives</span><span class="dot">✦</span><span>Muzikanten</span><span class="dot">✦</span><span>Designers</span><span class="dot">✦</span><span>Producers</span><span class="dot">✦</span><span>Fotografen</span><span class="dot">✦</span><span>Regisseurs</span><span class="dot">✦</span><span>Artiesten</span><span class="dot">✦</span><span>Ondernemers</span><span class="dot">✦</span><span>Creatives</span><span class="dot">✦</span><span>Muzikanten</span><span class="dot">✦</span><span>Designers</span><span class="dot">✦</span><span>Producers</span><span class="dot">✦</span><span>Fotografen</span><span class="dot">✦</span><span>Regisseurs</span><span class="dot">✦</span></div></div>
+  <!-- COVER FOTO -->
+  <div class="cover-img-wrap" id="cover-img-wrap"></div>
+  <div class="cover-info" id="cover-info"></div>
 
-  <!-- FEATURED -->
-  <div class="featured-section">
-    <p class="section-label">Featured</p>
-  </div>
-  <div class="featured-block" id="home-featured" onclick=""></div>
+
+
 
   <!-- STORIES -->
   <section class="section">
@@ -305,16 +325,17 @@
       <button class="btn-outline" onclick="showPage('interviews')" style="font-size:10px;padding:12px 20px;">Alle stories <span class="arrow">→</span></button>
     </div>
   </section>
-  <div class="about-teaser">
-    <p class="about-teaser-label">Over Culture Head</p>
-    <p class="about-teaser-text">Iedereen ziet het eindresultaat. Culture Head laat zien wat eraan voorafging. De keuzes, het proces, de mensen die <strong>bouwen terwijl de wereld nog slaapt.</strong></p>
-  </div>
+
   <section class="cta-section">
     <p class="section-label">The Magazine</p>
     <h2 class="cta-headline">Vol. 01<br><span class="neon">incoming.</span></h2>
     <p class="cta-sub">Culture Head wordt print. De verhalen die online begonnen, op papier. Limited run, first come first served.</p>
     <button class="btn-outline" onclick="showPage('magazine')">Lees meer <span class="arrow">→</span></button>
   </section>
+  <div class="about-bar">
+    <p class="about-bar-text"><strong>Culture Head</strong> documenteert artiesten, ondernemers en creatives die de scene bouwen. Niet de highlights — het proces.</p>
+    <button class="btn-neon-text" onclick="showPage('about')">Over CLTRHEAD →</button>
+  </div>
   <footer><img src="culture_head_logo.png" alt="Culture Head"><span class="footer-tagline">We basically collect stories 🎙️</span><a href="https://instagram.com/cltrhead" target="_blank" class="footer-ig">@cltrhead</a></footer>
 </div>
 
@@ -453,6 +474,7 @@
   }
 
   const interviews=[
+    {ep:'Vol. 015',name:'Ella John',role:'Rapper & Artiest',desc:'Voor de mensen die me niet kennen — je hoort me eigenlijk wel te kennen.',thumb:'_DSC0176.JPG',video:'',hasArticle:true,articleId:'ellajohn'},
     {ep:'Vol. 001',name:'Celeste Mercedes',role:'Violiste & Music Director',desc:'Hoe een violiste haar plek veroverde naast haar childhood hero The Game en wat jij kan leren over obsessie en connecties.',thumb:'celeste-thumb.jpg',video:'celeste.mp4',hasArticle:true,articleId:'celeste'},
     {ep:'Vol. 002',name:'Rawen Mustafa',role:'Designer & Oprichter ETB',desc:'Hoe Rawen Mustafa vanuit zijn vaders leeratelier een eigen jeansmerk bouwde op vakmanschap en de filosofie dat slow de enige echte weg is.',thumb:'rawen-thumb.jpg',video:'rawen.mp4',hasArticle:true,articleId:'rawen'},
     {ep:'Vol. 003',name:'Yael Daila',role:'Artiest & Performer',desc:'Backstage in Paradiso daags voor haar allereerste headline show. Yael Daila over haar voorbereiding en op een vriendelijke manier toch je zin doordrijven.',thumb:'Yael-thumb.jpg',video:'Yael.mp4',hasArticle:true,articleId:'yael'},
@@ -473,6 +495,35 @@
   // photos: array van max 2 paden — 1 foto = full width, 2 foto's = paar
   // body: array van content blokken { type: 'text'|'quote'|'heading'|'photos', content }
   const articles={
+    ellajohn:{
+      ep:'Vol. 015',
+      name:'Ella John',
+      role:'Rapper & Artiest',
+      thumb:'_DSC0176.JPG',
+      video:'',
+      videoSide:'left',
+      photos:['_DSC0211.JPG','_DSC0219.JPG'],
+      quote:'Ik wil dat mensen die kracht in hun vrouwelijkheid horen in wat ik vertel. Die zelfverzekerdheid, die kracht in jezelf.',
+      introText:'Donderdag 28 mei. Greenhouse Amsterdam. Buiten hangt het neonbord nog in het avondlicht. Binnen is het anders. Geen groot podium, geen zaal vol vreemden. Vijfentwintig vrouwen, een DJ-set, en een rapper die haar eerste EP laat horen aan de mensen die het het meest verdienen om het als eerste te horen.',
+      sideText:'Ella John heeft dit bewust zo opgezet. De avond heet officieel een luistersessie. In samenwerking met Canna Bish Lounge — een community van vrouwelijke smokers. Op de tafels: vinyl platen, een joint met een paars lintje eromheen, EP-covers van Sobek. De details zijn geen toeval.',
+      sideText2:'',
+      body:[
+        {type:'heading',content:'Sobek'},
+        {type:'text',content:'Zeven tracks, volledig geproduceerd door Mike Dipper. Ella omschrijft het als mellow — bars die er zijn, maar ingebed in een sound die je mee naar binnen neemt. Geen schreeuwerige energie. Rust met karakter.'},
+        {type:'text',content:'Het project draait om zelfverzekerdheid, eigenwaarde en vrouwelijkheid. Niet als statement op een poster, maar als iets wat ze voelt en in de muziek stopt.'},
+        {type:'quote',content:'Ik wil dat mensen die kracht in hun vrouwelijkheid horen in wat ik vertel. Die zelfverzekerdheid, die kracht in jezelf.'},
+        {type:'photos',content:['_DSC0151.JPG','_DSC0159.JPG']},
+        {type:'heading',content:'Waarom ladies only'},
+        {type:'text',content:'De beslissing om de release in een besloten ruimte te vieren is geen bescheidenheid. Het is een keuze. Vijfentwintig mensen, alleen vrouwen, haar mensen. Ze kennen haar niet alleen als artiest. Ze kennen haar. Dat is een ander soort avond.'},
+        {type:'quote',content:'Ik wilde een avond die meer was dan alleen muziek luisteren. Dus ik heb al mijn ladies bij elkaar gehaald.'},
+        {type:'photos',content:['_DSC0154.JPG','_DSC0182.JPG']},
+        {type:'heading',content:'De discipline'},
+        {type:'text',content:'Ella is bezig met iets groters dan één EP. Eerste single komt in juni. Dan juli, augustus. Het hele project in september. Ze bouwt bewust, stapje voor stapje.'},
+        {type:'text',content:'Haar tip voor iedereen die ook ergens aan bouwt: niet ingewikkeld. Gewoon doorgaan.'},
+        {type:'quote',content:'Door gewoon je ding te doen en door te gaan. Die discipline te vinden, dat vertrouwen in je ideeën en je visie vasthouden. En door er 100% in te geloven.'},
+        {type:'photos',content:['_DSC0225.JPG','_DSC0232.JPG']},
+      ]
+    },
     celeste:{ep:'Vol. 001',name:'Celeste Mercedes',role:'Violiste & Music Director',thumb:'celeste-thumb.jpg',video:'celeste.mp4',videoSide:'left',
       quote:'Je moet drive hebben, het echt willen en bijna zo obsessed zijn dat het weird wordt. Want dat is hoe je op de plekken komt waar anderen niet komen.',
       introText:'Het is een doordeweekse avond als we binnenlopen bij Tivoli Vredenburg. The Game staat op het podium. De zaal trilt. En ergens in dat gewoel staat Celeste Mercedes — niet als toeschouwer, maar als iemand die straks naast hem staat.',
@@ -633,6 +684,30 @@
     grid.innerHTML=interviews.map(buildCard).join('');
   }
   function buildFeatured() {
+    const iv = interviews[0];
+    if (!iv) return;
+    const imgWrap = document.getElementById('cover-img-wrap');
+    const infoWrap = document.getElementById('cover-info');
+    if (imgWrap) {
+      imgWrap.onclick = () => iv.hasArticle ? showArticle(iv.articleId) : null;
+      imgWrap.innerHTML = `<img src="${iv.thumb}" alt="${iv.name}">`;
+    }
+    if (infoWrap) {
+      infoWrap.onclick = () => iv.hasArticle ? showArticle(iv.articleId) : null;
+      infoWrap.innerHTML = `
+        <div class="cover-info-left">
+          <p class="cover-info-ep">${iv.ep} — Interview</p>
+          <h2 class="cover-info-name">${iv.name}</h2>
+          <p class="cover-info-role">${iv.role}</p>
+        </div>
+        <div class="cover-info-right">
+          <p class="cover-info-desc">${iv.desc}</p>
+          ${iv.hasArticle ? `<button class="btn-neon-text" onclick="event.stopPropagation();showArticle('${iv.articleId}')">Lees het artikel →</button>` : ''}
+        </div>`;
+    }
+  }
+
+  function buildFeaturedOld() {
     const iv = interviews[0];
     if (!iv) return;
     const el = document.getElementById('home-featured');
