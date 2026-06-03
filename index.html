@@ -488,7 +488,7 @@
   }
 
   const interviews=[
-    {ep:'Vol. 015',name:'Ella John',role:'Rapper & Artiest',desc:'Voor de mensen die me niet kennen — je hoort me eigenlijk wel te kennen.',thumb:'_DSC0211.JPG',video:'',hasArticle:true,articleId:'ellajohn'},
+    {ep:'Vol. 015',name:'Ella John',role:'Rapper & Artiest',desc:'Voor de mensen die me niet kennen — je hoort me eigenlijk wel te kennen.',thumb:'ELLA THUMB.png',cover:'_DSC0211.JPG',video:'Ella2_4WEB.mp4',hasArticle:true,articleId:'ellajohn'},
     {ep:'Vol. 001',name:'Celeste Mercedes',role:'Violiste & Music Director',desc:'Hoe een violiste haar plek veroverde naast haar childhood hero The Game en wat jij kan leren over obsessie en connecties.',thumb:'celeste-thumb.jpg',video:'celeste.mp4',hasArticle:true,articleId:'celeste'},
     {ep:'Vol. 002',name:'Rawen Mustafa',role:'Designer & Oprichter ETB',desc:'Hoe Rawen Mustafa vanuit zijn vaders leeratelier een eigen jeansmerk bouwde op vakmanschap en de filosofie dat slow de enige echte weg is.',thumb:'rawen-thumb.jpg',video:'rawen.mp4',hasArticle:true,articleId:'rawen'},
     {ep:'Vol. 003',name:'Yael Daila',role:'Artiest & Performer',desc:'Backstage in Paradiso daags voor haar allereerste headline show. Yael Daila over haar voorbereiding en op een vriendelijke manier toch je zin doordrijven.',thumb:'Yael-thumb.jpg',video:'Yael.mp4',hasArticle:true,articleId:'yael'},
@@ -705,7 +705,7 @@
     if (imgWrap) {
       imgWrap.onclick = () => iv.hasArticle ? showArticle(iv.articleId) : null;
       imgWrap.innerHTML = `
-        <img src="${iv.thumb}" alt="${iv.name}">
+        <img src="${iv.cover || iv.thumb}" alt="${iv.name}">
         <div class="cover-mobile-overlay">
           <div class="cover-overlay-top">
             <p class="cover-mobile-ep">${iv.ep} — Interview</p>
