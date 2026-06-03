@@ -118,9 +118,16 @@
   .cover-img-wrap img { position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover; display: block; transition: transform 0.4s ease; }
   .cover-img-wrap:hover img { transform: scale(1.02); }
   /* Overlay altijd zichtbaar */
-  .cover-mobile-overlay { display: flex; position: absolute; inset: 0; flex-direction: column; justify-content: flex-end; padding: 40px 48px; background: linear-gradient(to bottom, rgba(10,10,10,0) 40%, rgba(10,10,10,0.82) 100%); }
+  .cover-mobile-overlay { display: flex; position: absolute; inset: 0; flex-direction: column; justify-content: flex-end; padding: 36px 44px; background: linear-gradient(to bottom, rgba(10,10,10,0.1) 0%, rgba(10,10,10,0.1) 40%, rgba(10,10,10,0.65) 100%); }
   .cover-mobile-ep { font-size: 10px; letter-spacing: 0.25em; text-transform: uppercase; color: var(--neon); margin-bottom: 10px; }
-  .cover-mobile-name { font-size: clamp(36px,6vw,80px); font-weight: 700; letter-spacing: -0.02em; text-transform: uppercase; line-height: 1; color: var(--white); margin-bottom: 24px; }
+  .cover-mobile-name { font-size: clamp(42px,7vw,96px); font-weight: 700; letter-spacing: -0.03em; text-transform: uppercase; line-height: 0.92; color: var(--white); }
+  .cover-mobile-eptitle { font-size: clamp(42px,7vw,96px); font-weight: 700; letter-spacing: -0.03em; text-transform: uppercase; line-height: 0.92; color: var(--neon); margin-bottom: 20px; }
+  .cover-overlay-bottom { display: flex; align-items: flex-end; justify-content: space-between; gap: 24px; }
+  .cover-overlay-left {}
+  .cover-overlay-right { text-align: right; flex-shrink: 0; }
+  .cover-overlay-desc { font-size: 12px; color: rgba(245,245,240,0.75); line-height: 1.55; margin-bottom: 14px; }
+  .cover-overlay-btn { font-size: 9px; letter-spacing: 0.12em; text-transform: uppercase; color: var(--neon); border: 1px solid rgba(0,163,255,0.4); padding: 8px 16px; background: none; cursor: pointer; font-family: var(--font); white-space: nowrap; }
+  .cover-overlay-btn:hover { background: rgba(0,163,255,0.1); }
   .cover-info { display: none; }
 
   /* SMALL ABOUT BAR */
@@ -256,8 +263,11 @@
     .featured-cards { display: none; }
     .featured-text { padding: 24px; }
     .cover-img-wrap { aspect-ratio: unset; height: 88vh; min-height: unset; }
-    .cover-mobile-overlay { padding: 28px 24px; }
-    .cover-mobile-name { font-size: 36px; margin-bottom: 20px; }
+    .cover-mobile-overlay { padding: 24px; }
+    .cover-mobile-name { font-size: 36px; }
+    .cover-mobile-eptitle { font-size: 36px; margin-bottom: 16px; }
+    .cover-overlay-bottom { flex-direction: column; align-items: flex-start; gap: 12px; }
+    .cover-overlay-right { text-align: left; }
     .about-bar { padding: 16px 24px; flex-direction: column; align-items: flex-start; gap: 10px; }
     .about-teaser { padding: 64px 24px; grid-template-columns: 1fr; gap: 20px; }
     footer { padding: 36px 24px; justify-content: center; text-align: center; flex-direction: column; gap: 12px; }
@@ -477,7 +487,7 @@
   }
 
   const interviews=[
-    {ep:'Vol. 015',name:'Ella John',role:'Rapper & Artiest',desc:'Voor de mensen die me niet kennen — je hoort me eigenlijk wel te kennen.',thumb:'_DSC0176.JPG',video:'',hasArticle:true,articleId:'ellajohn'},
+    {ep:'Vol. 015',name:'Ella John',role:'Rapper & Artiest',desc:'Voor de mensen die me niet kennen — je hoort me eigenlijk wel te kennen.',thumb:'_DSC0211.JPG',video:'',hasArticle:true,articleId:'ellajohn'},
     {ep:'Vol. 001',name:'Celeste Mercedes',role:'Violiste & Music Director',desc:'Hoe een violiste haar plek veroverde naast haar childhood hero The Game en wat jij kan leren over obsessie en connecties.',thumb:'celeste-thumb.jpg',video:'celeste.mp4',hasArticle:true,articleId:'celeste'},
     {ep:'Vol. 002',name:'Rawen Mustafa',role:'Designer & Oprichter ETB',desc:'Hoe Rawen Mustafa vanuit zijn vaders leeratelier een eigen jeansmerk bouwde op vakmanschap en de filosofie dat slow de enige echte weg is.',thumb:'rawen-thumb.jpg',video:'rawen.mp4',hasArticle:true,articleId:'rawen'},
     {ep:'Vol. 003',name:'Yael Daila',role:'Artiest & Performer',desc:'Backstage in Paradiso daags voor haar allereerste headline show. Yael Daila over haar voorbereiding en op een vriendelijke manier toch je zin doordrijven.',thumb:'Yael-thumb.jpg',video:'Yael.mp4',hasArticle:true,articleId:'yael'},
@@ -502,7 +512,7 @@
       ep:'Vol. 015',
       name:'Ella John',
       role:'Rapper & Artiest',
-      thumb:'_DSC0176.JPG',
+      thumb:'_DSC0211.JPG',
       video:'',
       videoSide:'left',
       photos:['_DSC0211.JPG','_DSC0219.JPG'],
@@ -697,8 +707,16 @@
         <img src="${iv.thumb}" alt="${iv.name}">
         <div class="cover-mobile-overlay">
           <p class="cover-mobile-ep">${iv.ep} — Interview</p>
-          <h2 class="cover-mobile-name">${iv.name}</h2>
-          ${iv.hasArticle ? `<button class="btn-outline" onclick="event.stopPropagation();showArticle('${iv.articleId}')" style="font-size:10px;padding:10px 20px;">Check the story →</button>` : ''}
+          <div class="cover-mobile-name">${iv.name}</div>
+          <div class="cover-mobile-eptitle">So Big.</div>
+          <div class="cover-overlay-bottom">
+            <div class="cover-overlay-left">
+              <p class="cover-overlay-desc">Ella John over eigenwaarde,<br>vrouwelijkheid en haar nieuwe EP.</p>
+            </div>
+            <div class="cover-overlay-right">
+              ${iv.hasArticle ? `<button class="cover-overlay-btn" onclick="event.stopPropagation();showArticle('${iv.articleId}')">Check the story →</button>` : ''}
+            </div>
+          </div>
         </div>`;
     }
     if (infoWrap) {
