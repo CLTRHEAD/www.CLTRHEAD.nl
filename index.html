@@ -113,16 +113,16 @@
   .featured-block:hover .featured-photo img { transform: scale(1.03); }
   .featured-section { padding: 48px 48px 20px; }
   /* COVER HOMEPAGE */
+  /* COVER — desktop: foto + tekst eronder, mobiel: foto groot met tekst erin */
   .cover-img-wrap { width: 100%; aspect-ratio: 16/9; min-height: 300px; overflow: hidden; cursor: pointer; position: relative; background: var(--gray); display: block; }
   .cover-img-wrap img { position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover; display: block; transition: transform 0.4s ease; }
   .cover-img-wrap:hover img { transform: scale(1.02); }
-  .cover-info { padding: 20px 48px 24px; border-bottom: 1px solid rgba(255,255,255,0.07); display: flex; align-items: flex-start; justify-content: space-between; gap: 32px; cursor: pointer; }
-  .cover-info-left {}
-  .cover-info-ep { font-size: 10px; letter-spacing: 0.25em; text-transform: uppercase; color: var(--neon); margin-bottom: 10px; }
-  .cover-info-name { font-size: clamp(28px,4vw,52px); font-weight: 700; letter-spacing: -0.02em; text-transform: uppercase; line-height: 1; color: var(--white); margin-bottom: 6px; }
-  .cover-info-role { font-size: 11px; letter-spacing: 0.1em; text-transform: uppercase; color: var(--gray-light); }
-  .cover-info-right { display: flex; flex-direction: column; align-items: flex-end; justify-content: center; gap: 14px; padding-top: 4px; }
-  .cover-info-desc { font-size: 13px; color: rgba(245,245,240,0.8); max-width: 320px; line-height: 1.65; text-align: right; }
+  /* Overlay altijd zichtbaar */
+  .cover-mobile-overlay { display: flex; position: absolute; inset: 0; flex-direction: column; justify-content: flex-end; padding: 40px 48px; background: linear-gradient(to bottom, rgba(10,10,10,0) 40%, rgba(10,10,10,0.82) 100%); }
+  .cover-mobile-ep { font-size: 10px; letter-spacing: 0.25em; text-transform: uppercase; color: var(--neon); margin-bottom: 10px; }
+  .cover-mobile-name { font-size: clamp(36px,6vw,80px); font-weight: 700; letter-spacing: -0.02em; text-transform: uppercase; line-height: 1; color: var(--white); margin-bottom: 24px; }
+  .cover-info { display: none; }
+
   /* SMALL ABOUT BAR */
   .about-bar { padding: 18px 48px; border-top: 1px solid rgba(255,255,255,0.07); display: flex; align-items: center; justify-content: space-between; gap: 24px; }
   .about-bar-text { font-size: 12px; color: var(--gray-light); line-height: 1.6; }
@@ -255,9 +255,9 @@
     .featured-block { grid-template-columns: 1fr !important; }
     .featured-cards { display: none; }
     .featured-text { padding: 24px; }
-    .cover-info { padding: 16px 24px; flex-direction: column; gap: 12px; }
-    .cover-info-right { align-items: flex-start; }
-    .cover-info-desc { text-align: left; max-width: 100%; }
+    .cover-img-wrap { aspect-ratio: unset; height: 88vh; min-height: unset; }
+    .cover-mobile-overlay { padding: 28px 24px; }
+    .cover-mobile-name { font-size: 36px; margin-bottom: 20px; }
     .about-bar { padding: 16px 24px; flex-direction: column; align-items: flex-start; gap: 10px; }
     .about-teaser { padding: 64px 24px; grid-template-columns: 1fr; gap: 20px; }
     footer { padding: 36px 24px; justify-content: center; text-align: center; flex-direction: column; gap: 12px; }
@@ -693,7 +693,13 @@
     const infoWrap = document.getElementById('cover-info');
     if (imgWrap) {
       imgWrap.onclick = () => iv.hasArticle ? showArticle(iv.articleId) : null;
-      imgWrap.innerHTML = `<img src="${iv.thumb}" alt="${iv.name}">`;
+      imgWrap.innerHTML = `
+        <img src="${iv.thumb}" alt="${iv.name}">
+        <div class="cover-mobile-overlay">
+          <p class="cover-mobile-ep">${iv.ep} — Interview</p>
+          <h2 class="cover-mobile-name">${iv.name}</h2>
+          ${iv.hasArticle ? `<button class="btn-outline" onclick="event.stopPropagation();showArticle('${iv.articleId}')" style="font-size:10px;padding:10px 20px;">Check the story →</button>` : ''}
+        </div>`;
     }
     if (infoWrap) {
       infoWrap.onclick = () => iv.hasArticle ? showArticle(iv.articleId) : null;
