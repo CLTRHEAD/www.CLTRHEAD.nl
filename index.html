@@ -234,6 +234,11 @@
   @keyframes fadeUp { from{opacity:0;transform:translateY(32px)} to{opacity:1;transform:translateY(0)} }
   @media (max-width: 1100px) { .nav-links { gap: 22px; } .nav-links a { font-size: 10px; } }
   @media (max-width: 900px) {
+    #page-merch .page-header { padding: 110px 24px 56px; }
+    #page-merch > div:nth-child(2) { padding: 48px 24px; }
+    #page-merch > div:nth-child(2) > div { grid-template-columns: 1fr !important; gap: 40px !important; }
+    #page-merch > div:nth-child(3) { padding: 56px 24px; grid-template-columns: 1fr; gap: 16px; }
+  
     nav { padding: 18px 24px; } .nav-links { display: none; } .nav-hamburger { display: flex; }
     .nav-logo img { height: 110px; } .hero { padding: 0 24px 56px; }
     .hero-bottom { flex-direction: column; align-items: flex-start; gap: 24px; } .hero-sub { max-width: 100%; }
@@ -286,6 +291,7 @@
     <li><a onclick="showPage('home')" id="nav-home" class="active">Home</a></li>
     <li><a onclick="showPage('interviews')" id="nav-interviews">The Stories</a></li>
     <li><a onclick="showPage('magazine')" id="nav-magazine">Magazine</a></li>
+    <li><a onclick="showPage('merch')" id="nav-merch">Merch</a></li>
     <li><a onclick="showPage('about')" id="nav-about">Over CLTRHEAD</a></li>
     <li><a onclick="showPage('contact')" id="nav-contact">Contact</a></li>
   </ul>
@@ -296,6 +302,7 @@
   <a onclick="showPage('home');toggleMenu()">Home</a>
   <a onclick="showPage('interviews');toggleMenu()">The Stories</a>
   <a onclick="showPage('magazine');toggleMenu()">Magazine</a>
+  <a onclick="showPage('merch');toggleMenu()">Merch</a>
   <a onclick="showPage('about');toggleMenu()">Over CLTRHEAD</a>
   <a onclick="showPage('contact');toggleMenu()">Contact</a>
 </div>
@@ -325,7 +332,7 @@
 </div>
 
 <div id="page-interviews" class="page">
-  <div class="page-header"><h1 class="page-title">The<br><span class="outline">Stories</span></h1></div>
+  <div class="about-credo" style="padding:120px 48px 80px;"><p class="about-credo-text">The<br><em>Stories</em></p></div>
   <div style="padding:48px;background:var(--black);">
     <div class="reel-grid" id="interviews-grid" style="background:var(--black);gap:2px;"></div>
   </div>
@@ -376,7 +383,7 @@
 </div>
 
 <div id="page-magazine" class="page">
-  <div class="page-header"><h1 class="page-title">The<br><span class="outline">Magazine</span></h1></div>
+  <div class="about-credo" style="padding:120px 48px 80px;"><p class="about-credo-text">The<br><em>Magazine</em></p></div>
   <div class="mag-cover-wrap">
     <p class="section-label">Vol. 01 — Preview</p>
     <div class="mag-cover"><p class="mag-cover-label">Cover Reveal Soon</p><p class="mag-cover-title">Culture<br>Head</p><p class="mag-cover-vol">Vol. 01</p></div>
@@ -393,6 +400,104 @@
 </div>
 
 <div id="page-article" class="page"><div id="article-content"></div></div>
+
+
+<div id="page-merch" class="page">
+  <div class="about-credo" style="padding:120px 48px 80px;"><p class="about-credo-text">The<br><em>Drop</em></p></div>
+
+  <div style="padding: 80px 48px; border-bottom: 1px solid rgba(255,255,255,0.07);">
+    <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 80px; align-items: start; max-width: 1100px;">
+
+      <!-- Tas visueel -->
+      <div style="position: relative;">
+        <div style="aspect-ratio: 3/4; background: #0f0f0f; border: 1px solid rgba(255,255,255,0.07); display: flex; align-items: center; justify-content: center; position: relative; overflow: hidden;">
+          <img id="merch-img" src="ch-tas.jpg" alt="CH Tas" style="position:absolute;inset:0;width:100%;height:100%;object-fit:cover;display:block;" onerror="this.style.display='none';document.getElementById('merch-placeholder').style.display='flex'">
+          <div id="merch-placeholder" style="display:flex;flex-direction:column;align-items:center;justify-content:center;width:100%;height:100%;padding:40px;">
+            <svg width="120" height="160" viewBox="0 0 120 200" fill="none">
+              <path d="M35 70 Q35 40 50 38 Q65 36 65 70" stroke="#333" stroke-width="5" stroke-linecap="round"/>
+              <path d="M55 70 Q55 40 70 38 Q85 36 85 70" stroke="#333" stroke-width="5" stroke-linecap="round"/>
+              <rect x="20" y="68" width="80" height="110" rx="3" fill="#1a1a1a"/>
+              <rect x="28" y="76" width="64" height="94" rx="2" fill="none" stroke="#2a2a2a" stroke-width="0.8"/>
+              <text x="60" y="128" text-anchor="middle" font-family="Helvetica Neue, Helvetica, Arial, sans-serif" font-weight="700" font-size="22" fill="#f5f5f0" letter-spacing="-1">CH</text>
+              <line x1="42" y1="140" x2="78" y2="140" stroke="#00A3FF" stroke-width="0.8"/>
+            </svg>
+            <p style="font-size:11px;letter-spacing:0.2em;text-transform:uppercase;color:#444;margin-top:16px;">Foto volgt</p>
+          </div>
+          <!-- Sold out badge -->
+          <div style="position:absolute;top:20px;right:20px;background:#00A3FF;color:#0a0a0a;font-size:9px;font-weight:700;letter-spacing:0.15em;text-transform:uppercase;padding:6px 12px;">Limited</div>
+        </div>
+        <!-- Thumbnail navigatie -->
+        <div style="display:flex;gap:8px;margin-top:8px;">
+          <div style="width:60px;height:60px;background:#0f0f0f;border:1px solid rgba(255,255,255,0.15);cursor:pointer;"></div>
+          <div style="width:60px;height:60px;background:#0f0f0f;border:1px solid rgba(255,255,255,0.07);cursor:pointer;"></div>
+          <div style="width:60px;height:60px;background:#0f0f0f;border:1px solid rgba(255,255,255,0.07);cursor:pointer;"></div>
+        </div>
+      </div>
+
+      <!-- Product info -->
+      <div style="padding-top: 8px;">
+        <p style="font-size:10px;letter-spacing:0.25em;text-transform:uppercase;color:#00A3FF;margin-bottom:16px;">Vol. 01 — Merch Drop</p>
+        <h2 style="font-size:clamp(32px,4vw,56px);font-weight:700;letter-spacing:-0.02em;text-transform:uppercase;line-height:0.95;color:#f5f5f0;margin-bottom:12px;">CH Tas</h2>
+        <p style="font-size:12px;letter-spacing:0.1em;text-transform:uppercase;color:#888;margin-bottom:32px;">Culture Head × Vol. 01</p>
+
+        <div style="border-top:1px solid rgba(255,255,255,0.07);padding-top:24px;margin-bottom:24px;">
+          <p style="font-size:15px;color:rgba(245,245,240,0.8);line-height:1.8;margin-bottom:16px;">De eerste CH merch drop. Ontworpen vanuit hetzelfde principe als het platform: geen overbodige details. Alleen wat er toe doet.</p>
+          <p style="font-size:15px;color:rgba(245,245,240,0.8);line-height:1.8;">Limited run. Als hij weg is, is hij weg.</p>
+        </div>
+
+        <div style="border-top:1px solid rgba(255,255,255,0.07);padding:20px 0;border-bottom:1px solid rgba(255,255,255,0.07);margin-bottom:32px;">
+          <div style="display:flex;justify-content:space-between;align-items:center;margin-bottom:12px;">
+            <span style="font-size:11px;letter-spacing:0.15em;text-transform:uppercase;color:#888;">Materiaal</span>
+            <span style="font-size:13px;color:#f5f5f0;">Heavy canvas</span>
+          </div>
+          <div style="display:flex;justify-content:space-between;align-items:center;margin-bottom:12px;">
+            <span style="font-size:11px;letter-spacing:0.15em;text-transform:uppercase;color:#888;">Editie</span>
+            <span style="font-size:13px;color:#f5f5f0;">Vol. 01 — Gelimiteerd</span>
+          </div>
+          <div style="display:flex;justify-content:space-between;align-items:center;">
+            <span style="font-size:11px;letter-spacing:0.15em;text-transform:uppercase;color:#888;">Made in</span>
+            <span style="font-size:13px;color:#f5f5f0;">Amsterdam</span>
+          </div>
+        </div>
+
+        <!-- Prijs + CTA -->
+        <div style="display:flex;align-items:center;justify-content:space-between;margin-bottom:20px;">
+          <span style="font-size:28px;font-weight:700;color:#f5f5f0;letter-spacing:-0.02em;">€ —</span>
+          <span style="font-size:10px;letter-spacing:0.15em;text-transform:uppercase;color:#555;">Prijs volgt</span>
+        </div>
+
+        <button onclick="document.getElementById('merch-notify').style.display='block'" style="width:100%;background:#f5f5f0;color:#0a0a0a;border:none;padding:18px 40px;font-size:11px;letter-spacing:0.2em;text-transform:uppercase;font-family:var(--font, Helvetica Neue, Helvetica, Arial, sans-serif);font-weight:700;cursor:pointer;margin-bottom:12px;">Notify Me When Available →</button>
+
+        <div id="merch-notify" style="display:none;margin-top:16px;">
+          <div style="display:flex;gap:8px;">
+            <input type="email" id="merch-email" placeholder="jouw@email.com" style="flex:1;background:transparent;border:none;border-bottom:1px solid rgba(255,255,255,0.2);padding:10px 0;color:#f5f5f0;font-size:14px;font-family:inherit;outline:none;">
+            <button onclick="
+              const e=document.getElementById('merch-email');
+              if(e&&e.value&&e.value.includes('@')){
+                this.textContent='✓';
+                this.style.color='#00A3FF';
+                e.value='';
+              }
+            " style="background:none;border:none;border-bottom:1px solid rgba(0,163,255,0.4);color:#00A3FF;font-size:11px;letter-spacing:0.15em;text-transform:uppercase;cursor:pointer;padding:10px 16px;font-family:inherit;">Ok →</button>
+          </div>
+        </div>
+
+        <p style="font-size:11px;color:#444;margin-top:16px;letter-spacing:0.05em;">Geen spam. Alleen het bericht als de drop live gaat.</p>
+      </div>
+    </div>
+  </div>
+
+  <!-- About de drop -->
+  <div style="padding:80px 48px;border-bottom:1px solid rgba(255,255,255,0.07);display:grid;grid-template-columns:200px 1fr;gap:80px;align-items:start;">
+    <p style="font-size:11px;letter-spacing:0.25em;text-transform:uppercase;color:#00A3FF;padding-top:6px;">Over de drop</p>
+    <div>
+      <p style="font-size:clamp(18px,2vw,26px);line-height:1.6;font-weight:300;color:#f5f5f0;max-width:640px;">Culture Head maakt geen merch om merch te maken. De tas is er omdat mensen vroegen om iets waarmee ze het platform kunnen dragen. Letterlijk.</p>
+      <p style="font-size:clamp(18px,2vw,26px);line-height:1.6;font-weight:300;color:rgba(245,245,240,0.6);max-width:640px;margin-top:20px;">Vol. 01 is de eerste drop. Limited run. Meer volgt als het platform groeit.</p>
+    </div>
+  </div>
+
+  <footer><img src="culture_head_logo.png" alt="Culture Head"><span class="footer-tagline">We basically collect stories 🎙️</span><a href="https://instagram.com/cltrhead" target="_blank" class="footer-ig">@cltrhead</a></footer>
+</div>
 
 <div id="page-contact" class="page">
   <div class="contact-wrap">
