@@ -69,7 +69,6 @@
   .cta-headline .neon { color: var(--neon); }
   .cta-sub { font-size: 16px; color: rgba(245,245,240,0.75); max-width: 560px; margin: 0 auto 44px; line-height: 1.7; position: relative; z-index: 1; }
   .cta-section .btn-outline { position: relative; z-index: 1; }
-  /* COVER HERO */
   .cover-hero { position: relative; width: 100%; height: 70vh; overflow: hidden; cursor: pointer; }
   .cover-hero img { position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover; object-position: center top; display: block; }
   .cover-hero-overlay { position: absolute; inset: 0; background: linear-gradient(to bottom, rgba(10,10,10,0.1) 0%, rgba(10,10,10,0.15) 50%, rgba(10,10,10,0.85) 100%); }
@@ -82,8 +81,6 @@
   .cover-hero-right { text-align: right; padding-bottom: 8px; }
   .cover-hero-quote { font-size: 14px; font-weight: 300; line-height: 1.6; color: rgba(245,245,240,0.85); font-style: italic; max-width: 320px; border-right: 2px solid var(--neon); padding-right: 20px; }
   .cover-hero-btn { margin-top: 16px; }
-  /* FEATURED BLOK */
-
   .featured-video { position: relative; overflow: hidden; background: var(--gray); aspect-ratio: 9/16; }
   .featured-video video, .featured-video img { position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover; display: block; }
   .featured-video .play-icon { position: absolute; inset: 0; display: flex; align-items: center; justify-content: center; pointer-events: none; }
@@ -112,12 +109,9 @@
   .featured-quote p { font-size: 15px; font-weight: 300; line-height: 1.65; color: var(--white); font-style: italic; margin: 0; }
   .featured-block:hover .featured-photo img { transform: scale(1.03); }
   .featured-section { padding: 48px 48px 20px; }
-  /* COVER HOMEPAGE */
-  /* COVER — desktop: foto + tekst eronder, mobiel: foto groot met tekst erin */
   .cover-img-wrap { width: 100%; aspect-ratio: 16/9; min-height: 300px; overflow: hidden; cursor: pointer; position: relative; background: var(--gray); display: block; }
   .cover-img-wrap img { position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover; display: block; transition: transform 0.4s ease; }
   .cover-img-wrap:hover img { transform: scale(1.02); }
-  /* Overlay altijd zichtbaar */
   .cover-mobile-overlay { display: flex; position: absolute; inset: 0; flex-direction: column; justify-content: flex-start; padding: 36px 44px; background: linear-gradient(to bottom, rgba(10,10,10,0.65) 0%, rgba(10,10,10,0.05) 55%, rgba(10,10,10,0.0) 100%); }
   .cover-overlay-top { padding-top: 120px; }
   .cover-mobile-ep { font-size: 10px; letter-spacing: 0.25em; text-transform: uppercase; color: var(--neon); margin-bottom: 10px; }
@@ -130,8 +124,6 @@
   .cover-overlay-btn { font-size: 9px; letter-spacing: 0.12em; text-transform: uppercase; color: var(--neon); border: 1px solid rgba(0,163,255,0.4); padding: 8px 16px; background: none; cursor: pointer; font-family: var(--font); white-space: nowrap; }
   .cover-overlay-btn:hover { background: rgba(0,163,255,0.1); }
   .cover-info { display: none; }
-
-  /* SMALL ABOUT BAR */
   .about-bar { padding: 18px 48px; border-top: 1px solid rgba(255,255,255,0.07); display: flex; align-items: center; justify-content: space-between; gap: 24px; }
   .about-bar-text { font-size: 12px; color: var(--gray-light); line-height: 1.6; }
   .about-bar-text strong { color: var(--white); }
@@ -195,43 +187,31 @@
   .mag-form input:focus { border-color: var(--neon); }
   .mag-form input::placeholder { color: rgba(255,255,255,0.25); }
   #mag-msg { margin-top: 24px; font-size: 11px; min-height: 18px; letter-spacing: 0.15em; text-transform: uppercase; font-weight: 700; position: relative; z-index: 1; }
-
-  /* ── ARTIKEL LAYOUT ── */
   .article-header { padding: 140px 48px 56px; border-bottom: 1px solid rgba(255,255,255,0.07); }
   .article-ep-tag { font-size: 11px; letter-spacing: 0.25em; text-transform: uppercase; color: var(--neon); margin-bottom: 20px; }
   .article-title { font-size: clamp(44px,8vw,108px); font-weight: 700; letter-spacing: -0.03em; text-transform: uppercase; line-height: 0.9; margin-bottom: 20px; }
   .article-role-tag { font-size: 12px; letter-spacing: 0.12em; text-transform: uppercase; color: var(--gray-light); }
-
-  /* doorlopende tekst kolom */
   .article-body { max-width: 680px; margin: 0 auto; padding: 64px 48px 88px; }
   .article-body > p { font-size: 17px; line-height: 1.95; color: rgba(245,245,240,0.85); margin-bottom: 28px; font-weight: 300; }
   .article-body > h3 { font-size: 18px; font-weight: 700; text-transform: uppercase; letter-spacing: -0.01em; margin: 52px 0 18px; color: var(--white); }
   .article-body > blockquote { border-left: 2px solid var(--neon); padding: 20px 28px; margin: 40px 0; font-size: 19px; font-weight: 300; line-height: 1.65; color: var(--white); font-style: italic; }
   .article-body strong { color: var(--white); font-weight: 700; }
   .article-body em { color: var(--neon); font-style: normal; }
-
-  /* video + 2 tekst blokken naast elkaar — zit IN de tekst flow */
   .article-media-block { display: grid; gap: 28px; margin: 0 0 36px; align-items: start; }
   .article-media-block.video-left  { grid-template-columns: 220px 1fr; }
   .article-media-block.video-right { grid-template-columns: 1fr 220px; }
   .article-media-block.video-right .article-media-visual { order: 2; }
   .article-media-block.video-right .article-media-text   { order: 1; }
-
   .article-media-visual { position: relative; overflow: hidden; background: var(--gray); aspect-ratio: 9/16; width: 100%; }
   .article-media-visual video,
   .article-media-visual img { position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover; display: block; }
-
   .article-media-text { display: flex; flex-direction: column; justify-content: flex-start; gap: 20px; padding-top: 4px; }
   .article-media-text p { font-size: 17px; line-height: 1.9; color: rgba(245,245,240,0.82); margin: 0; font-weight: 300; }
-
-  /* foto's in de tekst */
   .article-photo-pair { display: grid; grid-template-columns: 1fr 1fr; gap: 4px; margin: 40px 0; }
   .article-photo-pair img { width: 100%; aspect-ratio: 3/4; object-fit: cover; display: block; }
   .article-photo-single { margin: 40px 0; }
   .article-photo-single img { width: 100%; aspect-ratio: 16/9; object-fit: cover; display: block; }
-
   .article-nav { padding: 56px 48px; border-top: 1px solid rgba(255,255,255,0.07); display: flex; align-items: center; justify-content: space-between; flex-wrap: wrap; gap: 16px; }
-
   .contact-wrap { display: grid; grid-template-columns: 1fr 1fr; min-height: 100svh; }
   .contact-left { padding: 140px 48px 72px; border-right: 1px solid rgba(255,255,255,0.07); display: flex; flex-direction: column; }
   .contact-title { font-size: clamp(36px,5vw,72px); font-weight: 700; text-transform: uppercase; letter-spacing: -0.02em; line-height: 0.95; margin-top: auto; }
@@ -252,7 +232,6 @@
   .btn-submit { width: 100%; margin-top: 8px; background: var(--neon); color: var(--black); border: none; padding: 18px 40px; font-size: 11px; letter-spacing: 0.2em; text-transform: uppercase; font-family: var(--font); font-weight: 700; cursor: pointer; transition: background 0.3s; }
   .btn-submit:hover { background: var(--white); }
   @keyframes fadeUp { from{opacity:0;transform:translateY(32px)} to{opacity:1;transform:translateY(0)} }
-
   @media (max-width: 1100px) { .nav-links { gap: 22px; } .nav-links a { font-size: 10px; } }
   @media (max-width: 900px) {
     nav { padding: 18px 24px; } .nav-links { display: none; } .nav-hamburger { display: flex; }
@@ -321,19 +300,10 @@
   <a onclick="showPage('contact');toggleMenu()">Contact</a>
 </div>
 
-<!-- HOME -->
 <div id="page-home" class="page active">
-  <!-- COVER FOTO -->
   <div class="cover-img-wrap" id="cover-img-wrap"></div>
   <div class="cover-info" id="cover-info"></div>
-
-
-
-
-  <!-- FEATURED CELESTE -->
   <div class="featured-block" id="home-featured" onclick=""></div>
-
-  <!-- STORIES -->
   <section class="section">
     <p class="section-label">The Stories</p>
     <div class="reel-grid" id="home-reels"></div>
@@ -341,7 +311,6 @@
       <button class="btn-outline" onclick="showPage('interviews')" style="font-size:10px;padding:12px 20px;">Alle stories <span class="arrow">→</span></button>
     </div>
   </section>
-
   <section class="cta-section">
     <p class="section-label">The Magazine</p>
     <h2 class="cta-headline">Vol. 01<br><span class="neon">incoming.</span></h2>
@@ -355,7 +324,6 @@
   <footer><img src="culture_head_logo.png" alt="Culture Head"><span class="footer-tagline">We basically collect stories 🎙️</span><a href="https://instagram.com/cltrhead" target="_blank" class="footer-ig">@cltrhead</a></footer>
 </div>
 
-<!-- INTERVIEWS -->
 <div id="page-interviews" class="page">
   <div class="page-header"><h1 class="page-title">The<br><span class="outline">Stories</span></h1></div>
   <div style="padding:48px;background:var(--black);">
@@ -364,7 +332,6 @@
   <footer><img src="culture_head_logo.png" alt="Culture Head"><span class="footer-tagline">We basically collect stories 🎙️</span><a href="https://instagram.com/cltrhead" target="_blank" class="footer-ig">@cltrhead</a></footer>
 </div>
 
-<!-- OVER CULTURE HEAD -->
 <div id="page-about" class="page">
   <div class="about-credo">
     <p class="about-credo-text">Real stories<br><em>move</em> people.</p>
@@ -408,7 +375,6 @@
   <footer><img src="culture_head_logo.png" alt="Culture Head"><span class="footer-tagline">We basically collect stories 🎙️</span><a href="https://instagram.com/cltrhead" target="_blank" class="footer-ig">@cltrhead</a></footer>
 </div>
 
-<!-- MAGAZINE -->
 <div id="page-magazine" class="page">
   <div class="page-header"><h1 class="page-title">The<br><span class="outline">Magazine</span></h1></div>
   <div class="mag-cover-wrap">
@@ -426,10 +392,8 @@
   <footer><img src="culture_head_logo.png" alt="Culture Head"><span class="footer-tagline">We basically collect stories 🎙️</span><a href="https://instagram.com/cltrhead" target="_blank" class="footer-ig">@cltrhead</a></footer>
 </div>
 
-<!-- ARTIKEL -->
 <div id="page-article" class="page"><div id="article-content"></div></div>
 
-<!-- CONTACT -->
 <div id="page-contact" class="page">
   <div class="contact-wrap">
     <div class="contact-left">
@@ -497,32 +461,23 @@
     {ep:'Vol. 004',name:'Jessy Richmond',role:'Producent & Eigenaresse Richmond Media Group',desc:'Van Japan naar LA naar het Carré. Hoe Jessy Richmond een internationaal productiehuis bouwde op vertrouwen, netwerk en slow and steady.',thumb:'jessy-thumb.jpg',video:'Jessy.mp4',hasArticle:true,articleId:'jessy'},
     {ep:'Vol. 005',name:'Jaz Karis',role:'Artiest',desc:'Culture Head was uitgenodigd voor haar show in de Melkweg. Jaz Karis over haar creatief proces en hoe het internet haar ontdekte.',thumb:'jazkaris-thumb.jpg',video:'jazkaris.mp4',hasArticle:true,articleId:'jaz'},
     {ep:'Vol. 006',name:'Chanou',role:'Zangeres',desc:'Op de releaseparty van haar eerste single na twee jaar. Chanou over geduld, visuals en terug bij jezelf komen.',thumb:'chanou-thumb.jpg',video:'chanou.mp4',hasArticle:true,articleId:'chanou'},
-    {ep:'Vol. 007',name:'Joeboy',role:'Artiest',desc:'Artikel volgt binnenkort.',thumb:'joeboy-thumb.jpg',video:'joeboy.mp4',hasArticle:true,articleId:'joeboy'},
+    {ep:'Vol. 007',name:'Joeboy',role:'Artiest & Singer-Songwriter',desc:'Na een uitverkochte show in Amsterdam. Joeboy over Afrobeats, zijn publiek en waarom erkenning hem harder laat werken.',thumb:'joeboy-thumb.jpg',video:'joeboy.mp4',hasArticle:true,articleId:'joeboy'},
     {ep:'Vol. 008',name:'Sneakerness — Matthijs van Meulen',role:'CEO Sneakerness',desc:'Hoe Matthijs van Meulen CEO werd van het grootste sneaker en lifestyle event van Europa door gewoon de telefoon op te pakken.',thumb:'sneakerness-thumb.jpg',video:'sneakerness.mp4',hasArticle:true,articleId:'sneakerness'},
     {ep:'Vol. 009',name:'Supa Dupa Goods',role:'Nick Spapens & Samay June — Oprichters',desc:'Van crappy shirts als hobbyproject naar een eigen merk. Supa Dupa Goods over naïef beginnen en de valkuil van perfectie.',thumb:'supadupagoods-thumb.jpg',video:'supadupagoods.mp4',hasArticle:true,articleId:'supadupa'},
-    {ep:'Vol. 010',name:'Amiera Amore',role:'Artiest',desc:'Het verhaal van Amiera Amore. Tekst volgt binnenkort.',thumb:'Amiera Amore-thumb.jpg',video:'Amiera Amore.mp4',hasArticle:true,articleId:'amiera'},
+    {ep:'Vol. 010',name:'Amiera Amore',role:'Creative Director & Fashion Designer',desc:'Ze begon op haar achtste met haar eerste business. Nu bouwt ze een eigen wereld als creative director, designer en photographer.',thumb:'Amiera Amore-thumb.jpg',video:'Amiera Amore.mp4',hasArticle:true,articleId:'amiera'},
     {ep:'Vol. 011',name:'Annicee',role:'Artiest',desc:'Het verhaal van Annicee. Tekst volgt binnenkort.',thumb:'Annicee-thumb.jpg',video:'Annicee.mp4',hasArticle:true,articleId:'annicee'},
-    {ep:'Vol. 012',name:'Kaytranada',role:'Producer & DJ',desc:'Het verhaal van Kaytranada. Tekst volgt binnenkort.',thumb:'kaytranada-thumb.jpg',video:'kaytranada.mp4',hasArticle:true,articleId:'kaytranada'},
+    {ep:'Vol. 012',name:'Kaytranada',role:'Producer & DJ',desc:'Je hebt alleen een laptop nodig. De rest is discipline, tutorials en door de moeilijke fases heen gaan.',thumb:'kaytranada-thumb.jpg',video:'kaytranada.mp4',hasArticle:true,articleId:'kaytranada'},
     {ep:'Vol. 013',name:'Steven Aswin',role:'Artiest',desc:'Het verhaal van Steven Aswin. Tekst volgt binnenkort.',thumb:'Steven Aswin-thumb.jpg',video:'Steven Aswin.mp4',hasArticle:true,articleId:'stevenaswin'},
     {ep:'Vol. 014',name:'Twenty20',role:'Artiest',desc:'Het verhaal van Twenty20. Tekst volgt binnenkort.',thumb:'Twenty20-thumb.jpg',video:'Twenty20.mp4',hasArticle:true,articleId:'twenty20'},
   ];
 
-  // videoSide: 'left' of 'right' — wisselt per artikel
-  // photos: array van max 2 paden — 1 foto = full width, 2 foto's = paar
-  // body: array van content blokken { type: 'text'|'quote'|'heading'|'photos', content }
   const articles={
     ellajohn:{
-      ep:'Vol. 015',
-      name:'Ella John',
-      role:'Rapper & Artiest',
-      thumb:'ELLA THUMB.png',
-      cover:'1_DSC0211.png',
-      video:'Ella2_4WEB.mp4',
-      videoSide:'left',
+      ep:'Vol. 015',name:'Ella John',role:'Rapper & Artiest',thumb:'ELLA THUMB.png',cover:'1_DSC0211.png',video:'Ella2_4WEB.mp4',videoSide:'left',
       photos:['_DSC0151.JPG','_DSC0152.JPG'],
       quote:'Ik wil dat mensen die kracht in hun vrouwelijkheid horen in wat ik vertel. Die zelfverzekerdheid, die kracht in jezelf.',
-      introText:'Donderdag 28 mei. Greenhouse Amsterdam. Buiten hangt het neonbord nog in het avondlicht. Binnen is het anders. Geen groot podium, geen zaal vol vreemden. Vijfentwintig vrouwen, een DJ-set, en een rapper die haar eerste EP laat horen aan de mensen die het het meest verdienen om het als eerste te horen.',
-      sideText:'Ella John heeft dit bewust zo opgezet. De avond heet officieel een luistersessie. In samenwerking met Canna Bish Lounge — een community van vrouwelijke smokers. Op de tafels: vinyl platen, een joint met een paars lintje eromheen, EP-covers van So Big. De details zijn geen toeval.',
+      introText:'Donderdag 28 mei. Greenhouse Amsterdam. Buiten hangt het neonbord nog in het avondlicht. Binnen is het anders. Geen groot podium, geen zaal vol vreemden. Een besloten groep vrouwen, een DJ-set, en een rapper die haar eerste EP laat horen aan de mensen die het het meest verdienen om het als eerste te horen.',
+      sideText:'Ella John heeft dit bewust zo opgezet. De avond is een luistersessie in samenwerking met Canna Bish Lounge — een community van vrouwelijke smokers. Op de tafels: vinyl platen, een joint met een paars lintje eromheen, EP-covers van So Big. De details zijn geen toeval.',
       sideText2:'',
       body:[
         {type:'heading',content:'So Big'},
@@ -531,7 +486,7 @@
         {type:'quote',content:'Ik wil dat mensen die kracht in hun vrouwelijkheid horen in wat ik vertel. Die zelfverzekerdheid, die kracht in jezelf.'},
         {type:'photos',content:['_DSC0151.JPG','_DSC0152.JPG']},
         {type:'heading',content:'Waarom ladies only'},
-        {type:'text',content:'De beslissing om de release in een besloten ruimte te vieren is geen bescheidenheid. Het is een keuze. Vijfentwintig mensen, alleen vrouwen, haar mensen. Ze kennen haar niet alleen als artiest. Ze kennen haar. Dat is een ander soort avond.'},
+        {type:'text',content:'De beslissing om de release in een besloten ruimte te vieren is geen bescheidenheid. Het is een keuze. Alleen vrouwen, haar mensen. Ze kennen haar niet alleen als artiest. Ze kennen haar. Dat is een ander soort avond.'},
         {type:'quote',content:'Ik wilde een avond die meer was dan alleen muziek luisteren. Dus ik heb al mijn ladies bij elkaar gehaald.'},
         {type:'photos',content:['_DSC0154.JPG','_DSC0166.JPG']},
         {type:'heading',content:'De discipline'},
@@ -541,17 +496,17 @@
         {type:'photos',content:['_DSC0176.JPG','_DSC0211.JPG']},
       ]
     },
+
     celeste:{ep:'Vol. 001',name:'Celeste Mercedes',role:'Violiste & Music Director',thumb:'celeste-thumb.jpg',video:'celeste.mp4',videoSide:'left',
       quote:'Je moet drive hebben, het echt willen en bijna zo obsessed zijn dat het weird wordt. Want dat is hoe je op de plekken komt waar anderen niet komen.',
       introText:'Het is een doordeweekse avond als we binnenlopen bij Tivoli Vredenburg. The Game staat op het podium. De zaal trilt. En ergens in dat gewoel staat Celeste Mercedes — niet als toeschouwer, maar als iemand die straks naast hem staat.',
-      sideText:'We kwamen haar per toeval tegen. Gewoon op een avond waarop alles klopte. En toen we hoorden wie ze was en wat ze had gedaan, wisten we: dit verhaal moet verteld worden.',sideText2:'Celeste is violiste en music director. Twee werelden die op papier weinig met elkaar te maken hebben — klassiek en hiphop — maar in haar handen wordt het één ding.',
+      sideText:'We kwamen haar per toeval tegen. Gewoon op een avond waarop alles klopte. En toen we hoorden wie ze was en wat ze had gedaan, wisten we: dit verhaal moet verteld worden.',
+      sideText2:'Celeste is violiste en music director. Twee werelden die op papier weinig met elkaar te maken hebben — klassiek en hiphop — maar in haar handen wordt het één ding.',
       photos:['photo1.jpg','photo2.jpg'],
       body:[
         {type:'heading',content:'Viool in de hiphopwereld'},
-        {type:'text',content:'Celeste is violiste en music director. Twee werelden die op papier weinig met elkaar te maken hebben — klassiek en hiphop — maar in haar handen wordt het één ding. Ze werkte al samen met grote namen in de muziek, maar die avond bij The Game was anders.'},
-        {type:'text',content:'Want The Game is niet zomaar een artiest voor haar. Hij is haar childhood hero. De muziek waarmee ze opgroeide. En hem dan op het podium begeleiden, als violiste, als music director? Dat is geen toeval. Dat is werk.'},
+        {type:'text',content:'Ze werkte al samen met grote namen in de muziek, maar die avond bij The Game was anders. Want The Game is niet zomaar een artiest voor haar. Hij is haar childhood hero. En hem dan op het podium begeleiden, als violiste, als music director? Dat is geen toeval. Dat is werk.'},
         {type:'heading',content:'Hoe kom je op die plekken?'},
-        {type:'text',content:'Dat vroegen wij haar ook. Recht voor z\'n raap. Hoe krijg je dit voor elkaar?'},
         {type:'quote',content:'Je moet drive hebben, het echt willen en bijna zo obsessed zijn dat het weird wordt. Want dat is hoe je op de plekken komt waar anderen niet komen.'},
         {type:'text',content:'Ze legt uit dat het niet gaat om geluk. Het gaat om connecties op de juiste manier. Niet netwerken alsof je iets wil hebben. Verbinden omdat je echt iets te bieden hebt.'},
         {type:'photos',content:['photo1.jpg','photo2.jpg']},
@@ -566,15 +521,13 @@
       photos:['rawen-foto1.jpg','rawen-foto2.jpg'],
       body:[
         {type:'heading',content:'Waarom denim'},
-        {type:'text',content:'De keuze voor denim is geen toeval. Het is een filosofie. Rawen houdt van materialen die leven naarmate je ze draagt.'},
         {type:'text',content:'"Als jij een jeans draagt voor anderhalf jaar, elke dag, dan leeft die op de manier hoe jij je stappen zet, hoe hij beweegt, waar jij je telefoon hebt zitten." Denim als spiegel van de drager.'},
         {type:'heading',content:'Het product eerst'},
         {type:'quote',content:'Als het product klopt, dan komt pas het vervolg. Vakmanschap is een verlengstuk van het product.'},
         {type:'text',content:'Die houding maakt ETB langzaam en dat is precies de bedoeling. Stapsgewijs, elk jaar iets verder.'},
         {type:'photos',content:['rawen-foto1.jpg','rawen-foto2.jpg']},
         {type:'heading',content:'Ondernemen is problemen oplossen'},
-        {type:'text',content:'"Als je daar niet tegen kan, dan zou ik absoluut geen ondernemer worden." Ondernemen is niet voor iedereen. Je moet de persoon er voor zijn — iemand die elke dag opnieuw problemen wil oplossen.'},
-        {type:'text',content:'"Ik kan lekker alles droppen, lekker op mijn bek gaan. ETB is voor mij echt een plek om mezelf te perfectioneren."'},
+        {type:'text',content:'"Als je daar niet tegen kan, dan zou ik absoluut geen ondernemer worden." Ondernemen is niet voor iedereen. Je moet de persoon er voor zijn.'},
       ]},
 
     yael:{ep:'Vol. 003',name:'Yael Daila',role:'Artiest & Performer',thumb:'Yael-thumb.jpg',video:'Yael.mp4',videoSide:'left',
@@ -587,23 +540,19 @@
         {type:'text',content:'Yael doet het niet half. Stage design, movement coaching, choreografie, vocal workouts — ze rennen op een hardloopband terwijl ze zingt. Alles is voorbereid, alles is doordacht.'},
         {type:'heading',content:'Jouw show, hun input'},
         {type:'quote',content:'Het is belangrijk om op een heel vriendelijke manier toch je zin door te drijven. At the end of the day weet mijn team: dit is jouw show. Als ik zeg nee, dan gaat het gewoon niet gebeuren.'},
-        {type:'text',content:'Het gaat om haar brand. Ze wordt erop aangekeken. Dus ze moet er volledig achter staan en zo comfortabel mogelijk op dat podium staan.'},
         {type:'heading',content:'Rising artiest, rising sound'},
         {type:'text',content:'Yael is ook midden in een rebranding. Van Amapiano richting pop, R&B en afropop. Nieuwe sounds, nieuw profiel, dezelfde stem — maar dan meer van zichzelf.'},
-        {type:'text',content:'Haar eerste headline show in Paradiso. Niet toevallig. Niet vanzelf. Gewoon: heel goed voorbereid.'},
       ]},
 
     jessy:{ep:'Vol. 004',name:'Jessy Richmond',role:'Producent & Eigenaresse Richmond Media Group',thumb:'jessy-thumb.jpg',video:'Jessy.mp4',videoSide:'right',
       quote:'Slow and steady wins the race. Als je weet waar je naartoe wil, hou dat vooruitzicht maar wil niet te snel gaan.',
       introText:'We staan midden in het Carré. Backstage. Technici rennen voorbij, lichten worden ingesteld, artiesten warmen op. En dan is daar Jessy Richmond — rustig, gefocust, precies weten wat ze doet.',
-      sideText:'We kennen haar naam al voordat we haar spreken. Richmond Media Group. Internationaal. Los Angeles. Grammy-artiesten. Maar hoe bouw je zoiets op? Dat vroegen we haar gewoon.',
+      sideText:'Richmond Media Group. Internationaal. Los Angeles. Grammy-artiesten. Maar hoe bouw je zoiets op?',
       photos:['jessy-foto1.jpg','jessy-foto2.jpg'],
       body:[
         {type:'heading',content:'Vanaf haar zesde in de muziekwereld'},
-        {type:'text',content:'Jessy zit al in de muziekwereld sinds ze een jaar of zes, zeven was. Ze noemt zichzelf geen videograaf. Ze is een productiehuis.'},
         {type:'text',content:'"Als je een productie neer wilt zetten — als artiest, als ondernemer, maakt niet uit wat je doet — dan heb je ook meerdere mensen nodig."'},
         {type:'heading',content:'Van Japan naar LA in drie maanden'},
-        {type:'text',content:'Twee jaar geleden fotografeerde ze Ozone en zijn team. Het balletje begon te rollen. Drie maanden later zat ze in Los Angeles.'},
         {type:'text',content:'"Hoe ik dat vertrouwen heb kunnen bouwen is het werk zelf en het netwerk. Mensen weten wat ze kunnen verwachten."'},
         {type:'photos',content:['jessy-foto1.jpg','jessy-foto2.jpg']},
         {type:'heading',content:'Slow and steady'},
@@ -613,23 +562,21 @@
     jaz:{ep:'Vol. 005',name:'Jaz Karis',role:'Artiest',thumb:'jazkaris-thumb.jpg',video:'jazkaris.mp4',videoSide:'left',
       quote:"I have one rule — I never buy WiFi on the plane. That's my creative space. No one can reach me.",
       introText:'Culture Head werd uitgenodigd voor de show van Jaz Karis in de Melkweg. Niet om te recenseren. Gewoon om te kijken, te luisteren en te begrijpen wie ze is.',
-      sideText:'Jaz Karis is een van die artiesten die het internet vond voordat de industrie doorhad dat ze er was. Een stem, een gevoel, een sound die niet om aandacht vroeg maar die je gewoon niet kon negeren.',
+      sideText:'Jaz Karis is een van die artiesten die het internet vond voordat de industrie doorhad dat ze er was.',
       photos:['jaz1.jpg','jaz2.jpg'],
       body:[
         {type:'heading',content:'Gevonden door het internet'},
-        {type:'text',content:'Haar verhaal begint niet op een podium. Een clip hier, een opname daar — en dan ineens een golf van mensen die haar muziek deelden alsof ze iets hadden ontdekt dat van hen was.'},
+        {type:'text',content:'Een clip hier, een opname daar — en dan ineens een golf van mensen die haar muziek deelden alsof ze iets hadden ontdekt dat van hen was.'},
         {type:'heading',content:'Het creatief proces'},
         {type:'quote',content:"I have one rule — I never buy WiFi on the plane. That's my creative space. No one can reach me."},
-        {type:'text',content:'In een wereld waar iedereen altijd bereikbaar is, is dat een statement. Creativiteit heeft ruimte nodig. Stilte. Tijd zonder input. Jaz beschermt dat actief.'},
+        {type:'text',content:'Creativiteit heeft ruimte nodig. Stilte. Tijd zonder input. Jaz beschermt dat actief.'},
         {type:'photos',content:['jaz1.jpg','jaz2.jpg']},
-        {type:'heading',content:'De Melkweg'},
-        {type:'text',content:'De zaal zat vol met mensen die elk woord meezingen. Niet omdat een label hen had verteld dat ze dit moesten kennen. Maar omdat ze het zelf hadden gevonden.'},
       ]},
 
     chanou:{ep:'Vol. 006',name:'Chanou',role:'Zangeres',thumb:'chanou-thumb.jpg',video:'chanou.mp4',videoSide:'right',
       quote:'Heb geduld met jezelf. Bouw een visie voor wat voor jou in de toekomst wel gaat werken en neem daar alle tijd voor die je daarvoor nodig hebt.',
       introText:'De releaseparty van haar eerste single na twee jaar. Chanou staat midden in de ruimte, lacht, praat met iedereen — maar achter die lichte energie zit een heel bewust proces.',
-      sideText:'Twee jaar stond ze niet in de spotlights. Niet omdat het niet wilde, maar omdat ze het zo koos. En die keuze verdedigen — ook als de buitenwereld begint te trekken — dat is misschien wel haar sterkste verhaal.',
+      sideText:'Twee jaar stond ze niet in de spotlights. Niet omdat het niet wilde, maar omdat ze het zo koos.',
       photos:['chanou-foto1.jpg','chanou-foto2.jpg'],
       body:[
         {type:'heading',content:'Terug bij jezelf'},
@@ -642,8 +589,21 @@
         {type:'text',content:'Die twee jaar waren niet de bedoeling. Het begon als een korte pas op de plaats. Maar een plan maken bleek meer tijd te kosten. Tot haar gevoel zei: nu.'},
       ]},
 
-    joeboy:{ep:'Vol. 007',name:'Joeboy',role:'Artiest',thumb:'joeboy-thumb.jpg',video:'joeboy.mp4',videoSide:'left',
-      quote:'Artikel volgt.',introText:'Artikel wordt binnenkort toegevoegd.',sideText:'',photos:[],body:[]},
+    joeboy:{ep:'Vol. 007',name:'Joeboy',role:'Artiest & Singer-Songwriter',thumb:'joeboy-thumb.jpg',video:'joeboy.mp4',videoSide:'left',
+      quote:'It makes me want to go hard. To go more outside the box.',
+      introText:'Na een uitverkochte show in Amsterdam. De crowd was loud, de energie was goed, en Joeboy staat rustig te praten over wat Afrobeats nu betekent voor de wereld — en voor hem persoonlijk.',
+      sideText:'Joeboy is een van de namen die Afrobeats heeft meegenomen van de Afrikaanse club naar het mondiale podium. Maar hij denkt niet in termen van succes. Hij denkt in termen van verantwoordelijkheid.',
+      sideText2:'',
+      photos:[],
+      body:[
+        {type:'heading',content:'Afrobeats en de wereld'},
+        {type:'text',content:'Afrobeats krijgt momenteel wereldwijde erkenning. Meer streams, meer festivals, meer mainstream aandacht dan ooit. Voor Joeboy is dat geen reden om te ontspannen. Het is juist een reden om harder te werken.'},
+        {type:'text',content:'Nu de aandacht er is, is het moment om het niveau op te trekken. Om te laten zien wat het genre echt kan.'},
+        {type:'quote',content:'It makes me want to go hard. To go more outside the box.'},
+        {type:'heading',content:'Voor de vrouwen'},
+        {type:'text',content:'Op het podium in Amsterdam deed Joeboy meerdere shout-outs aan de vrouwen in de zaal. Niet als marketingstunt. Vrouwen maken een kritisch deel uit van zijn publiek en zijn een van zijn grootste creatieve krachten als het aankomt op het maken van muziek.'},
+        {type:'text',content:'De verbinding met de crowd, de energie, de momenten die mensen bijblijven — dat is geen toeval. Dat is bewust werken aan iets wat groter is dan jezelf.'},
+      ]},
 
     sneakerness:{ep:'Vol. 008',name:'Sneakerness — Matthijs van Meulen',role:'CEO Sneakerness',thumb:'sneakerness-thumb.jpg',video:'sneakerness.mp4',videoSide:'right',
       quote:'Trek gewoon de stoute schoenen aan. Ga je ergens mee bemoeien. Kijk waar je mensen kunt helpen — zo vind je je rol.',
@@ -655,8 +615,7 @@
         {type:'text',content:'"Ik belde hem gewoon op en zei: goeie productie, dat kan jij, dat weet ik. Maar wat weet jij in godsnaam van de sneaker community?" Zijn collega moest hard lachen. Ze hadden nog zes weken. Of Matthijs wilde helpen.'},
         {type:'quote',content:'Trek gewoon de stoute schoenen aan. Ga je ergens mee bemoeien. Kijk waar je mensen kunt helpen — zo vind je je rol.'},
         {type:'heading',content:'Van community naar CEO'},
-        {type:'text',content:'In het eerste jaar vroeg Sneakerness International hem al om de marketing te doen. Hij kende de community van binnenuit. Hij wist wat mensen voelden bij sneakers.'},
-        {type:'text',content:'Twee jaar geleden werd hij CEO. Het grootste sneaker en lifestyle event van Europa. En het begon met één telefoontje, dertien jaar geleden, vanuit oprechte nieuwsgierigheid.'},
+        {type:'text',content:'In het eerste jaar vroeg Sneakerness International hem al om de marketing te doen. Hij kende de community van binnenuit. Hij wist wat mensen voelden bij sneakers. Twee jaar geleden werd hij CEO.'},
       ]},
 
     supadupa:{ep:'Vol. 009',name:'Supa Dupa Goods',role:'Nick Spapens & Samay June — Oprichters',thumb:'supadupagoods-thumb.jpg',video:'supadupagoods.mp4',videoSide:'left',
@@ -673,14 +632,44 @@
         {type:'text',content:'Wat Supa Dupa Goods onderscheidt van andere merken is precies wat het begin zo lastig maakte: ze zijn fans. Ze maken voor zichzelf, voor mensen die hetzelfde voelen. Niet voor de markt. Niet voor het algoritme.'},
       ]},
 
-    amiera:{ep:'Vol. 010',name:'Amiera Amore',role:'Artiest',thumb:'Amiera Amore-thumb.jpg',video:'Amiera Amore.mp4',videoSide:'right',
-      quote:'Quote volgt binnenkort.',introText:'Dit artikel wordt binnenkort toegevoegd.',sideText:'',photos:[],body:[]},
+    amiera:{ep:'Vol. 010',name:'Amiera Amore',role:'Creative Director & Fashion Designer',thumb:'Amiera Amore-thumb.jpg',video:'Amiera Amore.mp4',videoSide:'right',
+      quote:"Once it's meant for you, everything aligns. As long as you work hard.",
+      introText:'Amiera Amore startte haar eerste business op haar achtste. Niet als grap, niet als schoolproject. Gewoon omdat ze geld wilde verdienen en wist hoe. Gras maaien in de buurt. Een schoonmaakbedrijf op haar elfde. Mode op haar zestiende. Ze deed het allemaal voor ze wist dat het een carrière kon worden.',
+      sideText:'Nu is ze creative director, fashion designer en photographer. Ze maakt merch voor artiesten, ontwerpt voor retailers en bouwt haar eigen wereld. Maar de basis is altijd hetzelfde gebleven: gewoon beginnen en hard werken.',
+      sideText2:'',
+      photos:[],
+      body:[
+        {type:'heading',content:'Ondernemer van nature'},
+        {type:'text',content:'Amiera Amore wachtte niet op toestemming. Op haar achtste begon ze met gras maaien in de buurt. Op haar elfde had ze een schoonmaakbedrijf. Ze noemt het zelf simpel: ze was altijd al ondernemer van nature. Mode kwam op hetzelfde moment maar werd pas echt een carrière op haar zestiende.'},
+        {type:'text',content:'Dat is het verschil tussen mensen die dromen over iets doen en mensen die het gewoon doen. Amiera behoort tot de tweede groep.'},
+        {type:'quote',content:"Once it's meant for you, everything aligns. As long as you work hard."},
+        {type:'heading',content:'16-uurs dagen'},
+        {type:'text',content:'Ze put in 16-uurs dagen en is blij. Niet omdat ze moet, maar omdat ze van haar werk houdt. Dat is haar definitie van het vinden van je ding: als het werk niet als werk voelt, ook niet als het zwaar is. Consistent zijn over jaren. Dan komt alles samen.'},
+        {type:'text',content:'Momenteel werkt ze aan merch voor artiesten en ontwerpt ze voor retailstores. Twee werelden, één visie.'},
+      ]},
+
     annicee:{ep:'Vol. 011',name:'Annicee',role:'Artiest',thumb:'Annicee-thumb.jpg',video:'Annicee.mp4',videoSide:'left',
       quote:'Quote volgt binnenkort.',introText:'Dit artikel wordt binnenkort toegevoegd.',sideText:'',photos:[],body:[]},
+
     kaytranada:{ep:'Vol. 012',name:'Kaytranada',role:'Producer & DJ',thumb:'kaytranada-thumb.jpg',video:'kaytranada.mp4',videoSide:'right',
-      quote:'Quote volgt binnenkort.',introText:'Dit artikel wordt binnenkort toegevoegd.',sideText:'',photos:[],body:[]},
+      quote:'You always going to go through the rough patches before you become who you become.',
+      introText:'Kaytranada heeft één superkracht die hij zelf benoemt: mensen bij elkaar brengen. Maar dat is pas het resultaat. Wat eraan voorafging was jaren van leren, oefenen, remaken en door de moeilijke fases heen gaan.',
+      sideText:'De producer en DJ uit Montreal is een van de meest invloedrijke names in de hedendaagse elektronische muziek. Maar zijn advies is opvallend nuchter: begin gewoon. Een laptop is genoeg.',
+      sideText2:'',
+      photos:[],
+      body:[
+        {type:'heading',content:'Je hebt alleen een laptop nodig'},
+        {type:'text',content:'Kaytranada legt het simpel uit: je hebt geen studio nodig, geen duur equipment, geen connecties. Een laptop is je startpunt. Alles wat daarna komt is discipline — tutorials kijken, instrumenten leren, je favoriete producers remaken tot je begrijpt hoe ze denken.'},
+        {type:'text',content:'Dat klinkt basic. Maar hij zegt het met een reden: het zijn de basics die je unstoppable maken. Niet de shortcuts.'},
+        {type:'quote',content:'You always going to go through the rough patches before you become who you become.'},
+        {type:'heading',content:'Door de moeilijke fases heen'},
+        {type:'text',content:'Elke producer gaat door een periode waarin het niet werkt. Waarin de beats niet kloppen, de inspiratie wegblijft en de erkenning uitblijft. Kaytranada zegt: dat hoort erbij. Ga er doorheen. Leer van elke fase. Dat is hoe je wordt wie je moet worden.'},
+        {type:'text',content:'Zijn superkracht — mensen bij elkaar brengen — is niet aangeboren. Die is gebouwd. Track voor track, show voor show, jaar na jaar.'},
+      ]},
+
     stevenaswin:{ep:'Vol. 013',name:'Steven Aswin',role:'Artiest',thumb:'Steven Aswin-thumb.jpg',video:'Steven Aswin.mp4',videoSide:'left',
       quote:'Quote volgt binnenkort.',introText:'Dit artikel wordt binnenkort toegevoegd.',sideText:'',photos:[],body:[]},
+
     twenty20:{ep:'Vol. 014',name:'Twenty20',role:'Artiest',thumb:'Twenty20-thumb.jpg',video:'Twenty20.mp4',videoSide:'right',
       quote:'Quote volgt binnenkort.',introText:'Dit artikel wordt binnenkort toegevoegd.',sideText:'',photos:[],body:[]},
   };
@@ -694,58 +683,46 @@
       `<div class="reel-meta"><p class="reel-ep">${iv.ep}</p><h3 class="reel-name">${iv.name}</h3><p class="reel-role">${iv.role}</p><p class="reel-desc">${iv.desc}</p>`+
       `${iv.hasArticle?`<button class="btn-neon-text" onclick="event.stopPropagation();showArticle('${iv.articleId}')">Lees het artikel <span>→</span></button>`:''}</div></div>`;
   }
+
   function buildGrid(id){
     const grid=document.getElementById(id);
     if(!grid||grid.dataset.built)return;
     grid.dataset.built='1';
     grid.innerHTML=interviews.map(buildCard).join('');
   }
-  function buildFeatured() {
-    const iv = interviews[0];
-    if (!iv) return;
-    const imgWrap = document.getElementById('cover-img-wrap');
-    const infoWrap = document.getElementById('cover-info');
-    if (imgWrap) {
-      imgWrap.onclick = () => iv.hasArticle ? showArticle(iv.articleId) : null;
-      imgWrap.innerHTML = `
-        <img src="${iv.cover || iv.thumb}" alt="${iv.name}">
+
+  function buildFeatured(){
+    const iv=interviews[0];
+    if(!iv)return;
+    const imgWrap=document.getElementById('cover-img-wrap');
+    const infoWrap=document.getElementById('cover-info');
+    if(imgWrap){
+      imgWrap.onclick=()=>iv.hasArticle?showArticle(iv.articleId):null;
+      imgWrap.innerHTML=`
+        <img src="${iv.cover||iv.thumb}" alt="${iv.name}">
         <div class="cover-mobile-overlay">
           <div class="cover-overlay-top">
             <p class="cover-mobile-ep">${iv.ep} — Interview</p>
             <div class="cover-mobile-name">${iv.name}</div>
             <div class="cover-mobile-eptitle">So Big.</div>
             <p class="cover-overlay-desc" style="margin-top:16px;">Ella John over eigenwaarde,<br>vrouwelijkheid en haar nieuwe EP.</p>
-            ${iv.hasArticle ? `<button class="cover-overlay-btn" style="margin-top:14px;" onclick="event.stopPropagation();showArticle('${iv.articleId}')">Check the story →</button>` : ''}
+            ${iv.hasArticle?`<button class="cover-overlay-btn" style="margin-top:14px;" onclick="event.stopPropagation();showArticle('${iv.articleId}')">Check the story →</button>`:''}
           </div>
-        </div>`;
-    }
-    if (infoWrap) {
-      infoWrap.onclick = () => iv.hasArticle ? showArticle(iv.articleId) : null;
-      infoWrap.innerHTML = `
-        <div class="cover-info-left">
-          <p class="cover-info-ep">${iv.ep} — Interview</p>
-          <h2 class="cover-info-name">${iv.name}</h2>
-          <p class="cover-info-role">${iv.role}</p>
-        </div>
-        <div class="cover-info-right">
-          <p class="cover-info-desc">${iv.desc}</p>
-          ${iv.hasArticle ? `<button class="btn-neon-text" onclick="event.stopPropagation();showArticle('${iv.articleId}')">Lees het artikel →</button>` : ''}
         </div>`;
     }
   }
 
-  function buildFeaturedCeleste() {
-    const iv = interviews.find(i => i.articleId === 'celeste');
-    if (!iv) return;
-    const el = document.getElementById('home-featured');
-    if (!el) return;
-    el.onclick = () => showArticle('celeste');
-    const a = articles['celeste'];
-    const featuredPhoto = (a && a.photos && a.photos[0]) ? a.photos[0] : iv.thumb;
-    const mediaEl = iv.video
-      ? `<video src="${iv.video}" poster="${iv.thumb}" muted playsinline loop preload="none" style="position:absolute;inset:0;width:100%;height:100%;object-fit:cover;display:block;" onmouseenter="this.play()" onmouseleave="this.pause();this.currentTime=0"></video>`
-      : `<img src="${iv.thumb}" alt="${iv.name}" style="position:absolute;inset:0;width:100%;height:100%;object-fit:cover;display:block;">`;
-    el.innerHTML = `
+  function buildFeaturedCeleste(){
+    const iv=interviews.find(i=>i.articleId==='celeste');
+    if(!iv)return;
+    const el=document.getElementById('home-featured');
+    if(!el)return;
+    el.onclick=()=>showArticle('celeste');
+    const a=articles['celeste'];
+    const mediaEl=iv.video
+      ?`<video src="${iv.video}" poster="${iv.thumb}" muted playsinline loop preload="none" style="position:absolute;inset:0;width:100%;height:100%;object-fit:cover;display:block;" onmouseenter="this.play()" onmouseleave="this.pause();this.currentTime=0"></video>`
+      :`<img src="${iv.thumb}" alt="${iv.name}" style="position:absolute;inset:0;width:100%;height:100%;object-fit:cover;display:block;">`;
+    el.innerHTML=`
       <div class="featured-video">
         ${mediaEl}
         <div class="play-icon"><svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="10"/><polygon points="10,8 16,12 10,16" fill="rgba(255,255,255,0.85)" stroke="none"/></svg></div>
@@ -766,67 +743,31 @@
       </div>`;
   }
 
-  function buildFeaturedOld() {
-    const iv = interviews[0];
-    if (!iv) return;
-    const el = document.getElementById('home-featured');
-    if (!el) return;
-    el.onclick = () => iv.hasArticle ? showArticle(iv.articleId) : null;
-    const a = iv.hasArticle && articles[iv.articleId] ? articles[iv.articleId] : null;
-    const featuredPhoto = (a && a.photos && a.photos[0]) ? a.photos[0] : iv.thumb;
-    const mediaEl = iv.video
-      ? `<video src="${iv.video}" poster="${iv.thumb}" muted playsinline loop preload="none" style="position:absolute;inset:0;width:100%;height:100%;object-fit:cover;display:block;" onmouseenter="this.play()" onmouseleave="this.pause();this.currentTime=0"></video>`
-      : `<img src="${iv.thumb}" alt="${iv.name}" style="position:absolute;inset:0;width:100%;height:100%;object-fit:cover;display:block;">`;
-    el.innerHTML = `
-      <div class="featured-video">
-        ${mediaEl}
-        <div class="play-icon"><svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="10"/><polygon points="10,8 16,12 10,16" fill="rgba(255,255,255,0.85)" stroke="none"/></svg></div>
-        <div class="featured-video-logo"><img src="culture_head_logo.png" alt="CH"></div>
-
-      </div>
-      <div class="featured-text">
-        <p class="featured-ep">${iv.ep} — Interview</p>
-        <h2 class="featured-name">${iv.name}</h2>
-        <p class="featured-role">${iv.role}</p>
-        <p style="font-size:14px;color:rgba(245,245,240,0.9);line-height:1.7;margin-bottom:20px;">${iv.desc}</p>
-        ${iv.hasArticle ? `<button class="btn-neon-text" onclick="event.stopPropagation();showArticle('${iv.articleId}')">Lees het artikel <span>→</span></button>` : ''}
-      </div>
-      ${(a && a.photos && a.photos[0] && a.photos[1]) ? `
-      <div class="featured-cards" style="border-left:none;">
-        <div class="featured-cards-inner">
-          <div class="featured-card-2"><img src="${a.photos[1]}" alt="${iv.name}"></div>
-          <div class="featured-card-1"><img src="${a.photos[0]}" alt="${iv.name}"></div>
-        </div>
-      </div>` : ''}`;
-  }
   buildFeatured();
   buildFeaturedCeleste();
   buildGrid('home-reels');
 
   function renderBodyBlock(block){
-    if(block.type==='heading') return `<h3>${block.content}</h3>`;
-    if(block.type==='text') return `<p>${block.content}</p>`;
-    if(block.type==='quote') return `<blockquote>"${block.content}"</blockquote>`;
+    if(block.type==='heading')return`<h3>${block.content}</h3>`;
+    if(block.type==='text')return`<p>${block.content}</p>`;
+    if(block.type==='quote')return`<blockquote>"${block.content}"</blockquote>`;
     if(block.type==='photos'){
       const imgs=block.content.filter(Boolean);
-      if(imgs.length===0) return '';
-      if(imgs.length===1) return `<div class="article-photo-single"><img src="${imgs[0]}" alt="foto" loading="lazy"></div>`;
-      return `<div class="article-photo-pair">${imgs.map(src=>`<img src="${src}" alt="foto" loading="lazy">`).join('')}</div>`;
+      if(imgs.length===0)return'';
+      if(imgs.length===1)return`<div class="article-photo-single"><img src="${imgs[0]}" alt="foto" loading="lazy"></div>`;
+      return`<div class="article-photo-pair">${imgs.map(src=>`<img src="${src}" alt="foto" loading="lazy">`).join('')}</div>`;
     }
-    return '';
+    return'';
   }
 
   function showArticle(id){
     const a=articles[id];
     if(!a)return;
-
     const sideClass=a.videoSide==='right'?'video-right':'video-left';
     const mediaEl=a.video
       ?`<video src="${a.video}" poster="${a.thumb}" controls playsinline style="position:absolute;inset:0;width:100%;height:100%;object-fit:cover;display:block;"></video>`
       :`<img src="${a.thumb}" alt="${a.name}" style="position:absolute;inset:0;width:100%;height:100%;object-fit:cover;display:block;">`;
-
     const bodyHTML=a.body.map(renderBodyBlock).join('');
-
     document.getElementById('article-content').innerHTML=
       `<div class="article-header">
         <p class="article-ep-tag">${a.ep} — Interview</p>
@@ -838,8 +779,8 @@
         <div class="article-media-block ${sideClass}">
           <div class="article-media-visual">${mediaEl}</div>
           <div class="article-media-text">
-            ${a.sideText?`<p>${a.sideText}</p>`:""}
-            ${a.sideText2?`<p>${a.sideText2}</p>`:""}
+            ${a.sideText?`<p>${a.sideText}</p>`:''}
+            ${a.sideText2?`<p>${a.sideText2}</p>`:''}
           </div>
         </div>
         ${bodyHTML}
