@@ -297,6 +297,7 @@
     <li><a onclick="showPage('merch')" id="nav-merch">Merch</a></li>
     <li><a onclick="showPage('about')" id="nav-about">Over CLTRHEAD</a></li>
     <li><a onclick="showPage('contact')" id="nav-contact">Contact</a></li>
+    <li><a onclick="toggleLang()" id="nav-lang" style="color:var(--neon);border:1px solid rgba(0,163,255,0.3);padding:4px 10px;font-size:9px;letter-spacing:0.15em;">EN</a></li>
   </ul>
   <button class="nav-hamburger" onclick="toggleMenu()" aria-label="Menu"><span></span><span></span><span></span></button>
 </nav>
@@ -308,6 +309,7 @@
   <a onclick="showPage('merch');toggleMenu()">Merch</a>
   <a onclick="showPage('about');toggleMenu()">Over CLTRHEAD</a>
   <a onclick="showPage('contact');toggleMenu()">Contact</a>
+  <a onclick="toggleLang();toggleMenu()" style="color:var(--neon);font-size:18px;">EN / NL</a>
 </div>
 
 <div id="page-home" class="page active">
@@ -964,6 +966,137 @@
       <footer><img src="culture_head_logo.png" alt="Culture Head"><span class="footer-tagline">Creatives die creatives inspireren. 🎙️</span><a href="https://instagram.com/cltrhead" target="_blank" class="footer-ig">@cltrhead</a></footer>`;
     showPage('article');
   }
+
+  // LANGUAGE SYSTEM
+  let currentLang = 'nl';
+
+  const t = {
+    nl: {
+      nav: { home:'Home', interviews:'The Stories', magazine:'Magazine', merch:'Merch', about:'Over CLTRHEAD', contact:'Contact' },
+      hero: { ep:'Interview', checkStory:'Check the story' },
+      home: {
+        storiesLabel:'The Stories',
+        allStories:'Alle stories',
+        magLabel:'The Magazine',
+        magTitle:'Vol. 01<br><span class="neon">incoming.</span>',
+        magSub:'De come up stories die online begonnen, op papier. Limited run. Als hij weg is, is hij weg.',
+        magBtn:'Lees meer',
+        aboutBar:'<strong>Culture Head</strong> — come up stories van mensen die bewegen. De struggles, de lessen, alles wat erbij hoort.',
+        aboutLink:'Over CLTRHEAD',
+        footer:'Creatives die creatives inspireren. 🎙️',
+      },
+      about: {
+        credo:'Real stories<br><em>move</em> people.',
+        ch1title:'Uit de liefde.',
+        ch1p1:'Culture Head begon persoonlijk. Uit de liefde voor storytelling, voor portretten maken, voor mensen begrijpen. Maar ook uit de wil om te leren — ondernemen, bouwen, groeien.',
+        ch1p2:'Ergens in dat proces werd duidelijk dat er verhalen misten. Niet de verhalen over wie er uiteindelijk boven staat. Maar de verhalen over hoe mensen zijn begonnen. De twijfel, de keuzes, de periodes waarin het nergens naar leek te gaan maar je toch doorging.',
+        ch1p3:'Culture Head is gebouwd om die verhalen te vertellen. Niet om te laten zien wat succes eruitziet. Maar om te laten voelen wat het kost. Zodat iedereen die zelf iets aan het bouwen is weet dat het erbij hoort.',
+        ch2title:'Come up stories.',
+        ch2p1:'We documenteren creatives. Mensen die iets aan het doen zijn, of dat nou muziek is, fashion, ondernemen of creative direction. Mensen die bewegen naar iets. Die een goal hebben en elke dag stappen zetten.',
+        ch2p2:'We gaan op pad. Backstage, in de studio, op de releaseparty, achter de naaimachine. Overal waar iemand bezig is met iets wat groter is dan zichzelf.',
+        ch2p3:'De struggles, de lessen, de momenten die mensen vormen. Dat zijn de verhalen die wij willen vertellen. Niet het eindresultaat. Alles wat daarvoor komt.',
+        ch3title:'Voor de mensen die bewegen.',
+        ch3p1:'CH is voor iedereen die zichzelf herkent in het proces. Die weet hoe het voelt om iets te willen en er nog niet te zijn. Die leert van mensen die het gewoon doen.',
+        ch3p2:'Creatives die creatives inspireren. Dat is het.',
+      },
+      articles: { back:'← Alle Stories', follow:'Volg @cltrhead →' },
+      contact: { title:'Laten We<br><span class="neon">Praten.</span>', name:'Naam', email:'Email', subject:'Onderwerp', subPlaceholder:'Interview / Samenwerking / Anders', message:'Bericht', msgPlaceholder:'Vertel ons jouw verhaal...', send:'Verstuur Bericht →' },
+      mag: { label:'Be the first to know', title:'Drop <span class="neon">incoming.</span>', sub:'Laat je email achter. Jij hoort het als eerste als Vol. 01 er aan komt.', notify:'Notify Me' },
+      merch: { ep:'Vol. 01 — Merch Drop', title:'CH Tas', sub1:'De eerste CH drop. Geen overkill, geen labels die je niet kent. Gewoon een tas van een platform dat verhalen vertelt.', sub2:'Limited run. Als hij op is, is hij op.', notifyBtn:'Notify Me When Available →', aboutLabel:'Over de drop', aboutP1:'CH maakt geen merch om merch te maken. De tas is er omdat mensen vroegen om iets waarmee ze het platform kunnen dragen. Letterlijk.', aboutP2:'Vol. 01. Meer volgt als we groeien.' },
+    },
+    en: {
+      nav: { home:'Home', interviews:'The Stories', magazine:'Magazine', merch:'Merch', about:'About CLTRHEAD', contact:'Contact' },
+      hero: { ep:'Interview', checkStory:'Check the story' },
+      home: {
+        storiesLabel:'The Stories',
+        allStories:'All stories',
+        magLabel:'The Magazine',
+        magTitle:'Vol. 01<br><span class="neon">incoming.</span>',
+        magSub:'The come up stories that started online, now in print. Limited run. When it's gone, it's gone.',
+        magBtn:'Read more',
+        aboutBar:'<strong>Culture Head</strong> — come up stories from people who are moving. The struggles, the lessons, everything that comes with it.',
+        aboutLink:'About CLTRHEAD',
+        footer:'Creatives inspiring creatives. 🎙️',
+      },
+      about: {
+        credo:'Real stories<br><em>move</em> people.',
+        ch1title:'Built from love.',
+        ch1p1:'Culture Head started personal. From a love for storytelling, for making portraits, for understanding people. But also from the desire to learn — to build, to grow, to figure things out.',
+        ch1p2:'Somewhere in that process it became clear that certain stories were missing. Not the stories about who made it to the top. But the stories about how people started. The doubt, the choices, the periods when nothing seemed to be working but you kept going anyway.',
+        ch1p3:'Culture Head was built to tell those stories. Not to show what success looks like. But to make you feel what it costs. So that anyone building something knows that all of it is part of the process.',
+        ch2title:'Come up stories.',
+        ch2p1:'We document creatives. People who are doing something — whether that's music, fashion, entrepreneurship or creative direction. People moving toward something. Who have a goal and take steps every day.',
+        ch2p2:'We go out. Backstage, in the studio, at the release party, behind the sewing machine. Everywhere someone is working on something bigger than themselves.',
+        ch2p3:'The struggles, the lessons, the moments that shape people. Those are the stories we want to tell. Not the end result. Everything that comes before it.',
+        ch3title:'For the people who are moving.',
+        ch3p1:'CH is for everyone who recognizes themselves in the process. Who knows what it feels like to want something and not be there yet. Who learns from people who just do it.',
+        ch3p2:'Creatives inspiring creatives. That's it.',
+      },
+      articles: { back:'← All Stories', follow:'Follow @cltrhead →' },
+      contact: { title:'Let's<br><span class="neon">Talk.</span>', name:'Name', email:'Email', subject:'Subject', subPlaceholder:'Interview / Collaboration / Other', message:'Message', msgPlaceholder:'Tell us your story...', send:'Send Message →' },
+      mag: { label:'Be the first to know', title:'Drop <span class="neon">incoming.</span>', sub:'Leave your email. You'll be the first to hear when Vol. 01 drops.', notify:'Notify Me' },
+      merch: { ep:'Vol. 01 — Merch Drop', title:'CH Bag', sub1:'The first CH drop. No overkill, no labels you don't know. Just a bag from a platform that tells stories.', sub2:'Limited run. When it's gone, it's gone.', notifyBtn:'Notify Me When Available →', aboutLabel:'About the drop', aboutP1:'CH doesn't make merch just to make merch. The bag exists because people asked for something to carry the platform. Literally.', aboutP2:'Vol. 01. More to come as we grow.' },
+    }
+  };
+
+  function applyLang(lang) {
+    const tx = t[lang];
+    // Nav links
+    const navMap = {home:'nav-home',interviews:'nav-interviews',magazine:'nav-magazine',merch:'nav-merch',about:'nav-about',contact:'nav-contact'};
+    Object.entries(navMap).forEach(([k,id])=>{const el=document.getElementById(id);if(el)el.textContent=tx.nav[k];});
+    // Lang toggle button
+    const langBtn=document.getElementById('nav-lang');
+    if(langBtn) langBtn.textContent=lang==='nl'?'EN':'NL';
+    // About credo
+    const credo=document.querySelector('.about-credo-text');
+    if(credo) credo.innerHTML=tx.about.credo;
+    // Chapters
+    const slides=document.querySelectorAll('.chapter-slide');
+    if(slides[0]){
+      slides[0].querySelector('h2').textContent=tx.about.ch1title;
+      const ps=slides[0].querySelectorAll('p');
+      if(ps[0])ps[0].textContent=tx.about.ch1p1;
+      if(ps[1])ps[1].textContent=tx.about.ch1p2;
+      if(ps[2])ps[2].textContent=tx.about.ch1p3;
+    }
+    if(slides[1]){
+      slides[1].querySelector('h2').textContent=tx.about.ch2title;
+      const ps=slides[1].querySelectorAll('p');
+      if(ps[0])ps[0].textContent=tx.about.ch2p1;
+      if(ps[1])ps[1].textContent=tx.about.ch2p2;
+      if(ps[2])ps[2].textContent=tx.about.ch2p3;
+    }
+    if(slides[2]){
+      slides[2].querySelector('h2').textContent=tx.about.ch3title;
+      const ps=slides[2].querySelectorAll('p');
+      if(ps[0])ps[0].textContent=tx.about.ch3p1;
+      if(ps[1])ps[1].textContent=tx.about.ch3p2;
+    }
+    // Homepage about bar
+    const aboutBar=document.querySelector('.about-bar-text');
+    if(aboutBar) aboutBar.innerHTML=tx.home.aboutBar;
+    const aboutLink=document.querySelector('.about-bar .btn-neon-text');
+    if(aboutLink) aboutLink.textContent=tx.home.aboutLink+' →';
+    // Footer
+    document.querySelectorAll('.footer-tagline').forEach(el=>el.textContent=tx.home.footer);
+    // Mag CTA on homepage
+    const ctaSub=document.querySelector('#page-home .cta-sub');
+    if(ctaSub) ctaSub.textContent=tx.home.magSub;
+    const ctaBtn=document.querySelector('#page-home .cta-section .btn-outline');
+    if(ctaBtn) ctaBtn.innerHTML=tx.home.magBtn+' <span class="arrow">→</span>';
+    // Stories label
+    const storiesLabel=document.querySelector('#page-home .section-label');
+    if(storiesLabel) storiesLabel.textContent=tx.home.storiesLabel;
+    // All stories btn
+    const allStoriesBtn=document.querySelector('#page-home .section button.btn-outline');
+    if(allStoriesBtn) allStoriesBtn.innerHTML=tx.home.allStories+' <span class="arrow">→</span>';
+  }
+
+  function toggleLang() {
+    currentLang = currentLang === 'nl' ? 'en' : 'nl';
+    applyLang(currentLang);
+  }
+
   document.addEventListener('contextmenu',e=>e.preventDefault());
 </script>
 </body>
