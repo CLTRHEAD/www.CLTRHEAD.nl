@@ -297,6 +297,7 @@
     <li><a onclick="showPage('merch')" id="nav-merch">Merch</a></li>
     <li><a onclick="showPage('about')" id="nav-about">Over CLTRHEAD</a></li>
     <li><a onclick="showPage('contact')" id="nav-contact">Contact</a></li>
+    <li><a onclick="toggleLang()" id="nav-lang" style="color:var(--neon);border:1px solid rgba(0,163,255,0.3);padding:4px 10px;font-size:9px;letter-spacing:0.15em;cursor:pointer;">EN</a></li>
   </ul>
   <button class="nav-hamburger" onclick="toggleMenu()" aria-label="Menu"><span></span><span></span><span></span></button>
 </nav>
@@ -308,6 +309,7 @@
   <a onclick="showPage('merch');toggleMenu()">Merch</a>
   <a onclick="showPage('about');toggleMenu()">Over CLTRHEAD</a>
   <a onclick="showPage('contact');toggleMenu()">Contact</a>
+  <a onclick="toggleLang();toggleMenu()" style="color:var(--neon);">EN / NL</a>
 </div>
 
 <div id="page-home" class="page active">
@@ -353,6 +355,8 @@
         <div class="chapter-body">
           <h2>Uit de liefde.</h2>
           <p>Culture Head begon vanuit twee dingen: de liefde voor storytelling en de wil om te leren ondernemen. Portretten maken, verhalen vertellen maar ook zelf begrijpen hoe je iets bouwt.</p>
+          <p>Ergens in dat proces werd duidelijk dat er verhalen misten. Niet de verhalen over wie er uiteindelijk boven staat. Maar de verhalen over hoe mensen zijn begonnen. De twijfel, de keuzes, de periodes waarin het nergens naar leek te gaan maar je toch doorging.</p>
+          <p>Culture Head is gebouwd om die verhalen te vertellen. Niet om te laten zien wat succes eruitziet. Maar om te laten voelen wat het kost. Zodat iedereen die zelf iets aan het bouwen is weet dat het erbij hoort.</p>
           
         </div>
       </div>
@@ -965,6 +969,83 @@
     showPage('article');
   }
 
+
+
+  // TAALSWITCH
+  let chLang = 'nl';
+  const chTrans = {
+    nl: {
+      nav_about:'Over CLTRHEAD', nav_contact:'Contact', nav_lang:'EN',
+      footer:'Creatives die creatives inspireren.',
+      about_bar:'<strong>Culture Head</strong> — come up stories van mensen die bewegen. De struggles, de lessen, alles wat erbij hoort.',
+      mag_sub:'De come up stories die online begonnen, op papier. Limited run. Als hij weg is, is hij weg.',
+      ch1title:'Uit de liefde.',
+      ch1p1:'Culture Head begon vanuit twee dingen: de liefde voor storytelling en de wil om te leren ondernemen. Portretten maken, verhalen vertellen maar ook zelf begrijpen hoe je iets bouwt.',
+      ch1p2:'Ergens in dat proces werd duidelijk dat er verhalen misten. Niet de verhalen over wie er uiteindelijk boven staat. Maar de verhalen over hoe mensen zijn begonnen. De twijfel, de keuzes, de periodes waarin het nergens naar leek te gaan maar je toch doorging.',
+      ch1p3:'Culture Head is gebouwd om die verhalen te vertellen. Niet om te laten zien wat succes eruitziet. Maar om te laten voelen wat het kost. Zodat iedereen die zelf iets aan het bouwen is weet dat het erbij hoort.',
+      ch2title:'Come up stories.',
+      ch2p1:'We documenteren creatives. Mensen die iets aan het doen zijn, of dat nou muziek is, fashion, ondernemen of creative direction. Mensen die bewegen naar iets. Die een goal hebben en elke dag stappen zetten.',
+      ch2p2:'We gaan op pad. Backstage, in de studio, op de releaseparty, achter de naaimachine. Overal waar iemand bezig is met iets wat groter is dan zichzelf.',
+      ch2p3:'De struggles, de lessen, de momenten die mensen vormen. Dat zijn de verhalen die wij willen vertellen. Niet het eindresultaat. Alles wat daarvoor komt.',
+      ch3title:'Voor de mensen die bewegen.',
+      ch3p1:'CH is voor iedereen die zichzelf herkent in het proces. Die weet hoe het voelt om iets te willen en er nog niet te zijn. Die leert van mensen die het gewoon doen.',
+      ch3p2:'Creatives die creatives inspireren. Dat is het.'
+    },
+    en: {
+      nav_about:'About CLTRHEAD', nav_contact:'Contact', nav_lang:'NL',
+      footer:'Creatives inspiring creatives.',
+      about_bar:'<strong>Culture Head</strong> — come up stories from people who are moving. The struggles, the lessons, everything that comes with it.',
+      mag_sub:"The come up stories that started online, now in print. Limited run. When it's gone, it's gone.",
+      ch1title:'Built from love.',
+      ch1p1:'Culture Head started personal. From a love for storytelling, for making portraits, for understanding people. But also from the desire to learn — to build, to grow, to figure things out.',
+      ch1p2:"Somewhere in that process it became clear that certain stories were missing. Not the stories about who made it to the top. But the stories about how people started. The doubt, the choices, the periods when nothing seemed to be working but you kept going anyway.",
+      ch1p3:"Culture Head was built to tell those stories. Not to show what success looks like. But to make you feel what it costs. So that anyone building something knows that all of it is part of the process.",
+      ch2title:'Come up stories.',
+      ch2p1:"We document creatives. People who are doing something, whether that's music, fashion, entrepreneurship or creative direction. People moving toward something. Who have a goal and take steps every day.",
+      ch2p2:'We go out. Backstage, in the studio, at the release party, behind the sewing machine. Everywhere someone is working on something bigger than themselves.',
+      ch2p3:'The struggles, the lessons, the moments that shape people. Those are the stories we want to tell. Not the end result. Everything that comes before it.',
+      ch3title:'For the people who are moving.',
+      ch3p1:"CH is for everyone who recognizes themselves in the process. Who knows what it feels like to want something and not be there yet. Who learns from people who just do it.",
+      ch3p2:"Creatives inspiring creatives. That's it."
+    }
+  };
+
+  function toggleLang() {
+    chLang = chLang === 'nl' ? 'en' : 'nl';
+    const tx = chTrans[chLang];
+    const langBtn = document.getElementById('nav-lang');
+    if(langBtn) langBtn.textContent = tx.nav_lang;
+    const navAbout = document.getElementById('nav-about');
+    if(navAbout) navAbout.textContent = tx.nav_about;
+    document.querySelectorAll('.footer-tagline').forEach(el => { el.textContent = tx.footer; });
+    const aboutBar = document.querySelector('.about-bar-text');
+    if(aboutBar) aboutBar.innerHTML = tx.about_bar;
+    const magSub = document.querySelector('#page-home .cta-sub');
+    if(magSub) magSub.textContent = tx.mag_sub;
+    const credo = document.querySelector('.about-credo-text');
+    if(credo) credo.innerHTML = chLang === 'nl' ? 'Real stories<br><em>move</em> people.' : 'Real stories<br><em>move</em> people.';
+    const slides = document.querySelectorAll('.chapter-slide');
+    if(slides[0]) {
+      slides[0].querySelector('h2').textContent = tx.ch1title;
+      const ps = slides[0].querySelectorAll('p');
+      if(ps[0]) ps[0].textContent = tx.ch1p1;
+      if(ps[1]) ps[1].textContent = tx.ch1p2;
+      if(ps[2]) ps[2].textContent = tx.ch1p3;
+    }
+    if(slides[1]) {
+      slides[1].querySelector('h2').textContent = tx.ch2title;
+      const ps = slides[1].querySelectorAll('p');
+      if(ps[0]) ps[0].textContent = tx.ch2p1;
+      if(ps[1]) ps[1].textContent = tx.ch2p2;
+      if(ps[2]) ps[2].textContent = tx.ch2p3;
+    }
+    if(slides[2]) {
+      slides[2].querySelector('h2').textContent = tx.ch3title;
+      const ps = slides[2].querySelectorAll('p');
+      if(ps[0]) ps[0].textContent = tx.ch3p1;
+      if(ps[1]) ps[1].textContent = tx.ch3p2;
+    }
+  }
 
   document.addEventListener('contextmenu',e=>e.preventDefault());
 </script>
