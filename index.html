@@ -24,7 +24,7 @@
   nav { position: fixed; top: 0; left: 0; right: 0; z-index: 100; display: grid; grid-template-columns: 1fr auto 1fr; align-items: center; padding: 20px 48px; }
   nav::before { content: ''; position: absolute; inset: 0; background: linear-gradient(to bottom, rgba(10,10,10,0.97), transparent); pointer-events: none; }
   .nav-logo { position: relative; z-index: 1; text-decoration: none; cursor: pointer; line-height: 0; grid-column: 2; justify-self: center; }
-  .nav-logo img { height: 32px; width: auto; display: block; }
+  .nav-logo img { height: 250px; width: auto; display: block; }
   .nav-links { display: flex; gap: 28px; list-style: none; position: relative; z-index: 1; grid-column: 3; justify-self: end; }
   .nav-links a { font-size: 11px; letter-spacing: 0.15em; text-transform: uppercase; color: var(--gray-light); text-decoration: none; transition: color 0.2s; cursor: pointer; }
   .nav-links a:hover, .nav-links a.active { color: var(--neon); }
@@ -232,7 +232,12 @@
   .btn-submit:hover { background: var(--white); }
   @keyframes fadeUp { from{opacity:0;transform:translateY(32px)} to{opacity:1;transform:translateY(0)} }
   /* FAN CAROUSEL */
-  .fan-section { padding: 80px 0 100px; overflow: hidden; background: var(--black); border-bottom: 1px solid rgba(255,255,255,0.07); }
+  .fan-section { padding: 80px 0 100px; overflow: hidden; position: relative; border-bottom: 1px solid rgba(255,255,255,0.07); }
+  .fan-bg { position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover; object-position: center; display: block; z-index: 0; }
+  .fan-bg-overlay { position: absolute; inset: 0; background: rgba(10,10,10,0.72); z-index: 1; }
+  .fan-label { position: relative; z-index: 2; }
+  .fan-layout { position: relative; z-index: 2; }
+  .fan-nav { position: relative; z-index: 2; }
   .fan-label { font-size: 11px; letter-spacing: 0.25em; text-transform: uppercase; color: var(--neon); margin-bottom: 48px; padding: 0 48px; }
   .fan-layout { position: relative; display: flex; justify-content: center; align-items: center; width: 100%; height: 38rem; max-width: 80rem; margin: 0 auto; }
   .fan-card-overlay { position: absolute; inset: 0; background: linear-gradient(to top, rgba(0,0,0,0.85) 0%, transparent 60%); opacity: 0; transition: opacity 0.3s; pointer-events: none; z-index: 2; }
@@ -259,7 +264,7 @@
     #page-merch > div:nth-child(3) { padding: 56px 24px; grid-template-columns: 1fr; gap: 16px; }
   
     nav { padding: 18px 24px; } .nav-links { display: none; } .nav-hamburger { display: flex; }
-    .nav-logo img { height: 28px; } .hero { padding: 0 24px 56px; }
+    .nav-logo img { height: 110px; } .hero { padding: 0 24px 56px; }
     .hero-bottom { flex-direction: column; align-items: flex-start; gap: 24px; } .hero-sub { max-width: 100%; }
     .section { padding: 40px 16px; } .cta-section { padding: 72px 24px; }
     .reel-grid { grid-template-columns: repeat(3, 1fr); }
@@ -296,7 +301,7 @@
     .contact-right { padding: 48px 24px 72px; } .contact-title { margin-top: 0; }
   }
   @media (max-width: 480px) {
-    .reel-grid { grid-template-columns: repeat(2, 1fr); } .nav-logo img { height: 24px; }
+    .reel-grid { grid-template-columns: repeat(2, 1fr); } .nav-logo img { height: 80px; }
     .article-photo-pair { grid-template-columns: 1fr; }
   }
 </style>
@@ -335,6 +340,8 @@
 
   <!-- FAN CAROUSEL -->
   <div class="fan-section" id="fan-carousel">
+    <img src="header-2.jpg" alt="" class="fan-bg">
+    <div class="fan-bg-overlay"></div>
     <p class="fan-label">The Stories</p>
     <div class="fan-layout" id="fan-stage"></div>
     <div class="fan-nav">
