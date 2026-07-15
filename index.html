@@ -238,7 +238,7 @@
   .fan-label { position: relative; z-index: 2; }
   .fan-layout { position: relative; z-index: 2; }
   .fan-nav { position: relative; z-index: 2; }
-  .fan-label { font-size: 11px; letter-spacing: 0.25em; text-transform: uppercase; color: var(--neon); margin-bottom: 48px; padding: 0 48px; }
+  .fan-label { display: none; }
   .fan-layout { position: relative; display: flex; justify-content: center; align-items: center; width: 100%; height: 38rem; max-width: 80rem; margin: 0 auto; }
   .fan-card-overlay { position: absolute; inset: 0; background: linear-gradient(to top, rgba(0,0,0,0.85) 0%, transparent 60%); opacity: 0; transition: opacity 0.3s; pointer-events: none; z-index: 2; }
   .fan-card.show-info .fan-card-overlay, .fan-card.show-info .fan-card-info { opacity: 1; pointer-events: all; }
@@ -272,6 +272,8 @@
     .featured-cards { display: none; }
     .featured-text { padding: 24px; }
     .cover-img-wrap { aspect-ratio: unset; height: 88vh; min-height: unset; }
+    .fan-section { padding: 32px 0 60px; }
+    .fan-bg-overlay { background: rgba(10,10,10,0.78); }
     .cover-mobile-overlay { padding: 24px; justify-content: flex-end; background: linear-gradient(to bottom, rgba(10,10,10,0) 50%, rgba(10,10,10,0.88) 100%); }
     .cover-img-wrap img { object-position: 40% 20%; }
     .cover-mobile-name { font-size: 34px; }
@@ -342,7 +344,6 @@
   <div class="fan-section" id="fan-carousel">
     <img src="header-2.jpg" alt="" class="fan-bg">
     <div class="fan-bg-overlay"></div>
-    <p class="fan-label">The Stories</p>
     <div class="fan-layout" id="fan-stage"></div>
     <div class="fan-nav">
       <button class="fan-nav-btn" id="fan-prev">&#8249;</button>
