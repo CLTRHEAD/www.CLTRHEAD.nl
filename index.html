@@ -149,10 +149,18 @@
   .footer-tagline { font-size: 12px; color: var(--gray-light); }
   .footer-ig { font-size: 11px; letter-spacing: 0.15em; text-transform: uppercase; color: var(--neon); text-decoration: none; transition: opacity 0.2s; }
   .footer-ig:hover { opacity: 0.7; }
+  /* ANIMATED SOCIAL LINKS */
+  .social-links { display: flex; align-items: center; justify-content: center; gap: 0; }
+  .social-link { position: relative; cursor: pointer; padding: 8px 20px; transition: opacity 0.2s; text-decoration: none; }
+  .social-link span { display: block; font-size: 12px; letter-spacing: 0.15em; text-transform: uppercase; color: var(--white); font-family: var(--font); }
+  .social-link-icon { position: absolute; bottom: 100%; left: 50%; transform: translateX(-50%) translateY(10px); opacity: 0; width: 48px; height: 48px; object-fit: contain; pointer-events: none; transition: opacity 0.2s, transform 0.2s, filter 0.2s; filter: blur(2px); }
+  .social-link:hover .social-link-icon { opacity: 1; transform: translateX(-50%) translateY(-10px); filter: blur(0px); }
+  .social-links.has-hover .social-link:not(:hover) { opacity: 0.4; }
+
   .page-header { padding: 140px 48px 72px; border-bottom: 1px solid rgba(255,255,255,0.07); }
   .page-title { font-size: clamp(44px,8vw,112px); font-weight: 700; letter-spacing: -0.03em; text-transform: uppercase; line-height: 0.9; }
   .page-title .outline { color: transparent; -webkit-text-stroke: 1px var(--white); }
-  .about-credo { padding: 120px 48px 100px; position: relative; border-bottom: 1px solid rgba(255,255,255,0.07); }
+  .about-credo { padding: 180px 48px 100px; position: relative; border-bottom: 1px solid rgba(255,255,255,0.07); }
   .about-credo::before { content: ''; position: absolute; inset: 0; background: radial-gradient(ellipse at 60% 50%, rgba(0,163,255,0.04) 0%, transparent 65%); pointer-events: none; }
   .about-credo-text { font-size: clamp(44px,6.5vw,100px); font-weight: 700; letter-spacing: -0.03em; line-height: 0.95; text-transform: uppercase; position: relative; z-index: 1; max-width: 860px; }
   .about-credo-text em { color: var(--neon); font-style: normal; }
@@ -364,7 +372,7 @@
     <p class="about-bar-text"><strong>Culture Head</strong> come up stories van mensen die bewegen. De struggles, de lessen, alles wat erbij hoort.</p>
     <button class="btn-neon-text" onclick="showPage('about')">Over CLTRHEAD →</button>
   </div>
-  <footer><img src="culture_head_logo.png" alt="Culture Head"><span class="footer-tagline">Creatives die creatives inspireren. 🎙️</span><a href="https://instagram.com/cltrhead" target="_blank" class="footer-ig">@cltrhead</a></footer>
+  <footer><span class="footer-tagline">Creatives die creatives inspireren.</span><div class="social-links" id="social-links-home"><a href="https://instagram.com/cltrhead" target="_blank" class="social-link"><img src="https://upload.wikimedia.org/wikipedia/commons/a/a5/Instagram_icon.png" alt="Instagram" class="social-link-icon"><span>Instagram</span></a><a href="https://www.linkedin.com/company/cltrhead" target="_blank" class="social-link"><img src="https://upload.wikimedia.org/wikipedia/commons/c/ca/LinkedIn_logo_initials.png" alt="LinkedIn" class="social-link-icon"><span>LinkedIn</span></a><a href="https://www.tiktok.com/@cltrhead1" target="_blank" class="social-link"><img src="https://cdn.simpleicons.org/tiktok/ffffff" alt="TikTok" class="social-link-icon"><span>TikTok</span></a></div></footer>
 </div>
 
 <div id="page-interviews" class="page">
@@ -372,7 +380,7 @@
   <div style="padding:220px 48px 48px;background:var(--black);">
     <div class="reel-grid" id="interviews-grid" style="background:var(--black);gap:2px;"></div>
   </div>
-  <footer><img src="culture_head_logo.png" alt="Culture Head"><span class="footer-tagline">Creatives die creatives inspireren. 🎙️</span><a href="https://instagram.com/cltrhead" target="_blank" class="footer-ig">@cltrhead</a></footer>
+  <footer><span class="footer-tagline">Creatives die creatives inspireren.</span><div class="social-links" id="social-links-interviews"><a href="https://instagram.com/cltrhead" target="_blank" class="social-link"><img src="https://upload.wikimedia.org/wikipedia/commons/a/a5/Instagram_icon.png" alt="Instagram" class="social-link-icon"><span>Instagram</span></a><a href="https://www.linkedin.com/company/cltrhead" target="_blank" class="social-link"><img src="https://upload.wikimedia.org/wikipedia/commons/c/ca/LinkedIn_logo_initials.png" alt="LinkedIn" class="social-link-icon"><span>LinkedIn</span></a><a href="https://www.tiktok.com/@cltrhead1" target="_blank" class="social-link"><img src="https://cdn.simpleicons.org/tiktok/ffffff" alt="TikTok" class="social-link-icon"><span>TikTok</span></a></div></footer>
 </div>
 
 <div id="page-about" class="page">
@@ -419,7 +427,7 @@
       <button class="chapter-arrow" id="chapterNext" onclick="moveChapter(1)">→</button>
     </div>
   </div>
-  <footer><img src="culture_head_logo.png" alt="Culture Head"><span class="footer-tagline">Creatives die creatives inspireren. 🎙️</span><a href="https://instagram.com/cltrhead" target="_blank" class="footer-ig">@cltrhead</a></footer>
+  <footer><span class="footer-tagline">Creatives die creatives inspireren.</span><div class="social-links" id="social-links-about"><a href="https://instagram.com/cltrhead" target="_blank" class="social-link"><img src="https://upload.wikimedia.org/wikipedia/commons/a/a5/Instagram_icon.png" alt="Instagram" class="social-link-icon"><span>Instagram</span></a><a href="https://www.linkedin.com/company/cltrhead" target="_blank" class="social-link"><img src="https://upload.wikimedia.org/wikipedia/commons/c/ca/LinkedIn_logo_initials.png" alt="LinkedIn" class="social-link-icon"><span>LinkedIn</span></a><a href="https://www.tiktok.com/@cltrhead1" target="_blank" class="social-link"><img src="https://cdn.simpleicons.org/tiktok/ffffff" alt="TikTok" class="social-link-icon"><span>TikTok</span></a></div></footer>
 </div>
 
 <div id="page-magazine" class="page">
@@ -436,7 +444,7 @@
     <form class="mag-form" onsubmit="event.preventDefault();notifyMagazine();"><input type="email" id="mag-email" placeholder="jouw@email.com" required><button type="submit" class="btn-outline">Notify Me <span class="arrow">→</span></button></form>
     <p id="mag-msg"></p>
   </section>
-  <footer><img src="culture_head_logo.png" alt="Culture Head"><span class="footer-tagline">Creatives die creatives inspireren. 🎙️</span><a href="https://instagram.com/cltrhead" target="_blank" class="footer-ig">@cltrhead</a></footer>
+  <footer><span class="footer-tagline">Creatives die creatives inspireren.</span><div class="social-links" id="social-links-magazine"><a href="https://instagram.com/cltrhead" target="_blank" class="social-link"><img src="https://upload.wikimedia.org/wikipedia/commons/a/a5/Instagram_icon.png" alt="Instagram" class="social-link-icon"><span>Instagram</span></a><a href="https://www.linkedin.com/company/cltrhead" target="_blank" class="social-link"><img src="https://upload.wikimedia.org/wikipedia/commons/c/ca/LinkedIn_logo_initials.png" alt="LinkedIn" class="social-link-icon"><span>LinkedIn</span></a><a href="https://www.tiktok.com/@cltrhead1" target="_blank" class="social-link"><img src="https://cdn.simpleicons.org/tiktok/ffffff" alt="TikTok" class="social-link-icon"><span>TikTok</span></a></div></footer>
 </div>
 
 <div id="page-article" class="page"><div id="article-content"></div></div>
@@ -536,7 +544,7 @@
     </div>
   </div>
 
-  <footer><img src="culture_head_logo.png" alt="Culture Head"><span class="footer-tagline">Creatives die creatives inspireren. 🎙️</span><a href="https://instagram.com/cltrhead" target="_blank" class="footer-ig">@cltrhead</a></footer>
+  <footer><span class="footer-tagline">Creatives die creatives inspireren.</span><div class="social-links" id="social-links-merch"><a href="https://instagram.com/cltrhead" target="_blank" class="social-link"><img src="https://upload.wikimedia.org/wikipedia/commons/a/a5/Instagram_icon.png" alt="Instagram" class="social-link-icon"><span>Instagram</span></a><a href="https://www.linkedin.com/company/cltrhead" target="_blank" class="social-link"><img src="https://upload.wikimedia.org/wikipedia/commons/c/ca/LinkedIn_logo_initials.png" alt="LinkedIn" class="social-link-icon"><span>LinkedIn</span></a><a href="https://www.tiktok.com/@cltrhead1" target="_blank" class="social-link"><img src="https://cdn.simpleicons.org/tiktok/ffffff" alt="TikTok" class="social-link-icon"><span>TikTok</span></a></div></footer>
 </div>
 
 <div id="page-contact" class="page">
@@ -544,8 +552,7 @@
     <div class="contact-left">
       <h1 class="contact-title">Laten We<br><span class="neon">Praten.</span></h1>
       <div class="contact-info">
-        <div class="contact-item"><p class="contact-item-label">Instagram</p><p class="contact-item-value"><a href="https://instagram.com/cltrhead" target="_blank">@cltrhead</a></p></div>
-        <div class="contact-item"><p class="contact-item-label">TikTok</p><p class="contact-item-value"><a href="https://www.tiktok.com/@cltrhead1" target="_blank">@cltrhead1</a></p></div>
+        <div class="contact-item"><p class="contact-item-label">Socials</p><p class="contact-item-value"><div class="social-links" style="justify-content:flex-start;"><a href="https://instagram.com/cltrhead" target="_blank" class="social-link" style="padding-left:0;"><img src="https://upload.wikimedia.org/wikipedia/commons/a/a5/Instagram_icon.png" alt="Instagram" class="social-link-icon"><span>Instagram</span></a><a href="https://www.linkedin.com/company/cltrhead" target="_blank" class="social-link"><img src="https://upload.wikimedia.org/wikipedia/commons/c/ca/LinkedIn_logo_initials.png" alt="LinkedIn" class="social-link-icon"><span>LinkedIn</span></a><a href="https://www.tiktok.com/@cltrhead1" target="_blank" class="social-link"><img src="https://cdn.simpleicons.org/tiktok/ffffff" alt="TikTok" class="social-link-icon"><span>TikTok</span></a></div></p></div>
       </div>
     </div>
     <div class="contact-right">
@@ -961,9 +968,9 @@
       </div>
       <div class="article-nav">
         <button class="btn-outline" onclick="showPage('interviews')">← Alle Stories</button>
-        <a href="https://instagram.com/cltrhead" target="_blank" class="footer-ig">Volg @cltrhead →</a>
+        <a href="https://instagram.com/cltrhead" target="_blank" class="footer-ig">@cltrhead →</a>
       </div>
-      <footer><img src="culture_head_logo.png" alt="Culture Head"><span class="footer-tagline">Creatives die creatives inspireren. 🎙️</span><a href="https://instagram.com/cltrhead" target="_blank" class="footer-ig">@cltrhead</a></footer>`;
+      <footer><span class="footer-tagline">Creatives die creatives inspireren.</span><div class="social-links"><a href="https://instagram.com/cltrhead" target="_blank" class="social-link"><img src="https://upload.wikimedia.org/wikipedia/commons/a/a5/Instagram_icon.png" alt="Instagram" class="social-link-icon"><span>Instagram</span></a><a href="https://www.linkedin.com/company/cltrhead" target="_blank" class="social-link"><img src="https://upload.wikimedia.org/wikipedia/commons/c/ca/LinkedIn_logo_initials.png" alt="LinkedIn" class="social-link-icon"><span>LinkedIn</span></a><a href="https://www.tiktok.com/@cltrhead1" target="_blank" class="social-link"><img src="https://cdn.simpleicons.org/tiktok/ffffff" alt="TikTok" class="social-link-icon"><span>TikTok</span></a></div></footer>`;
     showPage('article');
   }
 
@@ -1136,6 +1143,15 @@
   })();
 
 
+
+  // SOCIAL LINKS HOVER
+  document.querySelectorAll('.social-links').forEach(wrap => {
+    const links = wrap.querySelectorAll('.social-link');
+    links.forEach(link => {
+      link.addEventListener('mouseenter', () => wrap.classList.add('has-hover'));
+      link.addEventListener('mouseleave', () => wrap.classList.remove('has-hover'));
+    });
+  });
   document.addEventListener('contextmenu',e=>e.preventDefault());
 </script>
 </body>
