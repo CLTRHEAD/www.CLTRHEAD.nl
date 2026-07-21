@@ -137,13 +137,14 @@
   .article-body strong { color: var(--white); font-weight: 700; }
   .article-body em { color: var(--neon); font-style: normal; }
   .article-media-block { display: grid; gap: 28px; margin: 0 0 36px; align-items: start; }
+  .article-media-visual { align-self: start; }
   .article-media-block.video-left { grid-template-columns: 220px 1fr; }
   .article-media-block.video-right { grid-template-columns: 1fr 220px; }
   .article-media-block.video-right .article-media-visual { order: 2; }
   .article-media-block.video-right .article-media-text { order: 1; }
   .article-media-visual { position: relative; overflow: hidden; background: var(--gray); aspect-ratio: 9/16; width: 100%; }
   .article-media-visual video, .article-media-visual img { position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover; display: block; }
-  .article-media-text { display: flex; flex-direction: column; justify-content: flex-start; gap: 20px; padding-top: 4px; }
+  .article-media-text { display: flex; flex-direction: column; justify-content: flex-start; gap: 20px; padding-top: 0; }
   .article-media-text p { font-size: 17px; line-height: 1.9; color: rgba(245,245,240,0.82); margin: 0; font-weight: 300; }
   .article-photo-pair { display: grid; grid-template-columns: 1fr 1fr; gap: 4px; margin: 40px 0; }
   .article-photo-pair img { width: 100%; aspect-ratio: 3/4; object-fit: cover; display: block; }
@@ -575,18 +576,21 @@
         {type:'text',content:'Zijn advies voor jonge ondernemers is simpel en eerlijk. Durf de risico\'s te nemen. Steek zo veel mogelijk tijd en geld erin. En geloof in jezelf. Hij noemt het zelf een cliche maar hij zegt het alsof hij het meent. Omdat hij het heeft bewezen.'},
       ]},
     jessy:{ep:'Vol. 009',name:'Jessy Richmond',role:'Producent & Eigenaresse Richmond Media Group',thumb:'jessy-thumb.jpg',video:'Jessy.mp4',videoSide:'right',
-      quote:'Slow and steady wins the race. Als je weet waar je naartoe wil, hou dat vooruitzicht maar wil niet te snel gaan.',
-      introText:'We staan midden in het Carre. Backstage. Technici rennen voorbij, lichten worden ingesteld, artiesten warmen op. En dan is daar Jessy Richmond rustig, gefocust, precies weten wat ze doet.',
-      sideText:'Richmond Media Group. Internationaal. Los Angeles. Grammy-artiesten. Maar hoe bouw je zoiets op?',
+      quote:'Slow and steady wins the race. Je moet niet snel willen gaan, je moet goed willen gaan.',
+      introText:'',
+      sideText:'Het Carre, tijdens een korte pauze in het concert. Sarah Jane staat op het punt om weer op te komen, de couture show We Are Royals draait door, en ergens in die kier tussen twee momenten vinden we Jessy Richmond. Vijf minuten heeft ze, precies. Ze meent het serieus. Alles ligt strak in de planning vanavond. Niemand heeft ruimte om te improviseren, ook Jessy niet, en zeker niet middenin haar eigen productie.',
+      sideText2:'Ze is eigenaresse van Richmond Media Group, een productiebedrijf dat zich focust op video en fotografie, internationaal. Grammy artiesten, hier en in het buitenland. Een tak in Los Angeles.',
       photos:['jessy-foto1.jpg','jessy-foto2.jpg'],
       body:[
-        {type:'heading',content:'Vanaf haar zesde in de muziekwereld'},
-        {type:'text',content:'"Als je een productie neer wilt zetten als artiest, als ondernemer, maakt niet uit wat je doet dan heb je ook meerdere mensen nodig."'},
-        {type:'heading',content:'Van Japan naar LA in drie maanden'},
-        {type:'text',content:'"Hoe ik dat vertrouwen heb kunnen bouwen is het werk zelf en het netwerk. Mensen weten wat ze kunnen verwachten."'},
-        {type:'photos',content:['jessy-foto1.jpg','jessy-foto2.jpg']},
-        {type:'heading',content:'Slow and steady'},
-        {type:'quote',content:'Slow and steady wins the race. Als je weet waar je naartoe wil, hou dat vooruitzicht maar wil niet te snel gaan. Kijk niet naar andere mensen. Geloof in jezelf. En je gaat er komen.'},
+        {type:'heading',content:'Ik ben geen videograaf, ik ben een productiehuis'},
+        {type:'text',content:'Als je haar vraagt wat ze het liefst doet, twijfelt ze eerst. Ze vindt heel veel leuk om te doen, daarom doet ze ook best wel veel. Maar wat ze op dit moment doet noemt ze het leukste: produceren voor artiesten, en wegen creeren voor de meiden in haar team. Kansen geven om zich te ontwikkelen. Daar wordt ze het meest blij van. Niet van de erkenning, niet van de schaal, van dat laatste stukje.'},
+        {type:'quote',content:'Ik ben een team, ik ben geen videograaf, ik ben een productiehuis.'},
+        {type:'text',content:'Wat Jessy doet is groter dan een camera vasthouden. Als je als artiest of als ondernemer een productie wil neerzetten, heb je meerdere mensen nodig. Ze had ook videograaf kunnen blijven, freelance, een vrouw met een camera die van klus naar klus hopt. Ze koos ervoor iets te bouwen waar anderen in mee konden groeien.'},
+        {type:'heading',content:'Slow & steady'},
+        {type:'text',content:'Aan creatives die willen staan waar zij nu staat, geeft ze geen shortcut, ook geen geheime formule. Ze herhaalt het bijna als een mantra: slow & steady wins the race. Momentum is belangrijk, maar dat betekent niet dat je moet rennen. Ga op je eigen tempo. Kijk niet naar andere mensen. Geloof in jezelf.'},
+        {type:'quote',content:'Just slow and steady, and you will get there.'},
+        {type:'text',content:'In een wereld waar iedereen elkaar aftroeft op snelheid, op wie het eerst viral gaat, is dat bijna een tegendraads statement. Het is geen advies dat ze net verzonnen heeft voor de camera. Het is hoe ze zelf al jaren werkt.'},
+        {type:'text',content:'Vijf minuten waren beloofd, in het Carre, in een pauze die eigenlijk voor iets anders bedoeld was. Het werden er een paar meer. Maar wie op eigen tempo bouwt, gaat niet ineens rennen omdat de klok tikt, ook niet als de klok van iemand anders is.'},
       ]},
     yael:{ep:'Vol. 008',name:'Yael Daila',role:'Artiest & Performer',thumb:'Yael-thumb.jpg',video:'Yael.mp4',videoSide:'left',
       quote:'Het is belangrijk om op een heel vriendelijke manier toch je zin door te drijven. At the end of the day weet mijn team: dit is jouw show.',
