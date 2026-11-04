@@ -21,7 +21,7 @@ header a{text-decoration:none}
 .title span:last-child{transform:rotate(1.5deg) translateY(-2px)}
 .title{animation:wipe 1.6s .3s cubic-bezier(.6,0,.2,1) both}
 @keyframes wipe{from{clip-path:inset(0 100% 0 0)}to{clip-path:inset(0 0 0 0)}}
-.card{position:absolute;display:block;text-decoration:none;will-change:transform;z-index:2}
+.card{position:absolute;width:var(--w);display:block;text-decoration:none;will-change:transform;z-index:2}
 .card .ph{aspect-ratio:4/5;overflow:hidden;background:linear-gradient(160deg,#3a352f,#1b1917)}
 .card img{width:100%;height:100%;object-fit:cover;display:block;transition:transform .8s cubic-bezier(.2,.7,.2,1),filter .4s;filter:saturate(.9)}
 .card:hover{z-index:20}
@@ -31,6 +31,15 @@ header a{text-decoration:none}
 .card .role{position:absolute;left:10px;bottom:38px;color:#fff;font-size:12px;opacity:0;transform:translateY(6px);transition:.3s;text-shadow:0 1px 8px rgba(0,0,0,.6)}
 .card:hover .role{opacity:1;transform:none}
 .intro{position:absolute;left:28px;bottom:28px;max-width:340px;font-size:14px;z-index:5}
+
+.feat{position:relative;z-index:11;height:92svh;min-height:520px;overflow:hidden;background:#1b1917}
+.feat img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;object-position:50% 25%;display:block}
+.feat::after{content:"";position:absolute;inset:0;background:linear-gradient(to top,rgba(0,0,0,.72),transparent 55%)}
+.feat .txt{position:absolute;left:0;right:0;bottom:0;z-index:2;padding:0 28px 40px;color:#fff;display:flex;justify-content:space-between;align-items:flex-end;gap:24px;flex-wrap:wrap}
+.feat .lab{font-size:12px;letter-spacing:.12em;text-transform:uppercase;opacity:.85;margin-bottom:10px}
+.feat h2{font:400 clamp(44px,7vw,110px)/.95 var(--serif);letter-spacing:-.03em}
+.feat p{max-width:360px;font-size:14px}
+.feat a{color:#fff;display:inline-block;margin-top:12px;border-bottom:1px solid #fff;text-decoration:none;font-size:14px}
 .mid,.studios,footer{position:relative;z-index:11;background:var(--bg)}
 .mid{padding:20vh 28px;display:grid;grid-template-columns:repeat(12,1fr);column-gap:18px}
 .mid p{grid-column:4/11;font:400 clamp(28px,4vw,58px)/1.12 var(--serif);letter-spacing:-.02em}
@@ -43,18 +52,19 @@ header a{text-decoration:none}
 footer{display:flex;justify-content:space-between;flex-wrap:wrap;gap:12px;padding:24px 28px 32px;border-top:1px solid var(--line);font-size:12px;color:var(--mute);letter-spacing:.06em}
 @media (hover:hover) and (pointer:fine){html.chc,html.chc *{cursor:none!important}}
 .chcur{position:fixed;left:0;top:0;width:48px;height:48px;z-index:9999;pointer-events:none;opacity:0;transition:opacity .2s;will-change:transform}
-.chcur img{width:100%;height:100%;object-fit:contain;display:block}
+.chcur img{width:100%;height:100%;object-fit:contain;display:block;filter:brightness(0)}
+body.dark .chcur img{filter:brightness(0) invert(1)}
 html.chc .chcur.show{opacity:1}
 #mode{position:fixed;right:20px;bottom:20px;z-index:40;font:12px var(--mono);background:var(--ink);color:var(--bg);border:0;padding:9px 14px;cursor:pointer}
 @media(max-width:800px){
- .title span{font-size:15vw}
- .stage{height:auto;padding:0 16px 40px}
- .title{margin-bottom:0;height:80svh;flex-direction:column;gap:8px}
- .title span{font-size:21vw}
- .grid{display:grid;grid-template-columns:repeat(2,1fr);gap:28px 14px}
- .card{position:static;width:auto!important;transform:none!important}
- .card:nth-child(even){margin-top:36px}
- .intro{position:static;margin:0 0 28px}
+ .stage{height:300vh}
+ .title span{font-size:clamp(30px,10.5vw,52px)}
+ .title{gap:12px}
+ .card{width:calc(var(--w)*1.6)}
+ .card .cap{font-size:9px;margin-top:5px;flex-direction:column;gap:0}
+ .card .role{display:none}
+ .intro{left:16px;bottom:16px;font-size:12px;max-width:220px}
+ .feat .txt{padding:0 16px 28px}
  .mid,.studios,footer{padding-left:16px;padding-right:16px}
  .mid p,.studios h2,.studios p{grid-column:1/13}
  header{padding:16px}
@@ -65,25 +75,26 @@ html.chc .chcur.show{opacity:1}
 <section class="stage" id="top">
   <div class="title"><span>CULTURE</span><span>HEAD</span></div>
   <div class="grid-wrap" id="grid">
-<a class="card" href="index.html" data-speed="0.025" style="left:18%;top:4%;width:12%"><div class="ph"><img src="FAVE.png" alt="FAVE" loading="lazy" onerror="this.style.display='none'"></div><div class="cap"><b>FAVE</b><span>016</span></div><span class="role">Singer-Songwriter</span></a>
-<a class="card" href="index.html" data-speed="-0.075" style="left:36%;top:2%;width:10%"><div class="ph"><img src="ELLA%20THUMB.png" alt="Ella John" loading="lazy" onerror="this.style.display='none'"></div><div class="cap"><b>Ella John</b><span>015</span></div><span class="role">Rapper & Artiest</span></a>
-<a class="card" href="index.html" data-speed="0.0" style="left:54%;top:5%;width:12%"><div class="ph"><img src="chanou-thumb.jpg" alt="Chanou" loading="lazy" onerror="this.style.display='none'"></div><div class="cap"><b>Chanou</b><span>014</span></div><span class="role">Zangeres</span></a>
-<a class="card" href="index.html" data-speed="0.025" style="left:72%;top:3%;width:11%"><div class="ph"><img src="jazkaris-thumb.jpg" alt="Jaz Karis" loading="lazy" onerror="this.style.display='none'"></div><div class="cap"><b>Jaz Karis</b><span>013</span></div><span class="role">Artiest</span></a>
-<a class="card" href="index.html" data-speed="-0.075" style="left:14%;top:15%;width:10%"><div class="ph"><img src="rawen-thumb.jpg" alt="Rawen Mustafa" loading="lazy" onerror="this.style.display='none'"></div><div class="cap"><b>Rawen Mustafa</b><span>012</span></div><span class="role">Designer & Oprichter ETB</span></a>
-<a class="card" href="index.html" data-speed="0.075" style="left:76%;top:14%;width:10%"><div class="ph"><img src="celeste-thumb.jpg" alt="Celeste Mercedes" loading="lazy" onerror="this.style.display='none'"></div><div class="cap"><b>Celeste Mercedes</b><span>011</span></div><span class="role">Violiste & Music Director</span></a>
-<a class="card" href="index.html" data-speed="-0.025" style="left:24%;top:23%;width:12%"><div class="ph"><img src="Twenty20-thumb.jpg" alt="Twenty20 Jewelry" loading="lazy" onerror="this.style.display='none'"></div><div class="cap"><b>Twenty20 Jewelry</b><span>010</span></div><span class="role">Edgar Boudens Oprichter & Goudsmid</span></a>
-<a class="card" href="index.html" data-speed="0.0" style="left:44%;top:25%;width:11%"><div class="ph"><img src="jessy-thumb.jpg" alt="Jessy Richmond" loading="lazy" onerror="this.style.display='none'"></div><div class="cap"><b>Jessy Richmond</b><span>009</span></div><span class="role">Producent & Eigenaresse Richmond Media Group</span></a>
-<a class="card" href="index.html" data-speed="0.05" style="left:62%;top:22%;width:12%"><div class="ph"><img src="Yael-thumb.jpg" alt="Yael Daila" loading="lazy" onerror="this.style.display='none'"></div><div class="cap"><b>Yael Daila</b><span>008</span></div><span class="role">Artiest & Performer</span></a>
-<a class="card" href="index.html" data-speed="0.0" style="left:18%;top:34%;width:11%"><div class="ph"><img src="supadupagoods-thumb.jpg" alt="Supa Dupa Goods" loading="lazy" onerror="this.style.display='none'"></div><div class="cap"><b>Supa Dupa Goods</b><span>007</span></div><span class="role">Nick Spapens & Samay June Oprichters</span></a>
-<a class="card" href="index.html" data-speed="-0.05" style="left:72%;top:36%;width:12%"><div class="ph"><img src="joeboy-thumb.jpg" alt="Joeboy" loading="lazy" onerror="this.style.display='none'"></div><div class="cap"><b>Joeboy</b><span>006</span></div><span class="role">Artiest & Singer-Songwriter</span></a>
-<a class="card" href="index.html" data-speed="-0.075" style="left:34%;top:45%;width:11%"><div class="ph"><img src="sneakerness-thumb.jpg" alt="Sneakerness Matthijs van Meulen" loading="lazy" onerror="this.style.display='none'"></div><div class="cap"><b>Sneakerness Matthijs van Meulen</b><span>005</span></div><span class="role">CEO Sneakerness</span></a>
-<a class="card" href="index.html" data-speed="-0.05" style="left:56%;top:50%;width:12%"><div class="ph"><img src="Amiera%20Amore-thumb.jpg" alt="Amiera Amore" loading="lazy" onerror="this.style.display='none'"></div><div class="cap"><b>Amiera Amore</b><span>004</span></div><span class="role">Creative Director & Fashion Designer</span></a>
-<a class="card" href="index.html" data-speed="-0.05" style="left:20%;top:58%;width:12%"><div class="ph"><img src="Annicee-thumb.jpg" alt="Annicee" loading="lazy" onerror="this.style.display='none'"></div><div class="cap"><b>Annicee</b><span>003</span></div><span class="role">Art Director, DJ & Curator</span></a>
-<a class="card" href="index.html" data-speed="0.025" style="left:66%;top:64%;width:11%"><div class="ph"><img src="kaytranada-thumb.jpg" alt="Kaytranada" loading="lazy" onerror="this.style.display='none'"></div><div class="cap"><b>Kaytranada</b><span>002</span></div><span class="role">Producer & DJ</span></a>
-<a class="card" href="index.html" data-speed="0.0" style="left:40%;top:74%;width:13%"><div class="ph"><img src="Steven%20Aswin-thumb.jpg" alt="Steven Aswin" loading="lazy" onerror="this.style.display='none'"></div><div class="cap"><b>Steven Aswin</b><span>001</span></div><span class="role">Componist, Zanger & Ondernemer</span></a>
+<a class="card" href="index.html" data-speed="0.025" style="left:18%;top:4%;--w:12%"><div class="ph"><img src="FAVE.png" alt="FAVE" loading="lazy" onerror="this.style.display='none'"></div><div class="cap"><b>FAVE</b><span>016</span></div><span class="role">Singer-Songwriter</span></a>
+<a class="card" href="index.html" data-speed="-0.075" style="left:36%;top:2%;--w:10%"><div class="ph"><img src="ELLA%20THUMB.png" alt="Ella John" loading="lazy" onerror="this.style.display='none'"></div><div class="cap"><b>Ella John</b><span>015</span></div><span class="role">Rapper & Artiest</span></a>
+<a class="card" href="index.html" data-speed="0.0" style="left:54%;top:5%;--w:12%"><div class="ph"><img src="chanou-thumb.jpg" alt="Chanou" loading="lazy" onerror="this.style.display='none'"></div><div class="cap"><b>Chanou</b><span>014</span></div><span class="role">Zangeres</span></a>
+<a class="card" href="index.html" data-speed="0.025" style="left:72%;top:3%;--w:11%"><div class="ph"><img src="jazkaris-thumb.jpg" alt="Jaz Karis" loading="lazy" onerror="this.style.display='none'"></div><div class="cap"><b>Jaz Karis</b><span>013</span></div><span class="role">Artiest</span></a>
+<a class="card" href="index.html" data-speed="-0.075" style="left:14%;top:15%;--w:10%"><div class="ph"><img src="rawen-thumb.jpg" alt="Rawen Mustafa" loading="lazy" onerror="this.style.display='none'"></div><div class="cap"><b>Rawen Mustafa</b><span>012</span></div><span class="role">Designer & Oprichter ETB</span></a>
+<a class="card" href="index.html" data-speed="0.075" style="left:76%;top:14%;--w:10%"><div class="ph"><img src="celeste-thumb.jpg" alt="Celeste Mercedes" loading="lazy" onerror="this.style.display='none'"></div><div class="cap"><b>Celeste Mercedes</b><span>011</span></div><span class="role">Violiste & Music Director</span></a>
+<a class="card" href="index.html" data-speed="-0.025" style="left:24%;top:23%;--w:12%"><div class="ph"><img src="Twenty20-thumb.jpg" alt="Twenty20 Jewelry" loading="lazy" onerror="this.style.display='none'"></div><div class="cap"><b>Twenty20 Jewelry</b><span>010</span></div><span class="role">Edgar Boudens Oprichter & Goudsmid</span></a>
+<a class="card" href="index.html" data-speed="0.0" style="left:44%;top:25%;--w:11%"><div class="ph"><img src="jessy-thumb.jpg" alt="Jessy Richmond" loading="lazy" onerror="this.style.display='none'"></div><div class="cap"><b>Jessy Richmond</b><span>009</span></div><span class="role">Producent & Eigenaresse Richmond Media Group</span></a>
+<a class="card" href="index.html" data-speed="0.05" style="left:62%;top:22%;--w:12%"><div class="ph"><img src="Yael-thumb.jpg" alt="Yael Daila" loading="lazy" onerror="this.style.display='none'"></div><div class="cap"><b>Yael Daila</b><span>008</span></div><span class="role">Artiest & Performer</span></a>
+<a class="card" href="index.html" data-speed="0.0" style="left:18%;top:34%;--w:11%"><div class="ph"><img src="supadupagoods-thumb.jpg" alt="Supa Dupa Goods" loading="lazy" onerror="this.style.display='none'"></div><div class="cap"><b>Supa Dupa Goods</b><span>007</span></div><span class="role">Nick Spapens & Samay June Oprichters</span></a>
+<a class="card" href="index.html" data-speed="-0.05" style="left:72%;top:36%;--w:12%"><div class="ph"><img src="joeboy-thumb.jpg" alt="Joeboy" loading="lazy" onerror="this.style.display='none'"></div><div class="cap"><b>Joeboy</b><span>006</span></div><span class="role">Artiest & Singer-Songwriter</span></a>
+<a class="card" href="index.html" data-speed="-0.075" style="left:34%;top:45%;--w:11%"><div class="ph"><img src="sneakerness-thumb.jpg" alt="Sneakerness Matthijs van Meulen" loading="lazy" onerror="this.style.display='none'"></div><div class="cap"><b>Sneakerness Matthijs van Meulen</b><span>005</span></div><span class="role">CEO Sneakerness</span></a>
+<a class="card" href="index.html" data-speed="-0.05" style="left:56%;top:50%;--w:12%"><div class="ph"><img src="Amiera%20Amore-thumb.jpg" alt="Amiera Amore" loading="lazy" onerror="this.style.display='none'"></div><div class="cap"><b>Amiera Amore</b><span>004</span></div><span class="role">Creative Director & Fashion Designer</span></a>
+<a class="card" href="index.html" data-speed="-0.05" style="left:20%;top:58%;--w:12%"><div class="ph"><img src="Annicee-thumb.jpg" alt="Annicee" loading="lazy" onerror="this.style.display='none'"></div><div class="cap"><b>Annicee</b><span>003</span></div><span class="role">Art Director, DJ & Curator</span></a>
+<a class="card" href="index.html" data-speed="0.025" style="left:66%;top:64%;--w:11%"><div class="ph"><img src="kaytranada-thumb.jpg" alt="Kaytranada" loading="lazy" onerror="this.style.display='none'"></div><div class="cap"><b>Kaytranada</b><span>002</span></div><span class="role">Producer & DJ</span></a>
+<a class="card" href="index.html" data-speed="0.0" style="left:40%;top:74%;--w:13%"><div class="ph"><img src="Steven%20Aswin-thumb.jpg" alt="Steven Aswin" loading="lazy" onerror="this.style.display='none'"></div><div class="cap"><b>Steven Aswin</b><span>001</span></div><span class="role">Componist, Zanger & Ondernemer</span></a>
   </div>
   <p class="intro">Gesprekken met mensen die iets aan het bouwen zijn. Vol. 001 &ndash; 016.</p>
 </section>
+<section class="feat" id="uitgelicht"><img src="1_DSC0211.png" alt="Ella John" onerror="this.style.display='none'"><div class="txt"><div><div class="lab">Uitgelicht &middot; Vol. 015</div><h2>Ella John</h2></div><p>Voor de mensen die me niet kennen: je hoort me eigenlijk wel te kennen.<br><a href="index.html">Lees het artikel &rarr;</a></p></div></section>
 <section class="mid" id="over"><p id="reveal">We leggen vast wat er gebeurt voordat iemand het gemaakt heeft. De twijfel, de late uren, de eerste keer dat het lukt. Iedereen ziet de eindstand. Wij zijn er bij als het nog niet af is.</p></section>
 <section class="studios" id="studios">
   <h2>Culture Head Studios</h2>
@@ -98,14 +109,11 @@ html.chc .chcur.show{opacity:1}
     var cards=[].slice.call(document.querySelectorAll('.card'));
     var stage=document.querySelector('.stage');
     var reduce=matchMedia('(prefers-reduced-motion: reduce)').matches;
-    var wrap=document.getElementById('grid');
-    function layout(){ if(innerWidth<=800){wrap.classList.add('grid')}else{wrap.classList.remove('grid')} }
-    layout(); addEventListener('resize',layout);
     var p=document.getElementById('reveal');
     p.innerHTML=p.textContent.split(' ').map(function(w){return '<span>'+w+' </span>'}).join('');
     var sp=p.querySelectorAll('span');
     function tick(){
-      if(!reduce && innerWidth>800){
+      if(!reduce){
         var vh=innerHeight;
         cards.forEach(function(c){
           var r=c.getBoundingClientRect(); var off=(r.top+r.height/2-vh/2);
