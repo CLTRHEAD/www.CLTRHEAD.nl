@@ -4,7 +4,7 @@
 <title>Culture Head preview</title>
 <link href="https://fonts.googleapis.com/css2?family=Newsreader:ital,opsz,wght@0,6..72,400;1,6..72,400&family=Courier+Prime&family=Reenie+Beanie&display=swap" rel="stylesheet">
 <style>
-:root{--bg:#f1eee8;--ink:#161614;--mute:#77736b;--line:rgba(22,22,20,.18);--mono:'Courier Prime','Courier New',monospace;--serif:'Newsreader',Georgia,serif;--hand:'Reenie Beanie','Segoe Script',cursive}
+:root{--bg:#f1eee8;--ink:#161614;--mute:#77736b;--line:rgba(22,22,20,.18);--mono:'Courier Prime','Courier New',monospace;--serif:'Newsreader',Georgia,serif;--sans:'Helvetica Neue',Helvetica,Arial,sans-serif;--hand:'Reenie Beanie','Segoe Script',cursive}
 body.dark{--bg:#0f0e0d;--ink:#ece7de;--mute:#8d877c;--line:rgba(236,231,222,.18)}
 *{box-sizing:border-box;margin:0;padding:0}
 html{scroll-snap-type:y mandatory;scroll-behavior:smooth}
@@ -17,17 +17,19 @@ header a{text-decoration:none}
 .hand{font-family:var(--hand);line-height:.9}
 .feat{background:#1b1917;color:#fff}
 .feat>img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;object-position:50% 25%}
-.feat::after{content:"";position:absolute;inset:0;background:linear-gradient(to top,rgba(0,0,0,.7),transparent 50%)}
-.feat .logo{position:absolute;top:18px;left:0;right:0;text-align:center;z-index:5;font-size:clamp(24px,2.2vw,34px);opacity:.92;pointer-events:none}
-.feat .txt{position:absolute;left:0;bottom:0;z-index:2;padding:0 28px 40px}
-.feat .lab{font-size:12px;letter-spacing:.12em;text-transform:uppercase;opacity:.85;margin-bottom:12px}
-.feat blockquote{font:italic clamp(22px,2.6vw,38px)/1.2 var(--serif);max-width:640px;margin-bottom:12px}
-.feat h2{font:400 clamp(44px,7vw,110px)/.95 var(--serif);letter-spacing:-.03em}
-.feat a{color:#fff;display:inline-block;margin-top:14px;border-bottom:1px solid #fff;text-decoration:none;font-size:14px}
+.feat::after{content:"";position:absolute;inset:0;background:linear-gradient(to top,rgba(0,0,0,.55),transparent 38%)}
+.feat .logo{position:absolute;top:16px;left:0;right:0;text-align:center;z-index:5;font-size:clamp(17px,1.5vw,22px);line-height:.8;opacity:.92;pointer-events:none}
+.feat .logo span{display:block}
+.feat .bar{position:absolute;left:28px;right:28px;bottom:28px;z-index:2;display:flex;justify-content:space-between;align-items:flex-end;gap:20px;border-top:1px solid rgba(255,255,255,.55);padding-top:14px;font-family:var(--sans)}
+.feat .nm{font-weight:700;font-size:clamp(15px,1.5vw,22px);letter-spacing:.04em;text-transform:uppercase}
+.feat .sub{font-size:clamp(12px,1vw,14px);margin-top:4px;opacity:.9}
+.feat .lab{font-size:11px;letter-spacing:.12em;text-transform:uppercase;opacity:.75;margin-bottom:6px}
+.feat a{color:#fff;font-size:12px;letter-spacing:.08em;text-transform:uppercase;text-decoration:none;white-space:nowrap}
+.feat a:hover{text-decoration:underline}
 .center{position:absolute;inset:0;display:flex;align-items:center;justify-content:center;gap:clamp(12px,2vw,30px);font-size:clamp(34px,4.4vw,68px);pointer-events:none;z-index:3}
 .center span:first-child{transform:rotate(-2deg)}
 .center span:last-child{transform:rotate(1.5deg)}
-.card{position:absolute;left:var(--l);top:var(--t);width:7.8vw;display:block;text-decoration:none;z-index:2}
+.card{position:absolute;left:var(--l);top:var(--t);width:min(6vw,9.5vh);display:block;text-decoration:none;z-index:2;will-change:transform}
 .ph{aspect-ratio:4/5;overflow:hidden;background:linear-gradient(160deg,#3a352f,#1b1917)}
 .card img{width:100%;height:100%;object-fit:cover;display:block;transition:transform .8s,filter .4s;filter:saturate(.9)}
 .card:hover{z-index:20}
@@ -36,10 +38,16 @@ header a{text-decoration:none}
 .cap b{font-weight:400;color:var(--ink);overflow:hidden;text-overflow:ellipsis}
 .role{position:absolute;left:8px;bottom:30px;right:6px;color:#fff;font-size:10px;line-height:1.2;opacity:0;transition:.3s;text-shadow:0 1px 8px #000}
 .card:hover .role{opacity:1}
-.about{display:grid;place-items:center;padding:0 28px}
-.about p{max-width:1000px;font:clamp(28px,4vw,58px)/1.12 var(--serif);letter-spacing:-.02em}
-.about p span{opacity:.15;transition:opacity .6s}
-.about.in p span{opacity:1}
+.about{display:grid;grid-template-columns:repeat(12,1fr);column-gap:18px;align-content:center;padding:0 28px}
+.about .tag{grid-column:1/5;font-size:12px;letter-spacing:.14em;text-transform:uppercase;color:var(--mute);margin-bottom:5vh}
+.about .big{grid-column:2/10;font:clamp(40px,5.6vw,92px)/.92 var(--hand);transform:rotate(-2deg);position:relative;width:fit-content}
+.about .big svg{position:absolute;left:0;bottom:-.12em;width:100%;height:.3em;overflow:visible}
+.about .big path{fill:none;stroke:currentColor;stroke-width:3;stroke-linecap:round;stroke-dasharray:1;stroke-dashoffset:1;transition:stroke-dashoffset 1.2s .6s}
+.about.in .big path{stroke-dashoffset:0}
+.about .txt{grid-column:7/12;margin-top:6vh;font:clamp(16px,1.35vw,21px)/1.45 var(--serif)}
+.about .txt span{opacity:.15;transition:opacity .6s}
+.about.in .txt span{opacity:1}
+.about .sig{grid-column:7/12;margin-top:18px;font:clamp(22px,2vw,30px)/1 var(--hand)}
 .studios{display:flex;flex-direction:column;justify-content:space-between}
 .studios .body{flex:1;display:grid;grid-template-columns:repeat(12,1fr);column-gap:18px;align-content:center;padding:0 28px;border-top:1px solid var(--line)}
 .studios h2{grid-column:1/7;font:clamp(34px,5vw,70px)/1 var(--serif);letter-spacing:-.03em}
@@ -51,30 +59,34 @@ footer{display:flex;justify-content:space-between;flex-wrap:wrap;gap:12px;paddin
 .chcur img{width:100%;height:100%;object-fit:contain;display:block;filter:brightness(0)}
 body.dark .chcur img{filter:brightness(0) invert(1)}
 html.chc .chcur.show{opacity:1}
-#mode{position:fixed;right:20px;bottom:20px;z-index:40;font:12px var(--mono);background:var(--ink);color:var(--bg);border:0;padding:9px 14px;cursor:pointer}
+#mode{position:fixed;left:28px;top:14px;z-index:40;font:12px var(--mono);background:var(--ink);color:var(--bg);border:0;padding:9px 14px;cursor:pointer}
 @media(max-width:800px){
  .card{left:var(--ml);top:var(--mt);width:21vw}
  .cap{font-size:9px}
  .role{display:none}
- .feat .txt{padding:0 16px 28px}
- .feat blockquote{font-size:22px}
+ .feat .bar{left:16px;right:16px;bottom:20px}
  .center{font-size:clamp(30px,10.5vw,52px)}
  .about,.studios .body{padding:0 16px}
+ .about .tag,.about .big,.about .txt,.about .sig{grid-column:1/13}
+ .about .big{font-size:clamp(40px,13vw,64px)}
  .studios h2,.studios p{grid-column:1/13}
  footer,header{padding:16px}
- #mode{bottom:14px;right:14px}
+ #mode{left:16px;top:12px}
 }
 </style></head><body>
 <header><nav><a href="#stories">Stories</a><a href="#over">Over</a><a href="#studios">Studios</a></nav></header>
 <section class="feat" id="top">
 <img src="1_DSC0211.png" alt="Ella John" onerror="this.style.display='none'">
-<div class="logo hand">Culture Head</div>
-<div class="txt"><div class="lab">Uitgelicht &middot; Vol. 015 &middot; Rapper &amp; Artiest</div>
-<blockquote>&ldquo;Je hoort me eigenlijk wel te kennen.&rdquo;</blockquote>
-<h2>Ella John</h2><a href="index.html">Lees het artikel &rarr;</a></div>
+<div class="logo hand"><span>Culture</span><span>Head</span></div>
+<div class="bar"><div><div class="lab">Uitgelicht &middot; Vol. 015</div><div class="nm">Ella John</div><div class="sub">Rapper &amp; Artiest. &ldquo;Je hoort me eigenlijk wel te kennen.&rdquo;</div></div><a href="index.html">Lees het artikel &rarr;</a></div>
 </section>
 <section id="stories"><div class="center hand"><span>CULTURE</span><span>HEAD</span></div></section>
-<section class="about" id="over"><p id="reveal">We leggen vast wat er gebeurt voordat iemand het gemaakt heeft. De twijfel, de late uren, de eerste keer dat het lukt. Iedereen ziet de eindstand. Wij zijn er bij als het nog niet af is.</p></section>
+<section class="about" id="over">
+<div class="tag">Over Culture Head</div>
+<div class="big">Iedereen ziet de eindstand.<svg viewBox="0 0 100 10" preserveAspectRatio="none"><path pathLength="1" d="M1 6 C20 1 35 9 55 4 S85 3 99 6"/></svg></div>
+<p class="txt" id="reveal">Wij zijn er bij als het nog niet af is. Culture Head legt vast wat er gebeurt voordat iemand iets gemaakt heeft: de twijfel, de late uren, de eerste keer dat het lukt.</p>
+<div class="sig">&mdash; Culture Head</div>
+</section>
 <section class="studios" id="studios"><div class="body"><h2>Culture Head Studios</h2>
 <p>Wil je jouw verhaal laten vertellen? Wij komen langs, filmen in jouw omgeving en maken er iets van dat blijft hangen.<br><a href="mailto:">Stuur een bericht &rarr;</a></p></div>
 <footer><span>Culture Head &middot; Real stories move people.</span><span>Amsterdam</span></footer></section>
@@ -83,15 +95,25 @@ html.chc .chcur.show{opacity:1}
 <script>
 (function(){
 try{
-var S=[["FAVE","016","Singer-Songwriter","FAVE.png",12,6,3,8],["Ella John","015","Rapper & Artiest","ELLA THUMB.png",29,9,27,11],["Chanou","014","Zangeres","chanou-thumb.jpg",46,5,51,7],["Jaz Karis","013","Artiest","jazkaris-thumb.jpg",63,9,75,10],["Rawen","012","Designer & Oprichter ETB","rawen-thumb.jpg",80,6,4,25],["Celeste","011","Violiste & Music Director","celeste-thumb.jpg",6,25,28,28],["Twenty20","010","Edgar Boudens Oprichter & Goudsmid","Twenty20-thumb.jpg",12,43,52,24],["Jessy","009","Producent & Eigenaresse Richmond Media Group","jessy-thumb.jpg",5,63,74,27],["Yael","008","Artiest & Performer","Yael-thumb.jpg",86,25,3,62],["Supa Dupa","007","Nick Spapens & Samay June Oprichters","supadupagoods-thumb.jpg",80,43,26,65],["Joeboy","006","Artiest & Singer-Songwriter","joeboy-thumb.jpg",87,63,51,61],["Sneakerness","005","CEO Sneakerness","sneakerness-thumb.jpg",20,74,76,64],["Amiera","004","Creative Director & Fashion Designer","Amiera Amore-thumb.jpg",33,78,5,77],["Annicee","003","Art Director, DJ & Curator","Annicee-thumb.jpg",46,74,28,80],["Kaytranada","002","Producer & DJ","kaytranada-thumb.jpg",59,78,52,76],["Steven Aswin","001","Componist, Zanger & Ondernemer","Steven Aswin-thumb.jpg",72,74,75,79]];
-var st=document.getElementById('stories');
-S.forEach(function(c){
+var S=[["FAVE","016","Singer-Songwriter","FAVE.png",22,7,3,8],["Ella John","015","Rapper & Artiest","ELLA THUMB.png",34,10,27,11],["Chanou","014","Zangeres","chanou-thumb.jpg",46,6,51,7],["Jaz Karis","013","Artiest","jazkaris-thumb.jpg",58,10,75,10],["Rawen","012","Designer & Oprichter ETB","rawen-thumb.jpg",70,7,4,25],["Celeste","011","Violiste & Music Director","celeste-thumb.jpg",73,25,28,28],["Twenty20","010","Edgar Boudens Oprichter & Goudsmid","Twenty20-thumb.jpg",79,41,52,24],["Jessy","009","Producent & Eigenaresse Richmond Media Group","jessy-thumb.jpg",72,57,74,27],["Yael","008","Artiest & Performer","Yael-thumb.jpg",70,76,3,62],["Supa Dupa","007","Nick Spapens & Samay June Oprichters","supadupagoods-thumb.jpg",58,79,26,65],["Joeboy","006","Artiest & Singer-Songwriter","joeboy-thumb.jpg",46,75,51,61],["Sneakerness","005","CEO Sneakerness","sneakerness-thumb.jpg",34,79,76,64],["Amiera","004","Creative Director & Fashion Designer","Amiera Amore-thumb.jpg",22,76,5,77],["Annicee","003","Art Director, DJ & Curator","Annicee-thumb.jpg",22,57,28,80],["Kaytranada","002","Producer & DJ","kaytranada-thumb.jpg",15,41,52,76],["Steven Aswin","001","Componist, Zanger & Ondernemer","Steven Aswin-thumb.jpg",21,25,75,79]];
+var st=document.getElementById('stories'),cards=[];
+S.forEach(function(c,i){
 var a=document.createElement('a');a.className='card';a.href='index.html';
 a.style.cssText='--l:'+c[4]+'%;--t:'+c[5]+'%;--ml:'+c[6]+'%;--mt:'+c[7]+'%';
+a.dataset.d=((i*7)%5-2)*.5;
 a.innerHTML='<div class="ph"><img src="'+encodeURI(c[3])+'" alt="" loading="lazy" onerror="this.style.display=\'none\'"></div><div class="cap"><b>'+c[0]+'</b><span>'+c[1]+'</span></div><span class="role">'+c[2]+'</span>';
-st.appendChild(a);});
+st.appendChild(a);cards.push(a);});
+var mx=0,my=0,still=matchMedia('(prefers-reduced-motion: reduce)').matches;
+function move(){
+if(still)return;
+var r=st.getBoundingClientRect(),p=r.top/innerHeight;
+cards.forEach(function(c){var d=parseFloat(c.dataset.d);
+c.style.transform='translate('+(mx*d*14).toFixed(1)+'px,'+(p*d*-34+my*d*10).toFixed(1)+'px)'});}
+addEventListener('scroll',move,{passive:true});
+addEventListener('mousemove',function(e){mx=e.clientX/innerWidth-.5;my=e.clientY/innerHeight-.5;move()});
+move();
 var about=document.getElementById('over'),p=document.getElementById('reveal');
-p.innerHTML=p.textContent.split(' ').map(function(w,i){return '<span style="transition-delay:'+(i*60)+'ms">'+w+' </span>'}).join('');
+p.innerHTML=p.textContent.split(' ').map(function(w,i){return '<span style="transition-delay:'+(i*50)+'ms">'+w+' </span>'}).join('');
 if('IntersectionObserver' in window){new IntersectionObserver(function(es){es.forEach(function(e){about.classList.toggle('in',e.isIntersecting)})},{threshold:.5}).observe(about)}else{about.classList.add('in')}
 var cur=document.getElementById('chcur'),img=cur.querySelector('img');
 if(matchMedia('(hover:hover) and (pointer:fine)').matches){
