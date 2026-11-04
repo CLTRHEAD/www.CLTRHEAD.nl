@@ -5,20 +5,19 @@
 <link href="https://fonts.googleapis.com/css2?family=Newsreader:ital,opsz,wght@0,6..72,400;1,6..72,400&family=Courier+Prime&family=Reenie+Beanie&display=swap" rel="stylesheet">
 <style>
 :root{--bg:#f1eee8;--ink:#161614;--mute:#77736b;--line:rgba(22,22,20,.18);--mono:'Courier Prime','Courier New',monospace;--serif:'Newsreader',Georgia,serif;--sans:'Helvetica Neue',Helvetica,Arial,sans-serif;--hand:'Reenie Beanie','Segoe Script',cursive}
-body.dark{--bg:#0f0e0d;--ink:#ece7de;--mute:#8d877c;--line:rgba(236,231,222,.18)}
 *{box-sizing:border-box;margin:0;padding:0}
 html{scroll-snap-type:y mandatory;scroll-behavior:smooth}
 body{background:var(--bg);color:var(--ink);font:17px/1.55 var(--mono);transition:background .4s,color .4s;overflow-x:hidden}
 a{color:inherit}
 section{height:100vh;height:100svh;scroll-snap-align:start;scroll-snap-stop:always;position:relative;overflow:hidden}
-header{position:fixed;inset:0 0 auto 0;z-index:30;display:flex;justify-content:flex-end;padding:20px 28px;mix-blend-mode:difference;color:#fff;font-size:13px;letter-spacing:.06em}
+header{position:fixed;inset:0 0 auto 0;z-index:30;display:flex;justify-content:flex-end;padding:36px 28px;mix-blend-mode:difference;color:#fff;font-size:13px;letter-spacing:.06em}
 header nav{display:flex;gap:26px}
 header a{text-decoration:none}
 .hand{font-family:var(--hand);line-height:.9}
 .feat{background:#1b1917;color:#fff}
 .feat>img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;object-position:50% 25%}
 .feat::after{content:"";position:absolute;inset:0;background:linear-gradient(to top,rgba(0,0,0,.55),transparent 38%)}
-.feat .logo{position:absolute;top:16px;left:0;right:0;text-align:center;z-index:5;font-size:clamp(17px,1.5vw,22px);line-height:.8;opacity:.92;pointer-events:none}
+.feat .logo{position:absolute;top:34px;left:0;right:0;text-align:center;z-index:5;font-size:clamp(17px,1.5vw,22px);line-height:.8;opacity:.92;pointer-events:none}
 .feat .logo span{display:block}
 .feat .bar{position:absolute;left:28px;right:28px;bottom:28px;z-index:2;display:flex;justify-content:space-between;align-items:flex-end;gap:20px;border-top:1px solid rgba(255,255,255,.55);padding-top:14px;font-family:var(--sans)}
 .feat .nm{font-weight:700;font-size:clamp(15px,1.5vw,22px);letter-spacing:.04em;text-transform:uppercase}
@@ -29,7 +28,7 @@ header a{text-decoration:none}
 .center{position:absolute;inset:0;display:flex;align-items:center;justify-content:center;gap:clamp(12px,2vw,30px);font-size:clamp(34px,4.4vw,68px);pointer-events:none;z-index:3}
 .center span:first-child{transform:rotate(-2deg)}
 .center span:last-child{transform:rotate(1.5deg)}
-.card{position:absolute;left:var(--l);top:var(--t);width:min(6vw,9.5vh);display:block;text-decoration:none;z-index:2;will-change:transform}
+.card{position:absolute;left:var(--l);top:var(--t);width:calc(min(8vw,12.5vh)*var(--s,1));display:block;text-decoration:none;z-index:2;will-change:transform}
 .ph{aspect-ratio:4/5;overflow:hidden;background:linear-gradient(160deg,#3a352f,#1b1917)}
 .card img{width:100%;height:100%;object-fit:cover;display:block;transition:transform .8s,filter .4s;filter:saturate(.9)}
 .card:hover{z-index:20}
@@ -41,9 +40,6 @@ header a{text-decoration:none}
 .about{display:grid;grid-template-columns:repeat(12,1fr);column-gap:18px;align-content:center;padding:0 28px}
 .about .tag{grid-column:1/5;font-size:12px;letter-spacing:.14em;text-transform:uppercase;color:var(--mute);margin-bottom:5vh}
 .about .big{grid-column:2/10;font:clamp(40px,5.6vw,92px)/.92 var(--hand);transform:rotate(-2deg);position:relative;width:fit-content}
-.about .big svg{position:absolute;left:0;bottom:-.12em;width:100%;height:.3em;overflow:visible}
-.about .big path{fill:none;stroke:currentColor;stroke-width:3;stroke-linecap:round;stroke-dasharray:1;stroke-dashoffset:1;transition:stroke-dashoffset 1.2s .6s}
-.about.in .big path{stroke-dashoffset:0}
 .about .txt{grid-column:7/12;margin-top:6vh;font:clamp(16px,1.35vw,21px)/1.45 var(--serif)}
 .about .txt span{opacity:.15;transition:opacity .6s}
 .about.in .txt span{opacity:1}
@@ -55,12 +51,12 @@ header a{text-decoration:none}
 .studios p a{display:inline-block;margin-top:18px;border-bottom:1px solid currentColor;text-decoration:none;font-size:14px}
 footer{display:flex;justify-content:space-between;flex-wrap:wrap;gap:12px;padding:24px 28px;border-top:1px solid var(--line);font-size:12px;color:var(--mute)}
 @media (hover:hover) and (pointer:fine){html.chc,html.chc *{cursor:none!important}}
-.chcur{position:fixed;left:0;top:0;width:48px;height:48px;z-index:9999;pointer-events:none;opacity:0;transition:opacity .2s}
+.chcur{position:fixed;left:0;top:0;width:72px;height:72px;z-index:9999;pointer-events:none;opacity:0;transition:opacity .2s}
 .chcur img{width:100%;height:100%;object-fit:contain;display:block;filter:brightness(0)}
-body.dark .chcur img{filter:brightness(0) invert(1)}
 html.chc .chcur.show{opacity:1}
-#mode{position:fixed;left:28px;top:14px;z-index:40;font:12px var(--mono);background:var(--ink);color:var(--bg);border:0;padding:9px 14px;cursor:pointer}
 @media(max-width:800px){
+ .card{width:23vw}
+ .feat .logo{top:26px}
  .card{left:var(--ml);top:var(--mt);width:21vw}
  .cap{font-size:9px}
  .role{display:none}
@@ -70,8 +66,7 @@ html.chc .chcur.show{opacity:1}
  .about .tag,.about .big,.about .txt,.about .sig{grid-column:1/13}
  .about .big{font-size:clamp(40px,13vw,64px)}
  .studios h2,.studios p{grid-column:1/13}
- footer,header{padding:16px}
- #mode{left:16px;top:12px}
+ footer{padding:16px}header{padding:28px 16px}
 }
 </style></head><body>
 <header><nav><a href="#stories">Stories</a><a href="#over">Over</a><a href="#studios">Studios</a></nav></header>
@@ -83,23 +78,22 @@ html.chc .chcur.show{opacity:1}
 <section id="stories"><div class="center hand"><span>CULTURE</span><span>HEAD</span></div></section>
 <section class="about" id="over">
 <div class="tag">Over Culture Head</div>
-<div class="big">Iedereen ziet de eindstand.<svg viewBox="0 0 100 10" preserveAspectRatio="none"><path pathLength="1" d="M1 6 C20 1 35 9 55 4 S85 3 99 6"/></svg></div>
-<p class="txt" id="reveal">Wij zijn er bij als het nog niet af is. Culture Head legt vast wat er gebeurt voordat iemand iets gemaakt heeft: de twijfel, de late uren, de eerste keer dat het lukt.</p>
+<div class="big">Real stories move people.</div>
+<p class="txt" id="reveal">Culture Head is een platform voor de verhalen van makers, artiesten en ondernemers. We komen langs, filmen wat er echt gebeurt en laten zien wat er nodig is om iets op te bouwen: de twijfel, de discipline, de eerste keer dat het lukt. Niet alleen de eindstand, maar alles daarvoor.</p>
 <div class="sig">&mdash; Culture Head</div>
 </section>
 <section class="studios" id="studios"><div class="body"><h2>Culture Head Studios</h2>
 <p>Wil je jouw verhaal laten vertellen? Wij komen langs, filmen in jouw omgeving en maken er iets van dat blijft hangen.<br><a href="mailto:">Stuur een bericht &rarr;</a></p></div>
 <footer><span>Culture Head &middot; Real stories move people.</span><span>Amsterdam</span></footer></section>
 <div class="chcur" id="chcur"><img src="culture_head_logo.png" alt=""></div>
-<button id="mode">Donker / Licht</button>
 <script>
 (function(){
 try{
-var S=[["FAVE","016","Singer-Songwriter","FAVE.png",22,7,3,8],["Ella John","015","Rapper & Artiest","ELLA THUMB.png",34,10,27,11],["Chanou","014","Zangeres","chanou-thumb.jpg",46,6,51,7],["Jaz Karis","013","Artiest","jazkaris-thumb.jpg",58,10,75,10],["Rawen","012","Designer & Oprichter ETB","rawen-thumb.jpg",70,7,4,25],["Celeste","011","Violiste & Music Director","celeste-thumb.jpg",73,25,28,28],["Twenty20","010","Edgar Boudens Oprichter & Goudsmid","Twenty20-thumb.jpg",79,41,52,24],["Jessy","009","Producent & Eigenaresse Richmond Media Group","jessy-thumb.jpg",72,57,74,27],["Yael","008","Artiest & Performer","Yael-thumb.jpg",70,76,3,62],["Supa Dupa","007","Nick Spapens & Samay June Oprichters","supadupagoods-thumb.jpg",58,79,26,65],["Joeboy","006","Artiest & Singer-Songwriter","joeboy-thumb.jpg",46,75,51,61],["Sneakerness","005","CEO Sneakerness","sneakerness-thumb.jpg",34,79,76,64],["Amiera","004","Creative Director & Fashion Designer","Amiera Amore-thumb.jpg",22,76,5,77],["Annicee","003","Art Director, DJ & Curator","Annicee-thumb.jpg",22,57,28,80],["Kaytranada","002","Producer & DJ","kaytranada-thumb.jpg",15,41,52,76],["Steven Aswin","001","Componist, Zanger & Ondernemer","Steven Aswin-thumb.jpg",21,25,75,79]];
+var S=[["FAVE","016","Singer-Songwriter","FAVE.png",5,5,3,8,1],["Ella John","015","Rapper & Artiest","ELLA THUMB.png",19,17,27,11,0.8],["Chanou","014","Zangeres","chanou-thumb.jpg",36,3,51,7,1.15],["Jaz Karis","013","Artiest","jazkaris-thumb.jpg",55,13,75,10,0.85],["Rawen","012","Designer & Oprichter ETB","rawen-thumb.jpg",70,4,4,25,1],["Celeste","011","Violiste & Music Director","celeste-thumb.jpg",85,12,28,28,0.8],["Twenty20","010","Edgar Boudens Oprichter & Goudsmid","Twenty20-thumb.jpg",84,36,52,24,1.15],["Jessy","009","Producent & Eigenaresse Richmond Media Group","jessy-thumb.jpg",72,53,74,27,0.8],["Yael","008","Artiest & Performer","Yael-thumb.jpg",88,63,3,62,0.9],["Supa Dupa","007","Nick Spapens & Samay June Oprichters","supadupagoods-thumb.jpg",66,74,26,65,1.1],["Joeboy","006","Artiest & Singer-Songwriter","joeboy-thumb.jpg",46,72,51,61,0.85],["Sneakerness","005","CEO Sneakerness","sneakerness-thumb.jpg",28,76,76,64,1],["Amiera","004","Creative Director & Fashion Designer","Amiera Amore-thumb.jpg",14,78,5,77,0.85],["Annicee","003","Art Director, DJ & Curator","Annicee-thumb.jpg",3,58,28,80,1],["Kaytranada","002","Producer & DJ","kaytranada-thumb.jpg",11,37,52,76,0.9],["Steven Aswin","001","Componist, Zanger & Ondernemer","Steven Aswin-thumb.jpg",22,56,75,79,0.85]];
 var st=document.getElementById('stories'),cards=[];
 S.forEach(function(c,i){
 var a=document.createElement('a');a.className='card';a.href='index.html';
-a.style.cssText='--l:'+c[4]+'%;--t:'+c[5]+'%;--ml:'+c[6]+'%;--mt:'+c[7]+'%';
+a.style.cssText='--l:'+c[4]+'%;--t:'+c[5]+'%;--ml:'+c[6]+'%;--mt:'+c[7]+'%;--s:'+c[8];
 a.dataset.d=((i*7)%5-2)*.5;
 a.innerHTML='<div class="ph"><img src="'+encodeURI(c[3])+'" alt="" loading="lazy" onerror="this.style.display=\'none\'"></div><div class="cap"><b>'+c[0]+'</b><span>'+c[1]+'</span></div><span class="role">'+c[2]+'</span>';
 st.appendChild(a);cards.push(a);});
@@ -120,9 +114,8 @@ if(matchMedia('(hover:hover) and (pointer:fine)').matches){
 img.addEventListener('load',function(){document.documentElement.classList.add('chc')});
 img.addEventListener('error',function(){cur.remove()});
 if(img.complete&&img.naturalWidth)document.documentElement.classList.add('chc');
-addEventListener('mousemove',function(e){cur.classList.add('show');cur.style.transform='translate('+(e.clientX-24)+'px,'+(e.clientY-24)+'px)'});
+addEventListener('mousemove',function(e){cur.classList.add('show');cur.style.transform='translate('+(e.clientX-36)+'px,'+(e.clientY-36)+'px)'});
 document.addEventListener('mouseleave',function(){cur.classList.remove('show')});}
-document.getElementById('mode').onclick=function(){document.body.classList.toggle('dark')};
 }catch(e){console.error(e)}
 })();
 </script></body></html>
