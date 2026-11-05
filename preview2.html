@@ -7,7 +7,7 @@
 :root{--bg:#f1eee8;--ink:#161614;--mute:#77736b;--line:rgba(22,22,20,.18);--mono:'Courier Prime','Courier New',monospace;--serif:'Newsreader',Georgia,serif;--sans:'Helvetica Neue',Helvetica,Arial,sans-serif;--hand:'Reenie Beanie','Segoe Script',cursive}
 *{box-sizing:border-box;margin:0;padding:0}
 html{scroll-snap-type:y mandatory;scroll-behavior:smooth}
-body{background:var(--bg);color:var(--ink);font:17px/1.55 var(--mono);transition:background .4s,color .4s;overflow-x:hidden}
+body{background:var(--bg);color:var(--ink);font:17px/1.55 var(--mono);overflow-x:hidden}
 a{color:inherit}
 section{height:100vh;height:100svh;scroll-snap-align:start;scroll-snap-stop:always;position:relative;overflow:hidden}
 header{position:fixed;inset:0 0 auto 0;z-index:30;display:flex;justify-content:flex-end;padding:36px 28px;mix-blend-mode:difference;color:#fff;font-size:13px;letter-spacing:.06em}
@@ -17,8 +17,6 @@ header a{text-decoration:none}
 .feat{background:#1b1917;color:#fff}
 .feat>img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;object-position:50% 25%}
 .feat::after{content:"";position:absolute;inset:0;background:linear-gradient(to top,rgba(0,0,0,.55),transparent 38%)}
-.feat .logo{position:absolute;top:34px;left:0;right:0;text-align:center;z-index:5;font-size:clamp(17px,1.5vw,22px);line-height:.8;opacity:.92;pointer-events:none}
-.feat .logo span{display:block}
 .feat .bar{position:absolute;left:28px;right:28px;bottom:28px;z-index:2;display:flex;justify-content:space-between;align-items:flex-end;gap:20px;border-top:1px solid rgba(255,255,255,.55);padding-top:14px;font-family:var(--sans)}
 .feat .nm{font-weight:700;font-size:clamp(15px,1.5vw,22px);letter-spacing:.04em;text-transform:uppercase}
 .feat .sub{font-size:clamp(12px,1vw,14px);margin-top:4px;opacity:.9}
@@ -28,7 +26,7 @@ header a{text-decoration:none}
 .center{position:absolute;inset:0;display:flex;align-items:center;justify-content:center;gap:clamp(12px,2vw,30px);font-size:clamp(34px,4.4vw,68px);pointer-events:none;z-index:3}
 .center span:first-child{transform:rotate(-2deg)}
 .center span:last-child{transform:rotate(1.5deg)}
-.card{position:absolute;left:var(--l);top:var(--t);width:calc(min(8vw,12.5vh)*var(--s,1));display:block;text-decoration:none;z-index:2;will-change:transform}
+.card{position:absolute;left:var(--l);top:var(--t);width:calc(min(7vw,11vh)*var(--s,1));display:block;text-decoration:none;z-index:2;will-change:transform}
 .ph{aspect-ratio:4/5;overflow:hidden;background:linear-gradient(160deg,#3a352f,#1b1917)}
 .card img{width:100%;height:100%;object-fit:cover;display:block;transition:transform .8s,filter .4s;filter:saturate(.9)}
 .card:hover{z-index:20}
@@ -55,8 +53,6 @@ footer{display:flex;justify-content:space-between;flex-wrap:wrap;gap:12px;paddin
 .chcur img{width:100%;height:100%;object-fit:contain;display:block;filter:brightness(0)}
 html.chc .chcur.show{opacity:1}
 @media(max-width:800px){
- .card{width:23vw}
- .feat .logo{top:26px}
  .card{left:var(--ml);top:var(--mt);width:21vw}
  .cap{font-size:9px}
  .role{display:none}
@@ -69,13 +65,12 @@ html.chc .chcur.show{opacity:1}
  footer{padding:16px}header{padding:28px 16px}
 }
 </style></head><body>
-<header><nav><a href="#stories">Stories</a><a href="#over">Over</a><a href="#studios">Studios</a></nav></header>
-<section class="feat" id="top">
+<header><nav><a href="#stories">Stories</a><a href="#uitgelicht">Uitgelicht</a><a href="#over">Over</a><a href="#studios">Studios</a></nav></header>
+<section id="stories"><div class="center hand"><span>CULTURE</span><span>HEAD</span></div></section>
+<section class="feat" id="uitgelicht">
 <img src="1_DSC0211.png" alt="Ella John" onerror="this.style.display='none'">
-<div class="logo hand"><span>Culture</span><span>Head</span></div>
 <div class="bar"><div><div class="lab">Uitgelicht &middot; Vol. 015</div><div class="nm">Ella John</div><div class="sub">Rapper &amp; Artiest. &ldquo;Je hoort me eigenlijk wel te kennen.&rdquo;</div></div><a href="index.html">Lees het artikel &rarr;</a></div>
 </section>
-<section id="stories"><div class="center hand"><span>CULTURE</span><span>HEAD</span></div></section>
 <section class="about" id="over">
 <div class="tag">Over Culture Head</div>
 <div class="big">Real stories move people.</div>
@@ -89,7 +84,7 @@ html.chc .chcur.show{opacity:1}
 <script>
 (function(){
 try{
-var S=[["FAVE","016","Singer-Songwriter","FAVE.png",5,5,3,8,1],["Ella John","015","Rapper & Artiest","ELLA THUMB.png",19,17,27,11,0.8],["Chanou","014","Zangeres","chanou-thumb.jpg",36,3,51,7,1.15],["Jaz Karis","013","Artiest","jazkaris-thumb.jpg",55,13,75,10,0.85],["Rawen","012","Designer & Oprichter ETB","rawen-thumb.jpg",70,4,4,25,1],["Celeste","011","Violiste & Music Director","celeste-thumb.jpg",85,12,28,28,0.8],["Twenty20","010","Edgar Boudens Oprichter & Goudsmid","Twenty20-thumb.jpg",84,36,52,24,1.15],["Jessy","009","Producent & Eigenaresse Richmond Media Group","jessy-thumb.jpg",72,53,74,27,0.8],["Yael","008","Artiest & Performer","Yael-thumb.jpg",88,63,3,62,0.9],["Supa Dupa","007","Nick Spapens & Samay June Oprichters","supadupagoods-thumb.jpg",66,74,26,65,1.1],["Joeboy","006","Artiest & Singer-Songwriter","joeboy-thumb.jpg",46,72,51,61,0.85],["Sneakerness","005","CEO Sneakerness","sneakerness-thumb.jpg",28,76,76,64,1],["Amiera","004","Creative Director & Fashion Designer","Amiera Amore-thumb.jpg",14,78,5,77,0.85],["Annicee","003","Art Director, DJ & Curator","Annicee-thumb.jpg",3,58,28,80,1],["Kaytranada","002","Producer & DJ","kaytranada-thumb.jpg",11,37,52,76,0.9],["Steven Aswin","001","Componist, Zanger & Ondernemer","Steven Aswin-thumb.jpg",22,56,75,79,0.85]];
+var S=[["FAVE","016","Singer-Songwriter","FAVE.png",30,9,3,8,0.9],["Ella John","015","Rapper & Artiest","ELLA THUMB.png",40,7,27,11,1.1],["Chanou","014","Zangeres","chanou-thumb.jpg",53,15,51,7,0.85],["Jaz Karis","013","Artiest","jazkaris-thumb.jpg",64,9,75,10,1],["Rawen","012","Designer & Oprichter ETB","rawen-thumb.jpg",73,25,4,25,0.9],["Celeste","011","Violiste & Music Director","celeste-thumb.jpg",76,42,28,28,1.1],["Twenty20","010","Edgar Boudens Oprichter & Goudsmid","Twenty20-thumb.jpg",70,63,52,24,0.85],["Jessy","009","Producent & Eigenaresse Richmond Media Group","jessy-thumb.jpg",62,68,74,27,1],["Yael","008","Artiest & Performer","Yael-thumb.jpg",50,74,3,62,0.9],["Supa Dupa","007","Nick Spapens & Samay June Oprichters","supadupagoods-thumb.jpg",38,67,26,65,1.1],["Joeboy","006","Artiest & Singer-Songwriter","joeboy-thumb.jpg",27,72,51,61,0.85],["Sneakerness","005","CEO Sneakerness","sneakerness-thumb.jpg",20,58,76,64,1],["Amiera","004","Creative Director & Fashion Designer","Amiera Amore-thumb.jpg",12,49,5,77,0.9],["Annicee","003","Art Director, DJ & Curator","Annicee-thumb.jpg",18,26,28,80,1.1],["Kaytranada","002","Producer & DJ","kaytranada-thumb.jpg",60,31,52,76,0.8],["Steven Aswin","001","Componist, Zanger & Ondernemer","Steven Aswin-thumb.jpg",35,30,75,79,0.8]];
 var st=document.getElementById('stories'),cards=[];
 S.forEach(function(c,i){
 var a=document.createElement('a');a.className='card';a.href='index.html';
