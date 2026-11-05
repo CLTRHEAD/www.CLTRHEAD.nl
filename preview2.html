@@ -10,24 +10,27 @@ html{scroll-snap-type:y mandatory;scroll-behavior:smooth}
 body{background:var(--bg);color:var(--ink);font:17px/1.55 var(--mono);overflow-x:hidden}
 a{color:inherit}
 section{height:100vh;height:100svh;scroll-snap-align:start;scroll-snap-stop:always;position:relative;overflow:hidden}
-header{position:fixed;inset:0 0 auto 0;z-index:30;display:flex;justify-content:flex-end;padding:36px 28px;mix-blend-mode:difference;color:#fff;font-size:13px;letter-spacing:.06em}
+header{position:fixed;inset:0 0 auto 0;z-index:30;display:flex;justify-content:space-between;padding:28px;mix-blend-mode:difference;color:#fff;font-size:12px;letter-spacing:.06em;text-transform:uppercase}
 header nav{display:flex;gap:26px}
 header a{text-decoration:none}
 .hand{font-family:var(--hand);line-height:.9}
-.center{position:absolute;inset:0;display:flex;flex-direction:column;align-items:center;justify-content:center;pointer-events:none;z-index:3}
-.center .t{display:flex;gap:clamp(12px,2vw,30px);font-size:clamp(28px,3.4vw,52px)}
+.center{position:absolute;inset:0;display:flex;flex-direction:column;align-items:center;justify-content:center;text-align:center;pointer-events:none;z-index:3}
+.center .t{display:flex;flex-direction:column;font-size:clamp(34px,3.8vw,58px);line-height:.82}
 .center .t span:first-child{transform:rotate(-2deg)}
-.center .t span:last-child{transform:rotate(1.5deg)}
-.center .q{margin-top:2vh;font:italic clamp(15px,1.3vw,20px)/1.3 var(--serif);color:var(--mute);max-width:26ch;text-align:center}
-.card{position:absolute;left:var(--l);top:var(--t);width:calc(min(9.5vw,15vh)*var(--s,1));display:block;text-decoration:none;z-index:2;will-change:transform}
-.ph{aspect-ratio:4/5;overflow:hidden;background:linear-gradient(160deg,#3a352f,#1b1917)}
-.card img{width:100%;height:100%;object-fit:cover;display:block;transition:transform .8s,filter .4s;filter:saturate(.9)}
+.center .t span:last-child{transform:rotate(1.5deg) translateX(.2em)}
+.center .d1{margin-top:2.2vh;font:clamp(15px,1.25vw,19px)/1.25 var(--serif)}
+.center .d2{margin-top:.8vh;font-size:11px;letter-spacing:.08em;text-transform:uppercase;color:var(--mute)}
+.side{position:absolute;left:28px;bottom:28px;z-index:4;font-size:11px;line-height:1.7;letter-spacing:.04em;text-transform:uppercase;color:var(--mute)}
+.all{position:absolute;right:28px;bottom:28px;z-index:4;font-size:12px;letter-spacing:.08em;text-transform:uppercase;text-decoration:none}
+.all:hover{text-decoration:underline}
+.card{position:absolute;left:var(--l);top:var(--t);width:calc(min(15vw,24vh)*var(--s,1));display:block;text-decoration:none;z-index:2;will-change:transform}
+.ph{aspect-ratio:4/5;overflow:hidden;background:linear-gradient(160deg,#3a352f,#1b1917);box-shadow:0 14px 34px rgba(30,20,10,.2)}
+.card img{width:100%;height:100%;object-fit:cover;display:block;transition:transform .8s}
 .card:hover{z-index:20}
-.card:hover img{transform:scale(1.06);filter:none}
-.cap{display:flex;justify-content:space-between;gap:6px;margin-top:6px;font-size:11px;color:var(--mute);white-space:nowrap;overflow:hidden}
-.cap b{font-weight:400;color:var(--ink);overflow:hidden;text-overflow:ellipsis}
-.role{position:absolute;left:8px;bottom:30px;right:6px;color:#fff;font-size:10px;line-height:1.2;opacity:0;transition:.3s;text-shadow:0 1px 8px #000}
-.card:hover .role{opacity:1}
+.card:hover img{transform:scale(1.05)}
+.cap{position:absolute;left:0;top:100%;margin-top:8px;display:flex;gap:10px;font-size:11px;white-space:nowrap;opacity:0;transition:opacity .3s}
+.card:hover .cap{opacity:1}
+.cap span{color:var(--mute)}
 .idx{height:auto;min-height:100vh;min-height:100svh;overflow:visible;padding:15vh 28px 8vh}
 .row{display:grid;grid-template-columns:60px 1fr auto;gap:18px;align-items:baseline;padding:10px 0;border-top:1px solid var(--line);text-decoration:none;font:clamp(20px,2.4vw,36px)/1.1 var(--serif);letter-spacing:-.02em;transition:opacity .3s}
 .row small{font:12px var(--mono);color:var(--mute);letter-spacing:0}
@@ -37,25 +40,32 @@ header a{text-decoration:none}
 .hv{position:fixed;left:0;top:0;width:210px;aspect-ratio:4/5;overflow:hidden;pointer-events:none;z-index:25;opacity:0;transition:opacity .2s;background:#2a2622}
 .hv img{width:100%;height:100%;object-fit:cover;display:block}
 .hv.show{opacity:1}
-.about{display:flex;flex-direction:column;justify-content:center;padding:14vh 28px 28px}
-.stmt{font:clamp(28px,4.3vw,70px)/1.1 var(--serif);letter-spacing:-.025em;max-width:19em;opacity:0;transform:translateY(24px);transition:opacity .8s,transform .8s}
-.about.in .stmt{opacity:1;transform:none}
-.inl{display:inline-block;height:1.02em;width:.8em;object-fit:cover;vertical-align:-.14em;margin:0 .1em;transform:rotate(var(--r,-3deg)) scale(.5);opacity:0;transition:transform .7s var(--d,.4s),opacity .7s var(--d,.4s)}
-.about.in .inl{transform:rotate(var(--r,-3deg));opacity:1}
-.sign{margin-top:5vh;align-self:flex-end;font:clamp(28px,3vw,46px)/1 var(--hand);transform:rotate(-3deg);padding-right:6vw}
-.studios{display:flex;flex-direction:column}
-.studios .body{flex:1;display:flex;flex-direction:column;justify-content:center;padding:12vh 28px 0}
-.studios .lab{font-size:12px;letter-spacing:.14em;text-transform:uppercase;color:var(--mute);margin-bottom:3vh}
-.cta{font:clamp(44px,9vw,150px)/.92 var(--serif);letter-spacing:-.04em;text-decoration:none;display:inline-block;max-width:14em;align-self:flex-start;background:linear-gradient(currentColor,currentColor) 0 100%/0 .05em no-repeat;transition:background-size .5s}
-.cta:hover{background-size:100% .05em}
-.cta i{font-style:normal;display:inline-block;transition:transform .4s}
-.cta:hover i{transform:translateX(.15em)}
-.studios .sub{margin-top:3vh;max-width:40ch;font-size:15px}
-.mq{border-top:1px solid var(--line);border-bottom:1px solid var(--line);overflow:hidden;white-space:nowrap;padding:6px 0}
-.mq div{display:inline-block;animation:mq 32s linear infinite;font:clamp(34px,4.5vw,70px)/1.1 var(--hand)}
-.mq span{margin-right:3vw}
-@keyframes mq{to{transform:translateX(-50%)}}
-@media (prefers-reduced-motion:reduce){.mq div{animation:none}}
+.about{height:auto;min-height:100vh;min-height:100svh;overflow:visible;display:grid;grid-template-columns:repeat(12,1fr);column-gap:18px;row-gap:12vh;padding:20vh 28px 16vh;align-content:center}
+.blk{grid-column:5/9;justify-self:center;max-width:40ch;text-align:center;font:clamp(15px,1.15vw,18px)/1.65 var(--serif);opacity:0;transform:translateY(18px);transition:opacity .9s,transform .9s}
+.b1{grid-row:1}.b2{grid-row:2;transition-delay:.15s}
+.about.in .blk{opacity:1;transform:none}
+.slot{aspect-ratio:4/5;background:rgba(22,22,20,.06);display:grid;place-items:center;font-size:10px;letter-spacing:.14em;color:var(--mute);text-transform:uppercase}
+.sA{grid-column:2/4;grid-row:1;align-self:start}
+.sB{grid-column:10/12;grid-row:1/3;align-self:end}
+.sC{grid-column:3/5;grid-row:2;align-self:end}
+.sign{grid-column:1/13;grid-row:3;text-align:center;font:clamp(26px,2.4vw,38px)/1 var(--hand);transform:rotate(-2deg)}
+.studios{height:auto;min-height:100vh;min-height:100svh;overflow:visible;display:flex;flex-direction:column}
+.st{flex:1;display:grid;grid-template-columns:repeat(12,1fr);column-gap:18px;padding:18vh 28px 8vh;align-content:center}
+.st-lab{grid-column:1/13;display:flex;justify-content:space-between;border-bottom:1px solid var(--line);padding-bottom:12px;margin-bottom:8vh;font-size:12px;letter-spacing:.14em;text-transform:uppercase;color:var(--mute)}
+.st-intro{grid-column:1/7;font:clamp(30px,3.7vw,58px)/1.08 var(--serif);letter-spacing:-.025em}
+.st-intro em{font-style:italic}
+.st-list{grid-column:8/13;list-style:none}
+.srv{display:grid;grid-template-columns:44px 1fr;gap:14px;padding:18px 0;border-top:1px solid var(--line);transition:padding .35s}
+.srv:last-child{border-bottom:1px solid var(--line)}
+.srv small{font-size:12px;color:var(--mute);padding-top:.5em}
+.srv b{display:block;font:400 clamp(22px,2vw,30px)/1.1 var(--serif);letter-spacing:-.02em}
+.srv p{font-size:13px;line-height:1.5;color:var(--mute);margin-top:6px}
+.srv:hover{padding-left:12px}
+.srv:hover b{font-style:italic}
+.st-cta{grid-column:1/13;margin-top:10vh;display:flex;justify-content:space-between;align-items:flex-end;gap:20px;flex-wrap:wrap}
+.st-cta p{max-width:30ch;font-size:13px;color:var(--mute)}
+.st-cta a{font:clamp(34px,5vw,84px)/1 var(--serif);letter-spacing:-.035em;text-decoration:none;background:linear-gradient(currentColor,currentColor) 0 100%/0 .05em no-repeat;transition:background-size .5s}
+.st-cta a:hover{background-size:100% .05em}
 footer{display:flex;justify-content:space-between;flex-wrap:wrap;gap:12px;padding:24px 28px;border-top:1px solid var(--line);font-size:12px;color:var(--mute)}
 @media (hover:hover) and (pointer:fine){html.chc,html.chc *{cursor:none!important}}
 .chcur{position:fixed;left:0;top:0;width:72px;height:72px;z-index:9999;pointer-events:none;opacity:0;transition:opacity .2s}
@@ -63,25 +73,47 @@ footer{display:flex;justify-content:space-between;flex-wrap:wrap;gap:12px;paddin
 html.chc .chcur.show{opacity:1}
 @media(hover:none){.row .th{display:block}.row{grid-template-columns:40px 1fr}.row small{display:none}.hv{display:none}}
 @media(max-width:800px){
- .card{left:var(--ml);top:var(--mt);width:min(24vw,11.5svh)}
- .cap{font-size:9px}
- .role{display:none}
- .center .t{font-size:clamp(30px,10.5vw,52px)}
+ header{padding:18px 16px;font-size:11px}
+ header nav{gap:14px}
+ .card{left:var(--ml);top:var(--mt);width:calc(var(--mw)*1vw)}
+ .cap{display:none}
+ .side{display:none}
+ .all{right:16px;bottom:18px}
+ .center .t{font-size:clamp(36px,12vw,56px)}
  .idx{padding-left:16px;padding-right:16px}
- .about{padding:12vh 16px 20px}
- .stmt{font-size:clamp(26px,7.4vw,42px)}
- .studios .body{padding:12vh 16px 0}
- .cta{font-size:clamp(44px,14vw,84px)}
- footer{padding:16px}header{padding:28px 16px}
- header nav{gap:14px;font-size:12px}
+ .about{display:flex;flex-direction:column;align-items:center;gap:7vh;padding:16vh 16px 12vh}
+ .blk{max-width:34ch}
+ .b1{order:1}.sA{order:2;width:58vw}.b2{order:3}.sB{order:4;width:58vw;align-self:center}.sC{display:none}.sign{order:5}
+ .st{padding:14vh 16px 8vh;display:block}
+ .st-intro{margin-bottom:6vh}
+ .st-cta{margin-top:7vh}
+ footer{padding:16px}
 }
 </style></head><body>
-<header><nav><a href="#stories">Stories</a><a href="#alle">Alle verhalen</a><a href="#over">Over</a><a href="#studios">Studios</a></nav></header>
-<section id="stories"><div class="center"><div class="t hand"><span>CULTURE</span><span>HEAD</span></div><div class="q">The stories behind the people who build culture.</div></div></section>
-<section class="idx" id="alle"><div id="list"></div></section>
-<section class="about" id="over"><p class="stmt">Culture Head vertelt de verhalen van <img class="inl" style="--r:-4deg;--d:.3s" src="rawen-thumb.jpg" alt="" onerror="this.remove()">makers, <img class="inl" style="--r:3deg;--d:.5s" src="jazkaris-thumb.jpg" alt="" onerror="this.remove()">artiesten en <img class="inl" style="--r:-2deg;--d:.7s" src="Twenty20-thumb.jpg" alt="" onerror="this.remove()">ondernemers. Niet alleen de eindstand, maar alles daarvoor.</p><div class="sign">&mdash; Culture Head</div></section>
-<section class="studios" id="studios"><div class="body"><div class="lab">Culture Head Studios</div><a class="cta" href="mailto:">Vertel ons jouw verhaal <i>&rarr;</i></a><p class="sub">Wij komen langs, filmen in jouw omgeving en maken er iets van dat blijft hangen.</p></div>
-<div class="mq"><div id="mq"></div></div>
+<header><span id="clk">Amsterdam (NH)</span><nav><a href="#over">Over</a><a href="#studios">Studios</a><a href="#index" id="nidx">Index</a></nav></header>
+<section id="stories"><div class="center"><div class="t hand"><span>Culture</span><span>Head</span></div><div class="d1">Independent Media from Amsterdam</div><div class="d2">Verhalen &#10059; Cultuur &mdash; AMS</div></div>
+<div class="side">&minus; Verhalen<br>&minus; Portretten<br>&minus; Culture moments</div>
+<a class="all" href="#index">[ Alle verhalen ]</a></section>
+<section class="idx" id="index"><div id="list"></div></section>
+<section class="about" id="over">
+<div class="slot sA">Foto</div>
+<p class="blk b1">Culture Head is een medium voor de verhalen van creatieve ondernemers, artiesten en makers. Niet alleen het succes, maar ook de twijfel, de discipline en het risico dat erachter zit. Iedereen ziet de eindstand, bijna niemand ziet het proces.</p>
+<p class="blk b2">We komen langs, filmen in hun wereld en laten mensen hun eigen verhaal vertellen. Rustig, eerlijk en zonder poespas. Zo leren we van elkaar, en zien we wat het kost om iets op te bouwen.</p>
+<div class="slot sB">Foto</div>
+<div class="slot sC">Foto</div>
+<div class="sign">&mdash; Culture Head</div>
+</section>
+<section class="studios" id="studios"><div class="st">
+<div class="st-lab"><span>Culture Head Studios</span><span>(04) Diensten</span></div>
+<p class="st-intro">Wij maken verhalen voor mensen en merken die <em>iets te vertellen</em> hebben.</p>
+<ul class="st-list">
+<li class="srv"><small>01</small><div><b>Portretten</b><p>Diepe gesprekken en mini-docs over mensen en hun proces.</p></div></li>
+<li class="srv"><small>02</small><div><b>Culture moments</b><p>Events, festivals en scenes vastgelegd met context en gevoel.</p></div></li>
+<li class="srv"><small>03</small><div><b>Formats</b><p>Korte, herkenbare series die iets vertellen over cultuur.</p></div></li>
+<li class="srv"><small>04</small><div><b>Op maat</b><p>Iets anders in gedachten? Vertel ons wat je wilt maken.</p></div></li>
+</ul>
+<div class="st-cta"><p>Wij komen langs, filmen in jouw omgeving en maken er iets van dat blijft hangen.</p><a href="mailto:">Vertel ons jouw verhaal &rarr;</a></div>
+</div>
 <footer><span>Culture Head &middot; Amsterdam</span><span>&copy; Culture Head</span></footer></section>
 <div class="hv" id="hv"><img alt=""></div>
 <div class="chcur" id="chcur"><img src="culture_head_logo.png" alt=""></div>
@@ -89,15 +121,17 @@ html.chc .chcur.show{opacity:1}
 (function(){
 try{
 var S=[["FAVE","016","Singer-Songwriter","FAVE.png"],["Ella John","015","Rapper & Artiest","ELLA THUMB.png"],["Chanou","014","Zangeres","chanou-thumb.jpg"],["Jaz Karis","013","Artiest","jazkaris-thumb.jpg"],["Rawen","012","Designer & Oprichter ETB","rawen-thumb.jpg"],["Celeste","011","Violiste & Music Director","celeste-thumb.jpg"],["Twenty20","010","Edgar Boudens, Oprichter & Goudsmid","Twenty20-thumb.jpg"],["Jessy","009","Producent & Eigenaresse Richmond Media Group","jessy-thumb.jpg"],["Yael","008","Artiest & Performer","Yael-thumb.jpg"],["Supa Dupa","007","Nick Spapens & Samay June, Oprichters","supadupagoods-thumb.jpg"],["Joeboy","006","Artiest & Singer-Songwriter","joeboy-thumb.jpg"],["Sneakerness","005","CEO Sneakerness","sneakerness-thumb.jpg"],["Amiera","004","Creative Director & Fashion Designer","Amiera Amore-thumb.jpg"],["Annicee","003","Art Director, DJ & Curator","Annicee-thumb.jpg"],["Kaytranada","002","Producer & DJ","kaytranada-thumb.jpg"],["Steven Aswin","001","Componist, Zanger & Ondernemer","Steven Aswin-thumb.jpg"]];
-var R=[[0,7,10,1.3,4,2,"Nieuw"],[1,27,6,.8,38,3],[3,55,5,1.05,71,2],[4,82,9,.75,17,22],[5,76,36,1.2,55,22],[7,70,72,.8,4,62],[8,40,70,1,38,63],[9,18,62,.9,71,62],[10,5,56,.7,17,81]];
+var R=[[0,5,10,1.15,3,7,40],[1,31,5,.8,54,5,32],[2,69,8,.95,66,25.5,24],[4,78,46,1.2,73,64,24],[5,32,66,1,40,69,30],[6,8,64,.75,3,66,34]];
 var st=document.getElementById('stories'),cards=[];
 R.forEach(function(r,i){var c=S[r[0]];
 var a=document.createElement('a');a.className='card';a.href='index.html';
-a.style.cssText='--l:'+r[1]+'%;--t:'+r[2]+'%;--s:'+r[3]+';--ml:'+r[4]+'%;--mt:'+r[5]+'%';
+a.style.cssText='--l:'+r[1]+'%;--t:'+r[2]+'%;--s:'+r[3]+';--ml:'+r[4]+'%;--mt:'+r[5]+'%;--mw:'+r[6];
 a.dataset.d=((i*7)%5-2)*.5;
-a.innerHTML='<div class="ph"><img src="'+encodeURI(c[3])+'" alt="" loading="lazy" onerror="this.style.display=\'none\'"></div><div class="cap"><b>'+c[0]+'</b><span>'+(r[6]||c[1])+'</span></div><span class="role">'+c[2]+'</span>';
+a.innerHTML='<div class="ph"><img src="'+encodeURI(c[3])+'" alt="" loading="lazy" onerror="this.style.display=\'none\'"></div><div class="cap"><b style="font-weight:400">'+c[0]+'</b><span>'+c[1]+'</span></div>';
 st.appendChild(a);cards.push(a);});
-var u='';for(var k=0;k<6;k++)u+='<span>Real stories move people.</span>';document.getElementById('mq').innerHTML=u+u;
+document.getElementById('nidx').textContent='Index('+S.length+')';
+function tick(){try{document.getElementById('clk').textContent='Amsterdam (NH) '+new Intl.DateTimeFormat('nl-NL',{hour:'2-digit',minute:'2-digit',timeZone:'Europe/Amsterdam'}).format(new Date())}catch(e){}}
+tick();setInterval(tick,30000);
 var list=document.getElementById('list'),hv=document.getElementById('hv'),hi=hv.querySelector('img');
 S.forEach(function(c){
 var a=document.createElement('a');a.className='row';a.href='index.html';a.dataset.src=encodeURI(c[3]);
@@ -116,7 +150,7 @@ addEventListener('scroll',move,{passive:true});
 addEventListener('mousemove',function(e){mx=e.clientX/innerWidth-.5;my=e.clientY/innerHeight-.5;move();hv.style.transform='translate('+(e.clientX+30)+'px,'+(e.clientY-140)+'px)'});
 move();
 var about=document.getElementById('over');
-if('IntersectionObserver' in window){new IntersectionObserver(function(es){es.forEach(function(e){about.classList.toggle('in',e.isIntersecting)})},{threshold:.5}).observe(about)}else{about.classList.add('in')}
+if('IntersectionObserver' in window){new IntersectionObserver(function(es){es.forEach(function(e){if(e.isIntersecting)about.classList.add('in')})},{threshold:.2}).observe(about)}else{about.classList.add('in')}
 var cur=document.getElementById('chcur'),img=cur.querySelector('img');
 if(matchMedia('(hover:hover) and (pointer:fine)').matches){
 img.addEventListener('load',function(){document.documentElement.classList.add('chc')});
