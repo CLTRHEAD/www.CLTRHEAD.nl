@@ -21,18 +21,17 @@ header a{text-decoration:none}
 .center .d1{margin-top:2.2vh;font:clamp(15px,1.25vw,19px)/1.25 var(--serif)}
 .center .d2{margin-top:.8vh;font-size:11px;letter-spacing:.08em;text-transform:uppercase;color:var(--mute)}
 .side{position:absolute;left:28px;bottom:28px;z-index:4;font-size:11px;line-height:1.7;letter-spacing:.04em;text-transform:uppercase;color:var(--mute)}
-.all{position:absolute;right:28px;bottom:28px;z-index:4;font-size:12px;letter-spacing:.08em;text-transform:uppercase;text-decoration:none}
-.all:hover{text-decoration:underline}
 .card{position:absolute;left:var(--l);top:var(--t);width:calc(min(15vw,24vh)*var(--s,1));display:block;text-decoration:none;z-index:2;will-change:transform}
 .ph{aspect-ratio:4/5;overflow:hidden;background:linear-gradient(160deg,#3a352f,#1b1917);box-shadow:0 14px 34px rgba(30,20,10,.2)}
 .card img{width:100%;height:100%;object-fit:cover;display:block;transition:transform .8s}
 .card:hover{z-index:20}
 .card:hover img{transform:scale(1.05)}
-.cap{position:absolute;left:0;top:100%;margin-top:8px;display:flex;gap:10px;font-size:11px;white-space:nowrap;opacity:0;transition:opacity .3s}
+.cap{position:absolute;left:10px;bottom:10px;right:10px;display:flex;flex-direction:column;align-items:flex-start;gap:5px;font-size:11px;line-height:1.25;letter-spacing:.04em;text-transform:uppercase;opacity:0;transition:opacity .25s;pointer-events:none}
+.cap span{background:var(--bg);padding:2px 6px;display:inline-block}
 .card:hover .cap{opacity:1}
-.cap span{color:var(--mute)}
 .idx{height:auto;min-height:100vh;min-height:100svh;overflow:visible;padding:15vh 28px 8vh}
-.row{display:grid;grid-template-columns:60px 1fr auto;gap:18px;align-items:baseline;padding:10px 0;border-top:1px solid var(--line);text-decoration:none;font:clamp(20px,2.4vw,36px)/1.1 var(--serif);letter-spacing:-.02em;transition:opacity .3s}
+.row{display:grid;grid-template-columns:60px 1fr minmax(0,22ch);gap:18px;align-items:baseline;padding:14px 0;border-top:1px solid var(--line);text-decoration:none;font:400 clamp(34px,5.2vw,88px)/1 var(--serif);letter-spacing:-.035em;transition:opacity .3s}
+.row small:last-child{text-align:right;line-height:1.35}
 .row small{font:12px var(--mono);color:var(--mute);letter-spacing:0}
 .row .th{display:none;width:40px;aspect-ratio:4/5;object-fit:cover}
 .idx:hover .row{opacity:.3}
@@ -46,8 +45,7 @@ header a{text-decoration:none}
 .about.in .blk{opacity:1;transform:none}
 .slot{aspect-ratio:4/5;background:rgba(22,22,20,.06);display:grid;place-items:center;font-size:10px;letter-spacing:.14em;color:var(--mute);text-transform:uppercase}
 .sA{grid-column:2/4;grid-row:1;align-self:start}
-.sB{grid-column:10/12;grid-row:1/3;align-self:end}
-.sC{grid-column:3/5;grid-row:2;align-self:end}
+.sB{grid-column:9/11;grid-row:2;align-self:end}
 .sign{grid-column:1/13;grid-row:3;text-align:center;font:clamp(26px,2.4vw,38px)/1 var(--hand);transform:rotate(-2deg)}
 .studios{height:auto;min-height:100vh;min-height:100svh;overflow:visible;display:flex;flex-direction:column}
 .st{flex:1;display:grid;grid-template-columns:repeat(12,1fr);column-gap:18px;padding:18vh 28px 8vh;align-content:center}
@@ -62,45 +60,42 @@ header a{text-decoration:none}
 .srv p{font-size:13px;line-height:1.5;color:var(--mute);margin-top:6px}
 .srv:hover{padding-left:12px}
 .srv:hover b{font-style:italic}
-.st-cta{grid-column:1/13;margin-top:10vh;display:flex;justify-content:space-between;align-items:flex-end;gap:20px;flex-wrap:wrap}
-.st-cta p{max-width:30ch;font-size:13px;color:var(--mute)}
-.st-cta a{font:clamp(34px,5vw,84px)/1 var(--serif);letter-spacing:-.035em;text-decoration:none;background:linear-gradient(currentColor,currentColor) 0 100%/0 .05em no-repeat;transition:background-size .5s}
-.st-cta a:hover{background-size:100% .05em}
 footer{display:flex;justify-content:space-between;flex-wrap:wrap;gap:12px;padding:24px 28px;border-top:1px solid var(--line);font-size:12px;color:var(--mute)}
 @media (hover:hover) and (pointer:fine){html.chc,html.chc *{cursor:none!important}}
 .chcur{position:fixed;left:0;top:0;width:72px;height:72px;z-index:9999;pointer-events:none;opacity:0;transition:opacity .2s}
 .chcur img{width:100%;height:100%;object-fit:contain;display:block;filter:brightness(0)}
 html.chc .chcur.show{opacity:1}
-@media(hover:none){.row .th{display:block}.row{grid-template-columns:40px 1fr}.row small{display:none}.hv{display:none}}
+@media(hover:none){.row .th{display:block}.hv{display:none}}
 @media(max-width:800px){
+ .row{grid-template-columns:40px 1fr;gap:4px 14px;padding:12px 0;font-size:clamp(28px,9vw,44px)}
+ .row small:first-of-type{display:none}
+ .row small:last-child{grid-column:2;text-align:left}
+ .row .th{display:block;grid-row:1/3;align-self:start}
  header{padding:18px 16px;font-size:11px}
  header nav{gap:14px}
  .card{left:var(--ml);top:var(--mt);width:calc(var(--mw)*1vw)}
  .cap{display:none}
  .side{display:none}
- .all{right:16px;bottom:18px}
  .center .t{font-size:clamp(36px,12vw,56px)}
  .idx{padding-left:16px;padding-right:16px}
  .about{display:flex;flex-direction:column;align-items:center;gap:7vh;padding:16vh 16px 12vh}
  .blk{max-width:34ch}
- .b1{order:1}.sA{order:2;width:58vw}.b2{order:3}.sB{order:4;width:58vw;align-self:center}.sC{display:none}.sign{order:5}
+ .b1{order:1}.sA{order:2;width:58vw}.b2{order:3}.sB{order:4;width:58vw;align-self:center}.sign{order:5}
  .st{padding:14vh 16px 8vh;display:block}
  .st-intro{margin-bottom:6vh}
- .st-cta{margin-top:7vh}
  footer{padding:16px}
 }
 </style></head><body>
 <header><span id="clk">Amsterdam (NH)</span><nav><a href="#over">Over</a><a href="#studios">Studios</a><a href="#index" id="nidx">Index</a></nav></header>
-<section id="stories"><div class="center"><div class="t hand"><span>Culture</span><span>Head</span></div><div class="d1">Independent Media from Amsterdam</div><div class="d2">Verhalen &#10059; Cultuur &mdash; AMS</div></div>
+<section id="stories"><div class="center"><div class="t hand"><span>Culture</span><span>Head</span></div><div class="d1">To learn and inspire</div><div class="d2">Amsterdam based creative media</div></div>
 <div class="side">&minus; Verhalen<br>&minus; Portretten<br>&minus; Culture moments</div>
-<a class="all" href="#index">[ Alle verhalen ]</a></section>
+</section>
 <section class="idx" id="index"><div id="list"></div></section>
 <section class="about" id="over">
 <div class="slot sA">Foto</div>
-<p class="blk b1">Culture Head is een medium voor de verhalen van creatieve ondernemers, artiesten en makers. Niet alleen het succes, maar ook de twijfel, de discipline en het risico dat erachter zit. Iedereen ziet de eindstand, bijna niemand ziet het proces.</p>
-<p class="blk b2">We komen langs, filmen in hun wereld en laten mensen hun eigen verhaal vertellen. Rustig, eerlijk en zonder poespas. Zo leren we van elkaar, en zien we wat het kost om iets op te bouwen.</p>
+<p class="blk b1">Culture Head komt voort uit liefde voor verhalen. Vooral die van mensen die iets uit het niets opbouwen: de oprichter met een idee en weinig middelen, de maker die blijft doorzetten tot het werkt. Startup stories, portretten en gesprekken die verder gaan dan de eindstand.</p>
+<p class="blk b2">Want wie goed luistert, leert. Over ondernemen, over twijfel, over keuzes die niemand ziet. Elk verhaal is een kleine les die je in geen boek vindt. Die delen we, zodat anderen er iets mee kunnen. Om te leren, en om te inspireren.</p>
 <div class="slot sB">Foto</div>
-<div class="slot sC">Foto</div>
 <div class="sign">&mdash; Culture Head</div>
 </section>
 <section class="studios" id="studios"><div class="st">
@@ -112,22 +107,21 @@ html.chc .chcur.show{opacity:1}
 <li class="srv"><small>03</small><div><b>Formats</b><p>Korte, herkenbare series die iets vertellen over cultuur.</p></div></li>
 <li class="srv"><small>04</small><div><b>Op maat</b><p>Iets anders in gedachten? Vertel ons wat je wilt maken.</p></div></li>
 </ul>
-<div class="st-cta"><p>Wij komen langs, filmen in jouw omgeving en maken er iets van dat blijft hangen.</p><a href="mailto:">Vertel ons jouw verhaal &rarr;</a></div>
 </div>
-<footer><span>Culture Head &middot; Amsterdam</span><span>&copy; Culture Head</span></footer></section>
+<footer><span>Culture Head &middot; Amsterdam</span><a href="mailto:">Contact</a><span>&copy; Culture Head</span></footer></section>
 <div class="hv" id="hv"><img alt=""></div>
 <div class="chcur" id="chcur"><img src="culture_head_logo.png" alt=""></div>
 <script>
 (function(){
 try{
-var S=[["FAVE","016","Singer-Songwriter","FAVE.png"],["Ella John","015","Rapper & Artiest","ELLA THUMB.png"],["Chanou","014","Zangeres","chanou-thumb.jpg"],["Jaz Karis","013","Artiest","jazkaris-thumb.jpg"],["Rawen","012","Designer & Oprichter ETB","rawen-thumb.jpg"],["Celeste","011","Violiste & Music Director","celeste-thumb.jpg"],["Twenty20","010","Edgar Boudens, Oprichter & Goudsmid","Twenty20-thumb.jpg"],["Jessy","009","Producent & Eigenaresse Richmond Media Group","jessy-thumb.jpg"],["Yael","008","Artiest & Performer","Yael-thumb.jpg"],["Supa Dupa","007","Nick Spapens & Samay June, Oprichters","supadupagoods-thumb.jpg"],["Joeboy","006","Artiest & Singer-Songwriter","joeboy-thumb.jpg"],["Sneakerness","005","CEO Sneakerness","sneakerness-thumb.jpg"],["Amiera","004","Creative Director & Fashion Designer","Amiera Amore-thumb.jpg"],["Annicee","003","Art Director, DJ & Curator","Annicee-thumb.jpg"],["Kaytranada","002","Producer & DJ","kaytranada-thumb.jpg"],["Steven Aswin","001","Componist, Zanger & Ondernemer","Steven Aswin-thumb.jpg"]];
+var S=[["FAVE","016","Singer-Songwriter","FAVE.png"],["Ella John","015","Rapper & Artiest","ELLA THUMB.png"],["Chanou","014","Zangeres","chanou-thumb.jpg"],["Jaz Karis","013","Artiest","jazkaris-thumb.jpg"],["Rawen","012","Designer & Oprichter ETB","rawen-thumb.jpg"],["Celeste","011","Violiste & Music Director","celeste-thumb.jpg"],["Edgar Boudens","010","Oprichter Twenty20 & Goudsmid","Twenty20-thumb.jpg"],["Jessy Richmond","009","Producent & Eigenaresse Richmond Media Group","jessy-thumb.jpg"],["Yael Daila","008","Artiest & Performer","Yael-thumb.jpg"],["Nick Spapens & Samay June","007","Oprichters Supa Dupa","supadupagoods-thumb.jpg"],["Joeboy","006","Artiest & Singer-Songwriter","joeboy-thumb.jpg"],["Matthijs van der Meulen","005","CEO Sneakerness","sneakerness-thumb.jpg"],["Amiera","004","Creative Director & Fashion Designer","Amiera Amore-thumb.jpg"],["Annicee","003","Art Director, DJ & Curator","Annicee-thumb.jpg"],["Kaytranada","002","Producer & DJ","kaytranada-thumb.jpg"],["Steven Aswin","001","Componist, Zanger & Ondernemer","Steven Aswin-thumb.jpg"]];
 var R=[[0,5,10,1.15,3,7,40],[1,31,5,.8,54,5,32],[2,69,8,.95,66,25.5,24],[4,78,46,1.2,73,64,24],[5,32,66,1,40,69,30],[6,8,64,.75,3,66,34]];
 var st=document.getElementById('stories'),cards=[];
 R.forEach(function(r,i){var c=S[r[0]];
 var a=document.createElement('a');a.className='card';a.href='index.html';
 a.style.cssText='--l:'+r[1]+'%;--t:'+r[2]+'%;--s:'+r[3]+';--ml:'+r[4]+'%;--mt:'+r[5]+'%;--mw:'+r[6];
 a.dataset.d=((i*7)%5-2)*.5;
-a.innerHTML='<div class="ph"><img src="'+encodeURI(c[3])+'" alt="" loading="lazy" onerror="this.style.display=\'none\'"></div><div class="cap"><b style="font-weight:400">'+c[0]+'</b><span>'+c[1]+'</span></div>';
+a.innerHTML='<div class="ph"><img src="'+encodeURI(c[3])+'" alt="" loading="lazy" onerror="this.style.display=\'none\'"></div><div class="cap"><span>N'+c[1]+'</span><span>'+c[0]+'</span><span>'+c[2]+'</span></div>';
 st.appendChild(a);cards.push(a);});
 document.getElementById('nidx').textContent='Index('+S.length+')';
 function tick(){try{document.getElementById('clk').textContent='Amsterdam (NH) '+new Intl.DateTimeFormat('nl-NL',{hour:'2-digit',minute:'2-digit',timeZone:'Europe/Amsterdam'}).format(new Date())}catch(e){}}
@@ -135,7 +129,7 @@ tick();setInterval(tick,30000);
 var list=document.getElementById('list'),hv=document.getElementById('hv'),hi=hv.querySelector('img');
 S.forEach(function(c){
 var a=document.createElement('a');a.className='row';a.href='index.html';a.dataset.src=encodeURI(c[3]);
-a.innerHTML='<small>'+c[1]+'</small><span>'+c[0]+'</span><small>'+c[2]+'</small>';
+a.innerHTML='<small>'+c[1]+'</small><span class="nm">'+c[0]+'</span><small>'+c[2]+'</small>';
 var t=document.createElement('img');t.className='th';t.src=encodeURI(c[3]);t.alt='';t.onerror=function(){t.style.display='none'};a.insertBefore(t,a.firstChild);
 a.addEventListener('mouseenter',function(){hi.src=a.dataset.src;hv.classList.add('show')});
 a.addEventListener('mouseleave',function(){hv.classList.remove('show')});
