@@ -52,6 +52,8 @@ header a{text-decoration:none}
 .blk{text-wrap:balance;grid-column:5/9;justify-self:center;max-width:46ch;text-align:center;font:clamp(13px,1vw,15px)/1.8 var(--mono);opacity:0;transform:translateY(18px);transition:opacity .9s,transform .9s}
 .b1{grid-row:1}.b2{grid-row:2;transition-delay:.15s}
 .about.in .blk{opacity:1;transform:none}
+.follow{grid-column:1/13;grid-row:4;justify-self:center;font-size:12px;letter-spacing:.08em;text-transform:uppercase;text-decoration:none;border-bottom:1px solid currentColor;padding-bottom:3px;transition:opacity .3s}
+.follow:hover{opacity:.55}
 .sign{grid-column:1/13;grid-row:3;text-align:center;font:clamp(26px,2.4vw,38px)/1 var(--hand);transform:rotate(-2deg)}
 .studios{height:auto;min-height:100vh;min-height:100svh;overflow:visible;display:flex;flex-direction:column}
 .st{flex:1;display:grid;grid-template-columns:repeat(12,1fr);column-gap:18px;padding:18vh 28px 6vh;align-content:start}
@@ -113,7 +115,7 @@ html.chc .chcur.show{opacity:1}
  .idx{padding-left:16px;padding-right:16px}
  .about{display:flex;flex-direction:column;align-items:center;gap:7vh;padding:16vh 16px 12vh}
  .blk{max-width:34ch}
- .b1{order:1}.b2{order:2}.sign{order:3}
+ .b1{order:1}.b2{order:2}.sign{order:3}.follow{order:4}
  .st{padding:14vh 16px 8vh;display:block}
  .st-left{margin-bottom:6vh}
  .st-lab2{margin-top:9vh}
@@ -147,6 +149,7 @@ html.pre .card{opacity:0}
 <p class="blk b1">Culture Head is een plek voor verhalen van creatives, ondernemers en artiesten. Over hoe ze zijn begonnen en wat ze onderweg leerden.</p>
 <p class="blk b2">Het succes hoort erbij, maar het falen ook. Wie zelf iets aan het bouwen is, ziet hier hoe anderen dat deden.</p>
 <div class="sign">&mdash; Culture Head</div>
+<a class="follow" href="https://instagram.com/cltrhead" target="_blank" rel="noopener">Volg @cltrhead op Instagram &rarr;</a>
 </section>
 <section class="idx" id="index"><div id="list"></div></section>
 <section class="studios" id="studios"><div class="st">
