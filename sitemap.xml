@@ -1,8 +1,20 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
-  <url>
-    <loc>https://cltrhead.com/</loc>
-    <changefreq>weekly</changefreq>
-    <priority>1.0</priority>
-  </url>
+  <url><loc>https://cltrhead.com/</loc></url>
+  <url><loc>https://cltrhead.com/stories/fave.html</loc></url>
+  <url><loc>https://cltrhead.com/stories/ella-john.html</loc></url>
+  <url><loc>https://cltrhead.com/stories/chanou.html</loc></url>
+  <url><loc>https://cltrhead.com/stories/jaz-karis.html</loc></url>
+  <url><loc>https://cltrhead.com/stories/rawen-mustafa.html</loc></url>
+  <url><loc>https://cltrhead.com/stories/celeste-mercedes.html</loc></url>
+  <url><loc>https://cltrhead.com/stories/edgar-boudens.html</loc></url>
+  <url><loc>https://cltrhead.com/stories/jessy-richmond.html</loc></url>
+  <url><loc>https://cltrhead.com/stories/yael-daila.html</loc></url>
+  <url><loc>https://cltrhead.com/stories/supa-dupa-goods.html</loc></url>
+  <url><loc>https://cltrhead.com/stories/joeboy.html</loc></url>
+  <url><loc>https://cltrhead.com/stories/matthijs-van-der-meulen.html</loc></url>
+  <url><loc>https://cltrhead.com/stories/amiera-amore.html</loc></url>
+  <url><loc>https://cltrhead.com/stories/annicee.html</loc></url>
+  <url><loc>https://cltrhead.com/stories/kaytranada.html</loc></url>
+  <url><loc>https://cltrhead.com/stories/steven-aswin.html</loc></url>
 </urlset>

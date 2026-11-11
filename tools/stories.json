@@ -1,0 +1,823 @@
+[
+ {
+  "id": "fave",
+  "slug": "fave",
+  "vol": "016",
+  "name": "FAVE",
+  "role": "Singer-Songwriter",
+  "desc": "Vanuit Lagos naar Amsterdam. FAVE over social media als hack en waarom haar muziek niet in een genre past.",
+  "thumb": "FAVE.png",
+  "video": "FAVE.mp4",
+  "quote": "Social media is my hack.",
+  "intro": "FAVE made her way from Lagos to Amsterdam, stopping by The New Originals on the Zeedijk where Culture Head got the chance to link up. No coincidence she's standing here. It started with just a phone and her voice, went viral, and now a room full of people here know her name.",
+  "opening": [
+   "Her Instagram bio says it all: how can the music I make be diminished by genre classification. That's not a slogan. That's how she built her whole career."
+  ],
+  "about": "",
+  "sources": [],
+  "body": [
+   {
+    "type": "quote",
+    "content": "Social media, to me, is a hack. It is a medium to get your talent, your own creations out there to the world."
+   },
+   {
+    "type": "text",
+    "content": "For an artist from Nigeria, location can be a barrier and traveling is expensive. FAVE found her way around it with her phone. She went viral, built an audience across borders, and eventually made it to stages in Amsterdam."
+   },
+   {
+    "type": "quote",
+    "content": "Having fans here, having people here that will listen to my music. Knowing my name. Buying tickets for my show. It means the world to me. And I never for a second could possibly take it for granted."
+   }
+  ]
+ },
+ {
+  "id": "ellajohn",
+  "slug": "ella-john",
+  "vol": "015",
+  "name": "Ella John",
+  "role": "Rapper & Artiest",
+  "desc": "Voor de mensen die me niet kennen je hoort me eigenlijk wel te kennen.",
+  "thumb": "ELLA THUMB.png",
+  "video": "Ella2_4WEB.mp4",
+  "quote": "Ik wil dat mensen die kracht in hun vrouwelijkheid horen in wat ik vertel. Die zelfverzekerdheid, die kracht in jezelf.",
+  "intro": "Met haar nieuwe EP So Big trekt Ella John de aandacht naar iets wat verder gaat dan alleen muziek. Op een besloten luistersessie bij Greenhouse, georganiseerd met Canna Bish Lounge, deelde ze zeven tracks vol mellow bars en een boodschap over zelfverzekerdheid. Waarom deze avond alleen voor vrouwen was, en hoe ze haar project stap voor stap opbouwt, vertelt ze hieronder.",
+  "opening": [
+   "So Big bestaat uit zeven tracks, volledig geproduceerd door Mike Dipper. Geen schreeuwerige energie, maar rust met een duidelijk karakter."
+  ],
+  "about": "",
+  "sources": [],
+  "body": [
+   {
+    "type": "heading",
+    "content": "Die kracht in jezelf"
+   },
+   {
+    "type": "text",
+    "content": "So Big bestaat uit zeven tracks, volledig geproduceerd door Mike Dipper. Geen schreeuwerige energie, maar rust met een duidelijk karakter. Volgens Ella draait de EP om zelfverzekerdheid, eigenwaarde en vrouwelijkheid."
+   },
+   {
+    "type": "quote",
+    "content": "Ik wil dat mensen die kracht in hun vrouwelijkheid horen in wat ik vertel. Die zelfverzekerdheid, die kracht in jezelf."
+   },
+   {
+    "type": "photos",
+    "content": [
+     "_DSC0151.JPG",
+     "_DSC0152.JPG"
+    ]
+   },
+   {
+    "type": "heading",
+    "content": "Een avond alleen voor haar ladies"
+   },
+   {
+    "type": "text",
+    "content": "De keuze om de luistersessie besloten te houden was bewust. Alleen haar ladies, mensen die haar kennen als Ella en niet als artiest. Die keuze maakte de avond relaxed en intiem."
+   },
+   {
+    "type": "quote",
+    "content": "Ik wilde een avond die meer was dan alleen muziek luisteren. Dus ik heb al mijn ladies bij elkaar gehaald."
+   },
+   {
+    "type": "photos",
+    "content": [
+     "_DSC0154.JPG",
+     "_DSC0166.JPG"
+    ]
+   },
+   {
+    "type": "heading",
+    "content": "Track voor track naar het hele project"
+   },
+   {
+    "type": "text",
+    "content": "Ella brengt So Big niet in een keer uit, maar bouwt het stap voor stap op. Dolla$ was in juni de eerste track die verscheen. Juli en augustus volgen met nieuwe releases, tot het complete project in september compleet is."
+   },
+   {
+    "type": "quote",
+    "content": "Door gewoon je ding te doen en door te gaan. Die discipline te vinden, dat vertrouwen in je ideeen en je visie vasthouden. En door er honderd procent in te geloven."
+   },
+   {
+    "type": "photos",
+    "content": [
+     "_DSC0176.JPG",
+     "_DSC0211.JPG"
+    ]
+   }
+  ]
+ },
+ {
+  "id": "chanou",
+  "slug": "chanou",
+  "vol": "014",
+  "name": "Chanou",
+  "role": "Zangeres",
+  "desc": "Op de releaseparty van haar eerste single na twee jaar. Chanou over geduld, visuals en terug bij jezelf komen.",
+  "thumb": "chanou-thumb.jpg",
+  "video": "chanou.mp4",
+  "quote": "Als dit voor jou is, dan rent het niet weg.",
+  "intro": "Na twee jaar uit de spotlights is Chanou terug met haar eerste single. Op de releaseparty stond ze middenin de ruimte, lachend, in gesprek met iedereen om haar heen. Maar achter die lichte energie zat een bewust proces van twijfelen, kiezen en wachten tot het juiste moment.",
+  "opening": [
+   "Waarom ze koos voor gevoel boven een commercieel veiliger nummer, en wat die twee jaar pauze haar leerden, vertelt ze hieronder."
+  ],
+  "about": "",
+  "sources": [],
+  "body": [
+   {
+    "type": "heading",
+    "content": "Terug bij jezelf"
+   },
+   {
+    "type": "text",
+    "content": "Voor haar comeback single stond Chanou voor een keuze tussen twee tracks: een die commercieel het meest voor de hand lag, en een die ze puur op gevoel had gemaakt. Tot het laatste moment twijfelde ze. Uiteindelijk koos ze niet voor de veilige optie, maar voor het nummer dat ze zelf het meest voelde."
+   },
+   {
+    "type": "heading",
+    "content": "Visuals als tweede taal"
+   },
+   {
+    "type": "text",
+    "content": "Tijdens haar pauze ontdekte Chanou dat ze meer is dan alleen een zangeres. Ze bouwt inmiddels net zo veel aan het visuele als aan de muziek zelf concepten bedenken, uitvoeren en er een complete beleving omheen zetten."
+   },
+   {
+    "type": "quote",
+    "content": "Heb geduld met jezelf. Bouw een visie voor wat voor jou in de toekomst wel gaat werken en neem daar alle tijd voor die je daarvoor nodig hebt. Want als dit voor jou is, dan rent het niet weg."
+   },
+   {
+    "type": "heading",
+    "content": "De pauze"
+   },
+   {
+    "type": "text",
+    "content": "De twee jaar stilte waren nooit het plan. Het begon als een korte adempauze, maar het maken van een goed plan bleek meer tijd te kosten dan verwacht. Pas toen haar gevoel het aangaf, wist ze: nu is het moment."
+   }
+  ]
+ },
+ {
+  "id": "jaz",
+  "slug": "jaz-karis",
+  "vol": "013",
+  "name": "Jaz Karis",
+  "role": "Artiest",
+  "desc": "Culture Head was uitgenodigd voor haar show in de Melkweg. Jaz Karis over haar creatief proces en hoe het internet haar ontdekte.",
+  "thumb": "jazkaris-thumb.jpg",
+  "video": "jazkaris.mp4",
+  "quote": "I have one rule I never buy WiFi on the plane. That's my creative space. No one can reach me.",
+  "intro": "Culture Head werd uitgenodigd voor de show van Jaz Karis in de Melkweg. Niet om te recenseren. Gewoon om te kijken, te luisteren en te begrijpen wie ze is.",
+  "opening": [
+   "Jaz Karis is een van die artiesten die het internet vond voordat de industrie doorhad dat ze er was."
+  ],
+  "about": "",
+  "sources": [],
+  "body": [
+   {
+    "type": "heading",
+    "content": "Gevonden door het internet"
+   },
+   {
+    "type": "text",
+    "content": "Een clip hier, een opname daar en dan ineens een golf van mensen die haar muziek deelden alsof ze iets hadden ontdekt dat van hen was."
+   },
+   {
+    "type": "heading",
+    "content": "Het creatief proces"
+   },
+   {
+    "type": "quote",
+    "content": "I have one rule I never buy WiFi on the plane. That's my creative space. No one can reach me."
+   },
+   {
+    "type": "text",
+    "content": "Creativiteit heeft ruimte nodig. Stilte. Tijd zonder input. Jaz beschermt dat actief."
+   },
+   {
+    "type": "photos",
+    "content": [
+     "jaz1.jpg",
+     "jaz2.jpg"
+    ]
+   }
+  ]
+ },
+ {
+  "id": "rawen",
+  "slug": "rawen-mustafa",
+  "vol": "012",
+  "name": "Rawen Mustafa",
+  "role": "Designer & Oprichter ETB",
+  "desc": "Hoe Rawen Mustafa vanuit zijn vaders leeratelier een eigen jeansmerk bouwde op vakmanschap en de filosofie dat slow de enige echte weg is.",
+  "thumb": "rawen-thumb.jpg",
+  "video": "rawen.mp4",
+  "quote": "Als het product klopt, dan komt pas het vervolg. Vakmanschap is een verlengstuk van het product.",
+  "intro": "Rawen Mustafa zit achter een naaimachine als we binnenkomen. Niet voor de camera gewoon omdat hij aan het werk is. Dat is meteen alles wat je moet weten over ETB, zijn jeansmerk.",
+  "opening": [
+   "\"Ik kom uit een textielfamilie. Mijn vader is leder expert, auto bekleden zo is het een beetje gaan rollen.\" Niet via een opleiding, niet via een businessplan. Via de handen van zijn vader."
+  ],
+  "about": "",
+  "sources": [],
+  "body": [
+   {
+    "type": "heading",
+    "content": "Waarom denim"
+   },
+   {
+    "type": "text",
+    "content": "\"Als jij een jeans draagt voor anderhalf jaar, elke dag, dan leeft die op de manier hoe jij je stappen zet, hoe hij beweegt, waar jij je telefoon hebt zitten.\" Denim als spiegel van de drager."
+   },
+   {
+    "type": "heading",
+    "content": "Het product eerst"
+   },
+   {
+    "type": "quote",
+    "content": "Als het product klopt, dan komt pas het vervolg. Vakmanschap is een verlengstuk van het product."
+   },
+   {
+    "type": "text",
+    "content": "Die houding maakt ETB langzaam en dat is precies de bedoeling. Stapsgewijs, elk jaar iets verder."
+   },
+   {
+    "type": "photos",
+    "content": [
+     "rawen-foto1.jpg",
+     "rawen-foto2.jpg"
+    ]
+   },
+   {
+    "type": "heading",
+    "content": "Ondernemen is problemen oplossen"
+   },
+   {
+    "type": "text",
+    "content": "\"Als je daar niet tegen kan, dan zou ik absoluut geen ondernemer worden.\" Ondernemen is niet voor iedereen. Je moet de persoon er voor zijn."
+   }
+  ]
+ },
+ {
+  "id": "celeste",
+  "slug": "celeste-mercedes",
+  "vol": "011",
+  "name": "Celeste Mercedes",
+  "role": "Violiste & Music Director",
+  "desc": "Hoe een violiste haar plek veroverde naast haar childhood hero The Game en wat jij kan leren over obsessie en connecties.",
+  "thumb": "celeste-thumb.jpg",
+  "video": "celeste.mp4",
+  "quote": "Je moet drive hebben, het echt willen en bijna zo obsessed zijn dat het weird wordt. Want dat is hoe je op de plekken komt waar anderen niet komen.",
+  "intro": "Het is een doordeweekse avond als we binnenlopen bij Tivoli Vredenburg. The Game staat op het podium. De zaal trilt. En ergens in dat gewoel staat Celeste Mercedes niet als toeschouwer, maar als iemand die straks naast hem staat.",
+  "opening": [
+   "We kwamen haar per toeval tegen. Gewoon op een avond waarop alles klopte. En toen we hoorden wie ze was en wat ze had gedaan, wisten we: dit verhaal moet verteld worden.",
+   "Celeste is violiste en music director. Twee werelden die op papier weinig met elkaar te maken hebben klassiek en hiphop maar in haar handen wordt het een ding."
+  ],
+  "about": "",
+  "sources": [],
+  "body": [
+   {
+    "type": "heading",
+    "content": "Viool in de hiphopwereld"
+   },
+   {
+    "type": "text",
+    "content": "Ze werkte al samen met grote namen in de muziek, maar die avond bij The Game was anders. Want The Game is niet zomaar een artiest voor haar. Hij is haar childhood hero. En hem dan op het podium begeleiden, als violiste, als music director? Dat is geen toeval. Dat is werk."
+   },
+   {
+    "type": "heading",
+    "content": "Hoe kom je op die plekken?"
+   },
+   {
+    "type": "quote",
+    "content": "Je moet drive hebben, het echt willen en bijna zo obsessed zijn dat het weird wordt. Want dat is hoe je op de plekken komt waar anderen niet komen."
+   },
+   {
+    "type": "text",
+    "content": "Ze legt uit dat het niet gaat om geluk. Het gaat om connecties op de juiste manier. Niet netwerken alsof je iets wil hebben. Verbinden omdat je echt iets te bieden hebt."
+   },
+   {
+    "type": "photos",
+    "content": [
+     "photo1.jpg",
+     "photo2.jpg"
+    ]
+   },
+   {
+    "type": "heading",
+    "content": "De les"
+   },
+   {
+    "type": "text",
+    "content": "Celeste Mercedes is het bewijs dat originele combinaties werken. Viool en hiphop. Klassiek en straat. Discipline en vrijheid. Ze past niet in een box en dat is precies haar kracht."
+   }
+  ]
+ },
+ {
+  "id": "twenty20",
+  "slug": "edgar-boudens",
+  "vol": "010",
+  "name": "Edgar Boudens",
+  "role": "Oprichter Twenty20 & Goudsmid",
+  "desc": "Van slaapkamer in Almere naar het grootste grillz-merk van Nederland. Edgar Boudens over risico nemen en geloven in je ding.",
+  "thumb": "Twenty20-thumb.jpg",
+  "video": "Twenty20.mp4",
+  "quote": "Wat je erin steekt krijg je terug. Het is een cliche, maar het is echt waar.",
+  "intro": "Edgar Boudens wist het al toen hij zijn goudsmid opleiding afrondde: geen standaard juwelierszaak. Iets eigens. Iets wat er nog niet was. Hij begon in zijn slaapkamer in Almere, maakte sieraden voor familie en vrienden, en zag iets wat anderen hadden gemist.",
+  "opening": [
+   "Een grote markt voor grills in Nederland en niemand die het serieus aanpakte. Edgar pakte het serieus aan."
+  ],
+  "about": "",
+  "sources": [],
+  "body": [
+   {
+    "type": "heading",
+    "content": "Vanuit de slaapkamer"
+   },
+   {
+    "type": "text",
+    "content": "Twenty20 Jewelry begon niet met een businessplan of een investeerder. Het begon in een slaapkamer in Almere. Edgar maakte sieraden voor de mensen om hem heen en ontdekte dat er vraag was naar grills maar dat niemand het professioneel aanpakte in Nederland."
+   },
+   {
+    "type": "text",
+    "content": "Hij stapte in dat gat. Via Instagram begon het te groeien. Collabs met BN'ers en influencers. Mond-tot-mond. En nu, zeven tot acht jaar later, weten mensen hem goed te vinden."
+   },
+   {
+    "type": "quote",
+    "content": "Wat je erin steekt krijg je terug. Het is een cliche, maar het is echt waar."
+   },
+   {
+    "type": "heading",
+    "content": "Grills als identiteit"
+   },
+   {
+    "type": "text",
+    "content": "Voor Edgar zijn grills meer dan sieraden. Het is een manier van laten zien wie je bent. Custom, persoonlijk, gemaakt voor jou. Dat is wat Twenty20 Jewelry onderscheidt: elk stuk is uniek en vertelt iets over de drager."
+   },
+   {
+    "type": "heading",
+    "content": "De tip"
+   },
+   {
+    "type": "text",
+    "content": "Zijn advies voor jonge ondernemers is simpel en eerlijk. Durf de risico's te nemen. Steek zo veel mogelijk tijd en geld erin. En geloof in jezelf. Hij noemt het zelf een cliche maar hij zegt het alsof hij het meent. Omdat hij het heeft bewezen."
+   }
+  ]
+ },
+ {
+  "id": "jessy",
+  "slug": "jessy-richmond",
+  "vol": "009",
+  "name": "Jessy Richmond",
+  "role": "Producent & Eigenaresse Richmond Media Group",
+  "desc": "Jessy Richmond regelt de productie van een hele show, stuurt de crew aan en pakt zelf ook de camera. Over een team bouwen, kansen geven en slow and steady.",
+  "thumb": "jessy-thumb.jpg",
+  "video": "Jessy.mp4",
+  "quote": "Je moet niet snel willen gaan, maar je moet goed willen gaan.",
+  "intro": "Op de show We Are Royals van Sarah Jane in het Carré liep iemand die de hele avond de touwtjes in handen had. Jessy Richmond deed de productie van de show. Ze stuurde de cameramensen en fotografen aan en filmde zelf ook mee.",
+  "opening": [],
+  "about": "Jessy is Surinaams en Amerikaans, en eigenaresse van Richmond Media Group, een productiebedrijf voor video en fotografie. Fotografie, videografie, editing: ze doet het allemaal. Ze werkte met artiesten als Joeboy, Tiwa Savage, Rema en Nicki Jam, en voor het merk Subway. Ook in Los Angeles heeft ze een bedrijf.",
+  "sources": [
+   [
+    "Canvas Rebel",
+    "https://canvasrebel.com/meet-jessy-richmond/"
+   ],
+   [
+    "richmondmediagrp.com",
+    "https://richmondmediagrp.com"
+   ]
+  ],
+  "body": [
+   {
+    "type": "heading",
+    "content": "Veel rennen"
+   },
+   {
+    "type": "text",
+    "content": "We spraken haar in de pauze van de show. Wat komt er kijken bij zo'n avond? \"Heel veel rennen, dus goede cardio is belangrijk.\""
+   },
+   {
+    "type": "text",
+    "content": "Daarnaast focus en voorbereiding. Van treatments tot moodboards, alles wordt doorgelopen. Ze is bij de generale repetities en weet zo wat ze kan verwachten."
+   },
+   {
+    "type": "text",
+    "content": "In Paradiso werkte ze eerder voor Joeboy. Nu staan ze in het Carré."
+   },
+   {
+    "type": "heading",
+    "content": "Festivals en same day edits"
+   },
+   {
+    "type": "text",
+    "content": "Bij Latino Gang doet Jessy de hele videoproductie. Op festivals stuurt ze fotografen en videografen aan, en ze doet same day edits. De beelden zijn dezelfde dag nog af, terwijl het festival nog loopt."
+   },
+   {
+    "type": "heading",
+    "content": "Ik ben een productiehuis"
+   },
+   {
+    "type": "text",
+    "content": "Wat ze het liefst doet? Een lastige vraag, want ze vindt veel leuk en doet daarom ook veel. Maar wat ze nu doet, vindt ze het leukst: produceren voor artiesten, Grammy-artiesten, in Nederland en in het buitenland. En wegen maken voor de meiden in haar team, zodat zij zich kunnen ontwikkelen. Daar wordt ze blij van."
+   },
+   {
+    "type": "text",
+    "content": "Hoe die meiden bij haar kwamen? Een van hen belde gewoon op. Ik heb hulp nodig, ik wil leren, ik wil filmen. Een zus had haar aangeraden om te vragen of ze mocht meelopen. Twee weken later waren ze begonnen, en dat is inmiddels twee jaar geleden. Jessy: \"Dat is wel echt hoe het gegaan is.\""
+   },
+   {
+    "type": "quote",
+    "content": "Ik ben een team, ik ben geen videograaf, ik ben een productiehuis."
+   },
+   {
+    "type": "text",
+    "content": "Wie een productie wil neerzetten, als artiest of als ondernemer, heeft meerdere mensen nodig. Op de schaal waarop zij content maakt zeker. Voor Jessy is dat vanzelfsprekend."
+   },
+   {
+    "type": "photos",
+    "content": [
+     "jessy-foto1.jpg",
+     "jessy-foto2.jpg"
+    ]
+   },
+   {
+    "type": "heading",
+    "content": "Vertrouwen"
+   },
+   {
+    "type": "text",
+    "content": "Wie met een team op pad gaat, moet erop kunnen rekenen dat het goed komt. Hoe bouwde ze dat vertrouwen op bij artiesten? Het werk zelf, zegt ze, en haar netwerk. Dat netwerk groeide over de jaren. Mensen weten wat ze kunnen verwachten. Komt Jessy met een team, dan weten ze dat de kwaliteit er is."
+   },
+   {
+    "type": "heading",
+    "content": "Hoe het begon"
+   },
+   {
+    "type": "text",
+    "content": "Jessy zit al sinds haar zesde of zevende in de muziekwereld. Als kind in New York had ze een Kodak-filmcamera, en via haar tante bij Columbia Pictures kwam ze op sets van grote producties."
+   },
+   {
+    "type": "text",
+    "content": "In de mode zag ze hoe belangrijk een eigen beeldtaal is. Niemand kon haar visie precies zo neerzetten, dus leerde ze het zelf: filmen en editen. Haar eerste betaalde klus kwam van een vriendin uit de designwereld die visualizers voor clubs zocht. Zo'n klus leverde ongeveer 50 dollar op."
+   },
+   {
+    "type": "heading",
+    "content": "Van een festival naar Los Angeles"
+   },
+   {
+    "type": "text",
+    "content": "Twee jaar geleden fotografeerde ze een artiest en zijn team op een festival. Daar ontmoette ze iemand, en drie maanden later zat ze in Los Angeles. Daar maakten ze een video, en vanaf dat moment ging het verder."
+   },
+   {
+    "type": "text",
+    "content": "In 2024 was ze onderweg van Los Angeles naar Las Vegas met danseres Lea Crigger, voor de Latin Billboard Awards op het Rumbazo Festival. Er kwam een nummer voorbij en ze hadden meteen een idee. Ze stopten langs de weg, pakten de camera en draaiden This Life, een korte film over de denkwijze van een professionele danseres. Binnen een dag hadden duizenden mensen hem gezien."
+   },
+   {
+    "type": "heading",
+    "content": "Als het niet loopt"
+   },
+   {
+    "type": "text",
+    "content": "Er zijn ook periodes dat het stilstaat: kansen die niet doorgaan, mails zonder antwoord, projecten die op het laatste moment sneuvelen. Haar manier om ermee om te gaan is stoppen met vergelijken en bij je eigen visie blijven."
+   },
+   {
+    "type": "quote",
+    "content": "Rejection isn't always rejection, it's redirection."
+   },
+   {
+    "type": "heading",
+    "content": "Slow and steady"
+   },
+   {
+    "type": "text",
+    "content": "Haar advies aan creatives die willen staan waar zij nu staat is kort. Ze zegt het al jaren: slow and steady wins the race."
+   },
+   {
+    "type": "quote",
+    "content": "Je moet niet snel willen gaan, maar je moet goed willen gaan."
+   },
+   {
+    "type": "text",
+    "content": "Wie weet waar hij naartoe wil, moet dat vooruitzicht vasthouden en niet te snel willen gaan. Het is ook wat ze de meiden in haar team meegeeft. Momentum is belangrijk, maar je gaat op je eigen tempo. Niet naar anderen kijken, in jezelf geloven."
+   }
+  ]
+ },
+ {
+  "id": "yael",
+  "slug": "yael-daila",
+  "vol": "008",
+  "name": "Yael Daila",
+  "role": "Artiest & Performer",
+  "desc": "Backstage in Paradiso daags voor haar allereerste headline show. Yael Daila over haar voorbereiding en op een vriendelijke manier toch je zin doordrijven.",
+  "thumb": "Yael-thumb.jpg",
+  "video": "Yael.mp4",
+  "quote": "Het is belangrijk om op een heel vriendelijke manier toch je zin door te drijven. At the end of the day weet mijn team: dit is jouw show.",
+  "intro": "Paradiso. Daags voor haar allereerste headline show. Yael Daila staat in de repetitieruimte, in-ears in haar oren, band om haar heen, setlist in haar hoofd.",
+  "opening": [
+   "\"Dit is de laatste repetitie voordat we de show hebben. En ik heb voor het eerst in-ears.\" Ze lacht. \"In die oortjes hoor je een klik tik tik tik de BPM. Dat had ik nog nooit eerder gedaan.\""
+  ],
+  "about": "",
+  "sources": [],
+  "body": [
+   {
+    "type": "heading",
+    "content": "Het hele plaatje"
+   },
+   {
+    "type": "text",
+    "content": "Yael doet het niet half. Stage design, movement coaching, choreografie, vocal workouts ze rennen op een hardloopband terwijl ze zingt. Alles is voorbereid, alles is doordacht."
+   },
+   {
+    "type": "heading",
+    "content": "Jouw show, hun input"
+   },
+   {
+    "type": "quote",
+    "content": "Het is belangrijk om op een heel vriendelijke manier toch je zin door te drijven. At the end of the day weet mijn team: dit is jouw show. Als ik zeg nee, dan gaat het gewoon niet gebeuren."
+   },
+   {
+    "type": "heading",
+    "content": "Rising artiest, rising sound"
+   },
+   {
+    "type": "text",
+    "content": "Yael is ook midden in een rebranding. Van Amapiano richting pop, R&B en afropop. Nieuwe sounds, nieuw profiel, dezelfde stem maar dan meer van zichzelf."
+   }
+  ]
+ },
+ {
+  "id": "supadupa",
+  "slug": "supa-dupa-goods",
+  "vol": "007",
+  "name": "Nick Spapens & Samay June",
+  "role": "Oprichters Supa Dupa",
+  "desc": "Van crappy shirts als hobbyproject naar een eigen merk. Supa Dupa Goods over naief beginnen en de valkuil van perfectie.",
+  "thumb": "supadupagoods-thumb.jpg",
+  "video": "supadupagoods.mp4",
+  "quote": "We zijn heel naief begonnen. Maar die laatste verbeteringen waren waarschijnlijk verbeteringen die alleen wij zagen. We hadden zo veel harder kunnen gaan.",
+  "intro": "Supa Dupa Goods is geen merk dat is gebouwd op een businessplan. Het begon als een hobbyproject. Twee fans die hun liefde voor een subcultuur wilden uiten op een subtiele manier.",
+  "opening": [
+   "En die misten hoe dat kon. Dus maakten ze het zelf."
+  ],
+  "about": "",
+  "sources": [],
+  "body": [
+   {
+    "type": "heading",
+    "content": "Crappy shirts en alles opnieuw investeren"
+   },
+   {
+    "type": "text",
+    "content": "Ze begonnen met shirts. De meest crappy kwaliteit shirts ever, zoals ze het zelf omschrijven. Beiden hadden een fulltime baan. Avonden, weekenden, dan een dag in de week, dan twee."
+   },
+   {
+    "type": "heading",
+    "content": "De valkuil van perfectie"
+   },
+   {
+    "type": "quote",
+    "content": "Die laatste verbeteringen waren waarschijnlijk verbeteringen die alleen wij zagen. We hadden zo veel harder kunnen gaan als we gewoon hadden gezegd: fuck it, dit is het."
+   },
+   {
+    "type": "heading",
+    "content": "Fan first"
+   },
+   {
+    "type": "text",
+    "content": "Wat Supa Dupa Goods onderscheidt van andere merken is precies wat het begin zo lastig maakte: ze zijn fans. Ze maken voor zichzelf, voor mensen die hetzelfde voelen. Niet voor de markt. Niet voor het algoritme."
+   }
+  ]
+ },
+ {
+  "id": "joeboy",
+  "slug": "joeboy",
+  "vol": "006",
+  "name": "Joeboy",
+  "role": "Artiest & Singer-Songwriter",
+  "desc": "Na een uitverkochte show in Amsterdam. Joeboy over Afrobeats, zijn publiek en waarom erkenning hem harder laat werken.",
+  "thumb": "joeboy-thumb.jpg",
+  "video": "joeboy.mp4",
+  "quote": "It makes me want to go hard. To go more outside the box.",
+  "intro": "Na een uitverkochte show in Amsterdam. De crowd was loud, de energie was goed, en Joeboy staat rustig te praten over wat Afrobeats nu betekent voor de wereld en voor hem persoonlijk.",
+  "opening": [
+   "Joeboy is een van de namen die Afrobeats heeft meegenomen van de Afrikaanse club naar het mondiale podium. Maar hij denkt niet in termen van succes. Hij denkt in termen van verantwoordelijkheid."
+  ],
+  "about": "",
+  "sources": [],
+  "body": [
+   {
+    "type": "heading",
+    "content": "Afrobeats en de wereld"
+   },
+   {
+    "type": "text",
+    "content": "Afrobeats krijgt momenteel wereldwijde erkenning. Meer streams, meer festivals, meer mainstream aandacht dan ooit. Voor Joeboy is dat geen reden om te ontspannen. Het is juist een reden om harder te werken."
+   },
+   {
+    "type": "text",
+    "content": "Nu de aandacht er is, is het moment om het niveau op te trekken. Om te laten zien wat het genre echt kan."
+   },
+   {
+    "type": "quote",
+    "content": "It makes me want to go hard. To go more outside the box."
+   },
+   {
+    "type": "heading",
+    "content": "Voor de vrouwen"
+   },
+   {
+    "type": "text",
+    "content": "Op het podium in Amsterdam deed Joeboy meerdere shout-outs aan de vrouwen in de zaal. Niet als marketingstunt. Vrouwen maken een kritisch deel uit van zijn publiek en zijn een van zijn grootste creatieve krachten als het aankomt op het maken van muziek."
+   }
+  ]
+ },
+ {
+  "id": "sneakerness",
+  "slug": "matthijs-van-der-meulen",
+  "vol": "005",
+  "name": "Matthijs van der Meulen",
+  "role": "CEO Sneakerness",
+  "desc": "Hoe Matthijs van Meulen CEO werd van het grootste sneaker en lifestyle event van Europa door gewoon de telefoon op te pakken.",
+  "thumb": "sneakerness-thumb.jpg",
+  "video": "sneakerness.mp4",
+  "quote": "Trek gewoon de stoute schoenen aan. Ga je ergens mee bemoeien. Kijk waar je mensen kunt helpen zo vind je je rol.",
+  "intro": "Matthijs van Meulen liep dertien jaar geleden voor het eerst Sneakerness binnen. Niet als CEO. Gewoon als iemand die het tof vond en die een vraag niet kon loslaten.",
+  "opening": [
+   "Waarom was er al zo lang geen sneakerevent meer in Amsterdam geweest? Hij ging rond vragen. En toen hij hoorde dat een oud-collega de productie zou gaan doen, pakte hij de telefoon."
+  ],
+  "about": "",
+  "sources": [],
+  "body": [
+   {
+    "type": "heading",
+    "content": "Bijdehand bellen"
+   },
+   {
+    "type": "text",
+    "content": "\"Ik belde hem gewoon op en zei: goeie productie, dat kan jij, dat weet ik. Maar wat weet jij in godsnaam van de sneaker community?\" Zijn collega moest hard lachen. Ze hadden nog zes weken. Of Matthijs wilde helpen."
+   },
+   {
+    "type": "quote",
+    "content": "Trek gewoon de stoute schoenen aan. Ga je ergens mee bemoeien. Kijk waar je mensen kunt helpen zo vind je je rol."
+   },
+   {
+    "type": "heading",
+    "content": "Van community naar CEO"
+   },
+   {
+    "type": "text",
+    "content": "In het eerste jaar vroeg Sneakerness International hem al om de marketing te doen. Hij kende de community van binnenuit. Hij wist wat mensen voelden bij sneakers. Twee jaar geleden werd hij CEO."
+   }
+  ]
+ },
+ {
+  "id": "amiera",
+  "slug": "amiera-amore",
+  "vol": "004",
+  "name": "Amiera Amore",
+  "role": "Creative Director & Fashion Designer",
+  "desc": "Ze begon op haar achtste met haar eerste business. Nu bouwt ze een eigen wereld als creative director, designer en photographer.",
+  "thumb": "Amiera Amore-thumb.jpg",
+  "video": "Amiera Amore.mp4",
+  "quote": "Once it's meant for you, everything aligns. As long as you work hard.",
+  "intro": "Amiera Amore startte haar eerste business op haar achtste. Niet als grap, niet als schoolproject. Gewoon omdat ze geld wilde verdienen en wist hoe. Gras maaien in de buurt. Een schoonmaakbedrijf op haar elfde. Mode op haar zestiende.",
+  "opening": [
+   "Nu is ze creative director, fashion designer en photographer. Ze maakt merch voor artiesten, ontwerpt voor retailers en bouwt haar eigen wereld. Maar de basis is altijd hetzelfde gebleven: gewoon beginnen en hard werken."
+  ],
+  "about": "",
+  "sources": [],
+  "body": [
+   {
+    "type": "heading",
+    "content": "Ondernemer van nature"
+   },
+   {
+    "type": "text",
+    "content": "Amiera Amore wachtte niet op toestemming. Op haar achtste begon ze met gras maaien. Op haar elfde had ze een schoonmaakbedrijf. Mode werd pas echt een carriere op haar zestiende."
+   },
+   {
+    "type": "quote",
+    "content": "Once it's meant for you, everything aligns. As long as you work hard."
+   },
+   {
+    "type": "heading",
+    "content": "16-uurs dagen"
+   },
+   {
+    "type": "text",
+    "content": "Ze put in 16-uurs dagen en is blij. Niet omdat ze moet, maar omdat ze van haar werk houdt. Consistent zijn over jaren. Dan komt alles samen."
+   }
+  ]
+ },
+ {
+  "id": "annicee",
+  "slug": "annicee",
+  "vol": "003",
+  "name": "Annicee",
+  "role": "Art Director, DJ & Curator",
+  "desc": "Annicee over kunst toegankelijk maken, Amsterdam Zuidoost en haar rol als curator bij OSCAM.",
+  "thumb": "Annicee-thumb.jpg",
+  "video": "Annicee.mp4",
+  "quote": "Heel veel culturen, heel veel verschillende energieen. En dat is ook wat ik probeerde terug te laten komen in deze tentoonstelling.",
+  "intro": "Annicee is art director, DJ, curator en creative producer bij OSCAM. Op het moment dat we haar spreken staat ze midden in een tentoonstelling die ze heeft gecureerd in het kader van 750 jaar Amsterdam, met Zuidoost als middelpunt.",
+  "opening": [
+   "Ze wilde dat het kleurrijk was. Dat het de energie van het stadsdeel ving. Dat de mensen die er wonen en werken eindelijk een podium kregen."
+  ],
+  "about": "",
+  "sources": [],
+  "body": [
+   {
+    "type": "heading",
+    "content": "Zuidoost centraal"
+   },
+   {
+    "type": "text",
+    "content": "De tentoonstelling draait om Amsterdam Zuidoost. Een stadsdeel met minder kunst- en cultuuraanbod dan andere delen van de stad. Dat is precies de reden dat OSCAM er zit."
+   },
+   {
+    "type": "quote",
+    "content": "Heel veel culturen, heel veel verschillende energieen. En dat is ook wat ik probeerde terug te laten komen in deze tentoonstelling."
+   },
+   {
+    "type": "heading",
+    "content": "De missie van OSCAM"
+   },
+   {
+    "type": "text",
+    "content": "OSCAM staat midden in De Poort in Zuidoost. De missie is kunst en cultuur toegankelijker en laagdrempeliger te maken zodat mensen meer in aanraking komen met wat er om hen heen gemaakt wordt."
+   }
+  ]
+ },
+ {
+  "id": "kaytranada",
+  "slug": "kaytranada",
+  "vol": "002",
+  "name": "Kaytranada",
+  "role": "Producer & DJ",
+  "desc": "Je hebt alleen een laptop nodig. De rest is discipline, tutorials en door de moeilijke fases heen gaan.",
+  "thumb": "kaytranada-thumb.jpg",
+  "video": "kaytranada.mp4",
+  "quote": "You always going to go through the rough patches before you become who you become.",
+  "intro": "Kaytranada heeft een superkracht die hij zelf benoemt: mensen bij elkaar brengen. Maar dat is pas het resultaat. Wat eraan voorafging was jaren van leren, oefenen, remaken en door de moeilijke fases heen gaan.",
+  "opening": [
+   "De producer en DJ uit Montreal is een van de meest invloedrijke names in de hedendaagse elektronische muziek. Maar zijn advies is opvallend nuchter: begin gewoon. Een laptop is genoeg."
+  ],
+  "about": "",
+  "sources": [],
+  "body": [
+   {
+    "type": "heading",
+    "content": "Je hebt alleen een laptop nodig"
+   },
+   {
+    "type": "text",
+    "content": "Kaytranada legt het simpel uit: je hebt geen studio nodig, geen duur equipment, geen connecties. Een laptop is je startpunt. Alles wat daarna komt is discipline."
+   },
+   {
+    "type": "quote",
+    "content": "You always going to go through the rough patches before you become who you become."
+   },
+   {
+    "type": "heading",
+    "content": "Door de moeilijke fases heen"
+   },
+   {
+    "type": "text",
+    "content": "Elke producer gaat door een periode waarin het niet werkt. Kaytranada zegt: dat hoort erbij. Ga er doorheen. Leer van elke fase. Dat is hoe je wordt wie je moet worden."
+   }
+  ]
+ },
+ {
+  "id": "stevenaswin",
+  "slug": "steven-aswin",
+  "vol": "001",
+  "name": "Steven Aswin",
+  "role": "Componist, Zanger & Ondernemer",
+  "desc": "Solo Stations begon als noodzaak in zijn woonkamer. Steven Aswin over doen, dromen en deuren openen als artiest-ondernemer.",
+  "thumb": "Steven Aswin-thumb.jpg",
+  "video": "Steven Aswin.mp4",
+  "quote": "Een goed idee is pas een goed idee als het uitgevoerd wordt.",
+  "intro": "Steven Aswin speelt piano vanaf kleins af aan. Als kind probeerde hij al bekende R&B tracks om te toveren op de piano. Dat gevoel van muziek begrijpen, van er iets eigens van maken is nooit weggegaan.",
+  "opening": [
+   "Nu is hij componist, zanger en bedenker van Solo Stations. Een concept dat twee jaar geleden begon als noodzaak, op zijn woonkamer, en uitgroeide tot iets groters."
+  ],
+  "about": "",
+  "sources": [],
+  "body": [
+   {
+    "type": "heading",
+    "content": "Solo Stations"
+   },
+   {
+    "type": "text",
+    "content": "Solo Stations ontstond vanuit een noodzaak. Steven begreep dat hij als artiest deuren moest openen en dat hij dat zelf moest organiseren. De makkelijkste manier: begin gewoon in je woonkamer. Dat deed hij."
+   },
+   {
+    "type": "quote",
+    "content": "Een goed idee is pas een goed idee als het uitgevoerd wordt."
+   },
+   {
+    "type": "heading",
+    "content": "Artiest en ondernemer"
+   },
+   {
+    "type": "text",
+    "content": "Steven is 24/7 bezig. Hij werkt, droomt over zijn concerten en wordt er mee wakker. Zijn motto is kort: doen. Niet praten over ideeen. Uitvoeren."
+   }
+  ]
+ }
+]
