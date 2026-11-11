@@ -23,9 +23,9 @@ header a{text-decoration:none}
 .center{position:absolute;inset:0;display:flex;flex-direction:column;align-items:center;justify-content:center;text-align:center;pointer-events:none;z-index:3}
 .center .t{display:flex;flex-direction:column;font-size:clamp(40px,5.4vw,80px);line-height:.82}
 .center .t span:first-child{transform:rotate(-2deg)}
-.center .t span:last-child{transform:rotate(1.5deg) translateX(.2em)}
+.center .t span:last-child{transform:rotate(1.5deg)}
 .center .cw{position:relative}
-.center .d2{position:absolute;top:100%;left:50%;transform:translateX(-50%);white-space:nowrap;margin-top:1.8vh;margin-left:clamp(8px,1vw,15px);font:400 9px/1 var(--mono);letter-spacing:.1em;text-transform:uppercase;color:var(--mute)}
+.center .d2{position:absolute;top:100%;left:50%;transform:translateX(-50%);white-space:nowrap;margin-top:1.8vh;font:400 9px/1 var(--mono);letter-spacing:.1em;text-transform:uppercase;color:var(--mute)}
 .side{position:absolute;left:28px;bottom:28px;z-index:4;font-size:11px;line-height:1.7;letter-spacing:.04em;text-transform:uppercase;color:var(--mute)}
 .tag{position:absolute;right:28px;bottom:28px;z-index:4;text-align:right;font-size:11px;line-height:1.7;letter-spacing:.04em;text-transform:uppercase;color:var(--mute);pointer-events:none}
 .card{position:absolute;left:var(--l);top:var(--t);width:calc(min(15vw,24vh)*var(--s,1));display:block;text-decoration:none;z-index:2;will-change:transform;transition:opacity .9s ease}
@@ -91,11 +91,12 @@ html.chc .chcur.show{opacity:1}
  header{padding:18px 16px;font-size:11px}
  header nav{gap:14px}
  .card{left:var(--ml);top:var(--mt);width:calc(var(--mw)*1vw)}
+ .card.dsk{display:none}
  .cap{display:none}
  .side{display:none}
  .tag{right:16px;bottom:18px;font-size:10px}
  .center .t,#intro .t{font-size:clamp(48px,17vw,72px)}
- .center .d2{margin-left:clamp(8px,3.4vw,14px);font-size:8.5px;letter-spacing:.08em}
+ .center .d2{font-size:8.5px;letter-spacing:.08em}
  .idx{padding-left:16px;padding-right:16px}
  .about{display:flex;flex-direction:column;align-items:center;gap:7vh;padding:16vh 16px 12vh}
  .blk{max-width:34ch}
@@ -109,7 +110,7 @@ html.chc .chcur.show{opacity:1}
 #intro.out{opacity:0;visibility:hidden;pointer-events:none}
 #intro .t{display:flex;flex-direction:column;font-size:clamp(40px,5.4vw,80px);line-height:.82;text-align:center}
 #intro .t span:first-child{transform:rotate(-2deg)}
-#intro .t span:last-child{transform:rotate(1.5deg) translateX(.2em)}
+#intro .t span:last-child{transform:rotate(1.5deg)}
 @media(max-width:800px){#intro .t{font-size:clamp(48px,17vw,72px)}}
 #intro .ib{position:relative}
 #intro .bw{position:absolute;left:0;right:0;top:100%;margin-top:2.6vh;display:flex;justify-content:center}
@@ -161,13 +162,13 @@ var B="https://cltrhead.github.io/www.CLTRHEAD.nl/";
 function im(f){var i=new Image();i.alt="";i.loading="lazy";i.src=encodeURI(f);i.onerror=function(){if(!i._t){i._t=1;i.src=B+encodeURI(f)}else{i.style.display="none"}};return i}
 var S=[["Central Cee","017","Rapper & Artiest",""],["FAVE","016","Singer-Songwriter","FAVE.png"],["Ella John","015","Rapper & Artiest","ELLA THUMB.png"],["Chanou","014","Zangeres","chanou-thumb.jpg"],["Jaz Karis","013","Artiest","jazkaris-thumb.jpg"],["Rawen Mustafa","012","Designer & Oprichter ETB","rawen-thumb.jpg"],["Celeste Mercedes","011","Violiste & Music Director","celeste-thumb.jpg"],["Edgar Boudens","010","Oprichter Twenty20 & Goudsmid","Twenty20-thumb.jpg"],["Jessy Richmond","009","Producent & Eigenaresse Richmond Media Group","jessy-thumb.jpg"],["Yael Daila","008","Artiest & Performer","Yael-thumb.jpg"],["Nick Spapens & Samay June","007","Oprichters Supa Dupa","supadupagoods-thumb.jpg"],["Joeboy","006","Artiest & Singer-Songwriter","joeboy-thumb.jpg"],["Matthijs van der Meulen","005","CEO Sneakerness","sneakerness-thumb.jpg"],["Amiera Amore","004","Creative Director & Fashion Designer","Amiera Amore-thumb.jpg"],["Annicee","003","Art Director, DJ & Curator","Annicee-thumb.jpg"],["Kaytranada","002","Producer & DJ","kaytranada-thumb.jpg"],["Steven Aswin","001","Componist, Zanger & Ondernemer","Steven Aswin-thumb.jpg"]];
 var A=[null,'fave','ella-john','chanou','jaz-karis','rawen-mustafa','celeste-mercedes','edgar-boudens','jessy-richmond','yael-daila','supa-dupa-goods','joeboy','matthijs-van-der-meulen','amiera-amore','annicee','kaytranada','steven-aswin'];
-var R=[[2,5,10,1.15,3,7,40],[10,31,5,.8,54,5,32],[0,69,8,.95,66,25.5,24],[7,78,46,1.2,73,64,24],[6,32,66,1,43,69,28],[11,8,64,.75,3,66,32]];
-var H={0:'fotos/central-cee.jpg',2:'fotos/ella-john.jpg',6:'fotos/celeste-mercedes.jpg',7:'fotos/edgar-boudens.jpg',10:'fotos/supa-dupa-goods.jpg',11:'fotos/joeboy.jpg'};
+var R=[[2,5,10,1.15,3,7,40],[10,31,5,.8,54,5,32],[0,69,8,.95,66,25.5,24],[7,78,46,1.2,73,64,24],[6,32,66,1,43,69,28],[11,8,64,.75,3,66,32],[1,57,70,.72,0,0,0,1]];
+var H={1:'fotos/fave.jpg',0:'fotos/central-cee.jpg',2:'fotos/ella-john.jpg',6:'fotos/celeste-mercedes.jpg',7:'fotos/edgar-boudens.jpg',10:'fotos/supa-dupa-goods.jpg',11:'fotos/joeboy.jpg'};
 var st=document.getElementById('stories'),cards=[];
 R.forEach(function(r,i){var c=S[r[0]];
 var a=document.createElement('a');a.className='card';if(A[r[0]]){a.href='stories/'+A[r[0]]+'.html'}else{a.className='card soon'}
 a.style.cssText='--l:'+r[1]+'%;--t:'+r[2]+'%;--s:'+r[3]+';--ml:'+r[4]+'%;--mt:'+r[5]+'%;--mw:'+r[6];
-a.dataset.d=((i*7)%5-2)*.5;
+if(r[7])a.className+=' dsk';a.dataset.d=((i*7)%5-2)*.5;
 a.innerHTML='<div class="ph"></div><div class="cap"><span>N'+c[1]+'</span><span>'+c[0]+'</span><span>'+c[2]+(A[r[0]]?'':' &middot; binnenkort')+'</span></div>';
 a.querySelector('.ph').appendChild(im(H[r[0]]||c[3]));
 st.appendChild(a);cards.push(a);});
