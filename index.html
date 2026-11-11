@@ -54,7 +54,7 @@ header a{text-decoration:none}
 .about.in .blk{opacity:1;transform:none}
 .sign{grid-column:1/13;grid-row:3;text-align:center;font:clamp(26px,2.4vw,38px)/1 var(--hand);transform:rotate(-2deg)}
 .studios{height:auto;min-height:100vh;min-height:100svh;overflow:visible;display:flex;flex-direction:column}
-.st{flex:1;display:grid;grid-template-columns:repeat(12,1fr);column-gap:18px;padding:18vh 28px 8vh;align-content:center}
+.st{flex:1;display:grid;grid-template-columns:repeat(12,1fr);column-gap:18px;padding:18vh 28px 6vh;align-content:start}
 .st-lab{grid-column:1/13;display:flex;justify-content:space-between;border-bottom:1px solid var(--line);padding-bottom:12px;margin-bottom:8vh;font-size:12px;letter-spacing:.14em;text-transform:uppercase;color:var(--mute)}
 .st-left{grid-column:1/7}
 .mail{display:inline-block;margin-top:5vh;font:400 clamp(15px,1.5vw,20px)/1.2 var(--mono);text-decoration:none;border-bottom:1px solid currentColor;padding-bottom:3px;transition:opacity .3s}
@@ -68,6 +68,19 @@ header a{text-decoration:none}
 .srv b{display:block;font:400 14px/1.3 var(--mono);letter-spacing:.06em;text-transform:uppercase}
 .srv p{font-size:13px;line-height:1.5;color:var(--mute);margin-top:6px}
 .srv:hover{padding-left:12px}
+.st-lab2{margin-top:12vh;margin-bottom:5vh}
+.st-work{grid-column:1/13;display:grid;grid-template-columns:repeat(3,1fr);gap:18px}
+.wk{text-decoration:none;display:block}
+.wk .ph{aspect-ratio:4/5;overflow:hidden;background:#1b1917;margin-bottom:12px}
+.wk img{width:100%;height:100%;object-fit:cover;object-position:50% 24%;display:block;transition:transform .8s}
+.wk:hover img{transform:scale(1.04)}
+.wk b{display:block;font:400 13px/1.3 var(--mono);letter-spacing:.06em;text-transform:uppercase}
+.wk small{font-size:12px;color:var(--mute)}
+.st-how{grid-column:1/13;list-style:none;display:grid;grid-template-columns:repeat(3,1fr);gap:18px}
+.st-how li{border-top:1px solid var(--line);padding-top:16px}
+.st-how small{font-size:12px;color:var(--mute)}
+.st-how b{display:block;font:400 14px/1.3 var(--mono);letter-spacing:.06em;text-transform:uppercase;margin-top:10px}
+.st-how p{font-size:13px;line-height:1.5;color:var(--mute);margin-top:6px;max-width:32ch}
 .motto{text-align:center;padding:7vh 28px 5vh;font-size:11px;line-height:1.7;letter-spacing:.08em;text-transform:uppercase;color:var(--mute)}
 footer{display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:12px;padding:24px 28px;border-top:1px solid var(--line);font-size:12px;color:var(--mute)}
 .socials{display:flex;align-items:center}
@@ -103,6 +116,11 @@ html.chc .chcur.show{opacity:1}
  .b1{order:1}.b2{order:2}.sign{order:3}
  .st{padding:14vh 16px 8vh;display:block}
  .st-left{margin-bottom:6vh}
+ .st-lab2{margin-top:9vh}
+ .st-work{gap:10px}
+ .wk b{font-size:10.5px;letter-spacing:.03em}.wk small{font-size:10.5px}
+ .st-how{grid-template-columns:1fr;gap:0}
+ .st-how li{padding:14px 0}
  footer{padding:16px;justify-content:center;text-align:center}
  .socials{order:-1;width:100%;justify-content:center}
 }
@@ -132,12 +150,24 @@ html.pre .card{opacity:0}
 </section>
 <section class="idx" id="index"><div id="list"></div></section>
 <section class="studios" id="studios"><div class="st">
-<div class="st-lab"><span>Culture Head Studios</span><span>(02) Diensten</span></div>
+<div class="st-lab"><span>Culture Head Studios</span><span>Diensten</span></div>
 <div class="st-left"><p class="st-intro">Zin om te collabben?</p><a class="mail" id="mail" href="#">hello@cltrhead.com</a></div>
 <ul class="st-list">
 <li class="srv"><small>01</small><div><b>Video</b><p>Video voor jou of je merk, in de stijl van onze verhalen.</p></div></li>
 <li class="srv"><small>02</small><div><b>Founder story</b><p>Jouw verhaal en dat van je bedrijf, verteld op onze socials en website. Altijd duidelijk gemarkeerd als samenwerking.</p></div></li>
 </ul>
+<div class="st-lab st-lab2"><span>Eigen werk</span><span>Founder stories</span></div>
+<div class="st-work">
+<a class="wk" href="stories/edgar-boudens.html"><div class="ph"><img src="fotos/edgar-boudens.jpg" alt="Edgar Boudens" loading="lazy"></div><b>Edgar Boudens</b><small>Twenty20 Jewelry</small></a>
+<a class="wk" href="stories/supa-dupa-goods.html"><div class="ph"><img src="fotos/supa-dupa-goods.jpg" alt="Nick Spapens en Samay June" loading="lazy"></div><b>Nick Spapens &amp; Samay June</b><small>Supa Dupa Goods</small></a>
+<a class="wk" href="stories/matthijs-van-der-meulen.html"><div class="ph"><img src="fotos/matthijs-van-der-meulen.jpg" alt="Matthijs van der Meulen" loading="lazy"></div><b>Matthijs van der Meulen</b><small>Sneakerness</small></a>
+</div>
+<div class="st-lab st-lab2"><span>Zo werkt het</span><span>Drie stappen</span></div>
+<ol class="st-how">
+<li><small>01</small><b>Mail</b><p>Je stuurt ons wat je wilt vertellen of laten zien.</p></li>
+<li><small>02</small><b>Plan</b><p>We bellen en maken een voorstel met een prijs.</p></li>
+<li><small>03</small><b>Video</b><p>We draaien, monteren en leveren de video op.</p></li>
+</ol>
 </div>
 <p class="motto">It&rsquo;s not the destination, it&rsquo;s the journey</p>
 <footer><span>Culture Head &middot; Amsterdam</span>
