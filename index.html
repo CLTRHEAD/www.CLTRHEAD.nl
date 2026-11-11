@@ -29,7 +29,7 @@ header a{text-decoration:none}
 .tag{position:absolute;right:28px;bottom:28px;z-index:4;text-align:right;font-size:11px;line-height:1.7;letter-spacing:.04em;text-transform:uppercase;color:var(--mute);pointer-events:none}
 .card{position:absolute;left:var(--l);top:var(--t);width:calc(min(15vw,24vh)*var(--s,1));display:block;text-decoration:none;z-index:2;will-change:transform;transition:opacity .9s ease}
 .ph{aspect-ratio:4/5;overflow:hidden;background:linear-gradient(160deg,#3a352f,#1b1917);box-shadow:0 14px 34px rgba(30,20,10,.2)}
-.card img{width:100%;height:100%;object-fit:cover;display:block;transition:transform .8s}
+.card img{width:100%;height:100%;object-fit:cover;object-position:50% 24%;display:block;transition:transform .8s}
 .card:hover{z-index:20}
 .card:hover img{transform:scale(1.05)}
 .cap{position:absolute;left:10px;bottom:10px;right:10px;display:flex;flex-direction:column;align-items:flex-start;gap:5px;font-size:11px;line-height:1.25;letter-spacing:.04em;text-transform:uppercase;opacity:0;transition:opacity .25s;pointer-events:none}
@@ -43,7 +43,7 @@ header a{text-decoration:none}
 .row .th{display:none;width:40px;aspect-ratio:4/5;object-fit:cover}
 .idx:hover .row{opacity:.3}
 .idx .row:hover{opacity:1}
-.row.soon{cursor:default}.row.soon .nm{color:var(--mute)}
+.card.soon{cursor:default}.row.soon{cursor:default}.row.soon .nm{color:var(--mute)}
 .hv{position:fixed;left:0;top:0;width:210px;aspect-ratio:4/5;overflow:hidden;pointer-events:none;z-index:25;opacity:0;transition:opacity .2s;background:#2a2622}
 .hv img{width:100%;height:100%;object-fit:cover;display:block}
 .hv.show{opacity:1}
@@ -157,14 +157,15 @@ var B="https://cltrhead.github.io/www.CLTRHEAD.nl/";
 function im(f){var i=new Image();i.alt="";i.loading="lazy";i.src=encodeURI(f);i.onerror=function(){if(!i._t){i._t=1;i.src=B+encodeURI(f)}else{i.style.display="none"}};return i}
 var S=[["Central Cee","017","Rapper & Artiest",""],["FAVE","016","Singer-Songwriter","FAVE.png"],["Ella John","015","Rapper & Artiest","ELLA THUMB.png"],["Chanou","014","Zangeres","chanou-thumb.jpg"],["Jaz Karis","013","Artiest","jazkaris-thumb.jpg"],["Rawen Mustafa","012","Designer & Oprichter ETB","rawen-thumb.jpg"],["Celeste Mercedes","011","Violiste & Music Director","celeste-thumb.jpg"],["Edgar Boudens","010","Oprichter Twenty20 & Goudsmid","Twenty20-thumb.jpg"],["Jessy Richmond","009","Producent & Eigenaresse Richmond Media Group","jessy-thumb.jpg"],["Yael Daila","008","Artiest & Performer","Yael-thumb.jpg"],["Nick Spapens & Samay June","007","Oprichters Supa Dupa","supadupagoods-thumb.jpg"],["Joeboy","006","Artiest & Singer-Songwriter","joeboy-thumb.jpg"],["Matthijs van der Meulen","005","CEO Sneakerness","sneakerness-thumb.jpg"],["Amiera Amore","004","Creative Director & Fashion Designer","Amiera Amore-thumb.jpg"],["Annicee","003","Art Director, DJ & Curator","Annicee-thumb.jpg"],["Kaytranada","002","Producer & DJ","kaytranada-thumb.jpg"],["Steven Aswin","001","Componist, Zanger & Ondernemer","Steven Aswin-thumb.jpg"]];
 var A=[null,'fave','ella-john','chanou','jaz-karis','rawen-mustafa','celeste-mercedes','edgar-boudens','jessy-richmond','yael-daila','supa-dupa-goods','joeboy','matthijs-van-der-meulen','amiera-amore','annicee','kaytranada','steven-aswin'];
-var R=[[1,5,10,1.15,3,7,40],[2,31,5,.8,54,5,32],[3,69,8,.95,66,25.5,24],[5,78,46,1.2,73,64,24],[6,32,66,1,43,69,28],[7,8,64,.75,3,66,32]];
+var R=[[2,5,10,1.15,3,7,40],[10,31,5,.8,54,5,32],[0,69,8,.95,66,25.5,24],[7,78,46,1.2,73,64,24],[6,32,66,1,43,69,28],[11,8,64,.75,3,66,32]];
+var H={0:'fotos/central-cee.jpg',2:'fotos/ella-john.jpg',6:'fotos/celeste-mercedes.jpg',7:'fotos/edgar-boudens.jpg',10:'fotos/supa-dupa-goods.jpg',11:'fotos/joeboy.jpg'};
 var st=document.getElementById('stories'),cards=[];
 R.forEach(function(r,i){var c=S[r[0]];
-var a=document.createElement('a');a.className='card';a.href='stories/'+A[r[0]]+'.html';
+var a=document.createElement('a');a.className='card';if(A[r[0]]){a.href='stories/'+A[r[0]]+'.html'}else{a.className='card soon'}
 a.style.cssText='--l:'+r[1]+'%;--t:'+r[2]+'%;--s:'+r[3]+';--ml:'+r[4]+'%;--mt:'+r[5]+'%;--mw:'+r[6];
 a.dataset.d=((i*7)%5-2)*.5;
-a.innerHTML='<div class="ph"></div><div class="cap"><span>N'+c[1]+'</span><span>'+c[0]+'</span><span>'+c[2]+'</span></div>';
-a.querySelector('.ph').appendChild(im(c[3]));
+a.innerHTML='<div class="ph"></div><div class="cap"><span>N'+c[1]+'</span><span>'+c[0]+'</span><span>'+c[2]+(A[r[0]]?'':' &middot; binnenkort')+'</span></div>';
+a.querySelector('.ph').appendChild(im(H[r[0]]||c[3]));
 st.appendChild(a);cards.push(a);});
 document.getElementById('nidx').textContent='Index('+A.filter(Boolean).length+')';
 function tick(){try{document.getElementById('clk').textContent='Amsterdam (NH) '+new Intl.DateTimeFormat('nl-NL',{hour:'2-digit',minute:'2-digit',timeZone:'Europe/Amsterdam'}).format(new Date())}catch(e){}}
@@ -172,7 +173,7 @@ tick();setInterval(tick,30000);
 var list=document.getElementById('list'),hv=document.getElementById('hv'),hi=hv.querySelector('img');
 S.forEach(function(c,k){
 var a=document.createElement('a');a.className='row';
-if(!A[k]){a.className='row soon';a.innerHTML='<i class="th"></i><small>'+c[1]+'</small><span class="nm">'+c[0]+'</span><small>'+c[2]+' &middot; binnenkort</small>';list.appendChild(a);return}
+if(!A[k]){a.className='row soon';a.dataset.f=H[k]||'';a.innerHTML='<small>'+c[1]+'</small><span class="nm">'+c[0]+'</span><small>'+c[2]+' &middot; binnenkort</small>';if(H[k]){var ts=im(H[k]);ts.className='th';a.insertBefore(ts,a.firstChild);a.addEventListener('mouseenter',function(){hi.onerror=null;hi.src=encodeURI(H[k]);hv.classList.add('show')});a.addEventListener('mouseleave',function(){hv.classList.remove('show')})}list.appendChild(a);return}
 a.href='stories/'+A[k]+'.html';a.dataset.f=c[3];
 a.innerHTML='<small>'+c[1]+'</small><span class="nm">'+c[0]+'</span><small>'+c[2]+'</small>';
 var t=im(c[3]);t.className='th';a.insertBefore(t,a.firstChild);
